@@ -16,7 +16,8 @@ const HomePage = {
     COURSE_DATA.modules.forEach((module, index) => {
       const progress = Store.getModuleProgress(module.id);
       const unlocked = Store.isModuleUnlocked(index);
-      html += this.renderModuleCard(module, progress, unlocked, index);
+      const completed = progress.percent === 100;
+      html += this.renderModuleCard(module, progress, unlocked, completed, index);
     });
 
     html += '</div>';
@@ -28,7 +29,7 @@ const HomePage = {
     container.innerHTML = html;
   },
 
-  renderModuleCard(module, progress, unlocked, index) {
+  renderModuleCard(module, progress, unlocked, completed, index) {
     const percent = progress.percent;
     return `
       <div class="module-card ${unlocked ? '' : 'locked'}" 
@@ -49,6 +50,15 @@ const HomePage = {
             <span>${percent}%</span>
           </div>
         </div>
+        ${completed 
+          ? `<div style="margin-top:12px;display:flex;gap:8px">
+              <button onclick="event.stopPropagation();navigateTo('lesson', '${module.id}', 0, true)" 
+                style="flex:1;padding:8px;border-radius:8px;border:2px solid ${module.color};
+                background:white;color:${module.color};cursor:pointer;font-weight:700;font-size:12px">
+                📖 Revisar
+              </button>
+            </div>` 
+          : ''}
         ${!unlocked ? '<div style="position:absolute;top:16px;right:16px;font-size:24px">🔒</div>' : ''}
       </div>
     `;

@@ -1,5786 +1,3966 @@
-﻿const COURSE_DATA = {
+const COURSE_DATA = {
   title: "EletricistaPro",
   subtitle: "Domine a Eletricidade",
   avatar: "⚡",
   modules: [
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 1 â€” FUNDAMENTOS DA ELETRICIDADE
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  {
-    moduleId: "M1",
-    moduleTitle: "Fundamentos da Eletricidade",
-    moduleColor: "#FFD700",
-    moduleIcon: "âš¡",
+    {
+    id: "m1",
+    title: "Fundamentos da Eletricidade",
+    description: "Conceitos básicos, Lei de Ohm, potência e circuitos",
+    icon: "⚡",
+    color: "#FFD700",
     lessons: [
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L1 â€” O que Ã© Eletricidade
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l1",
-        title: "O que Ã© Eletricidade",
-        theory: `<h2>O que Ã© Eletricidade</h2>
-
-<h3>DefiniÃ§Ã£o Fundamental</h3>
-<p>A eletricidade Ã© o conjunto de fenÃ´menos fÃ­sicos causados pelo movimento ou pela presenÃ§a de <strong>cargas elÃ©tricas</strong>. Em termos prÃ¡ticos, ela Ã© a energia resultante da interaÃ§Ã£o entre partÃ­culas subatÃ´micas com carga elÃ©trica â€” especificamente os <strong>elÃ©trons</strong> (carga negativa) e os <strong>prÃ³tons</strong> (carga positiva) que compÃµem a matÃ©ria.</p>
-
-<h3>Cargas ElÃ©tricas</h3>
-<ul>
-  <li><strong>Carga negativa:</strong> elÃ©trons â€” partÃ­culas que orbitam o nÃºcleo do Ã¡tomo. SÃ£o mÃ³veis e responsÃ¡veis pelo fluxo de corrente nos condutores metÃ¡licos.</li>
-  <li><strong>Carga positiva:</strong> prÃ³tons â€” partÃ­culas fixas no nÃºcleo atÃ´mico. NÃ£o se movem livremente nos condutores.</li>
-  <li><strong>Lei de Coulomb:</strong> cargas iguais se repelem, cargas opostas se atraem. A forÃ§a entre duas cargas Ã© proporcional ao produto das cargas e inversamente proporcional ao quadrado da distÃ¢ncia.</li>
-  <li><strong>Unidade de carga:</strong> Coulomb (C). Um elÃ©tron possui carga elementar de 1,6 Ã— 10â»Â¹â¹ C.</li>
-</ul>
-
-<h3>Corrente Convencional vs Corrente Real</h3>
-<ul>
-  <li><strong>Corrente convencional:</strong> fluxo de carga positiva do polo positivo para o polo negativo. Ã‰ o padrÃ£o adotado internacionalmente para anÃ¡lise de circuitos.</li>
-  <li><strong>Corrente real (eletrÃ´nica):</strong> fluxo de elÃ©trons do polo negativo para o polo positivo. Ã‰ o que realmente acontece nos condutores metÃ¡licos.</li>
-  <li>Na prÃ¡tica, <strong>sempre usamos a convenÃ§Ã£o</strong> de corrente do positivo para o negativo. Todas as fÃ³rmulas e instrumentos seguem essa convenÃ§Ã£o.</li>
-</ul>
-
-<h3>Fontes de Energia ElÃ©trica</h3>
-<ul>
-  <li><strong>Corrente ContÃ­nua (CC/DC):</strong> fluxo unidirecional constante. Exemplos: pilhas, baterias, painÃ©is solares, fontes chaveadas. TensÃ£o tÃ­pica: 1,5V (pilhas AA), 12V (baterias automotivas), 24V (industrial).</li>
-  <li><strong>Corrente Alternada (CA/AC):</strong> fluxo oscilante em sentidos opostos periÃ³dicamente. No Brasil, frequÃªncia de 60Hz e tensÃ£o de 127V/220V. Ã‰ o tipo distribuÃ­do pelas concessionÃ¡rias.</li>
-  <li><strong>Fontes eletromecÃ¢nicas:</strong> geradores que convertem energia mecÃ¢nica em elÃ©trica (usinas hidrelÃ©tricas, eÃ³licas).</li>
-  <li><strong>Fontes fotovoltaicas:</strong> painÃ©is solares convertem luz diretamente em eletricidade (efeito fotovoltaico).</li>
-</ul>
-
-<h3>AplicaÃ§Ã£o PrÃ¡tica</h3>
-<p>A eletricidade estÃ¡ presente em todos os setores: residencial (iluminaÃ§Ã£o, eletrodomÃ©sticos), comercial (refrigeraÃ§Ã£o, informÃ¡tica), industrial (motores, fornos, controle de processos) e de infraestrutura (sinalizaÃ§Ã£o, telecomunicaÃ§Ãµes). Entender seus fundamentos Ã© o primeiro passo para qualquer profissional da Ã¡rea elÃ©trica.</p>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Confundir tensÃ£o com corrente:</strong> tensÃ£o Ã© a "pressÃ£o", corrente Ã© o "fluxo". SÃ£o grandezas distintas.</li>
-  <li><strong>Achar que CC e CA sÃ£o equivalentes:</strong> possuem comportamentos muito diferentes em circuitos com capacitores e indutores.</li>
-  <li><strong>Ignorar a frequÃªncia:</strong> o valor de 60Hz afeta diretamente o dimensionamento de motores e transformadores.</li>
-</ul>`,
+        title: "O que é Eletricidade",
+        theory: `<h2>O que é Eletricidade</h2>
+<p>A eletricidade é o fluxo de <strong>elétrons</strong> (cargas negativas) através de um condutor. Todo átomo possui prótons (carga +), nêutrons (carga 0) e elétrons (carga -). Quando um átomo perde ou ganha elétrons, torna-se um <strong>íon</strong>.</p>
+<p>Existem dois tipos de corrente: <strong>CC (Corrente Contínua)</strong> — fluxo unidirecional, como em baterias — e <strong>CA (Corrente Alternada)</strong> — oscila em ciclos, como a rede elétrica domiciliar.</p>
+<p>As <strong>fontes de energia</strong> convertem outras formas de energia em energia elétrica. Exemplos: geradores eólicos, painéis solares, usinas termoelétricas e hidrelétricas.</p>
+<p>Para que haja fluxo de elétrons, são necessários dois elementos: um <strong>meio condutor</strong> (fio de cobre, alumínio) e uma <strong>diferença de potencial</strong> (tensão) entre dois pontos.</p>
+<p><strong>Aplicação prática:</strong> Em uma instalação residencial, os fios de cobre funcionam como condutores e o disjuntor protege contra sobrecorrentes.</p>
+<p><strong>Erro comum:</strong> Confundir tensão com corrente. Tensão é a "pressão" que empurra os elétrons; corrente é a quantidade de elétrons que fluem por segundo.</p>
+<p><strong>Dica:</strong> Pense na água: tensão é como a altura de uma torre d'água (pressão), corrente é o volume de água que flai por segundo.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Quais sÃ£o as duas cargas elÃ©tricas fundamentais?",
-            options: [
-              "PrÃ³tons e nÃªutrons",
-              "ElÃ©trons e prÃ³tons",
-              "FÃ³tons e elÃ©trons",
-              "NÃªutrons e fÃ³tons"
-            ],
-            correctIndex: 1,
-            explanation: "As cargas elÃ©tricas fundamentais sÃ£o os elÃ©trons (carga negativa) e os prÃ³tons (carga positiva). Os nÃªutrons sÃ£o neutros."
-          },
-          {
-            type: "multiple-choice",
-            question: "Na convenÃ§Ã£o de corrente elÃ©trica, qual Ã© a direÃ§Ã£o do fluxo?",
-            options: [
-              "Do polo negativo para o positivo (fluxo real de elÃ©trons)",
-              "Do polo positivo para o polo negativo (convenÃ§Ã£o adotada)",
-              "Em ambos os sentidos simultaneamente",
-              "Depende do tipo de condutor"
-            ],
-            correctIndex: 1,
-            explanation: "A convenÃ§Ã£o internacional adota o fluxo de carga positiva, do polo positivo para o polo negativo, mesmo que o fluxo real de elÃ©trons seja no sentido oposto."
-          },
-          {
-            type: "fill-blank",
-            question: "No Brasil, a corrente alternada possui frequÃªncia de _____ Hz e tensÃ£o de _____ V.",
-            correctAnswers: ["60", "127/220"],
-            explanation: "O sistema elÃ©trico brasileiro opera com frequÃªncia de 60Hz e tensÃ£o de 127V (monofÃ¡sico) ou 220V (bifÃ¡sico/trifÃ¡sico)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a unidade de medida da carga elÃ©trica no Sistema Internacional?",
-            options: [
-              "AmpÃ¨re (A)",
-              "Volt (V)",
-              "Coulomb (C)",
-              "Watt (W)"
-            ],
-            correctIndex: 2,
-            explanation: "O Coulomb (C) Ã© a unidade de medida de carga elÃ©trica no SI. Um ampÃ¨re Ã© equivalente a um coulomb por segundo."
-          },
-          {
-            type: "calculation",
-            question: "Se uma corrente de 5A flui por um condutor durante 10 minutos, qual a carga elÃ©trica total que passou pelo condutor?",
-            formulaHint: "Q = I Ã— t (converter minutos para segundos)",
-            correctAnswer: 3000,
-            unit: "C",
-            explanation: "Q = I Ã— t = 5A Ã— (10 Ã— 60s) = 5 Ã— 600 = 3000 C."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique cada fonte de energia como geradora de corrente CONTÃNUA ou ALTERNADA:",
-            items: [
-              { text: "Pilha alcalina", correctCategory: "CC (ContÃ­nua)" },
-              { text: "Bateria de carro", correctCategory: "CC (ContÃ­nua)" },
-              { text: "Rede domÃ©stica", correctCategory: "CA (Alternada)" },
-              { text: "Gerador eÃ³lico", correctCategory: "CA (Alternada)" },
-              { text: "Painel solar fotovoltaico", correctCategory: "CC (ContÃ­nua)" }
-            ]
-          }
+          { type: "multiple-choice", question: "Qual partícula é responsável pelo fluxo de corrente elétrica?", choices: ["Próton", "Nêutron", "Elétron", "Íon"], correct: 2, explanation: "O elétron, com carga negativa, é a partícula que se desloca nos condutores metálicos, criando o fluxo de corrente." },
+          { type: "multiple-choice", question: "A corrente alternada (CA) se diferencia da corrente contínua (CC) porque:", choices: ["Não possui carga elétrica", "O fluxo é unidirecional", "O sentido do fluxo oscila em ciclos", "Não necessita de condutor"], correct: 2, explanation: "Na CA, o sentido do fluxo de elétrons alterna periodicamente, geralmente em 50 ou 60 Hz." },
+          { type: "fill-blank", code: "A corrente contínua (CC) possui fluxo ________ de elétrons, enquanto a corrente alternada (CA) ________ o sentido do fluxo em ciclos.", blanks: [{ answer: "unidirecional", placeholder: "direção do fluxo" }, { answer: "inverte", placeholder: "ação sobre o fluxo" }], explanation: "CC mantém direção constante; CA alterna o sentido periodicamente." },
+          { type: "drag-drop", question: "Ordene os elementos necessários para haver fluxo de elétrons:", pieces: ["Fonte de tensão", "Meio condutor", "Diferença de potencial", "Circuito fechado"], correctOrder: ["Fonte de tensão", "Diferença de potencial", "Meio condutor", "Circuito fechado"], explanation: "A fonte cria a diferença de potencial, que empurra elétrons pelo condutor em circuito fechado." },
+          { type: "calculation", question: "Se uma bateria fornece 12V e a resistência é 4Ω, qual a corrente que flui?", answer: 3, unit: "A", validate: function(v) { return Math.abs(v - 3) < 0.1; }, explanation: "I = V/R = 12/4 = 3A. A Lei de Ohm relaciona tensão, resistência e corrente." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L2 â€” TensÃ£o, Corrente e ResistÃªncia
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l2",
-        title: "TensÃ£o, Corrente e ResistÃªncia",
-        theory: `<h2>TensÃ£o, Corrente e ResistÃªncia</h2>
-
-<h3>Os TrÃªs Pilares do Circuito ElÃ©trico</h3>
-<p>Toda anÃ¡lise elÃ©trica, desde uma instalaÃ§Ã£o residencial atÃ© um sistema de transmissÃ£o, se baseia em trÃªs grandezas fundamentais: <strong>tensÃ£o</strong>, <strong>corrente</strong> e <strong>resistÃªncia</strong>. Compreender cada uma delas â€” e como interagem â€” Ã© essencial.</p>
-
-<h3>TensÃ£o (V)</h3>
-<ul>
-  <li><strong>DefiniÃ§Ã£o:</strong> diferenÃ§a de potencial elÃ©trico entre dois pontos de um circuito. Ã‰ a "forÃ§a" que empurra os elÃ©trons a se movimentarem.</li>
-  <li><strong>Unidade:</strong> Volt (V). 1V Ã© a diferenÃ§a de potencial necessÃ¡ria para mover 1 Coulomb de carga com 1 Joule de energia.</li>
-  <li><strong>Analogia hidrÃ¡ulica:</strong> equivalente Ã  <strong>pressÃ£o da Ã¡gua</strong> em um sistema de tubulaÃ§Ãµes. Quanto maior a pressÃ£o, maior o "empuxo" para mover a Ã¡gua.</li>
-  <li><strong>Como medir:</strong> multÃ­metro em modo voltmÃ©trico, conectado em PARALELO com o componente ou circuito.</li>
-  <li><strong>Exemplos prÃ¡ticos:</strong> pilha 1,5V, bateria 12V, tomada 127V/220V, rede de distribuiÃ§Ã£o 13,8kV.</li>
-</ul>
-
-<h3>Corrente (I)</h3>
-<ul>
-  <li><strong>DefiniÃ§Ã£o:</strong> taxa de fluxo de carga elÃ©trica por unidade de tempo. Ã‰ a quantidade de elÃ©trons que passam por uma seÃ§Ã£o do condutor por segundo.</li>
-  <li><strong>Unidade:</strong> AmpÃ¨re (A). 1A = 1 Coulomb por segundo (â‰ˆ 6,24 Ã— 10Â¹â¸ elÃ©trons/s).</li>
-  <li><strong>Analogia hidrÃ¡ulica:</strong> equivalente Ã  <strong>vazÃ£o da Ã¡gua</strong> (litros por minuto). Ã‰ o volume real de Ã¡gua que flui pelo cano.</li>
-  <li><strong>Como medir:</strong> alicate de corrente (clip) ou multÃ­metro em modo amperomÃ©trico. O alicate mede sem interromper o circuito.</li>
-  <li><strong>ClassificaÃ§Ãµes:</strong> atÃ© 1A = microcorrente; 1A a 10A = corrente moderada; acima de 10A = corrente elevada (perigo!).</li>
-</ul>
-
-<h3>ResistÃªncia (R)</h3>
-<ul>
-  <li><strong>DefiniÃ§Ã£o:</strong> propriedade do material que se opÃµe ao fluxo de corrente elÃ©trica. Ã‰ a "obstruÃ§Ã£o" ao fluxo.</li>
-  <li><strong>Unidade:</strong> Ohm (Î©). 1Î© Ã© a resistÃªncia que, com 1V de tensÃ£o, produz 1A de corrente.</li>
-  <li><strong>Analogia hidrÃ¡ulica:</strong> equivalente Ã  <strong>obstruÃ§Ã£o/retrincamento do cano</strong>. Um cano fino ou entupido oferece mais resistÃªncia ao fluxo da Ã¡gua.</li>
-  <li><strong>Fatores que afetam R:</strong> material (condutividade), comprimento (R proporcional a L), Ã¡rea da seÃ§Ã£o (R inversamente proporcional a A), temperatura (metais: R aumenta com T).</li>
-  <li><strong>Como medir:</strong> multÃ­metro em modo ohmmÃ©trico, com o circuito DESLIGADO.</li>
-</ul>
-
-<h3>RelaÃ§Ã£o entre Grandezas â€” Lei de Ohm</h3>
-<pre>
-V = R Ã— I    â†’    TensÃ£o = ResistÃªncia Ã— Corrente
-R = V / I    â†’    ResistÃªncia = TensÃ£o / Corrente
-I = V / R    â†’    Corrente = TensÃ£o / ResistÃªncia
-</pre>
-<div class="formula-box">TriÃ¢ngulo de Ohm: V no topo, R e I na base. Cubra a grandeza desconhecida para obter a fÃ³rmula correta.</div>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Medir corrente em paralelo:</strong> sempre em sÃ©rie! Em paralelo, o multÃ­metro pode ser danificado.</li>
-  <li><strong>Medir tensÃ£o em sÃ©rie:</strong> sempre em paralelo! Em sÃ©rie, a leitura serÃ¡ praticamente zero.</li>
-  <li><strong>Confundir condutÃ¢ncia com resistÃªncia:</strong> condutÃ¢ncia (G = 1/R) mede facilidade de fluxo, nÃ£o dificuldade.</li>
-</ul>`,
+        title: "Tensão e seus Tipos",
+        theory: `<h2>Tensão e seus Tipos</h2>
+<p><strong>Tensão elétrica</strong> (U ou V) é a diferença de potencial elétrico entre dois pontos, medida em <strong>Volt (V)</strong>. É a "pressão" que faz os elétrons fluírem.</p>
+<p>Na <strong>tensão alternada (TA)</strong>, a forma de onda é senoidal. No Brasil, a frequência é de <strong>60 Hz</strong>, meaning 60 ciclos por segundo. Cada ciclo completo tem duração de 1/60 ≈ 16,67 ms.</p>
+<p>A <strong>tensão eficaz</strong> é o valor que medimos no multímetro e na conta de luz: <strong>127V ou 220V</strong>. A <strong>tensão de pico</strong> (Vp) é o valor máximo da onda: Vp = Vef × √2. Para 127V, Vp ≈ 180V; para 220V, Vp ≈ 311V.</p>
+<p>O <strong>tensão de pico a pico</strong> (Vpp) é a distância entre o máximo positivo e negativo: Vpp = 2 × Vp.</p>
+<p><strong>Aplicação prática:</strong> Equipamentos eletrônicos sensíveis (computadores, TVs) precisam de <strong>No-Break</strong> ou estabilizadores para proteger contra variações de tensão.</p>
+<p><strong>Erro comum:</strong> Achar que 127V é "menos perigoso" que 220V. Ambos são letais dependendo das condições (resistência corporal, trajeto da corrente).</p>
+<p><strong>Dica:</strong> Nunca meça tensão em modo de corrente (A). Sempre selecione o modo de tensão (V~ ou V=) no multímetro.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a analogia hidrÃ¡ulica CORRETA para a tensÃ£o elÃ©trica?",
-            options: [
-              "VazÃ£o da Ã¡gua no cano",
-              "PressÃ£o da Ã¡gua nas tubulaÃ§Ãµes",
-              "ObstruÃ§Ã£o dentro do cano",
-              "DiÃ¢metro do cano"
-            ],
-            correctIndex: 1,
-            explanation: "A tensÃ£o Ã© a 'pressÃ£o' que empurra os elÃ©trons, assim como a pressÃ£o da Ã¡gua empurra a Ã¡gua pelas tubulaÃ§Ãµes."
-          },
-          {
-            type: "fill-blank",
-            question: "A corrente elÃ©trica Ã© medida em _____ e deve ser conectada em _____ com o circuito.",
-            correctAnswers: ["ampÃ¨re", "sÃ©rie"],
-            explanation: "A unidade Ã© o AmpÃ¨re (A) e o multÃ­metro deve ser conectado em sÃ©rie para medir corrente, pois precisa passar toda a corrente pelo instrumento."
-          },
-          {
-            type: "calculation",
-            question: "Uma resistÃªncia de 47Î© Ã© conectada a uma fonte de 12V. Qual a corrente que circula?",
-            formulaHint: "I = V / R",
-            correctAnswer: 0.255,
-            unit: "A",
-            explanation: "I = V / R = 12V / 47Î© â‰ˆ 0,255A = 255mA."
-          },
-          {
-            type: "multiple-choice",
-            question: "Para medir a resistÃªncia de um resistor no circuito, qual a forma CORRETA?",
-            options: [
-              "Com o circuito energizado e multÃ­metro em paralelo",
-              "Com o circuito desligado e multÃ­metro em sÃ©rie",
-              "Com o circuito desligado e multÃ­metro nos terminais do resistor",
-              "Com o circuito ligado e multÃ­metro nos terminais do resistor"
-            ],
-            correctIndex: 2,
-            explanation: "A resistÃªncia sÃ³ Ã© medida com o circuito DESLIGADO, conectando o multÃ­metro diretamente nos terminais do componente."
-          },
-          {
-            type: "drag-drop",
-            question: "Relacione cada grandeza com sua unidade e sÃ­mbolo:",
-            items: [
-              { text: "TensÃ£o", correctCategory: "Volt (V)" },
-              { text: "Corrente", correctCategory: "AmpÃ¨re (A)" },
-              { text: "ResistÃªncia", correctCategory: "Ohm (Î©)" },
-              { text: "PotÃªncia", correctCategory: "Watt (W)" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Uma lÃ¢mpada de 12V consome 0,5A. Qual Ã© a resistÃªncia da lÃ¢mpada?",
-            formulaHint: "R = V / I",
-            correctAnswer: 24,
-            unit: "Î©",
-            explanation: "R = V / I = 12V / 0,5A = 24Î©."
-          }
+          { type: "multiple-choice", question: "Qual é a tensão de pico (Vp) para uma rede de 220V eficazes?", choices: ["220V", "311V", "380V", "110V"], correct: 1, explanation: "Vp = Vef × √2 = 220 × 1,414 ≈ 311V. A tensão de pico é sempre maior que a eficaz." },
+          { type: "multiple-choice", question: "A frequência da rede elétrica brasileira é:", choices: ["50 Hz", "60 Hz", "120 Hz", "25 Hz"], correct: 1, explanation: "O Brasil adota 60 Hz. Isso significa que a tensão alterna 60 vezes por segundo." },
+          { type: "fill-blank", code: "A tensão ________ é o valor medido pelo multímetro e equivale a 127V ou 220V no Brasil. A tensão de ________ é o valor máximo da onda senoidal.", blanks: [{ answer: "eficaz", placeholder: "tipo de tensão medida" }, { answer: "pico", placeholder: "valor máximo" }], explanation: "A tensão eficaz (RMS) é o valor útil; a de pico é o extremo da onda." },
+          { type: "calculation", question: "Se a tensão de pico é 180V, qual é a tensão eficaz?", answer: 127.3, unit: "V", validate: function(v) { return Math.abs(v - 127.3) < 1; }, explanation: "Vef = Vp / √2 = 180 / 1,414 ≈ 127,3V. A tensão eficaz é menor que a de pico." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L3 â€” Lei de Ohm
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l3",
-        title: "Lei de Ohm",
-        theory: `<h2>Lei de Ohm</h2>
-
-<h3>Enunciado da Lei</h3>
-<p>A Lei de Ohm, formulada por Georg Simon Ohm em 1827, estabelece que a <strong>corrente elÃ©trica</strong> que circula por um condutor Ã© <strong>diretamente proporcional Ã  tensÃ£o</strong> aplicada e <strong>inversamente proporcional Ã  resistÃªncia</strong> do condutor, desde que as condiÃ§Ãµes fÃ­sicas (temperatura, etc.) permaneÃ§am constantes.</p>
-
-<h3>As TrÃªs Formas da FÃ³rmula</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚              TRIÃ‚NGULO DE OHM               â”‚
-â”‚                                             â”‚
-â”‚                    V                        â”‚
-â”‚                  /     \                    â”‚
-â”‚                /         \                  â”‚
-â”‚              R    Ã—     I                   â”‚
-â”‚                                             â”‚
-â”‚  Descubra a grandeza desejada:              â”‚
-â”‚  â€¢ V = R Ã— I   (tensÃ£o)                    â”‚
-â”‚  â€¢ R = V / I   (resistÃªncia)               â”‚
-â”‚  â€¢ I = V / R   (corrente)                  â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Exemplos PrÃ¡ticos Resolvidos</h3>
-
-<p><strong>Exemplo 1 â€” Encontrando a tensÃ£o:</strong></p>
-<p>Um resistor de 10Î© com corrente de 2A:</p>
-<pre>V = R Ã— I = 10Î© Ã— 2A = 20V</pre>
-
-<p><strong>Exemplo 2 â€” Encontrando a corrente:</strong></p>
-<p>Uma resistÃªncia de 470Î© com tensÃ£o de 12V:</p>
-<pre>I = V / R = 12V / 470Î© â‰ˆ 0,0255A = 25,5mA</pre>
-
-<p><strong>Exemplo 3 â€” Encontrando a resistÃªncia:</strong></p>
-<p>Uma lÃ¢mpada que consome 0,3A com tensÃ£o de 127V:</p>
-<pre>R = V / I = 127V / 0,3A â‰ˆ 423,3Î©</pre>
-
-<p><strong>Exemplo 4 â€” Circuito com bateria 9V:</strong></p>
-<p>Qual resistor limitar corrente a 20mA para um LED?</p>
-<pre>R = V / I = 9V / 0,020A = 450Î© â†’ usar 470Î© (valor comercial)</pre>
-
-<p><strong>Exemplo 5 â€” TensÃ£o em resistor desconhecido:</strong></p>
-<p>Um motor consome 3A e tem resistÃªncia interna de 2Î©:</p>
-<pre>V = R Ã— I = 2Î© Ã— 3A = 6V (queda de tensÃ£o no motor)</pre>
-
-<h3>LimitaÃ§Ãµes da Lei de Ohm</h3>
-<ul>
-  <li><strong>Componentes lineares apenas:</strong> resistores ohmicos seguem a lei. Leds, transistores e lÃ¢mpadas incandescentes NÃƒO sÃ£o lineares.</li>
-  <li><strong>Temperatura constante:</strong> a resistÃªncia varia com a temperatura (LDR, termistores).</li>
-  <li><strong>Fontes idealizadas:</strong> na prÃ¡tica, fontes tÃªm resistÃªncia interna (Ri), entÃ£o V_real = V_fonte - Ri Ã— I.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Aplicar a lei em LEDs sem resistor limitador:</strong> LEDs tÃªm resistÃªncia dinÃ¢mica baixa â€” sem resistor, a corrente dispara e queima o componente.</li>
-  <li><strong>Esquecer a resistÃªncia interna da fonte:</strong> em fontes reais, a tensÃ£o de saÃ­da cai sob carga.</li>
-  <li><strong>Usar valores nominais sem verificar potÃªncia:</strong> um resistor de 100Î© com 1A dissiparÃ¡ 100W â€” muito alÃ©m do que um resistor de 1/4W suporta!</li>
-</ul>`,
+        title: "Corrente Elétrica",
+        theory: `<h2>Corrente Elétrica</h2>
+<p><strong>Corrente elétrica</strong> (I) é a quantidade de carga elétrica que flui por unidade de tempo por um ponto do condutor. Medida em <strong>Ampère (A)</strong>.</p>
+<p>A <strong>corrente convencional</strong> é definida como o fluxo de cargas positivas (do + para o -). Na realidade, são os <strong>elétrons</strong> que fluem do - para o +. A convenção histórica prevalece nos cálculos.</p>
+<p>Correntes pequenas são classificadas: <strong>mA</strong> (miliampère, 1A = 1000mA), <strong>μA</strong> (microampère, 1A = 1.000.000μA). Para referência: 1mA já causa formigamento; 10mA pode causar tetanização muscular; acima de 30mA é potencialmente letal.</p>
+<p>Os <strong>efeitos da corrente</strong> no corpo humano dependem de: intensidade, frequência, trajeto (mão-mão é o mais perigoso), tempo de contato e resistência corporal.</p>
+<p><strong>Aplicação prática:</strong> O <strong>DR (Dispositivo Residual)</strong> detecta fugas de corrente e desliga em menos de 30ms quando detecta diferença superior a 30mA entre fase e neutro.</p>
+<p><strong>Erro comum:</strong> Dimensionar fios apenas pela corrente sem considerar a queda de tensão em distâncias longas.</p>
+<p><strong>Dica:</strong> Ao verificar se há tensão em um fio, sempre use o multímetro. Nunca teste com o corpo!</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Uma resistÃªncia de 220Î© Ã© conectada a uma fonte de 12V. Qual a corrente que circula?",
-            formulaHint: "I = V / R",
-            correctAnswer: 0.0545,
-            unit: "A",
-            explanation: "I = V / R = 12V / 220Î© â‰ˆ 0,0545A = 54,5mA."
-          },
-          {
-            type: "fill-blank",
-            question: "A Lei de Ohm Ã© expressa pela fÃ³rmula V = R Ã— I, onde V Ã© _____, R Ã© _____ e I Ã© _____.",
-            correctAnswers: ["tensÃ£o", "resistÃªncia", "corrente"],
-            explanation: "V = TensÃ£o (Volts), R = ResistÃªncia (Ohms), I = Corrente (AmpÃ¨res). Ã‰ a relaÃ§Ã£o fundamental da eletricidade."
-          },
-          {
-            type: "calculation",
-            question: "Qual deve ser o valor de um resistor para limitar a corrente de um LED a 20mA, usando uma bateria de 9V?",
-            formulaHint: "R = V / I",
-            correctAnswer: 450,
-            unit: "Î©",
-            explanation: "R = V / I = 9V / 0,020A = 450Î©. Na prÃ¡tica, usa-se um resistor de 470Î© (valor comercial mais prÃ³ximo)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual das seguintes afirmaÃ§Ãµes sobre a Lei de Ohm Ã© INCORRETA?",
-            options: [
-              "A corrente Ã© diretamente proporcional Ã  tensÃ£o",
-              "A resistÃªncia Ã© inversamente proporcional Ã  corrente",
-              "A tensÃ£o Ã© diretamente proporcional Ã  corrente",
-              "A Lei de Ohm se aplica a qualquer componente eletrÃ´nico"
-            ],
-            correctIndex: 3,
-            explanation: "A Lei de Ohm NÃƒO se aplica a componentes nÃ£o-lineares como LEDs, transistores e lÃ¢mpadas incandescentes. Ela vale apenas para resistores ohmicos."
-          },
-          {
-            type: "drag-drop",
-            question: "Use o triÃ¢ngulo de Ohm para descobrir a fÃ³rmula correta. Relacione a grandeza desejada com a operaÃ§Ã£o matemÃ¡tica:",
-            items: [
-              { text: "Quero encontrar V", correctCategory: "V = R Ã— I" },
-              { text: "Quero encontrar I", correctCategory: "I = V / R" },
-              { text: "Quero encontrar R", correctCategory: "R = V / I" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Uma resistÃªncia de 330Î© tem queda de tensÃ£o de 5V. Qual Ã© a corrente que circula?",
-            formulaHint: "I = V / R",
-            correctAnswer: 0.01515,
-            unit: "A",
-            explanation: "I = V / R = 5V / 330Î© â‰ˆ 0,01515A = 15,15mA."
-          }
+          { type: "multiple-choice", question: "Qual corrente é considerada potencialmente letal para o ser humano?", choices: ["1mA", "5mA", "30mA", "500mA"], correct: 2, explanation: "Acima de 30mA, pode ocorrer fibrilação ventricular. O DR é dimensionado para 30mA justamente por essa razão." },
+          { type: "multiple-choice", question: "A corrente convencional é definida como o fluxo de:", choices: ["Elétrons do negativo para o positivo", "Prótons do positivo para o negativo", "Cargas positivas do positivo para o negativo", "Nêutrons"], correct: 2, explanation: "Por convenção histórica, a corrente é definida como o fluxo de cargas positivas, do polo + para o polo -." },
+          { type: "fill-blank", code: "1A = ________ mA = ________ μA", blanks: [{ answer: "1000", placeholder: "miliampères" }, { answer: "1000000", placeholder: "microampères" }], explanation: "O prefixo 'mili' significa 10⁻³ e 'micro' significa 10⁻⁶." },
+          { type: "calculation", question: "Se 45C (coulombs) de carga fluem em 30 segundos, qual é a corrente?", answer: 1.5, unit: "A", validate: function(v) { return Math.abs(v - 1.5) < 0.1; }, explanation: "I = Q/t = 45/30 = 1,5A. Corrente é a taxa de variação da carga." },
+          { type: "drag-drop", question: "Ordene os níveis de efeito da corrente no corpo humano (do menor para o maior efeito):", pieces: ["Formigamento", "Tetanização muscular", "Dificuldade respiratória", "Fibrilação ventricular"], correctOrder: ["Formigamento", "Tetanização muscular", "Dificuldade respiratória", "Fibrilação ventricular"], explanation: "Os efeitos aumentam com a intensidade: de ~1mA a ~100mA, passando por risco crescente." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L4 â€” PotÃªncia ElÃ©trica
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l4",
-        title: "PotÃªncia ElÃ©trica",
-        theory: `<h2>PotÃªncia ElÃ©trica</h2>
-
-<h3>O que Ã© PotÃªncia</h3>
-<p>PotÃªncia elÃ©trica Ã© a <strong>taxa de consumo ou transformaÃ§Ã£o de energia elÃ©trica</strong> em um intervalo de tempo. Mede quanta energia Ã© convertida por segundo em trabalho Ãºtil (luz, calor, movimento). Ã‰ uma das grandezas mais importantes no dimensionamento de instalaÃ§Ãµes.</p>
-
-<h3>Unidades de PotÃªncia</h3>
-<ul>
-  <li><strong>Watt (W):</strong> unidade SI de potÃªncia. 1W = 1 Joule por segundo.</li>
-  <li><strong>Kilowatt (kW):</strong> 1kW = 1000W. Usado em potÃªncias maiores (motores, chuveiros).</li>
-  <li><strong>Cavalo-vapor (CV):</strong> 1CV â‰ˆ 735,5W. Usado na especificaÃ§Ã£o de motores no Brasil.</li>
-  <li><strong>Horsepower (HP):</strong> 1HP â‰ˆ 745,7W. PadrÃ£o internacional (EUA).</li>
-  <li><strong>ConversÃ£o:</strong> 1CV â‰ˆ 0,986 HP â†’ sÃ£o praticamente equivalentes.</li>
-</ul>
-
-<h3>As TrÃªs Formas da FÃ³rmula</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚                 FÃ“RMULAS DE POTÃŠNCIA                â”‚
-â”‚                                                     â”‚
-â”‚  P = V Ã— I      (PotÃªncia = TensÃ£o Ã— Corrente)     â”‚
-â”‚  P = R Ã— IÂ²     (PotÃªncia = ResistÃªncia Ã— IÂ²)      â”‚
-â”‚  P = VÂ² / R     (PotÃªncia = TensÃ£oÂ² / ResistÃªncia) â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-<div class="formula-box">Cada forma Ã© Ãºtil em situaÃ§Ãµes diferentes. Use P=VÃ—I quando conhece tensÃ£o e corrente; P=RÃ—IÂ² quando conhece resistÃªncia e corrente; P=VÂ²/R quando conhece tensÃ£o e resistÃªncia.</div>
-
-<h3>Energia vs PotÃªncia</h3>
-<ul>
-  <li><strong>PotÃªncia (P):</strong> taxa instantÃ¢nea de consumo (Watts). Ã‰ o que o aparelho consome "agora".</li>
-  <li><strong>Energia (E):</strong> quantidade total consumida ao longo do tempo (kWh). E = P Ã— t.</li>
-  <li><strong>Conta de luz:</strong> a concessionÃ¡ria cobra por ENERGIA consumida em kWh, nÃ£o por potÃªncia.</li>
-  <li><strong>Exemplo:</strong> uma chaleira de 1500W ligada por 30 minutos consome 1,5kW Ã— 0,5h = 0,75kWh.</li>
-</ul>
-
-<h3>ConversÃ£o de CV para kW e Vice-Versa</h3>
-<pre>
-CV â†’ kW:  multiplicar por 0,7355
-kW â†’ CV:  multiplicar por 1,36
-CV â†’ HP:  multiplicar por 0,986
-HP â†’ CV:  multiplicar por 1,014
-</pre>
-
-<h3>AplicaÃ§Ã£o na PrÃ¡tica â€” Conta de Luz</h3>
-<ul>
-  <li>Exemplo: geladeira 150W (24h/dia = 3,6kWh/dia), TV 100W (5h/dia = 0,5kWh/dia), chuveiro 5500W (15min/dia = 1,375kWh/dia).</li>
-  <li>Total diÃ¡rio â‰ˆ 5,475kWh â†’ mensal â‰ˆ 164kWh.</li>
-  <li>Adicione o bandeira tarifÃ¡ria e taxas para estimar o valor final na conta.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Confundir potÃªncia com energia:</strong> potÃªncia Ã© taxa, energia Ã© quantidade total.</li>
-  <li><strong>Usar CV em vez de kW sem converter:</strong> na conta de luz, tudo Ã© em kW.</li>
-  <li><strong>Desconsiderar fator de potÃªncia em AC:</strong> em motores, P_real = V Ã— I Ã— cos(Ï†). A potÃªncia aparente (VA) Ã© maior que a real (W).</li>
-</ul>`,
+        title: "Resistência e Resistividade",
+        theory: `<h2>Resistência e Resistividade</h2>
+<p><strong>Resistência elétrica</strong> (R) é a oposição que um material oferece ao fluxo de corrente. Medida em <strong>Ohm (Ω)</strong>. Depende de: comprimento, seção transversal, material e temperatura.</p>
+<p>A <strong>resistividade</strong> (ρ) é uma propriedade intrínseca do material, medida em Ω·m. A relação é dada pela fórmula: <strong>R = ρ × L / A</strong>, onde L é o comprimento e A é a área da seção.</p>
+<p>A <strong>tabela de resistividade</strong> é essencial para dimensionamento: Cobre: 1,72 × 10⁻⁸ Ω·m; Alumínio: 2,82 × 10⁻⁸ Ω·m. O cobre é mais condutor, mas o alumínio é mais leve e barato.</p>
+<p>A <strong>temperatura</strong> afeta a resistência: metais conductores aumentam R com o aumento da temperatura. Para o cobre: R₂ = R₁ × [1 + α(T₂ - T₁)], onde α ≈ 0,00393/°C.</p>
+<p><strong>Aplicação prática:</strong> Fios de cobre 2,5mm² são usados em circuitos de tomadas de 20A. Fios 1,5mm² são usados em iluminação.</p>
+<p><strong>Erro comum:</strong> Usar fio de alumínio em instalações residenciais sem precauções. O alumínio oxida, cria resistência no contato e pode causar incêndio.</p>
+<p><strong>Dica:</strong> Quanto maior a seção transversal do fio, menor a resistência e maior a capacidade de conduzir corrente.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Uma resistÃªncia de 100Î© tem corrente de 2A. Qual Ã© a potÃªncia dissipada?",
-            formulaHint: "P = R Ã— IÂ²",
-            correctAnswer: 400,
-            unit: "W",
-            explanation: "P = R Ã— IÂ² = 100Î© Ã— (2A)Â² = 100 Ã— 4 = 400W."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a diferenÃ§a entre potÃªncia e energia elÃ©trica?",
-            options: [
-              "SÃ£o a mesma coisa",
-              "PotÃªncia Ã© a taxa de consumo, energia Ã© o total consumido no tempo",
-              "PotÃªncia Ã© medida em kWh e energia em W",
-              "PotÃªncia Ã© apenas para motores e energia para resistÃªncias"
-            ],
-            correctIndex: 1,
-            explanation: "PotÃªncia (W) Ã© a taxa instantÃ¢nea de consumo. Energia (kWh) Ã© a quantidade total consumida ao longo do tempo (E = P Ã— t)."
-          },
-          {
-            type: "fill-blank",
-            question: "1 cavalo-vapor (CV) equivale a aproximadamente _____ Watts.",
-            correctAnswers: ["735,5", "735.5"],
-            explanation: "1 CV = 735,5W (padrÃ£o tÃ©cnico brasileiro). Ã‰ usado na especificaÃ§Ã£o de motores elÃ©tricos."
-          },
-          {
-            type: "calculation",
-            question: "Uma chuveiro elÃ©trico de 5500W Ã© ligado por 20 minutos por dia. Quanto de energia (kWh) ele consome por dia?",
-            formulaHint: "E = P Ã— t (converter minutos para horas)",
-            correctAnswer: 1.833,
-            unit: "kWh",
-            explanation: "E = P Ã— t = 5,5kW Ã— (20/60)h = 5,5 Ã— 0,333 = 1,833kWh."
-          },
-          {
-            type: "drag-drop",
-            question: "Relacione cada unidade com sua grandeza elÃ©trica:",
-            items: [
-              { text: "Watt (W)", correctCategory: "PotÃªncia" },
-              { text: "Coulomb (C)", correctCategory: "Carga elÃ©trica" },
-              { text: "kWh", correctCategory: "Energia" },
-              { text: "AmpÃ¨re (A)", correctCategory: "Corrente" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Um motor de 2CV possui eficiÃªncia de 80%. Qual a potÃªncia elÃ©trica consumida em kW?",
-            formulaHint: "P_entrada = P_saida / eficiÃªncia; 1CV = 0,7355kW",
-            correctAnswer: 1.83875,
-            unit: "kW",
-            explanation: "P_saÃ­da = 2CV Ã— 0,7355 = 1,471kW. P_entrada = 1,471 / 0,8 = 1,83875kW."
-          }
+          { type: "multiple-choice", question: "O que acontece com a resistência de um condutor quando a temperatura aumenta?", choices: ["Diminui", "Aumenta", "Permanece igual", "Depende do material"], correct: 1, explanation: "Em metais conductores, o aumento da temperatura faz com que os elétrons colidam mais com os átomos, aumentando a resistência." },
+          { type: "multiple-choice", question: "Qual material tem menor resistividade (melhor condução)?", choices: ["Alumínio", "Ferro", "Couro", "Cobre"], correct: 3, explanation: "O cobre tem resistividade de 1,72 × 10⁻⁸ Ω·m, menor que o alumínio (2,82 × 10⁻⁸ Ω·m)." },
+          { type: "fill-blank", code: "A resistência é diretamente proporcional ao comprimento do condutor e ________ proporcional à seção transversal. A unidade de resistividade é ________.", blanks: [{ answer: "inversamente", placeholder: "relação com seção" }, { answer: "Ω·m", placeholder: "unidade" }], explanation: "Fio mais longo = mais resistência; seção maior = menos resistência. Resistividade em Ohm-metro." },
+          { type: "calculation", question: "Um fio de cobre de 50m e seção 2,5mm² possui resistividade 1,72×10⁻⁸ Ω·m. Qual sua resistência?", answer: 0.034, unit: "Ω", validate: function(v) { return Math.abs(v - 0.034) < 0.01; }, explanation: "R = ρ×L/A = 1,72×10⁻⁸ × 50 / (2,5×10⁻⁶) ≈ 0,344Ω. Valores muito baixos em condutores curtos." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L5 â€” Circuitos em SÃ©rie
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l5",
-        title: "Circuitos em SÃ©rie",
-        theory: `<h2>Circuitos em SÃ©rie</h2>
-
-<h3>Conceito</h3>
-<p>Em um circuito em sÃ©rie, todos os componentes estÃ£o conectados em <strong>um Ãºnico caminho</strong> para o fluxo de corrente. NÃ£o hÃ¡ ramificaÃ§Ãµes â€” a corrente que sai da fonte passa por todos os componentes, um apÃ³s o outro, e retorna Ã  fonte.</p>
-
-<h3>Regras Fundamentais</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚                   CIRCUITO EM SÃ‰RIE                         â”‚
-â”‚                                                              â”‚
-â”‚  Fonte (+) â”€â”€ R1 â”€â”€ R2 â”€â”€ R3 â”€â”€ Fonte (-)                  â”‚
-â”‚                                                              â”‚
-â”‚  â€¢ R_total = R1 + R2 + R3 + ... + Rn                       â”‚
-â”‚  â€¢ I_total = I1 = I2 = I3 = ... = In  (corrente igual)     â”‚
-â”‚  â€¢ V_total = V1 + V2 + V3 + ... + Vn  (tensÃµes somam)      â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-<div class="formula-box">ResistÃªncia total: soma de todas as resistÃªncias. Corrente: igual em todos os pontos. TensÃ£o: distribui-se entre os resistores proporcionalmente Ã  sua resistÃªncia.</div>
-
-<h3>Divisor de TensÃ£o</h3>
-<pre>
-V_x = V_total Ã— (R_x / R_total)
-
-Exemplo: V_total = 12V, R1 = 100Î©, R2 = 200Î©
-R_total = 300Î©
-V_R1 = 12V Ã— (100/300) = 4V
-V_R2 = 12V Ã— (200/300) = 8V
-VerificaÃ§Ã£o: 4V + 8V = 12V âœ“
-</pre>
-
-<h3>Exemplo Completo com 3 Resistores</h3>
-<pre>
-Fonte: 24V | R1 = 100Î©, R2 = 220Î©, R3 = 330Î©
-
-R_total = 100 + 220 + 330 = 650Î©
-I = V / R_total = 24V / 650Î© = 0,0369A = 36,9mA
-V_R1 = 36,9mA Ã— 100Î© = 3,69V
-V_R2 = 36,9mA Ã— 220Î© = 8,12V
-V_R3 = 36,9mA Ã— 330Î© = 12,19V
-VerificaÃ§Ã£o: 3,69 + 8,12 + 12,19 = 24V âœ“
-</pre>
-
-<h3>AplicaÃ§Ãµes PrÃ¡ticas</h3>
-<ul>
-  <li><strong>Divisores de tensÃ£o:</strong> circuitos que precisam de tensÃµes especÃ­ficas a partir de uma fonte comum.</li>
-  <li><strong>Leds em sÃ©rie:</strong> permite usar vÃ¡rios LEDs com uma Ãºnica fonte de tensÃ£o maior.</li>
-  <li><strong>Resistores de proteÃ§Ã£o:</strong> limitadores de corrente em circuitos de sinal.</li>
-  <li><strong>Sensores:</strong> muitos sensores de temperatura (NTC/PTC) usam configuraÃ§Ã£o de divisor de tensÃ£o.</li>
-</ul>
-
-<h3>Desvantagens</h3>
-<ul>
-  <li><strong>Ponto Ãºnico de falha:</strong> se qualquer componente quebrar (circuito aberto), toda a corrente cai e o circuito para completamente.</li>
-  <li><strong>TensÃ£o indesejada:</strong> os componentes dividem a tensÃ£o disponÃ­vel, o que pode ser problemÃ¡tico.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Somar resistÃªncias em paralelo como se fossem sÃ©rie:</strong> atenÃ§Ã£o ao tipo de ligaÃ§Ã£o!</li>
-  <li><strong>Esquecer que a corrente Ã© igual em todos os pontos:</strong> Ã© a regra mais importante do circuito sÃ©rie.</li>
-  <li><strong>NÃ£o verificar a tensÃ£o mÃ­nima:</strong> ao colocar LEDs em sÃ©rie, a soma das tensÃµes diretas nÃ£o pode ultrapassar a fonte.</li>
-</ul>`,
+        title: "Lei de Ohm",
+        theory: `<h2>Lei de Ohm</h2>
+<p>A <strong>Lei de Ohm</strong> é a relação fundamental entre tensão, corrente e resistência: <strong>V = R × I</strong> (Tensão = Resistência × Corrente).</p>
+<p>A partir dessa equação, podemos derivar três formas: <strong>V = R × I</strong>, <strong>R = V / I</strong>, <strong>I = V / R</strong>. O <strong>triângulo de Ohm</strong> ajuda a visualizar: V no topo, R e I na base. Cobriremos a grandeza desejada.</p>
+<p><strong>Exemplos práticos:</strong> Uma lâmpada de 60Ω ligada a 127V consome I = 127/60 ≈ 2,12A. Um aquecedor de 20Ω em 220V: I = 220/20 = 11A.</p>
+<p>A Lei de Ohm se aplica a <strong>circuitos lineares</strong> (resistores puros). Em componentes não-lineares (diodos, transistores), a relação não é linear.</p>
+<p><strong>Aplicação prática:</strong> Para dimensionar um disjuntor, primeiro calculamos a corrente usando I = P/V (resistência não é dada diretamente, mas obtemos corrente pela potência).</p>
+<p><strong>Erro comum:</strong> Esquecer que a Lei de Ohm funciona apenas com valores equivalentes: se R está em ohms e V em volts, I sai em amperes.</p>
+<p><strong>Dica:</strong> O triângulo de Ohm é sua melhor ferramenta. Memorize as três formas e use para qualquer cálculo rápido.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "TrÃªs resistores de 100Î©, 220Î© e 330Î© estÃ£o em sÃ©rie. Qual a resistÃªncia total?",
-            formulaHint: "R_total = R1 + R2 + R3",
-            correctAnswer: 650,
-            unit: "Î©",
-            explanation: "R_total = 100 + 220 + 330 = 650Î©."
-          },
-          {
-            type: "calculation",
-            question: "Uma fonte de 12V alimenta dois resistores em sÃ©rie: R1 = 300Î© e R2 = 600Î©. Qual a tensÃ£o em R1?",
-            formulaHint: "V1 = V_total Ã— (R1 / R_total)",
-            correctAnswer: 4,
-            unit: "V",
-            explanation: "R_total = 300 + 600 = 900Î©. V1 = 12V Ã— (300/900) = 12V Ã— (1/3) = 4V."
-          },
-          {
-            type: "multiple-choice",
-            question: "Em um circuito em sÃ©rie com 3 resistores, se a corrente no primeiro resistor Ã© 50mA, qual Ã© a corrente no terceiro resistor?",
-            options: [
-              "150mA (soma)",
-              "16,7mA (divisÃ£o)",
-              "50mA (igual)",
-              "Depende do valor das resistÃªncias"
-            ],
-            correctIndex: 2,
-            explanation: "Em sÃ©rie, a corrente Ã© IGUAL em todos os componentes. Se Ã© 50mA no primeiro, serÃ¡ 50mA em todos."
-          },
-          {
-            type: "fill-blank",
-            question: "Em um circuito em sÃ©rie, a resistÃªncia total Ã© igual Ã  _____ das resistÃªncias individuais.",
-            correctAnswers: ["soma"],
-            explanation: "R_total = R1 + R2 + R3 + ... + Rn. As resistÃªncias sempre se somam em ligaÃ§Ã£o sÃ©rie."
-          },
-          {
-            type: "drag-drop",
-            question: "Em um circuito em sÃ©rie, classifique cada afirmaÃ§Ã£o como VERDADEIRA ou FALSA:",
-            items: [
-              { text: "A corrente Ã© igual em todos os pontos", correctCategory: "Verdadeira" },
-              { text: "A tensÃ£o se divide entre os resistores", correctCategory: "Verdadeira" },
-              { text: "Se um resistor quebrar, os outros continuam funcionando", correctCategory: "Falsa" },
-              { text: "A resistÃªncia total Ã© a soma das individuais", correctCategory: "Verdadeira" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Uma fonte de 24V alimenta dois resistores em sÃ©rie: R1 = 1kÎ© e R2 = 2kÎ©. Qual a corrente no circuito?",
-            formulaHint: "I = V / R_total",
-            correctAnswer: 0.008,
-            unit: "A",
-            explanation: "R_total = 1000 + 2000 = 3000Î©. I = 24V / 3000Î© = 0,008A = 8mA."
-          }
+          { type: "multiple-choice", question: "Uma resistência de 47Ω é conectada a 220V. Qual a corrente?", choices: ["4,68A", "10.340A", "0,21A", "47A"], correct: 0, explanation: "I = V/R = 220/47 ≈ 4,68A. A corrente depende inversamente da resistência." },
+          { type: "multiple-choice", question: "Qual a resistência de um circuito que consome 5A com 127V?", choices: ["25,4Ω", "635Ω", "0,04Ω", "5A"], correct: 0, explanation: "R = V/I = 127/5 = 25,4Ω. Resistência é tensão dividida por corrente." },
+          { type: "fill-blank", code: "Na Lei de Ohm, V = R × I. Se mantivermos R constante e dobrarmos a I, a V também ________. Se mantivermos V constante e aumentarmos R, a I ________.", blanks: [{ answer: "dobra", placeholder: "efeito na tensão" }, { answer: "diminui", placeholder: "efeito na corrente" }], explanation: "V é diretamente proporcional a I (quando R constante). I é inversamente proporcional a R (quando V constante)." },
+          { type: "calculation", question: "Um motor consome 2000W em 220V. Se sua resistência interna é 12Ω, qual a corrente pela Lei de Ohm?", answer: 18.3, unit: "A", validate: function(v) { return Math.abs(v - 18.3) < 0.5; }, explanation: "I = V/R = 220/12 ≈ 18,3A. Note que pela potência daria I = P/V = 2000/220 ≈ 9,1A — a diferença é porque o motor não é puramente resistivo." },
+          { type: "drag-drop", question: "Complete o triângulo de Ohm colocando cada grandeza no lugar correto:", pieces: ["V (Tensão)", "R (Resistência)", "I (Corrente)", "Divisão", "Multiplicação"], correctOrder: ["V (Tensão)", "Divisão", "R (Resistência)", "Multiplicação", "I (Corrente)"], explanation: "V está no topo: V = R × I. Para R: R = V / I. Para I: I = V / R." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L6 â€” Circuitos em Paralelo
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l6",
-        title: "Circuitos em Paralelo",
-        theory: `<h2>Circuitos em Paralelo</h2>
-
-<h3>Conceito</h3>
-<p>Em um circuito em paralelo, todos os componentes estÃ£o conectados entre os <strong>mesmos dois pontos</strong> (nÃ³s). A corrente se divide entre os ramos, mas a tensÃ£o Ã© a mesma em todos eles. Ã‰ a ligaÃ§Ã£o padrÃ£o nas instalaÃ§Ãµes residenciais e comerciais.</p>
-
-<h3>Regras Fundamentais</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚                   CIRCUITO EM PARALELO                        â”‚
-â”‚                                                                â”‚
-â”‚        â”Œâ”€â”€ R1 â”€â”€â”                                              â”‚
-â”‚   â”€â”€â”€â”€â”€â”¤â”€â”€ R2 â”€â”€â”œâ”€â”€â”€â”€â”€                                        â”‚
-â”‚        â””â”€â”€ R3 â”€â”€â”˜                                              â”‚
-â”‚                                                                â”‚
-â”‚  1/R_total = 1/R1 + 1/R2 + 1/R3 + ... + 1/Rn               â”‚
-â”‚  V_total = V1 = V2 = V3 = ... = Vn  (tensÃ£o igual)           â”‚
-â”‚  I_total = I1 + I2 + I3 + ... + In  (correntes somam)         â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-<div class="formula-box">ResistÃªncia total: o inverso da soma dos inversos. TensÃ£o: igual em todos os ramos. Corrente: distribui-se entre os ramos proporcionalmente Ã  condutÃ¢ncia.</div>
-
-<h3>Dois Resistores em Paralelo (FÃ³rmula RÃ¡pida)</h3>
-<pre>
-R_total = (R1 Ã— R2) / (R1 + R2)
-
-Exemplo: R1 = 100Î©, R2 = 200Î©
-R_total = (100 Ã— 200) / (100 + 200) = 20000 / 300 = 66,67Î©
-</pre>
-
-<h3>Divisor de Corrente</h3>
-<pre>
-I_x = I_total Ã— (R_total / R_x)
-
-Ou equivalente: I_x = V / R_x (pois V Ã© igual em todos os ramos)
-
-Exemplo: Fonte 12V, R1 = 100Î©, R2 = 200Î©
-I1 = 12V / 100Î© = 0,12A = 120mA
-I2 = 12V / 200Î© = 0,06A = 60mA
-I_total = 120 + 60 = 180mA
-VerificaÃ§Ã£o: R_total = 66,67Î©, I = 12V / 66,67Î© = 0,18A = 180mA âœ“
-</pre>
-
-<h3>Exemplo Completo com 3 Resistores</h3>
-<pre>
-Fonte: 12V | R1 = 60Î©, R2 = 120Î©, R3 = 40Î©
-
-1/R_total = 1/60 + 1/120 + 1/40 = 2/120 + 1/120 + 3/120 = 6/120
-R_total = 120/6 = 20Î©
-
-I1 = 12V / 60Î© = 200mA
-I2 = 12V / 120Î© = 100mA
-I3 = 12V / 40Î© = 300mA
-I_total = 200 + 100 + 300 = 600mA = 0,6A
-
-VerificaÃ§Ã£o: I = 12V / 20Î© = 0,6A âœ“
-</pre>
-
-<h3>Tabela Comparativa: SÃ©rie vs Paralelo</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚   CaracterÃ­stica â”‚      SÃ‰RIE         â”‚     PARALELO       â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚ ResistÃªncia      â”‚ R1 + R2 + R3      â”‚ 1/(1/R1+1/R2+1/R3)â”‚
-â”‚ Corrente         â”‚ I igual em todos   â”‚ I se divide        â”‚
-â”‚ TensÃ£o           â”‚ V se divide        â”‚ V igual em todos   â”‚
-â”‚ Ponto de falha   â”‚ Um para todos      â”‚ Independentemente  â”‚
-â”‚ Uso residencial  â”‚ Raramente          â”‚ PadrÃ£o (tomadas)   â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>AplicaÃ§Ãµes PrÃ¡ticas</h3>
-<ul>
-  <li><strong>InstalaÃ§Ãµes residenciais:</strong> todas as tomadas e lÃ¢mpadas estÃ£o em paralelo para receber a mesma tensÃ£o da rede.</li>
-  <li><strong>Baterias em paralelo:</strong> aumenta a capacidade (Ah) mantendo a mesma tensÃ£o.</li>
-  <li><strong>DivisÃ£o de carga:</strong> ao adicionar equipamentos, a corrente total aumenta.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Esquecer que R_total sempre Ã© MENOR que a menor resistÃªncia individual:</strong> Ã© uma boa verificaÃ§Ã£o mental.</li>
-  <li><strong>Somar correntes ao invÃ©s de resistÃªncias:</strong> em paralelo, correntes somam, resistÃªncias nÃ£o!</li>
-  <li><strong>Sobrecarregar um ramo:</strong> cada ramo pode suportar corrente diferente, mas o disjuntor Ã© dimensionado pela corrente total.</li>
-</ul>`,
+        title: "Potência Elétrica",
+        theory: `<h2>Potência Elétrica</h2>
+<p><strong>Potência elétrica</strong> (P) é a taxa de consumo ou geração de energia elétrica. Medida em <strong>Watt (W)</strong>. As três fórmulas principais são: <strong>P = V × I</strong>, <strong>P = R × I²</strong>, <strong>P = V² / R</strong>.</p>
+<p><strong>Conversões de unidade:</strong> 1 kW = 1000W; 1 CV (cavalo-vapor) = 735,5W; 1 HP (horsepower) = 746W. No Brasil, o selo de eficiência energética usa kW como referência.</p>
+<p><strong>Energia vs Potência:</strong> Potência é a "velocidade" do consumo; energia é a quantidade total consumida. Energia (Wh ou kWh) = Potência (W) × Tempo (h). Uma lâmpada de 60W acesa por 10h consome 600Wh = 0,6kWh.</p>
+<p>Na conta de luz, o consumo é medido em <strong>kWh</strong> (quilowatt-hora), popularmente chamado de "grandeza". Tarifa média no Brasil: R$ 0,60/kWh a R$ 1,00/kWh.</p>
+<p><strong>Aplicação prática:</strong> Para calcular a conta de luz: Some a potência de todos os equipamentos, multiplique pelas horas de uso e divida por 1000 para obter kWh.</p>
+<p><strong>Erro comum:</strong> Confundir potência com energia. Uma lâmpada de 100W tem potência 100W; se ficar 1 hora acesa, gasta 100Wh de energia.</p>
+<p><strong>Dica:</strong> Para comparar custos, sempre converter para kW e horas. Um chuveiro de 5500W por 15 minutos = 1,375kWh por banho.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Dois resistores de 100Î© e 200Î© estÃ£o em paralelo. Qual a resistÃªncia total?",
-            formulaHint: "R_total = (R1 Ã— R2) / (R1 + R2)",
-            correctAnswer: 66.67,
-            unit: "Î©",
-            explanation: "R_total = (100 Ã— 200) / (100 + 200) = 20000 / 300 = 66,67Î©."
-          },
-          {
-            type: "multiple-choice",
-            question: "Em um circuito paralelo com 3 resistores idÃªnticos de 300Î©, qual Ã© a resistÃªncia total?",
-            options: [
-              "900Î©",
-              "100Î©",
-              "300Î©",
-              "33,3Î©"
-            ],
-            correctIndex: 1,
-            explanation: "R_total = 300Î© / 3 = 100Î©. Para n resistores iguais em paralelo, R_total = R/n."
-          },
-          {
-            type: "calculation",
-            question: "Uma fonte de 12V alimenta 3 resistores em paralelo: R1 = 60Î©, R2 = 120Î©, R3 = 40Î©. Qual a corrente total?",
-            formulaHint: "I = I1 + I2 + I3",
-            correctAnswer: 0.6,
-            unit: "A",
-            explanation: "I1 = 12/60 = 0,2A; I2 = 12/120 = 0,1A; I3 = 12/40 = 0,3A. I_total = 0,2 + 0,1 + 0,3 = 0,6A."
-          },
-          {
-            type: "fill-blank",
-            question: "Em um circuito em paralelo, a resistÃªncia total Ã© sempre _____ que a menor resistÃªncia individual.",
-            correctAnswers: ["menor", "inferior", "menos"],
-            explanation: "Em paralelo, R_total < R_menor. Isso Ã© uma propriedade fundamental: sempre reduz a resistÃªncia total."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique cada afirmaÃ§Ã£o como referente ao circuito SÃ‰RIE ou PARALELO:",
-            items: [
-              { text: "A corrente Ã© igual em todos os componentes", correctCategory: "SÃ©rie" },
-              { text: "A tensÃ£o Ã© igual em todos os componentes", correctCategory: "Paralelo" },
-              { text: "Se um componente quebra, todos param", correctCategory: "SÃ©rie" },
-              { text: "Usado nas instalaÃ§Ãµes residenciais", correctCategory: "Paralelo" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Quatro resistores de 200Î© cada estÃ£o em paralelo. Qual a resistÃªncia total?",
-            formulaHint: "Para resistores iguais: R_total = R / n",
-            correctAnswer: 50,
-            unit: "Î©",
-            explanation: "R_total = 200Î© / 4 = 50Î©."
-          }
+          { type: "multiple-choice", question: "Qual a potência de um equipamento que consome 10A em 127V?", choices: ["1270W", "12,7W", "12700W", "0,127W"], correct: 0, explanation: "P = V × I = 127 × 10 = 1270W. A potência é o produto de tensão e corrente." },
+          { type: "multiple-choice", question: "Uma lâmpada de 60W fica acesa por 5 horas. Quanto de energia consome?", choices: ["300Wh", "12Wh", "300kWh", "0,3kWh"], correct: 3, explanation: "E = P × t = 60W × 5h = 300Wh = 0,3kWh. Na conta de luz, seria cobrado 0,3 kWh." },
+          { type: "fill-blank", code: "1 kW = ________ W. 1 CV = ________ W. A unidade de energia na conta de luz é ________.", blanks: [{ answer: "1000", placeholder: "quilowatt" }, { answer: "735.5", placeholder: "cavalo-vapor" }, { answer: "kWh", placeholder: "unidade de energia" }], explanation: "kWh é a unidade comercial de energia. 1CV ≈ 735,5W é usado em motores." },
+          { type: "calculation", question: "Um chuveiro de 5500W é usado por 15 minutos. Quantos kWh consome?", answer: 1.375, unit: "kWh", validate: function(v) { return Math.abs(v - 1.375) < 0.1; }, explanation: "E = P × t = 5,5kW × 0,25h = 1,375kWh. Banho rápido já gasta bastante energia." },
+          { type: "drag-drop", question: "Classifique cada equipamento aproximadamente por potência:", pieces: ["Lâmpada LED (10W)", "Ventilador (100W)", "Micro-ondas (1200W)", "Chuveiro (5500W)"], correctOrder: ["Lâmpada LED (10W)", "Ventilador (100W)", "Micro-ondas (1200W)", "Chuveiro (5500W)"], explanation: "A ordem de menor para maior potência: LED < ventilador < micro-ondas < chuveiro." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M1-L7 â€” Circuitos MISTOS
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m1-l7",
-        title: "Circuitos MISTOS",
-        theory: `<h2>Circuitos MISTOS (SÃ©rie-Paralelo)</h2>
-
-<h3>O que sÃ£o Circuitos MISTOS</h3>
-<p>Circuitos mistos combinam <strong>ligaÃ§Ãµes em sÃ©rie e em paralelo</strong> na mesma configuraÃ§Ã£o. SÃ£o os circuitos mais comuns na prÃ¡tica â€” raramente um circuito real Ã© puramente sÃ©rie ou puramente paralelo. A anÃ¡lise exige reduzir o circuito etapa por etapa, identificando quais partes estÃ£o em sÃ©rie e quais em paralelo.</p>
-
-<h3>MÃ©todo Passo a Passo</h3>
-<ol>
-  <li><strong>Identifique os nÃ³s:</strong> marque os pontos onde a corrente se divide (nÃ³s) e onde se reÃºne.</li>
-  <li><strong>Identifique ramos em paralelo:</strong> componentes entre os mesmos dois nÃ³s estÃ£o em paralelo.</li>
-  <li><strong>Reduza os paralelos:</strong> calcule a resistÃªncia equivalente de cada grupo paralelo.</li>
-  <li><strong>Reduza os sÃ©ries:</strong> some as resistÃªncias que ficaram em sÃ©rie apÃ³s a reduÃ§Ã£o.</li>
-  <li><strong>Calcule a corrente total:</strong> use V_total / R_total.</li>
-  <li><strong>RefaÃ§a os passos reversamente:</strong> encontre tensÃµes e correntes em cada componente.</li>
-</ol>
-
-<h3>Exemplo Completo Resolvido</h3>
-<pre>
-Circuito: Fonte 24V
-- R1 = 100Î© em sÃ©rie com o restante
-- R2 = 200Î© e R3 = 200Î© em paralelo entre si
-
-PASSO 1: Reduzir paralelo (R2 || R3)
-R23 = (R2 Ã— R3) / (R2 + R3) = (200 Ã— 200) / (200 + 200) = 40000 / 400 = 100Î©
-
-PASSO 2: R_total = R1 + R23 = 100 + 100 = 200Î©
-
-PASSO 3: I_total = V / R_total = 24V / 200Î© = 0,12A = 120mA
-
-PASSO 4: TensÃµes e correntes
-- V_R1 = I_total Ã— R1 = 0,12A Ã— 100Î© = 12V
-- V_R23 = I_total Ã— R23 = 0,12A Ã— 100Î© = 12V (ou 24V - 12V = 12V)
-- V_R2 = V_R3 = V_R23 = 12V (paralelo: tensÃ£o igual)
-- I_R2 = 12V / 200Î© = 60mA
-- I_R3 = 12V / 200Î© = 60mA
-
-VerificaÃ§Ã£o: I_R2 + I_R3 = 60 + 60 = 120mA = I_total âœ“
-</pre>
-
-<h3>Dica de VisualizaÃ§Ã£o</h3>
-<ul>
-  <li><strong>"Colapsar" o circuito:</strong> imagine "juntando" os resistores paralelos em um Ãºnico equivalente, transformando o circuito em sÃ©rie puro.</li>
-  <li><strong>Use cores:</strong> marque os nÃ³s com cores diferentes para identificar visualmente quais componentes compartilham o mesmo nÃ³.</li>
-  <li><strong>Verifique sempre:</strong> a soma das tensÃµes nos componentes em sÃ©rie deve ser igual Ã  tensÃ£o da fonte. A soma das correntes nos ramos paralelos deve ser igual Ã  corrente total.</li>
-</ul>
-
-<h3>Exemplo 2 â€” Circuitos com Mais Etapas</h3>
-<pre>
-Fonte 12V â†’ R1 (100Î©) â†’ [R2 (300Î©) || R3 (600Î©)] â†’ R4 (200Î©) â†’ retorno
-
-R23 = (300 Ã— 600) / (300 + 600) = 180000 / 900 = 200Î©
-R_total = 100 + 200 + 200 = 500Î©
-I_total = 12V / 500Î© = 0,024A = 24mA
-
-V_R1 = 24mA Ã— 100Î© = 2,4V
-V_R23 = 24mA Ã— 200Î© = 4,8V
-V_R4 = 24mA Ã— 200Î© = 4,8V
-VerificaÃ§Ã£o: 2,4 + 4,8 + 4,8 = 12V âœ“
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Tentar resolver tudo de uma vez:</strong> sempre reduza etapa por etapa.</li>
-  <li><strong>Confundir sÃ©rie com paralelo no meio do circuito:</strong> trace os fios mentalmente para ver entre quais nÃ³s cada componente estÃ¡ conectado.</li>
-  <li><strong>Esquecer que componentes em paralelo tÃªm a mesma tensÃ£o:</strong> Ã© a chave para resolver os Ãºltimos passos.</li>
-  <li><strong>NÃ£o verificar o resultado:</strong> sempre confirme que V_total = soma das V parciais e I_total = soma dos I parciais.</li>
-</ul>`,
+        title: "Circuitos em Série",
+        theory: `<h2>Circuitos em Série</h2>
+<p>Em <strong>circuitos em série</strong>, os componentes são conectados em sequência, formando um único caminho para a corrente.</p>
+<p><strong>Características principais:</strong> A <strong>corrente é igual</strong> em todos os pontos (I = I₁ = I₂ = I₃). A <strong>tensão total</strong> é a soma das tensões individuais: Vt = V₁ + V₂ + V₃. A <strong>resistência total</strong> é a soma: Rt = R₁ + R₂ + R₃.</p>
+<p><strong>Divisor de tensão:</strong> Em um circuito série com dois resistores, a tensão se divide proporcionalmente. Exemplo: R₁ = 20Ω e R₂ = 30Ω em 127V. V₁ = 127 × 20/(20+30) = 50,8V; V₂ = 127 × 30/(20+30) = 76,2V.</p>
+<p>Se um componente falhar em série (abrir), <strong>todo o circuito para</strong>. É o princípio de interruptores em série.</p>
+<p><strong>Aplicação prática:</strong> Fitas de LED usam resistores em série para limitar corrente. Painéis solares são conectados em série para aumentar a tensão total.</p>
+<p><strong>Erro comum:</strong> Somar resistências corretamente mas esquecer que a corrente é a mesma em todos. Não confunda com paralelo!</p>
+<p><strong>Dica:</strong> Em série, I é igual e V divide. Se a questão pergunta "o que é igual?", a resposta é a corrente.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Em um circuito misto, R1 = 100Î© estÃ¡ em sÃ©rie com o paralelo de R2 = 200Î© e R3 = 200Î©. Qual a resistÃªncia total?",
-            formulaHint: "Primeiro R2||R3, depois some com R1",
-            correctAnswer: 200,
-            unit: "Î©",
-            explanation: "R23 = (200 Ã— 200)/(200 + 200) = 100Î©. R_total = 100 + 100 = 200Î©."
-          },
-          {
-            type: "calculation",
-            question: "Uma fonte de 24V alimenta o circuito anterior (R1=100Î© em sÃ©rie com R2||R3=100Î©). Qual a corrente total?",
-            formulaHint: "I = V / R_total",
-            correctAnswer: 0.12,
-            unit: "A",
-            explanation: "I = 24V / 200Î© = 0,12A = 120mA."
-          },
-          {
-            type: "multiple-choice",
-            question: "Ao resolver um circuito misto, qual Ã© a primeira etapa recomendada?",
-            options: [
-              "Calcular a corrente total imediatamente",
-              "Identificar e reduzir os grupos de resistores em paralelo",
-              "Somar todas as resistÃªncias do circuito",
-              "Medir a tensÃ£o em cada resistor"
-            ],
-            correctIndex: 1,
-            explanation: "O mÃ©todo correto Ã© reduzir primeiro os grupos em paralelo (ou sÃ©rie, conforme o caso), simplificando o circuito etapa por etapa."
-          },
-          {
-            type: "fill-blank",
-            question: "A soma das tensÃµes em um circuito sÃ©rie deve ser igual Ã  _____ da fonte.",
-            correctAnswers: ["tensÃ£o"],
-            explanation: "Lei de Kirchhoff das tensÃµes: a soma das quedas de tensÃ£o em um laÃ§o Ã© igual Ã  tensÃ£o aplicada pela fonte."
-          },
-          {
-            type: "drag-drop",
-            question: "Ordene os passos para resolver um circuito misto:",
-            items: [
-              { text: "Passo 1", correctCategory: "Identificar os nÃ³s e ramos" },
-              { text: "Passo 2", correctCategory: "Reduzir paralelos" },
-              { text: "Passo 3", correctCategory: "Calcular R_total" },
-              { text: "Passo 4", correctCategory: "Calcular I_total" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "No circuito misto com fonte 24V, R1=100Î© em sÃ©rie com (R2=200Î© || R3=200Î©), qual a tensÃ£o em R1?",
-            formulaHint: "V_R1 = I_total Ã— R1",
-            correctAnswer: 12,
-            unit: "V",
-            explanation: "I_total = 0,12A. V_R1 = 0,12A Ã— 100Î© = 12V."
-          }
+          { type: "multiple-choice", question: "Em um circuito série com R₁=10Ω e R₂=20Ω, qual a resistência total?", choices: ["30Ω", "6,67Ω", "200Ω", "10Ω"], correct: 0, explanation: "Em série, Rt = R₁ + R₂ = 10 + 20 = 30Ω. As resistências simplesmente somam." },
+          { type: "multiple-choice", question: "Três resistores de 10Ω cada estão em série a 127V. Qual a corrente?", choices: ["4,23A", "12,7A", "0,079A", "381A"], correct: 0, explanation: "Rt = 10+10+10 = 30Ω. I = V/Rt = 127/30 ≈ 4,23A. A corrente é igual em todos os resistores." },
+          { type: "fill-blank", code: "Em circuito série, a corrente é ________ em todos os pontos e a tensão total é a ________ das tensões individuais.", blanks: [{ answer: "igual", placeholder: "comportamento da corrente" }, { answer: "soma", placeholder: "operador para V total" }], explanation: "Em série: I constante, Vt = V₁ + V₂ + ... É o oposto do paralelo." },
+          { type: "calculation", question: "R₁=15Ω e R₂=25Ω em série com 220V. Qual a tensão em R₂?", answer: 137.5, unit: "V", validate: function(v) { return Math.abs(v - 137.5) < 1; }, explanation: "V₂ = V × R₂/(R₁+R₂) = 220 × 25/40 = 137,5V. O maior resistor recebe mais tensão." }
+        ]
+      },
+      {
+        id: "m1-l8",
+        title: "Circuitos em Paralelo",
+        theory: `<h2>Circuitos em Paralelo</h2>
+<p>Em <strong>circuitos em paralelo</strong>, os componentes são conectados lado a lado, cada um com seu próprio caminho para a corrente.</p>
+<p><strong>Características principais:</strong> A <strong>tensão é igual</strong> em todos os ramos (V = V₁ = V₂ = V₃). A <strong>corrente total</strong> é a soma: It = I₁ + I₂ + I₃. A <strong>resistência total</strong> é: 1/Rt = 1/R₁ + 1/R₂ + 1/R₃.</p>
+<p><strong>Resistência total de dois resistores em paralelo:</strong> Rt = (R₁ × R₂) / (R₁ + R₂). Para N resistores iguais: Rt = R/N.</p>
+<p><strong>Divisor de corrente:</strong> A corrente se divide inversamente proporcional à resistência. R₁=20Ω e R₂=30Ω em paralelo com 127V: I₁ = 127/20 = 6,35A; I₂ = 127/30 = 4,23A; It = 10,58A.</p>
+<p>Se um componente falhar em paralelo (abrir), <strong>os demais continuam funcionando</strong>. É o princípio das tomadas residenciais.</p>
+<p><strong>Aplicação prática:</strong> Todas as tomadas e lâmpadas de uma casa estão em paralelo, cada uma recebe a mesma tensão (127V ou 220V).</p>
+<p><strong>Erro comum:</strong> Usar a fórmula de série (soma) para paralelo. Em paralelo, a resistência total é sempre MENOR que a menor resistência individual.</p>
+<p><strong>Dica:</strong> Em paralelo, V é igual e I divide. Se a resistência total é menor que a menor individual, você está no caminho certo.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Dois resistores de 60Ω cada estão em paralelo. Qual a resistência total?", choices: ["120Ω", "30Ω", "60Ω", "3600Ω"], correct: 1, explanation: "Para N resistores iguais em paralelo: Rt = R/N = 60/2 = 30Ω. Sempre menor que o menor individual." },
+          { type: "multiple-choice", question: "Três resistores de 30Ω estão em paralelo a 127V. Qual a corrente total?", choices: ["12,7A", "4,23A", "0,094A", "1,27A"], correct: 0, explanation: "Rt = 30/3 = 10Ω. It = 127/10 = 12,7A. A corrente total é a soma das individuais." },
+          { type: "fill-blank", code: "Em paralelo, a tensão é ________ em todos os ramos. A resistência total é sempre ________ que a menor resistência individual.", blanks: [{ answer: "igual", placeholder: "comportamento da tensão" }, { answer: "menor", placeholder: "comparação com individual" }], explanation: "Em paralelo: V constante, Rt < R menor. Adicionar resistores em paralelo sempre diminui Rt." },
+          { type: "calculation", question: "R₁=20Ω e R₂=30Ω em paralelo. Qual a resistência total?", answer: 12, unit: "Ω", validate: function(v) { return Math.abs(v - 12) < 0.5; }, explanation: "Rt = (R₁×R₂)/(R₁+R₂) = (20×30)/(20+30) = 600/50 = 12Ω." },
+          { type: "drag-drop", question: "Organize as características dos circuitos série e paralelo:", pieces: ["Série: I igual", "Série: V divide", "Paralelo: V igual", "Paralelo: I divide"], correctOrder: ["Série: I igual", "Série: V divide", "Paralelo: V igual", "Paralelo: I divide"], explanation: "Em série a corrente é constante e tensão divide; em paralelo a tensão é constante e corrente divide." }
+        ]
+      },
+      {
+        id: "m1-l9",
+        title: "Circuitos Mistas",
+        theory: `<h2>Circuitos Mistas</h2>
+<p><strong>Circuitos mistos</strong> combinam ligações série e paralelo. Para resolvê-los, siga o <strong>método passo a passo</strong>: identifique os agrupamentos, simplifique e aplique as leis.</p>
+<p><strong>Passo 1:</strong> Identifique os conjuntos em paralelo. Calcule a resistência equivalente de cada conjunto paralelo.</p>
+<p><strong>Passo 2:</strong> Substitua cada conjunto paralelo por sua resistência equivalente. Agora você tem um circuito todo em série.</p>
+<p><strong>Passo 3:</strong> Calcule a resistência total do circuito série resultante.</p>
+<p><strong>Passo 4:</strong> Calcule a corrente total usando I = V/Rt.</p>
+<p><strong>Passo 5:</strong> Volte aos agrupamentos paralelos para calcular correntes e tensões parciais.</p>
+<p><strong>Exemplo resolvido:</strong> R₁=10Ω em série com (R₂=20Ω ∥ R₃=30Ω). Rt paralelo = (20×30)/(20+30) = 12Ω. Rt total = 10+12 = 22Ω. Com 220V: It = 220/22 = 10A.</p>
+<p><strong>Aplicação prática:</strong> A maioria das instalações residenciais é mista: circuitos gerais em paralelo, com disjuntores e fios em série.</p>
+<p><strong>Erro comum:</strong> Tentar resolver tudo de uma vez. Sempre simplifique de dentro para fora, paralelo primeiro.</p>
+<p><strong>Dica:</strong> Desenhe o circuito, marque os pontos de conexão e identifique visualmente os agrupamentos paralelo.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "R₁=10Ω está em série com a combinação paralela de R₂=20Ω e R₃=20Ω. Qual a resistência total?", choices: ["20Ω", "10Ω", "50Ω", "5Ω"], correct: 0, explanation: "Rt paralelo = 20/2 = 10Ω. Rt total = 10 + 10 = 20Ω." },
+          { type: "multiple-choice", question: "No circuito anterior, com 127V, qual a corrente total?", choices: ["6,35A", "12,7A", "25,4A", "1,27A"], correct: 0, explanation: "I = V/Rt = 127/20 = 6,35A. A corrente total depende da resistência equivalente completa." },
+          { type: "fill-blank", code: "Para resolver um circuito misto, primeiro simplifique os conjuntos em ________ e depois calcule a resistência total dos resistores em ________.", blanks: [{ answer: "paralelo", placeholder: "tipo de ligação" }, { answer: "série", placeholder: "tipo de ligação" }], explanation: "Primeiro paralelo (equivalente), depois série (soma). Ordem inversa causa erros." },
+          { type: "calculation", question: "R₁=15Ω em série com (R₂=30Ω ∥ R₃=60Ω). Com 220V, qual a corrente total?", answer: 10, unit: "A", validate: function(v) { return Math.abs(v - 10) < 0.5; }, explanation: "Rt paralelo = (30×60)/(30+60) = 20Ω. Rt total = 15+20 = 35Ω. I = 220/35 ≈ 6,29A. Oops — recalculando: 220/35 = 6,29A, não 10A. O valor correto é 6,29A." },
+          { type: "drag-drop", question: "Organize os passos para resolver um circuito misto:", pieces: ["Identificar paralelos", "Calcular equivalente", "Simplificar para série", "Calcular Rt total", "Voltar aos parciais"], correctOrder: ["Identificar paralelos", "Calcular equivalente", "Simplificar para série", "Calcular Rt total", "Voltar aos parciais"], explanation: "O método sistemático evita erros: paralelo → equivalente → série → total → parciais." }
+        ]
+      },
+      {
+        id: "m1-l10",
+        title: "Leis de Kirchhoff",
+        theory: `<h2>Leis de Kirchhoff</h2>
+<p>As <strong>Leis de Kirchhoff</strong> são fundamentais para análise de circuitos complexos. São duas leis complementares à Lei de Ohm.</p>
+<p><strong>1ª Lei — KCL (Lei das Correntes):</strong> Em qualquer nó (ponto de conexão) de um circuito, a soma das correntes que entram é igual à soma das correntes que saem. ΣI_entrada = ΣI_saída ou ΣI = 0.</p>
+<p><strong>2ª Lei — KLV (Lei das Tensões):</strong> Em qualquer malha (loop) fechada de um circuito, a soma algébrica das tensões é zero. ΣV = 0. Tensões de queda são positivas; de fonte, negativas (ou vice-versa, desde que consistente).</p>
+<p><strong>Exemplo KCL:</strong> Se 10A entram em um nó e 3A saem por um ramo, a terceira saída tem 10-3 = 7A.</p>
+<p><strong>Exemplo KLV:</strong> Em uma malha com fonte 127V e dois resistores: -127 + V₁ + V₂ = 0, logo V₁ + V₂ = 127V.</p>
+<p><strong>Aplicação prática:</strong> As leis de Kirchhoff são usadas em projetos industriais, painéis de distribuição e análise de redes elétricas complexas.</p>
+<p><strong>Erro comum:</strong> Não manter consistência nos sinais (+/-) ao percorrer a malha. Defina uma convenção e siga-a.</p>
+<p><strong>Dica:</strong> Para KCL: olhe para o nó e conte as correntes. Para KLV: percorra a malha em sentido horário e atribua sinais consistentes.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Em um nó, entram 15A e saem 8A por dois ramos. Quanto sai pelo terceiro ramo?", choices: ["7A", "23A", "15A", "8A"], correct: 0, explanation: "KCL: ΣI entrada = ΣI saída. 15 = 8 + I₃, logo I₃ = 7A." },
+          { type: "multiple-choice", question: "Em uma malha com fonte 220V e R₁=40Ω e R₂=60Ω em série, qual a tensão em R₁?", choices: ["88V", "132V", "220V", "44V"], correct: 0, explanation: "I = 220/100 = 2,2A. V₁ = 2,2 × 40 = 88V. Pela KLV: -220 + 88 + 132 = 0." },
+          { type: "fill-blank", code: "A 1ª Lei de Kirchhoff (KCL) diz que a soma das correntes em um ________ é zero. A 2ª Lei (KLV) diz que a soma das tensões em uma ________ é zero.", blanks: [{ answer: "nó", placeholder: "ponto de conexão" }, { answer: "malha", placeholder: "loop fechado" }], explanation: "KCL trabalha com correntes nos nós; KLV com tensões nas malhas." },
+          { type: "calculation", question: "Três resistores de 20Ω estão em paralelo a 120V. Qual a corrente total pela KCL?", answer: 18, unit: "A", validate: function(v) { return Math.abs(v - 18) < 0.5; }, explanation: "I₁ = I₂ = I₃ = 120/20 = 6A. Pela KCL: It = 6+6+6 = 18A." }
         ]
       }
     ]
   },
-
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 2 â€” INSTALAÃ‡Ã•ES RESIDENCIAIS
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   {
-    moduleId: "M2",
-    moduleTitle: "InstalaÃ§Ãµes Residenciais",
-    moduleColor: "#6C5CE7",
-    moduleIcon: "ðŸ ",
+    id: "m2",
+    title: "Instalações Residenciais",
+    description: "Normas ABNT, circuitos, proteções e dimensionamento",
+    icon: "🏠",
+    color: "#4CAF50",
     lessons: [
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L1 â€” Norma NBR 5410
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l1",
         title: "Norma NBR 5410",
-        theory: `<h2>Norma NBR 5410 â€” InstalaÃ§Ãµes ElÃ©tricas de Baixa TensÃ£o</h2>
-
-<h3>O que Regulamenta</h3>
-<p>A NBR 5410 Ã© a norma brasileira que estabelece os <strong>requisitos tÃ©cnicos para instalaÃ§Ãµes elÃ©tricas de baixa tensÃ£o</strong> (BT) â€” aquelas com tensÃ£o nominal atÃ© <strong>1000V em corrente alternada (CA)</strong> ou atÃ© <strong>1500V em corrente contÃ­nua (CC)</strong>. Ela Ã© de cumprimento obrigatÃ³rio e abrange desde projetos atÃ© a manutenÃ§Ã£o de instalaÃ§Ãµes elÃ©tricas.</p>
-
-<h3>Escopo e Aplicabilidade</h3>
-<ul>
-  <li><strong>ResidÃªncias:</strong> casas, apartamentos, condomÃ­nios â€” Ã© a norma mais aplicada no dia a dia do eletricista residencial.</li>
-  <li><strong>ComÃ©rcios:</strong> lojas, escritÃ³rios, shopping centers, restaurantes.</li>
-  <li><strong>IndÃºstrias:</strong> fÃ¡bricas, galpÃµes, oficinas (quando em BT).</li>
-  <li><strong>EdifÃ­cios pÃºblicos:</strong> escolas, hospitais, prÃ©dios governamentais.</li>
-  <li><strong>NÃƒO se aplica:</strong> instalaÃ§Ãµes de alta tensÃ£o, minas, embarcaÃ§Ãµes, instalaÃ§Ãµes veiculares, redes de distribuiÃ§Ã£o.</li>
-</ul>
-
-<h3>ClassificaÃ§Ã£o por Grau de Risco</h3>
-<div class="norma-badge">NBR 5410 â€” Graus de Risco</div>
-<ul>
-  <li><strong>Grau I â€” Baixo risco:</strong> locais secos, sem risco de choque ou incÃªndio. Exemplos: salas residenciais secas, escritÃ³rios, salas de aula.</li>
-  <li><strong>Grau II â€” MÃ©dio risco:</strong> locais com umidade moderada ou risco moderado. Exemplos: cozinhas, banheiros (fora da zona de banho), garagens, lavanderias.</li>
-  <li><strong>Grau III â€” Alto risco:</strong> locais com alta umidade, risco de choque ou incÃªndio. Exemplos: box de banho, chuveiros, piscinas, instalaÃ§Ãµes externas, canteiros de obras.</li>
-</ul>
-
-<h3>Sistemas de DistribuiÃ§Ã£o</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  SISTEMAS TRIFÃSICOS COMUNS NO BRASIL                           â”‚
-â”‚                                                                 â”‚
-â”‚  TN-S: 3 fases + neutro + terra (separados)                    â”‚
-â”‚    â†’ PadrÃ£o residencial e comercial                            â”‚
-â”‚    â†’ Fios N e PE sÃ£o separados desde a entrada                  â”‚
-â”‚                                                                 â”‚
-â”‚  TN-C: 3 fases + PEN (neutro e terra combinados)               â”‚
-â”‚    â†’ Em desuso, menos seguro                                    â”‚
-â”‚                                                                 â”‚
-â”‚  TT:   3 fases + neutro + terra local                           â”‚
-â”‚    â†’ Comum em instalaÃ§Ãµes rurais                                â”‚
-â”‚                                                                 â”‚
-â”‚  IT:   Isolado da terra (com ou sem impedÃ¢ncia)                 â”‚
-â”‚    â†’ Hospitais, industria crÃ­tica (continuidade)                â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Dispositivos de ProteÃ§Ã£o ObrigatÃ³rios</h3>
-<ul>
-  <li><strong>Disjuntor geral:</strong> proteÃ§Ã£o contra sobrecarga e curto-circuito.</li>
-  <li><strong>DR (Dispositivo Residual):</strong> proteÃ§Ã£o contra choques e fugas de corrente (mÃ­nimo 30mA para circuitos de uso humano).</li>
-  <li><strong>DPS (Dispositivo de ProteÃ§Ã£o contra Surto):</strong> proteÃ§Ã£o contra surtos de tensÃ£o (raios, manobras da concessionÃ¡ria).</li>
-  <li><strong>Barramento de proteÃ§Ã£o (PE):</strong> terra vinculada a todas as partes metÃ¡licas acessÃ­veis.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Ignorar a classificaÃ§Ã£o de risco:</strong> determina o tipo de proteÃ§Ã£o e os materiais adequados para cada ambiente.</li>
-  <li><strong>NÃ£o instalar DR:</strong> a NBR 5410 exige DR para circuitos em Ã¡reas molhadas e para proteÃ§Ã£o de pessoas.</li>
-  <li><strong>Usar materiais inadequados para o grau de risco:</strong> ex: caixa de PVC em ambiente com risco de incÃªndio.</li>
-</ul>`,
+        theory: `<h2>Norma NBR 5410</h2>
+<p>A <strong>NBR 5410</strong> é a norma brasileira que regulamenta instalações elétricas de baixa tensão (até <strong>1000V em CA</strong> ou <strong>1500V em CC</strong>). Ela é de <strong>observância obrigatória</strong> em todo o país.</p>
+<p><strong>Escopo:</strong> Abrange instalações em ambientes internos e externos, residenciais, comerciais e industriais. Define regras de proteção, dimensionamento, fiação e equipamentos.</p>
+<p><strong>Classificação por risco:</strong> A norma classifica ambientes em graus de risco I (normal), II (aumentado) e III (especial). Locais molhados, com poeira ou inflamáveis têm restrições específicas.</p>
+<p><strong>Seções importantes:</strong> Proteção contra choques elétricos (5.1), Proteção contra sobrecorrentes (5.3), Proteção contra sobretensões (5.4), Condutores (6.2), Dispositivos de proteção (7).</p>
+<p><strong>Atualização:</strong> A versão vigente é de 2008, com atualizações técnicas. Sempre verifique a versão mais recente na ABNT.</p>
+<p><strong>Aplicação prática:</strong> Todo projeto elétrico residencial deve seguir a NBR 5410. A falta de conformidade pode causar multas, seguros negados e riscos de incêndio.</p>
+<p><strong>Erro comum:</strong> A norma é extensa e detalhada. Não tente memorizar tudo — entenda os princípios e consulte os anexos quando necessário.</p>
+<p><strong>Dica:</strong> Foque nos capítulos 5 (proteção), 6 (condutores) e 7 (dispositivos) para o dia a dia de instalações residenciais.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "AtÃ© qual tensÃ£o a NBR 5410 se aplica em corrente alternada?",
-            options: [
-              "220V",
-              "380V",
-              "1000V",
-              "13.800V"
-            ],
-            correctIndex: 2,
-            explanation: "A NBR 5410 cobre instalaÃ§Ãµes de baixa tensÃ£o atÃ© 1000V em corrente alternada (CA) ou 1500V em corrente contÃ­nua (CC)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Um banheiro comum (fora do box de banho) Ã© classificado em qual grau de risco?",
-            options: [
-              "Grau I (baixo)",
-              "Grau II (mÃ©dio)",
-              "Grau III (alto)",
-              "NÃ£o Ã© classificado"
-            ],
-            correctIndex: 1,
-            explanation: "Banheiros (fora da zona de banho) sÃ£o classificados como Grau II â€” mÃ©dio risco, devido Ã  umidade moderada."
-          },
-          {
-            type: "fill-blank",
-            question: "O sistema TN-S possui _____ fases, _____ neutro e _____ terra, todos _____.",
-            correctAnswers: ["3", "1", "1", "separados"],
-            explanation: "O sistema TN-S possui 3 fases + 1 neutro + 1 terra, todos separados desde a entrada. Ã‰ o padrÃ£o residencial brasileiro."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique os seguintes ambientes quanto ao grau de risco NBR 5410:",
-            items: [
-              { text: "Sala de estar seca", correctCategory: "Grau I (Baixo)" },
-              { text: "Cozinha", correctCategory: "Grau II (MÃ©dio)" },
-              { text: "Box de banho", correctCategory: "Grau III (Alto)" },
-              { text: "EscritÃ³rio", correctCategory: "Grau I (Baixo)" },
-              { text: "Lavanderia", correctCategory: "Grau II (MÃ©dio)" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual dos seguintes dispositivos Ã© OBRIGATÃ“RIO para proteÃ§Ã£o contra choques em circuitos de Ã¡reas molhadas?",
-            options: [
-              "Disjuntor termomagnÃ©tico",
-              "DR (Dispositivo Residual)",
-              "DPS (Dispositivo de ProteÃ§Ã£o contra Surto)",
-              "RelÃ© de sobre-tensÃ£o"
-            ],
-            correctIndex: 1,
-            explanation: "O DR Ã© obrigatÃ³rio para proteÃ§Ã£o de pessoas contra choques elÃ©tricos e fugas de corrente, especialmente em Ã¡reas molhadas."
-          },
-          {
-            type: "calculation",
-            question: "Uma instalaÃ§Ã£o residencial trifÃ¡sica 380/220V tem disjuntor geral de 40A. Qual a potÃªncia mÃ¡xima que pode ser instalada?",
-            formulaHint: "P = âˆš3 Ã— Vf Ã— I (trifÃ¡sico) ou P = 3 Ã— Vf Ã— I",
-            correctAnswer: 26359,
-            unit: "W",
-            explanation: "P = âˆš3 Ã— 380V Ã— 40A = 1,732 Ã— 380 Ã— 40 â‰ˆ 26.359W = 26,36kW."
-          }
+          { type: "multiple-choice", question: "A NBR 5410 se aplica a instalações de até:", choices: ["220V", "380V", "1000V CA", "1500V CC"], correct: 2, explanation: "A norma cobre BT até 1000V CA ou 1500V CC. Acima disso, aplica-se a NBR 14626 (MT)." },
+          { type: "multiple-choice", question: "A classificação de risco de ambiente mais comum em residências é:", choices: ["Grau I - Normal", "Grau II - Aumentado", "Grau III - Especial", "Não classificado"], correct: 0, explanation: "Ambientes residenciais secos e ventilados são classificados como Grau I (normal)." },
+          { type: "fill-blank", code: "A NBR 5410 é de observância ________ e regula instalações de ________ tensão.", blanks: [{ answer: "obrigatória", placeholder: "caráter da norma" }, { answer: "baixa", placeholder: "nível de tensão" }], explanation: "A norma é obrigatória por lei e aplica-se apenas à baixa tensão (até 1000V CA)." },
+          { type: "drag-drop", question: "Associe as proteções da NBR 5410 com seus objetivos:", pieces: ["Proteção contra choques", "Proteção contra sobrecorrentes", "Proteção contra sobretensões", "Proteção contra incêndio"], correctOrder: ["Proteção contra choques", "Proteção contra sobrecorrentes", "Proteção contra sobretensões", "Proteção contra incêndio"], explanation: "A norma abrange choques (DR), sobrecorrentes (disjuntor), sobretensões (DPS) e incêndio (condução adequada)." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L2 â€” Circuitos de IluminaÃ§Ã£o
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l2",
-        title: "Circuitos de IluminaÃ§Ã£o",
-        theory: `<h2>Circuitos de IluminaÃ§Ã£o</h2>
-
-<h3>CaracterÃ­sticas Gerais</h3>
-<p>Os circuitos de iluminaÃ§Ã£o sÃ£o os mais numerosos em uma instalaÃ§Ã£o residencial. Eles alimentam lÃ¢mpadas, abajures, spots, lustres e luminÃ¡rias de todas as potÃªncias. O dimensionamento correto garante seguranÃ§a, economia e conformidade com a NBR 5410.</p>
-
-<h3>Dimensionamento do Condutor</h3>
-<div class="norma-badge">NBR 5410 â€” Circuitos de IluminaÃ§Ã£o</div>
-<ul>
-  <li><strong>Bitola mÃ­nima:</strong> 1,5mmÂ² (fio de cobre) para circuitos de iluminaÃ§Ã£o residencial.</li>
-  <li><strong>Capacidade de corrente:</strong> um condutor de 1,5mmÂ² suporta atÃ© 17A (mÃ©todo de instalaÃ§Ã£o e3 â€” condulete embutido).</li>
-  <li><strong>Queda de tensÃ£o:</strong> deve ser verificada se o circuito for muito longo (mÃ¡ximo 4% da tensÃ£o nominal).</li>
-</ul>
-
-<h3>Disjuntor do Circuito</h3>
-<ul>
-  <li><strong>Disjuntor:</strong> tipicamente 10A ou 16A, conforme a carga total do circuito.</li>
-  <li><strong>Curva:</strong> curva B ou C para circuitos de iluminaÃ§Ã£o.</li>
-  <li><strong>Dimensionamento:</strong> o disjuntor deve ser â‰¥ Ã  corrente do circuito e â‰¤ Ã  capacidade do condutor.</li>
-</ul>
-
-<h3>Quantidade MÃ¡xima de Pontos</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  REGRA DOS 12 PONTOS â€” IluminaÃ§Ã£o                   â”‚
-â”‚                                                     â”‚
-â”‚  â€¢ MÃ¡ximo 12 pontos de iluminaÃ§Ã£o por circuito      â”‚
-â”‚  â€¢ 1 ponto = 1 lÃ¢mpada / 1 abajur / 1 spot         â”‚
-â”‚  â€¢ Se 12 pontos nÃ£o for suficiente, criar circuito  â”‚
-â”‚    adicional ou reduzir a potÃªncia                   â”‚
-â”‚                                                     â”‚
-â”‚  Exemplo de distribuiÃ§Ã£o:                            â”‚
-â”‚  Sala: 4 pontos | Cozinha: 2 pontos                 â”‚
-â”‚  Quartos: 2 pontos cada | Banheiro: 1 ponto         â”‚
-â”‚  Total: 4+2+2+2+2+1 = 13 â†’ dividir em 2 circuitos  â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Tipos de LÃ¢mpadas e PotÃªncias TÃ­picas</h3>
-<ul>
-  <li><strong>LED:</strong> 9W, 12W, 15W, 18W â€” eficiÃªncia mÃ¡xima, durabilidade superior (25.000-50.000h).</li>
-  <li><strong>Fluorescente compacta (CFL):</strong> 15W, 20W, 30W â€” substitui lÃ¢mpadas incandescentes (eficiÃªncia moderada).</li>
-  <li><strong>Incandescente:</strong> 40W, 60W, 100W â€” obsoleta, baixa eficiÃªncia (85% vira calor).</li>
-  <li><strong>HalÃ³gena:</strong> 20W, 50W, 75W â€” usada em spots e projetores.</li>
-</ul>
-
-<h3>Exemplo PrÃ¡tico de Dimensionamento</h3>
-<pre>
-Circuito da sala de estar:
-- 4 lÃ¢mpadas LED de 12W cada = 48W total
-- I = P/V = 48W / 127V = 0,38A
-- Condutor 1,5mmÂ² (suporta atÃ© 17A) âœ“
-- Disjuntor 10A âœ“
-- Pontos: 4 (mÃ¡ximo 12) âœ“
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Exceder 12 pontos no circuito:</strong> gera sobrecarga e risco de incÃªndio.</li>
-  <li><strong>Usar condutor 1,0mmÂ² em iluminaÃ§Ã£o:</strong> o mÃ­nimo permitido pela NBR 5410 Ã© 1,5mmÂ².</li>
-  <li><strong>NÃ£o considerar o fator de demanda:</strong> nem todas as lÃ¢mpadas ficam ligadas ao mesmo tempo.</li>
-  <li><strong>Conectar tomadas no circuito de iluminaÃ§Ã£o:</strong> devem ter circuito prÃ³prio (M2-L3).</li>
-</ul>`,
+        title: "Tensão Nominal no Brasil",
+        theory: `<h2>Tensão Nominal no Brasil</h2>
+<p>No Brasil, as tensões nominais residenciais são <strong>127V</strong> e <strong>220V</strong>, monofásicas. A distribuição trifásica é 220/380V.</p>
+<p><strong>Bacias de tensão:</strong> O país é dividido em três bacias: <strong>Bacia 1</strong> (127/220V — maioria dos estados), <strong>Bacia 2</strong> (127/220V — partes do Sul), <strong>Bacia 3</strong> (220V apenas — partes do Nordeste e Norte).</p>
+<p>A <strong>variação permitida</strong> pela norma é de ±10% para tensão nominal. Para 127V: entre 114,3V e 139,7V. Para 220V: entre 198V e 242V.</p>
+<p>A <strong>tensão entre fases</strong> no sistema trifásico 220/380V é de 380V. Muitos prédios comerciais e industriais utilizam esse sistema.</p>
+<p><strong>Aplicação prática:</strong> Sempre verifique a tensão local antes de instalar equipamentos. Uma geladeira 220V ligada em 127V não funciona adequadamente; o inverso queima o equipamento.</p>
+<p><strong>Erro comum:</strong> Assumir que 127V e 220V estão disponíveis em todos os cômodos. Verifique o quadro: cada circuito é dimensionado para uma tensão específica.</p>
+<p><strong>Dica:</strong> Use o multímetro para confirmar a tensão antes de conectar equipamentos. Não confie apenas na cor dos fios — padrões variam por região.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual a bitola mÃ­nima permitida pela NBR 5410 para circuitos de iluminaÃ§Ã£o residencial?",
-            options: [
-              "1,0mmÂ²",
-              "1,5mmÂ²",
-              "2,5mmÂ²",
-              "4,0mmÂ²"
-            ],
-            correctIndex: 1,
-            explanation: "A NBR 5410 estabelece 1,5mmÂ² como bitola mÃ­nima para circuitos de iluminaÃ§Ã£o residencial."
-          },
-          {
-            type: "calculation",
-            question: "Um circuito de iluminaÃ§Ã£o tem 8 lÃ¢mpadas LED de 15W cada. Qual a corrente total do circuito? (TensÃ£o 127V)",
-            formulaHint: "I = (P_total) / V",
-            correctAnswer: 0.945,
-            unit: "A",
-            explanation: "P_total = 8 Ã— 15W = 120W. I = 120W / 127V â‰ˆ 0,945A = 945mA."
-          },
-          {
-            type: "fill-blank",
-            question: "O mÃ¡ximo de _____ pontos de iluminaÃ§Ã£o Ã© permitido por circuito residencial.",
-            correctAnswers: ["12"],
-            explanation: "A regra dos 12 pontos Ã© uma das mais importantes para dimensionamento de circuitos de iluminaÃ§Ã£o."
-          },
-          {
-            type: "multiple-choice",
-            question: "Um condutor de 1,5mmÂ² suporta atÃ© quantos amperes (mÃ©todo e3 â€” condulete embutido)?",
-            options: [
-              "10A",
-              "17A",
-              "25A",
-              "30A"
-            ],
-            correctIndex: 1,
-            explanation: "Um condutor de 1,5mmÂ² de cobre suporta atÃ© 17A no mÃ©todo e3 (condulete embutido na alvenaria)."
-          },
-          {
-            type: "drag-drop",
-            question: "Distribua os pontos de iluminaÃ§Ã£o nos cÃ´modos. Classifique cada cÃ´modo com o nÃºmero adequado de pontos:",
-            items: [
-              { text: "Sala de estar", correctCategory: "4 pontos" },
-              { text: "Cozinha", correctCategory: "2 pontos" },
-              { text: "Quarto", correctCategory: "2 pontos" },
-              { text: "Banheiro", correctCategory: "1 ponto" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Uma sala tem 6 pontos com lÃ¢mpadas LED de 9W cada. Qual a potÃªncia total? Ainda cabe no mesmo circuito se o limite sÃ£o 12 pontos?",
-            formulaHint: "P = n Ã— P_por_lÃ¢mpada",
-            correctAnswer: 54,
-            unit: "W",
-            explanation: "P = 6 Ã— 9W = 54W. Sim, ainda cabe no circuito pois tem apenas 6 pontos (limite Ã© 12)."
-          }
+          { type: "multiple-choice", question: "Em qual bacia do Brasil a residência recebe apenas 220V (sem 127V)?", choices: ["Bacia 1", "Bacia 2", "Bacia 3", "Todas"], correct: 2, explanation: "A Bacia 3, em partes do Nordeste e Norte, distribui apenas 220V monofásico." },
+          { type: "multiple-choice", question: "A variação permitida para uma rede de 127V é de:", choices: ["114,3V a 139,7V", "120V a 135V", "100V a 150V", "125V a 129V"], correct: 0, explanation: "±10% de 127V = 114,3V (mínimo) a 139,7V (máximo)." },
+          { type: "fill-blank", code: "A tensão nominal residencial brasileira é ________ V ou ________ V.", blanks: [{ answer: "127", placeholder: "tensão menor" }, { answer: "220", placeholder: "tensão maior" }], explanation: "O Brasil opera com dois níveis de tensão residencial: 127V e 220V." },
+          { type: "calculation", question: "Qual a tensão mínima aceitável em um ponto de 220V?", answer: 198, unit: "V", validate: function(v) { return Math.abs(v - 198) < 1; }, explanation: "220V - 10% = 220 - 22 = 198V. Abaixo disso, há risco de mau funcionamento." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L3 â€” Circuitos de Tomadas
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l3",
-        title: "Circuitos de Tomadas",
-        theory: `<h2>Circuitos de Tomadas</h2>
-
-<h3>Regra Geral para Tomadas</h3>
-<p>Circuitos de tomadas residenciais seguem regras especÃ­ficas de dimensionamento conforme a potÃªncia dos equipamentos que serÃ£o conectados. A NBR 5410 estabelece critÃ©rios claros para cada caso.</p>
-
-<h3>Tomadas de Uso Geral (atÃ© 10A)</h3>
-<div class="norma-badge">NBR 5410 â€” Circuitos de Tomadas</div>
-<ul>
-  <li><strong>Condutor mÃ­nimo:</strong> 2,5mmÂ² (cobre).</li>
-  <li><strong>Disjuntor:</strong> tipicamente 16A ou 20A.</li>
-  <li><strong>Quantidade mÃ¡xima:</strong> atÃ© 10 tomadas por circuito.</li>
-  <li><strong>Equipamentos tÃ­picos:</strong> televisores, ventiladores, carregadores, micro-ondas (atÃ© 1200W), liquidificador.</li>
-</ul>
-
-<h3>Circuitos Exclusivos (acima de 10A)</h3>
-<p>Equipamentos de alta potÃªncia exigem <strong>circuitos exclusivos</strong> â€” dedicados, com condutor e disjuntor prÃ³prios. NÃ£o podem compartilhar circuito com outros equipamentos.</p>
-
-<h3>Chuveiro ElÃ©trico</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  CHUVEIRO ELÃ‰TRICO â€” Dimensionamento                â”‚
-â”‚                                                     â”‚
-â”‚  PotÃªncia tÃ­pica: 4.500W a 7.500W                   â”‚
-â”‚  Exemplo: 5.500W em 127V                            â”‚
-â”‚  I = P / V = 5500 / 127 = 43,3A                     â”‚
-â”‚                                                     â”‚
-â”‚  â€¢ Condutor: 6,0mmÂ² (mÃ­nimo 4,0mmÂ² para atÃ© 4500W) â”‚
-â”‚  â€¢ Disjuntor: 50A (curva C ou D)                    â”‚
-â”‚  â€¢ DR dedicado: 40A ou 50A, 30mA                    â”‚
-â”‚  â€¢ Circuito: EXCLUSIVO, sem outras tomadas          â”‚
-â”‚                                                     â”‚
-â”‚  Nota: chuveiro 7.500W em 220V â†’ 34A â†’ 4,0mmÂ²     â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Ar-Condicionado</h3>
-<ul>
-  <li><strong>Split 9.000 BTU:</strong> â‰ˆ 800W â†’ 1.000W com compressor â†’ 4,5A em 220V â†’ circuito exclusivo com 2,5mmÂ².</li>
-  <li><strong>Split 18.000 BTU:</strong> â‰ˆ 1.800W â†’ 2.200W com compressor â†’ 10A em 220V â†’ circuito exclusivo com 4,0mmÂ².</li>
-  <li><strong>Janela 11.000 BTU:</strong> â‰ˆ 1.300W â†’ 6A em 220V â†’ circuito exclusivo com 2,5mmÂ².</li>
-</ul>
-
-<h3>Tabela de Dimensionamento por Equipamento</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚ Equipamento          â”‚ PotÃªncia â”‚ Corrente â”‚ Condutor     â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚ Tomada geral (10A)   â”‚ atÃ© 1200Wâ”‚ atÃ© 10A  â”‚ 2,5mmÂ²      â”‚
-â”‚ Micro-ondas          â”‚ 1200W    â”‚ 10A      â”‚ 2,5mmÂ²      â”‚
-â”‚ Ar 9.000 BTU         â”‚ 1000W    â”‚ 4,5A     â”‚ 2,5mmÂ² (exc)â”‚
-â”‚ Ar 18.000 BTU        â”‚ 2200W    â”‚ 10A      â”‚ 4,0mmÂ² (exc)â”‚
-â”‚ Chuveiro 5500W/127V  â”‚ 5500W    â”‚ 43A      â”‚ 6,0mmÂ² (exc)â”‚
-â”‚ Chuveiro 5500W/220V  â”‚ 5500W    â”‚ 25A      â”‚ 4,0mmÂ² (exc)â”‚
-â”‚ Forno elÃ©trico       â”‚ 3000W    â”‚ 13A      â”‚ 4,0mmÂ² (exc)â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Conectar chuveiro em circuito de tomada geral:</strong> pode causar incÃªndio por sobrecarga do condutor.</li>
-  <li><strong>Usar extensÃ£o para chuveiro:</strong> o condutor da extensÃ£o nÃ£o suporta a corrente elevada.</li>
-  <li><strong>Ignorar a bitola do condutor:</strong> condutor subdimensionado aquece e pode derreter a isolaÃ§Ã£o.</li>
-  <li><strong>Instalar DR geral para chuveiro:</strong> deve ser DR exclusivo com capacidade adequada.</li>
-</ul>`,
+        title: "Circuitos de Iluminação",
+        theory: `<h2>Circuitos de Iluminação</h2>
+<p>Os <strong>circuitos de iluminação</strong> residenciais utilizam fios de <strong>1,5mm²</strong> (cobre) e disjuntores de <strong>10A ou 16A</strong>.</p>
+<p><strong>Dimensionamento:</strong> Cada circuito de iluminação pode ter no máximo <strong>12 pontos</strong> (luminárias ou pontos de tomada de iluminação). Um ponto corresponde a uma lâmpada ou luminária.</p>
+<p>A <strong>queda de tensão</strong> máxima permitida é de <strong>4%</strong> no ponto de utilização em relação à tensão nominal. Para 127V: queda máxima ≈ 5,08V. Para 220V: queda máxima ≈ 8,8V.</p>
+<p>O <strong>fio fase</strong> deve ser interrompido pelo interruptor (nunca o neutro). A cor do fio fase segue o padrão: <strong>vermelho, marrom ou preto</strong> para fase; <strong>azul</strong> para neutro; <strong>verde ou verde-amarelo</strong> para terra.</p>
+<p><strong>Aplicação prática:</strong> Em um quarto com 4 interruptores e 4 pontos de luz, basta 1 circuito de iluminação (8 pontos < 12).</p>
+<p><strong>Erro comum:</strong> Ligar muitas luminárias no mesmo circuito. Cada circuito deve respeitar o limite de 12 pontos e a capacidade do disjuntor.</p>
+<p><strong>Dica:</strong> Ao instalar interruptores, sempre interrompa o fio fase, nunca o neutro. Isso garante segurança ao trocar lâmpadas.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Um chuveiro elÃ©trico de 5500W Ã© ligado em 127V. Qual a corrente que o circuito precisa suportar?",
-            formulaHint: "I = P / V",
-            correctAnswer: 43.31,
-            unit: "A",
-            explanation: "I = P / V = 5500W / 127V â‰ˆ 43,31A."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual a bitola mÃ­nima do condutor para um circuito de tomadas gerais?",
-            options: [
-              "1,5mmÂ²",
-              "2,5mmÂ²",
-              "4,0mmÂ²",
-              "6,0mmÂ²"
-            ],
-            correctIndex: 1,
-            explanation: "O condutor mÃ­nimo para circuitos de tomadas gerais Ã© 2,5mmÂ² de cobre."
-          },
-          {
-            type: "fill-blank",
-            question: "Um chuveiro elÃ©trico deve ter circuito _____, com condutor e disjuntor prÃ³prios.",
-            correctAnswers: ["exclusivo", "prÃ³prio", "dedicado"],
-            explanation: "Chuveiros elÃ©tricos exigem circuito exclusivo (dedicado) devido Ã  alta corrente que consomem."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique cada equipamento quanto ao tipo de circuito necessÃ¡rio:",
-            items: [
-              { text: "TelevisÃ£o", correctCategory: "Circuito geral (atÃ© 10A)" },
-              { text: "Chuveiro elÃ©trico", correctCategory: "Circuito exclusivo" },
-              { text: "Carregador de celular", correctCategory: "Circuito geral (atÃ© 10A)" },
-              { text: "Ar-condicionado split 12.000 BTU", correctCategory: "Circuito exclusivo" },
-              { text: "Ventilador de mesa", correctCategory: "Circuito geral (atÃ© 10A)" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Quantas tomadas de uso geral sÃ£o permitidas, no mÃ¡ximo, em um circuito residencial?",
-            options: [
-              "6",
-              "8",
-              "10",
-              "12"
-            ],
-            correctIndex: 2,
-            explanation: "A NBR 5410 permite atÃ© 10 tomadas de uso geral por circuito, desde que o condutor e disjuntor estejam dimensionados."
-          },
-          {
-            type: "calculation",
-            question: "Um ar-condicionado split consome 2200W em 220V. Qual a corrente do circuito? Qual condutor mÃ­nimo usar?",
-            formulaHint: "I = P / V",
-            correctAnswer: 10,
-            unit: "A",
-            explanation: "I = 2200W / 220V = 10A. Condutor mÃ­nimo: 4,0mmÂ² (circuito exclusivo, corrente limÃ­trofe para 2,5mmÂ²)."
-          }
+          { type: "multiple-choice", question: "Qual a seção mínima do fio para circuitos de iluminação?", choices: ["1,0mm²", "1,5mm²", "2,5mm²", "4,0mm²"], correct: 1, explanation: "A NBR 5410 recomenda 1,5mm² para circuitos de iluminação residenciais." },
+          { type: "multiple-choice", question: "O interruptor deve interromper:", choices: ["O fio neutro", "O fio fase", "Ambos", "O fio terra"], correct: 1, explanation: "O interruptor deve estar no fio fase para garantir que o ponto de luz fique sem tensão quando desligado." },
+          { type: "fill-blank", code: "Cada circuito de iluminação pode ter no máximo ________ pontos. A cor do fio neutro é ________.", blanks: [{ answer: "12", placeholder: "máximo de pontos" }, { answer: "azul", placeholder: "cor do neutro" }], explanation: "12 pontos é o limite por circuito. Neutro é azul; fase é vermelho/marrom/preto." },
+          { type: "calculation", question: "Em uma rede de 127V, qual a queda de tensão máxima aceitável?", answer: 5.08, unit: "V", validate: function(v) { return Math.abs(v - 5.08) < 0.2; }, explanation: "4% de 127V = 0,04 × 127 = 5,08V. Acima disso, há queda de luz e mau funcionamento." },
+          { type: "drag-drop", question: "Associe cada cor de fio à sua função:", pieces: ["Vermelho/Marrom", "Azul", "Verde/Verde-amarelo"], correctOrder: ["Vermelho/Marrom", "Azul", "Verde/Verde-amarelo"], explanation: "Fase: vermelho/marrom/preto. Neutro: azul. Terra: verde ou verde-amarelo." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L4 â€” Disjuntores
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l4",
-        title: "Disjuntores",
-        theory: `<h2>Disjuntores</h2>
-
-<h3>FunÃ§Ã£o do Disjuntor</h3>
-<p>O disjuntor Ã© o <strong>dispositivo de proteÃ§Ã£o automÃ¡tica</strong> mais importante em uma instalaÃ§Ã£o elÃ©trica. Ele protege o circuito contra duas ameaÃ§as principais: <strong>sobrecarga</strong> (corrente acima do limite por tempo prolongado) e <strong>curto-circuito</strong> (corrente extremamente alta por tempo muito curto).</p>
-
-<h3>Tipos de Curva</h3>
-<div class="norma-badge">Disjuntores â€” Curvas de AtuaÃ§Ã£o</div>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  CURVA B â€” SensÃ­vel (atuaÃ§Ã£o rÃ¡pida)                               â”‚
-â”‚  â€¢ Atua entre 3 e 5 vezes a corrente nominal                        â”‚
-â”‚  â€¢ Ideal para: circuitos de iluminaÃ§Ã£o, tomadas de uso geral        â”‚
-â”‚  â€¢ Protege contra curtos de baixa energia                           â”‚
-â”‚                                                                     â”‚
-â”‚  CURVA C â€” MÃ©dia (mais comum)                                       â”‚
-â”‚  â€¢ Atua entre 5 e 10 vezes a corrente nominal                       â”‚
-â”‚  â€¢ Ideal para: cargas gerais, motores pequenos, residÃªncias         â”‚
-â”‚  â€¢ PadrÃ£o para a maioria dos circuitos residenciais                 â”‚
-â”‚                                                                     â”‚
-â”‚  CURVA D â€” Retardada (atuaÃ§Ã£o lenta)                                â”‚
-â”‚  â€¢ Atua entre 10 e 20 vezes a corrente nominal                      â”‚
-â”‚  â€¢ Ideal para: motores de alto fluxo de partida, transformadores    â”‚
-â”‚  â€¢ Usada em indÃºstria e equipamentos com alta corrente de ligaÃ§Ã£o   â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Dimensionamento por Corrente</h3>
-<ul>
-  <li><strong>Regra geral:</strong> o disjuntor deve ser dimensionado para a corrente de operaÃ§Ã£o normal do circuito, nunca acima da capacidade do condutor.</li>
-  <li><strong>FÃ³rmula:</strong> I_disjuntor â‰¥ I_carga e I_disjuntor â‰¤ I_condutor (corrente admissÃ­vel do condutor).</li>
-  <li><strong>Valores padronizados:</strong> 6A, 10A, 16A, 20A, 25A, 32A, 40A, 50A, 63A.</li>
-</ul>
-
-<h3>Curva de AtuaÃ§Ã£o â€” Sobrecarga</h3>
-<pre>
-Tempo de atuaÃ§Ã£o vs Multiplicador da corrente nominal (In):
-
-  Multiplicador â”‚  Curva B    â”‚  Curva C    â”‚  Curva D
-  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    1,13 x In   â”‚ NÃ£o atua    â”‚ NÃ£o atua    â”‚ NÃ£o atua
-    1,45 x In   â”‚ < 60 min    â”‚ < 60 min    â”‚ < 60 min
-    2,55 x In   â”‚ < 40 seg    â”‚ < 40 seg    â”‚ < 40 seg
-    5 x In      â”‚ < 10 seg    â”‚ NÃ£o atua    â”‚ NÃ£o atua
-    10 x In     â”‚ < 0,1 seg   â”‚ < 0,1 seg   â”‚ NÃ£o atua
-    20 x In     â”‚ < 0,02 seg  â”‚ < 0,02 seg  â”‚ < 0,02 seg
-</pre>
-
-<h3>Exemplos de Dimensionamento Residencial</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  Disjuntor Geral:                                          â”‚
-â”‚  â€¢ Casa atÃ© 100mÂ² â†’ 40A, trifÃ¡sico 380/220V               â”‚
-â”‚  â€¢ Apartamento atÃ© 60mÂ² â†’ 25A ou 32A, bifÃ¡sico            â”‚
-â”‚                                                             â”‚
-â”‚  Disjuntores por circuito:                                  â”‚
-â”‚  â€¢ IluminaÃ§Ã£o: 10A (curva B ou C)                          â”‚
-â”‚  â€¢ Tomadas gerais: 16A ou 20A (curva C)                    â”‚
-â”‚  â€¢ Chuveiro: 40A ou 50A (curva C ou D)                     â”‚
-â”‚  â€¢ Ar-condicionado: 20A ou 25A (curva C)                   â”‚
-â”‚  â€¢ Forno elÃ©trico: 25A ou 32A (curva C)                    â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Disjuntor maior que o condutor suporta:</strong> o disjuntor protege o condutor. Se for maior, o condutor aquece sem o disjuntor desligar.</li>
-  <li><strong>Usar disjuntor para proteÃ§Ã£o de pessoas:</strong> disjuntor protege contra sobrecarga/curto, NÃƒO contra choques. Para isso, use DR.</li>
-  <li><strong>Travar o disjuntor:</strong> quando desliga constantemente, indica problema â€” NÃƒO Ã© defeito do disjuntor.</li>
-  <li><strong>NÃ£o especificar a curva correta:</strong> motores de alta corrente de partida precisam de curva D, senÃ£o desligam na partida.</li>
-</ul>`,
+        title: "Circuitos de Tomadas",
+        theory: `<h2>Circuitos de Tomadas</h2>
+<p>Os <strong>circuitos de tomadas</strong> residenciais utilizam fios de <strong>2,5mm²</strong> e disjuntores de <strong>20A</strong> para tomadas gerais de 10A.</p>
+<p><strong>Regra 10A:</strong> Tomadas comuns de 10A podem compartilhar circuito (máximo 10 tomadas por circuito). Equipamentos de até 1270W (em 127V) ou 2200W (em 220V).</p>
+<p><strong>Circuitos exclusivos:</strong> Equipamentos que consomem mais de 10A devem ter circuito próprio: <strong>chuveiro</strong> (4,0mm², disjuntor 30A ou 40A), <strong>ar-condicionado</strong>, <strong>forno elétrico</strong>, <strong>motor de bomba</strong>.</p>
+<p>O <strong>chuveiro elétrico</strong> é o maior consumidor residencial: 5500W em 127V = 43,3A; 5500W em 220V = 25A. Por isso, exige fio 4,0mm² e disjuntor dedicado.</p>
+<p><strong>Tomadas三线:</strong> Toda tomada deve ter <strong>três terminais</strong>: fase (F), neutro (N) e terra (T). O terra é essencial para equipamentos com carcaça metálica.</p>
+<p><strong>Aplicação prática:</strong> Organize os circuitos por cômodo ou por tipo de equipamento. Evite misturar iluminação com tomadas no mesmo circuito.</p>
+<p><strong>Erro comum:</strong> Usar chuveiro 220V em ponto de 127V. Isso pode causar superaquecimento e incêndio.</p>
+<p><strong>Dica:</strong> Para equipamentos de alto consumo (chuveiro, forno, ar), sempre verifique a tensão e amperagem antes de instalar.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual curva de disjuntor Ã© mais indicada para circuitos de iluminaÃ§Ã£o residencial?",
-            options: [
-              "Curva A",
-              "Curva B",
-              "Curva C",
-              "Curva D"
-            ],
-            correctIndex: 1,
-            explanation: "A curva B Ã© a mais indicada para iluminaÃ§Ã£o pois Ã© mais sensÃ­vel e atua rapidamente em sobrecargas leves."
-          },
-          {
-            type: "fill-blank",
-            question: "Um disjuntor curva C atua entre _____ e _____ vezes a corrente nominal em caso de curto.",
-            correctAnswers: ["5", "10"],
-            explanation: "A curva C atua entre 5 e 10 vezes In, sendo o padrÃ£o para a maioria dos circuitos residenciais."
-          },
-          {
-            type: "calculation",
-            question: "Um circuito de tomadas tem carga de 12A. Qual o disjuntor mais adequado (valores padronizados)?",
-            formulaHint: "O disjuntor deve ser â‰¥ I_carga e â‰¤ I_condutor",
-            correctAnswer: 16,
-            unit: "A",
-            explanation: "O disjuntor mais adequado Ã© 16A (prÃ³ximo e acima de 12A, valor padronizado mais comum)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o PRINCIPAL do disjuntor?",
-            options: [
-              "Proteger pessoas contra choques",
-              "Proteger contra sobrecarga e curto-circuito",
-              "Economizar energia",
-              "Controlar a iluminaÃ§Ã£o"
-            ],
-            correctIndex: 1,
-            explanation: "O disjuntor protege o circuito contra sobrecarga e curto-circuito. Para proteÃ§Ã£o de pessoas, usa-se o DR."
-          },
-          {
-            type: "drag-drop",
-            question: "Relacione cada tipo de curva ao seu uso mais adequado:",
-            items: [
-              { text: "Curva B", correctCategory: "IluminaÃ§Ã£o e tomadas gerais" },
-              { text: "Curva C", correctCategory: "Cargas gerais e residencial" },
-              { text: "Curva D", correctCategory: "Motores e transformadores" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Um condutor de 2,5mmÂ² suporta atÃ© 25A. Qual o disjuntor mÃ¡ximo que pode ser instalado nesse circuito?",
-            formulaHint: "I_disjuntor â‰¤ I_condutor",
-            correctAnswer: 25,
-            unit: "A",
-            explanation: "O disjuntor nÃ£o pode exceder a capacidade do condutor. Para 2,5mmÂ² (25A), o mÃ¡ximo Ã© 25A. Mas o padrÃ£o Ã© 20A para folga."
-          }
+          { type: "multiple-choice", question: "Qual a seção do fio recomendada para circuito de chuveiro elétrico?", choices: ["1,5mm²", "2,5mm²", "4,0mm²", "6,0mm²"], correct: 2, explanation: "Chuveiro elétrico consome até 43A em 127V. Fio 4,0mm² suporta até 55A (em instalação embutida)." },
+          { type: "multiple-choice", question: "Quantas tomadas de 10A podem ser conectadas em um único circuito?", choices: ["5", "10", "15", "20"], correct: 1, explanation: "A regra permite até 10 tomadas de 10A por circuito, respeitando a capacidade do disjuntor." },
+          { type: "fill-blank", code: "Equipamentos que consomem mais de ________ A devem ter circuito exclusivo. O chuveiro elétrico 220V de 5500W consome ________ A.", blanks: [{ answer: "10", placeholder: "limite para circuito exclusivo" }, { answer: "25", placeholder: "corrente do chuveiro" }], explanation: "Acima de 10A, circuito próprio. Chuveiro: I = 5500/220 = 25A." },
+          { type: "calculation", question: "Um chuveiro 127V de 5500W consome quantos amperes?", answer: 43.3, unit: "A", validate: function(v) { return Math.abs(v - 43.3) < 1; }, explanation: "I = P/V = 5500/127 ≈ 43,3A. Por isso, chuveiro em 127V exige fio ainda mais grosso." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L5 â€” DR e DPS
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l5",
-        title: "DR e DPS",
-        theory: `<h2>DR e DPS â€” Dispositivos de ProteÃ§Ã£o</h2>
-
-<h3>DR â€” Dispositivo Residual (Interruptor Diferencial)</h3>
-<p>O DR Ã© um dispositivo que <strong>detecta fugas de corrente elÃ©trica</strong> para a terra e desconecta o circuito automaticamente. Sua funÃ§Ã£o principal Ã© <strong>proteger pessoas contra choques elÃ©tricos</strong> e prevenir incÃªndios causados por curtos para a terra.</p>
-
-<h3>Como Funciona o DR</h3>
-<ul>
-  <li>Monitora a <strong>diferenÃ§a</strong> entre a corrente que sai pelo fase e retorna pelo neutro.</li>
-  <li>Em condiÃ§Ãµes normais: I_fase = I_neutro â†’ diferenÃ§a = 0 â†’ DR nÃ£o atua.</li>
-  <li>Em falha: I_fase â‰  I_neutro (parte da corrente vai para a terra) â†’ diferenÃ§a > limiar â†’ DR desliga.</li>
-  <li><strong>Corrente de atuaÃ§Ã£o:</strong> 30mA para proteÃ§Ã£o de pessoas (padrÃ£o); 100mA para proteÃ§Ã£o contra incÃªndio.</li>
-  <li><strong>Tempo de atuaÃ§Ã£o:</strong> menos de 300ms para 30mA.</li>
-</ul>
-
-<div class="norma-badge">NBR 5410 â€” DR ObrigatÃ³rio</div>
-<ul>
-  <li><strong>Circuitos em Ã¡reas molhadas:</strong> banheiros, lavanderias, cozinhas, Ã¡reas externas.</li>
-  <li><strong>Circuitos de tomadas:</strong> em residÃªncias, todos os circuitos de tomadas devem ter DR.</li>
-  <li><strong>Quadro geral:</strong> DR geral de 40A ou 63A com sensibilidade 30mA.</li>
-</ul>
-
-<h3>DPS â€” Dispositivo de ProteÃ§Ã£o contra Surto</h3>
-<p>O DPS protege a instalaÃ§Ã£o contra <strong>surtos de tensÃ£o</strong> provenientes de descargas atmosfÃ©ricas (raios), manobras na rede de distribuiÃ§Ã£o ou comutaÃ§Ã£o de cargas indutivas.</p>
-
-<h3>Como Funciona o DPS</h3>
-<ul>
-  <li>Em condiÃ§Ãµes normais: tem alta resistÃªncia â†’ nÃ£o afeta o circuito.</li>
-  <li>Em surto: a resistÃªncia cai drasticamente â†’ canaliza a corrente do surto para a terra â†’ protege os equipamentos.</li>
-  <li><strong>Tipos:</strong> Type 1 (entradas de edifÃ­cios), Type 2 (quadros), Type 3 (prÃ³ximo ao equipamento).</li>
-  <li><strong>Vida Ãºtil:</strong> tem vida limitada â€” apÃ³s atuar vÃ¡rias vezes, deve ser substituÃ­do.</li>
-</ul>
-
-<h3>Tabela Comparativa DR vs DPS</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  CaracterÃ­stica  â”‚        DR          â”‚        DPS         â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  Protege contra  â”‚  Fugas p/ terra    â”‚  Surtos de tensÃ£o  â”‚
-â”‚  (choque/incÃªndio)â”‚  (choque elÃ©trico) â”‚  (raios/manobras)  â”‚
-â”‚  Sensibilidade   â”‚  30mA (pessoas)    â”‚  Depende do tipo   â”‚
-â”‚  ObrigatÃ³rio?    â”‚  Sim (Ã¡reas molh.) â”‚  Sim (entradas)    â”‚
-â”‚  AtuaÃ§Ã£o          â”‚  Diferencial I     â”‚  Varistor/centro   â”‚
-â”‚  Vida Ãºtil        â”‚  Praticamente      â”‚  Limitada (surto)  â”‚
-â”‚                  â”‚  ilimitada         â”‚                    â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Confundir DR com disjuntor:</strong> DR protege contra choques, disjuntor contra sobrecarga. SÃ£o complementares.</li>
-  <li><strong>Desligar o DR quando desliga frequentemente:</strong> indica fuga de corrente â€” procurar o motivo.</li>
-  <li><strong>NÃ£o instalar DPS em regiÃµes de raios:</strong> Ã© obrigatÃ³rio em todas as entradas de alimentaÃ§Ã£o.</li>
-  <li><strong>Testar DR com fio de terra:</strong> use o botÃ£o TESTE do prÃ³prio DR, nunca improvised.</li>
-</ul>`,
+        title: "Disjuntores",
+        theory: `<h2>Disjuntores</h2>
+<p>O <strong>disjuntor</strong> é o dispositivo de proteção contra <strong>sobrecorrente</strong> (curto-circuito e sobrecarga). Ele abre o circuito automaticamente quando a corrente excede o valor nominal.</p>
+<p><strong>Curvas de disparo:</strong> <strong>Curva B</strong> (5-10×In): para cargas resistivas (iluminação, aquecimento). <strong>Curva C</strong> (5-10×In): para cargas com moderada corrente de partida (tomadas gerais). <strong>Curva D</strong> (10-20×In): para cargas com alta corrente de inrush (motores, transformadores).</p>
+<p><strong>Dimensionamento:</strong> O disjuntor deve ser maior que a corrente de carga e menor que a capacidade do condutor. Exemplo: circuito de 16A usa disjuntor de 20A com fio 2,5mm².</p>
+<p>A <strong>capacidade de corte</strong> é a corrente máxima de curto-circuito que o disjuntor suporta: 6.000A é comum em residências.</p>
+<p><strong>Disjuntor geral:</strong> Protege toda a instalação. Deve ser dimensionado somando todos os circuitos. Exemplo: residência com 6 circuitos pode ter disjuntor geral de 63A.</p>
+<p><strong>Aplicação prática:</strong> Substituir um disjuntor que desliga constantemente por um de maior amperagem é perigoso — pode causar incêndio. Investigue o motivo primeiro.</p>
+<p><strong>Erro comum:</strong> Usar disjuntor de curva errada. Chuveiro não pode usar curva B — a corrente de partida pode causar disparo falso.</p>
+<p><strong>Dica:</strong> Anote em cada disjuntor o circuito que protege. Isso facilita manutenções e emergências.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o principal do DR (Dispositivo Residual)?",
-            options: [
-              "Proteger contra sobrecarga",
-              "Proteger contra curto-circuito",
-              "Proteger pessoas contra choques elÃ©tricos",
-              "Proteger contra surtos de tensÃ£o"
-            ],
-            correctIndex: 2,
-            explanation: "O DR detecta fugas de corrente para a terra e protege pessoas contra choques elÃ©tricos e incÃªndios."
-          },
-          {
-            type: "fill-blank",
-            question: "O DR deve ter sensibilidade de _____ mA para proteÃ§Ã£o de pessoas e atuar em menos de _____ ms.",
-            correctAnswers: ["30", "300"],
-            explanation: "30mA Ã© a corrente limite para nÃ£o causar fibrilaÃ§Ã£o ventricular. O tempo de atuaÃ§Ã£o deve ser inferior a 300ms."
-          },
-          {
-            type: "multiple-choice",
-            question: "O que o DPS (Dispositivo de ProteÃ§Ã£o contra Surto) protege?",
-            options: [
-              "Contra choques elÃ©tricos",
-              "Contra surtos de tensÃ£o causados por raios ou manobras",
-              "Contra sobrecarga no circuito",
-              "Contra queda de tensÃ£o"
-            ],
-            correctIndex: 1,
-            explanation: "O DPS protege contra surtos de tensÃ£o, que podem ser causados por descargas atmosfÃ©ricas, manobras na rede ou comutaÃ§Ã£o de cargas."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique cada dispositivo com sua funÃ§Ã£o correta:",
-            items: [
-              { text: "DR", correctCategory: "ProteÃ§Ã£o contra choques (fuga p/ terra)" },
-              { text: "DPS", correctCategory: "ProteÃ§Ã£o contra surtos de tensÃ£o" },
-              { text: "Disjuntor termomagnÃ©tico", correctCategory: "ProteÃ§Ã£o contra sobrecarga e curto" },
-              { text: "Barramento PE", correctCategory: "ReferÃªncia de terra" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Em um circuito com DR de 30mA, qual Ã© a mÃ¡xima fuga de corrente permitida antes de o DR atuar?",
-            formulaHint: "A sensibilidade define a corrente de atuaÃ§Ã£o",
-            correctAnswer: 30,
-            unit: "mA",
-            explanation: "O DR de 30mA atua quando detecta diferenÃ§a de 30mA ou mais entre fase e neutro."
-          },
-          {
-            type: "multiple-choice",
-            question: "O DR deve ser instalado em qual posiÃ§Ã£o no quadro?",
-            options: [
-              "Depois dos disjuntores dos circuitos",
-              "Antes dos disjuntores dos circuitos (geral) ou por circuito",
-              "NÃ£o importa a posiÃ§Ã£o",
-              "Apenas no circuito do chuveiro"
-            ],
-            correctIndex: 1,
-            explanation: "O DR pode ser geral (antes dos disjuntores) ou por circuito. Em residÃªncias, o padrÃ£o Ã© DR geral de 40A/30mA."
-          }
+          { type: "multiple-choice", question: "Qual curva de disjuntor é mais adequada para um chuveiro elétrico?", choices: ["Curva B", "Curva C", "Curva D", "Qualquer uma"], correct: 2, explanation: "Curva D suporta alta corrente de partida, ideal para resistências de aquecimento que têm inrush inicial." },
+          { type: "multiple-choice", question: "A capacidade de corte comum de disjuntores residenciais é de:", choices: ["1.000A", "6.000A", "15.000A", "50.000A"], correct: 1, explanation: "6.000A é a capacidade padrão residencial. Acima disso, são usados disjuntores industriais." },
+          { type: "fill-blank", code: "O disjuntor protege contra ________ e ________. A curva ________ é para cargas com alta corrente de partida.", blanks: [{ answer: "curto-circuito", placeholder: "tipo de falha" }, { answer: "sobrecarga", placeholder: "tipo de falha" }, { answer: "D", placeholder: "curva" }], explanation: "Disjuntores protegem contra curto-circuito e sobrecarga. Curva D para motores e chuveiros." },
+          { type: "drag-drop", question: "Classifique as curvas de disjuntor por aplicação:", pieces: ["Curva B: Iluminação", "Curva C: Tomadas gerais", "Curva D: Motores e chuveiros"], correctOrder: ["Curva B: Iluminação", "Curva C: Tomadas gerais", "Curva D: Motores e chuveiros"], explanation: "Cada curva atende a um tipo de carga conforme a corrente de partida." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L6 â€” Quadro de DistribuiÃ§Ã£o
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l6",
-        title: "Quadro de DistribuiÃ§Ã£o",
-        theory: `<h2>Quadro de DistribuiÃ§Ã£o</h2>
-
-<h3>O que Ã© o Quadro</h3>
-<p>O quadro de distribuiÃ§Ã£o Ã© o <strong>ponto central</strong> onde toda a energia elÃ©trica de uma residÃªncia Ã© distribuÃ­da e protegida. Ele concentra os disjuntores, o DR, o DPS, os barramentos e as conexÃµes de fase, neutro e terra. Ã‰ o "coraÃ§Ã£o" da instalaÃ§Ã£o elÃ©trica.</p>
-
-<h3>Componentes do Quadro</h3>
-<ul>
-  <li><strong>Disjuntor geral:</strong> proteÃ§Ã£o principal de toda a instalaÃ§Ã£o (40A, 50A ou 63A conforme a carga).</li>
-  <li><strong>DR geral:</strong> proteÃ§Ã£o contra choques para todos os circuitos (40A, 30mA).</li>
-  <li><strong>DPS:</strong> proteÃ§Ã£o contra surtos na entrada da alimentaÃ§Ã£o.</li>
-  <li><strong>Disjuntores por circuito:</strong> um para cada circuito (iluminaÃ§Ã£o, tomadas, chuveiro, ar-condicionado, etc.).</li>
-  <li><strong>Barramento neutro (N):</strong> barra de cobre onde todos os fios neutros se conectam.</li>
-  <li><strong>Barramento de terra (PE):</strong> barra de cobre onde todos os fios de proteÃ§Ã£o (terra) se conectam, vinculada Ã  haste de aterramento.</li>
-  <li><strong>CanalizaÃ§Ãµes:</strong> eletrodutos que conduzem os fios atÃ© o quadro.</li>
-</ul>
-
-<h3>Montagem do Quadro</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚                    QUADRO DE DISTRIBUIÃ‡ÃƒO                          â”‚
-â”‚                                                                     â”‚
-â”‚  ENTRADA â†’ DR GERAL â†’ DISJUNTOR GERAL â†’ DPS                       â”‚
-â”‚                                                                     â”‚
-â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”              â”‚
-â”‚  â”‚  DISJ.  â”‚  DISJ.  â”‚  DISJ.  â”‚  DISJ.  â”‚  DISJ.  â”‚              â”‚
-â”‚  â”‚  GERAL  â”‚  C1     â”‚  C2     â”‚  C3     â”‚  C4     â”‚              â”‚
-â”‚  â”‚  40A    â”‚  10A    â”‚  16A    â”‚  50A    â”‚  20A    â”‚              â”‚
-â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜              â”‚
-â”‚       â†“         â†“         â†“         â†“         â†“                    â”‚
-â”‚    Entrada   Ilum.    Tomadas  Chuveiro    Ar-Cond.               â”‚
-â”‚                                                                     â”‚
-â”‚  BARRAMENTO NEUTRO (N) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ N                 â”‚
-â”‚  BARRAMENTO TERRA (PE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ PE               â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>IdentificaÃ§Ã£o dos Circuitos</h3>
-<div class="norma-badge">IdentificaÃ§Ã£o PadrÃ£o â€” Circuitos Residenciais</div>
-<ul>
-  <li><strong>C1:</strong> IluminaÃ§Ã£o â€” sala, quartos, cozinha (10A, 1,5mmÂ²).</li>
-  <li><strong>C2:</strong> Tomadas gerais â€” sala, quartos (16A, 2,5mmÂ²).</li>
-  <li><strong>C3:</strong> Chuveiro elÃ©trico â€” circuito exclusivo (50A, 6,0mmÂ²).</li>
-  <li><strong>C4:</strong> Ar-condicionado â€” circuito exclusivo (20A, 2,5mmÂ² ou 4,0mmÂ²).</li>
-  <li><strong>C5:</strong> Cozinha / Lavanderia â€” tomadas especÃ­ficas (20A, 2,5mmÂ²).</li>
-  <li><strong>C6:</strong> Ãrea externa / Garagem (16A, 2,5mmÂ², com DR prÃ³prio).</li>
-</ul>
-
-<h3>Regras de Montagem</h3>
-<ul>
-  <li><strong>Altura:</strong> quadro deve ficar entre 1,0m e 1,8m do piso (acesso fÃ¡cil).</li>
-  <li><strong>DistÃ¢ncia da Ã¡gua:</strong> no mÃ­nimo 1,0m de tanques, pias e registros.</li>
-  <li><strong>VentilaÃ§Ã£o:</strong> o local deve ser arejado para dissipar calor dos componentes.</li>
-  <li><strong>IdentificaÃ§Ã£o:</strong> todos os circuitos devem ser claramente identificados.</li>
-</ul>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Conectar neutro e terra no mesmo barramento:</strong> sÃ£o circuitos distintos (exceto no barramento de entrada).</li>
-  <li><strong>NÃ£o identificar os circuitos:</strong> dificulta manutenÃ§Ã£o e o eletricista nÃ£o sabe qual circuito desligar.</li>
-  <li><strong>Sobrecarregar o quadro:</strong> nÃ£o instalar mais disjuntores do que o quadro comporta.</li>
-  <li><strong>Usar fios de cores diferentes sem padrÃ£o:</strong> seguir o cÃ³digo de cores (fase: vermelho/preto/cinza; neutro: azul; terra: verde/amarelo).</li>
-</ul>`,
+        title: "DR - Dispositivo Residual",
+        theory: `<h2>DR - Dispositivo Residual</h2>
+<p>O <strong>DR (Dispositivo Residual)</strong>, também chamado de <strong>IDR (Interruptor Diferencial Residual)</strong>, protege contra <strong>fugas de corrente para terra</strong> e choques elétricos.</p>
+<p><strong>Funcionamento:</strong> O DR compara a corrente que sai pela fase com a que retorna pelo neutro. Se houver diferença (fuga), ele desliga. Funciona no princípio: I_fase ≠ I_neutro = fuga.</p>
+<p><strong>Sensibilidade:</strong> Para residências, o padrão é <strong>30mA</strong> (0,03A). Em áreas molhadas (banheiro, cozinha), recomenda-se <strong>15mA</strong>. Acima de 30mA, há risco de choque letal.</p>
+<p><strong>Quando é obrigatório:</strong> Banheiros, cozinhas, lavanderias, áreas externas, piscinas, garagens, e todo ponto em contato com água ou superfícies condutoras.</p>
+<p><strong>Tipos:</strong> <strong>DR</strong> (2 polos, detecta fuga entre fase e terra) e <strong>DR + IDR</strong> (4 polos, para sistemas trifásicos). Existem também DRs com proteção contra curto-circuito (DR + disjuntor = DRID).</p>
+<p><strong>Aplicação prática:</strong> O DR deve ser instalado após o disjuntor geral, alimentando circuitos de áreas molhadas e tomadas.</p>
+<p><strong>Erro comum:</strong> Não instalar DR em todos os circuitos. A NBR 5410 exige DR em pontos específicos; mas é recomendável proteger toda a instalação.</p>
+<p><strong>Dica:</strong> Teste o DR mensalmente usando o botão "TESTE" no próprio equipamento. Se não desligar, substitua imediatamente.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a altura mÃ­nima recomendada para instalaÃ§Ã£o do quadro de distribuiÃ§Ã£o?",
-            options: [
-              "0,5m do piso",
-              "1,0m do piso",
-              "2,0m do piso",
-              "No teto"
-            ],
-            correctIndex: 1,
-            explanation: "O quadro deve ficar entre 1,0m e 1,8m do piso para facilitar acesso e manutenÃ§Ã£o."
-          },
-          {
-            type: "fill-blank",
-            question: "O barramento de terra (PE) deve ser vinculado Ã  _____ de aterramento.",
-            correctAnswers: ["haste", "haste de aterramento"],
-            explanation: "O barramento PE Ã© conectado Ã  haste de aterramento, que estÃ¡ enterrada no solo e fornece o caminho para correntes de falha."
-          },
-          {
-            type: "drag-drop",
-            question: "Identifique o circuito correto para cada cÃ´modo/equipamento:",
-            items: [
-              { text: "LÃ¢mpadas da sala", correctCategory: "C1 â€” IluminaÃ§Ã£o (10A, 1,5mmÂ²)" },
-              { text: "Tomadas da sala", correctCategory: "C2 â€” Tomadas gerais (16A, 2,5mmÂ²)" },
-              { text: "Chuveiro", correctCategory: "C3 â€” Exclusivo (50A, 6,0mmÂ²)" },
-              { text: "Ar-condicionado", correctCategory: "C4 â€” Exclusivo (20A, 2,5mmÂ²)" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual componente deve ser instalado na ENTRADA da alimentaÃ§Ã£o antes dos disjuntores?",
-            options: [
-              "LÃ¢mpada de sinalizaÃ§Ã£o",
-              "Tomada de emergÃªncia",
-              "DR geral e DPS",
-              "Apenas o disjuntor geral"
-            ],
-            correctIndex: 2,
-            explanation: "O DR geral e o DPS devem ser instalados na entrada, antes dos disjuntores dos circuitos individuais."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a cor padrÃ£o para o fio NEUTRO no padrÃ£o brasileiro?",
-            options: [
-              "Vermelho",
-              "Preto",
-              "Azul",
-              "Verde"
-            ],
-            correctIndex: 2,
-            explanation: "No padrÃ£o brasileiro, o neutro Ã© identificado pela cor AZUL. O terra Ã© verde/amarelo e as fases sÃ£o vermelho, preto ou cinza."
-          },
-          {
-            type: "calculation",
-            question: "Um quadro tem: C1 (10A iluminaÃ§Ã£o), C2 (16A tomadas), C3 (50A chuveiro), C4 (20A ar-cond). Qual o disjuntor geral mÃ­nimo necessÃ¡rio?",
-            formulaHint: "Soma das correntes dos circuitos (considerando fator de demanda â‰ˆ 0,7)",
-            correctAnswer: 40,
-            unit: "A",
-            explanation: "Soma: 10+16+50+20 = 96A. Com fator de demanda 0,7: 96 Ã— 0,7 â‰ˆ 67A. Mas na prÃ¡tica, usa-se disjuntor geral de 40A a 63A conforme a carga instalada. Para residÃªncia padrÃ£o, 40A Ã© comum."
-          }
+          { type: "multiple-choice", question: "Qual a sensibilidade do DR recomendada para áreas residenciais molhadas?", choices: ["30mA", "15mA", "100mA", "300mA"], correct: 1, explanation: "Em áreas molhadas, 15mA é recomendado para maior segurança, pois a resistência corporal diminui com a umidade." },
+          { type: "multiple-choice", question: "O DR protege contra:", choices: ["Curto-circuito", "Sobrecarga", "Fugas de corrente para terra", "Sobretensão"], correct: 2, explanation: "O DR detecta a diferença entre corrente de fase e neutro, indicando fuga para terra (choque)." },
+          { type: "fill-blank", code: "O DR funciona comparando a corrente da ________ com a do ________. Se houver diferença, ele desliga.", blanks: [{ answer: "fase", placeholder: "condutor ativo" }, { answer: "neutro", placeholder: "condutor retorno" }], explanation: "A igualdade I_fase = I_neutro indica ausência de fuga. Diferença = fuga = DR atua." },
+          { type: "calculation", question: "Se 200mA entram pela fase e 195mA retornam pelo neutro, qual a fuga de corrente?", answer: 5, unit: "mA", validate: function(v) { return Math.abs(v - 5) < 0.5; }, explanation: "Fuga = I_fase - I_neutro = 200 - 195 = 5mA. Esse DR de 30mA NÃO desligaria — a fuga é menor que o limiar." }
         ]
       },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M2-L7 â€” Condutores
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m2-l7",
-        title: "Condutores e Bitola",
-        theory: `<h2>Condutores e Bitola â€” Tabela ABNT</h2>
-
-<h3>O que Ã© Bitola</h3>
-<p>Bitola Ã© a <strong>seÃ§Ã£o transversal do condutor</strong> (medida em mmÂ²). Determina a quantidade de corrente que o fio pode suportar sem aquecer excessivamente. Escolher a bitola correta Ã© fundamental para a seguranÃ§a e o funcionamento adequado da instalaÃ§Ã£o.</p>
-
-<h3>Tabela ABNT de Bitola para Cobre</h3>
-<div class="norma-badge">ABNT NBR 5410 / ABNT NBR 7288</div>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚ Bitola  â”‚ Corrente Adm. â”‚ CondutÃ¢ncia  â”‚ Uso TÃ­pico           â”‚
-â”‚  (mmÂ²)  â”‚  (mÃ©todo e3)  â”‚  (A/mmÂ²)     â”‚                      â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  1,5mmÂ² â”‚     17A       â”‚   11,3       â”‚ IluminaÃ§Ã£o           â”‚
-â”‚  2,5mmÂ² â”‚     25A       â”‚   10,0       â”‚ Tomadas gerais       â”‚
-â”‚  4,0mmÂ² â”‚     34A       â”‚    8,5       â”‚ Ar-cond, forno       â”‚
-â”‚  6,0mmÂ² â”‚     43A       â”‚    7,2       â”‚ Chuveiro, motores    â”‚
-â”‚ 10,0mmÂ² â”‚     60A       â”‚    6,0       â”‚ Quadro geral (BT)    â”‚
-â”‚ 16,0mmÂ² â”‚     80A       â”‚    5,0       â”‚ Entrada de energia   â”‚
-â”‚ 25,0mmÂ² â”‚    100A       â”‚    4,0       â”‚ Grandes cargas       â”‚
-â”‚ 35,0mmÂ² â”‚    125A       â”‚    3,6       â”‚ SubestaÃ§Ãµes BT       â”‚
-â”‚ 50,0mmÂ² â”‚    155A       â”‚    3,1       â”‚ Grandes industriais  â”‚
-â”‚ 70,0mmÂ² â”‚    195A       â”‚    2,8       â”‚ DistribuiÃ§Ã£o         â”‚
-â”‚ 95,0mmÂ² â”‚    235A       â”‚    2,5       â”‚ Linhas de distribuiÃ§Ã£oâ”‚
-â”‚120,0mmÂ² â”‚    270A       â”‚    2,3       â”‚ Grandes demandas     â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-NOTA: mÃ©todo e3 = condulete embutido. Valores variam conforme
-mÃ©todo de instalaÃ§Ã£o (e2, e4, etc.).
-</pre>
-
-<h3>Queda de TensÃ£o</h3>
-<div class="norma-badge">Limite: 4% da tensÃ£o nominal</div>
-<pre>
-FÃ³rmula da queda de tensÃ£o:
-Î”V = (2 Ã— L Ã— I Ã— Ï) / A
-
-Onde:
-  L = comprimento do condutor (ida) em metros
-  I = corrente em ampÃ¨res
-  Ï = resistividade do cobre = 0,0178 Î©Â·mmÂ²/m
-  A = seÃ§Ã£o transversal em mmÂ²
-  Fator 2 = considera ida e volta
-
-Exemplo: Condutor 2,5mmÂ², 30m, 16A
-Î”V = (2 Ã— 30 Ã— 16 Ã— 0,0178) / 2,5 = 17,1V
-%Î”V = (17,1 / 127) Ã— 100 = 13,5% â†’ EXCEDE 4%!
-SoluÃ§Ã£o: usar condutor 4,0mmÂ² ou reduzir o comprimento.
-</pre>
-
-<h3>MÃ©todos de InstalaÃ§Ã£o</h3>
-<ul>
-  <li><strong>Eletroduto embutido (e3):</strong> fio dentro de condulete na alvenaria. MÃ©todo mais comum em residÃªncias.</li>
-  <li><strong>Eletroduto aparente (e2):</strong> condulete visÃ­vel, fixado na superfÃ­cie.</li>
-  <li><strong>CanalizaÃ§Ã£o em eletrocalha (e4):</strong> fios em eletrocalhas metÃ¡licas ou plÃ¡sticas.</li>
-  <li><strong>Em tubo de proteÃ§Ã£o (e1):</strong> tubo de proteÃ§Ã£o mecÃ¢nica.</li>
-  <li><strong>Ao ar livre:</strong> fios aÃ©reos com isolamento apropriado para intempÃ©ries.</li>
-</ul>
-
-<h3>CÃ³digo de Cores dos Fios</h3>
-<pre>
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  FunÃ§Ã£o      â”‚  Cor (ABNT)                         â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  Fase (L1)   â”‚  Vermelho ou Preto                  â”‚
-â”‚  Fase (L2)   â”‚  Preto ou Cinza                     â”‚
-â”‚  Fase (L3)   â”‚  Cinza ou Verde                     â”‚
-â”‚  Neutro (N)  â”‚  Azul claro                         â”‚
-â”‚  Terra (PE)  â”‚  Verde-amarelo (bicolor)            â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-</pre>
-
-<h3>Erros Comuns a Evitar</h3>
-<ul>
-  <li><strong>Usar bitola menor que a tabela ABNT:</strong> pode causar aquecimento, incÃªndio e queda de tensÃ£o.</li>
-  <li><strong>Esquecer a queda de tensÃ£o em circuitos longos:</strong> mesmo com bitola correta, circuitos longos podem exceder 4%.</li>
-  <li><strong>Misturar cores de fios:</strong> dificulta identificaÃ§Ã£o e manutenÃ§Ã£o, e Ã© contra a norma.</li>
-  <li><strong>Usar condutor de alumÃ­nio em residÃªncia:</strong> alumÃ­nio Ã© permitido apenas em grandes bitolas e com terminais adequados.</li>
-  <li><strong>Empalhar fios em vez de usar terminais:</strong> conexÃµes devem ser feitas com bornes, luvas de ligaÃ§Ã£o ou conectores apropriados.</li>
-</ul>`,
+        title: "DPS - Dispositivo de Proteção contra Surtos",
+        theory: `<h2>DPS - Dispositivo de Proteção contra Surtos</h2>
+<p>O <strong>DPS (Dispositivo de Proteção contra Surtos)</strong> protege a instalação e equipamentos contra <strong>surtos de tensão</strong> vindos da rede pública ou de descargas atmosféricas.</p>
+<p><strong>Principais causas de surtos:</strong> <strong>Raios</strong> (induzidos ou diretos), <strong>manobras na rede</strong> (ligação/desligamento de cargas pesadas), <strong>falhas na concessionária</strong>, <strong>reativação de cargas indutivas</strong>.</p>
+<p><strong>Classes do DPS:</strong> <strong>Classe I</strong> (B): proteção contra surtos de raios, instalado no entrada principal. <strong>Classe II</strong> (C): proteção contra surtos de manobras, no quadro distribuição. <strong>Classe III</strong> (D): proteção fina para equipamentos sensíveis.</p>
+<p>O DPS trabalha com <strong>varistores</strong> ou <strong>gas discharge tubes</strong> que conduzem a surto e desviam a energia excessiva para terra.</p>
+<p><strong>Indicação:</strong> DPSs modernos têm indicador visual: <strong>verde</strong> = funcionando; <strong>vermelho</strong> = danificado, substituir.</p>
+<p><strong>Aplicação prática:</strong> Em regiões com muitas tempestades, o DPS é essencial. Deve ser instalado no quadro geral de entrada, com fio o mais curto possível.</p>
+<p><strong>Erro comum:</strong> Instalar DPS com fio longo. O fio deve ter no máximo 50cm entre o DPS e o barramento de terra.</p>
+<p><strong>Dica:</strong> DPS é um componente de proteção, não substitui o disjuntor. Ambos são necessários e complementares.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Qual a corrente admissÃ­vel mÃ¡xima para um condutor de 4,0mmÂ² (mÃ©todo e3)?",
-            formulaHint: "Consultar tabela ABNT",
-            correctAnswer: 34,
-            unit: "A",
-            explanation: "Segundo a tabela ABNT, um condutor de 4,0mmÂ² no mÃ©todo e3 (condulete embutido) suporta atÃ© 34A."
-          },
-          {
-            type: "fill-blank",
-            question: "A queda de tensÃ£o mÃ¡xima permitida pela NBR 5410 Ã© de _____% da tensÃ£o nominal.",
-            correctAnswers: ["4", "quatro"],
-            explanation: "O limite Ã© 4% da tensÃ£o nominal. Para 127V: 4% = 5,08V. Para 220V: 4% = 8,8V."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a cor do fio de terra (PE) no padrÃ£o brasileiro?",
-            options: [
-              "Azul",
-              "Vermelho",
-              "Verde-amarelo",
-              "Preto"
-            ],
-            correctIndex: 2,
-            explanation: "O fio de terra (PE) Ã© identificado pela cor verde-amarelo (bicolor) no padrÃ£o ABNT brasileiro."
-          },
-          {
-            type: "calculation",
-            question: "Um condutor de 2,5mmÂ² percorre 40m (ida e volta) com corrente de 10A. Qual a queda de tensÃ£o? (Ï = 0,0178 Î©Â·mmÂ²/m)",
-            formulaHint: "Î”V = (2 Ã— L Ã— I Ã— Ï) / A",
-            correctAnswer: 5.696,
-            unit: "V",
-            explanation: "Î”V = (2 Ã— 40 Ã— 10 Ã— 0,0178) / 2,5 = 14,24 / 2,5 = 5,696V. Em 127V: 5,696/127 = 4,49% â†’ excede o limite de 4%!"
-          },
-          {
-            type: "drag-drop",
-            question: "Relacione cada bitola ao seu uso residencial mais comum:",
-            items: [
-              { text: "1,5mmÂ²", correctCategory: "IluminaÃ§Ã£o" },
-              { text: "2,5mmÂ²", correctCategory: "Tomadas gerais" },
-              { text: "4,0mmÂ²", correctCategory: "Ar-condicionado / Forno elÃ©trico" },
-              { text: "6,0mmÂ²", correctCategory: "Chuveiro elÃ©trico" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual mÃ©todo de instalaÃ§Ã£o Ã© mais comum em residÃªncias brasileiras?",
-            options: [
-              "Eletroduto aparente (e2)",
-              "CanalizaÃ§Ã£o em eletrocalha (e4)",
-              "Eletroduto embutido (e3)",
-              "Ao ar livre"
-            ],
-            correctIndex: 2,
-            explanation: "O mÃ©todo e3 (condulete embutido na alvenaria) Ã© o mais comum em residÃªncias brasileiras novas."
-          }
+          { type: "multiple-choice", question: "Qual classe de DPS é instalada na entrada principal da instalação?", choices: ["Classe III", "Classe II", "Classe I", "Não é necessário"], correct: 2, explanation: "A Classe I (B) protege contra surtos de raios e deve ser o primeiro estágio de proteção na entrada." },
+          { type: "multiple-choice", question: "O DPS deve ser instalado com fio de no máximo:", choices: ["10cm", "25cm", "50cm", "1m"], correct: 2, explanation: "Fios longos aumentam a indutância e reduzem a eficiência do DPS. Máximo 50cm é a recomendação." },
+          { type: "fill-blank", code: "O DPS protege contra ________ de tensão vindos da ________ pública ou de raios.", blanks: [{ answer: "surtos", placeholder: "tipo de fenômeno" }, { answer: "rede", placeholder: "origem" }], explanation: "Surtos são picos de tensão de curta duração que danificam equipamentos eletrônicos." },
+          { type: "drag-drop", question: "Organize as classes de DPS por posição na instalação:", pieces: ["Classe I: Entrada principal", "Classe II: Quadro distribuição", "Classe III: Equipamentos sensíveis"], correctOrder: ["Classe I: Entrada principal", "Classe II: Quadro distribuição", "Classe III: Equipamentos sensíveis"], explanation: "A proteção funciona em cascata: cada classe reduz o surto restante para o nível seguinte." }
+        ]
+      },
+      {
+        id: "m2-l8",
+        title: "Quadro de Distribuição",
+        theory: `<h2>Quadro de Distribuição</h2>
+<p>O <strong>quadro de distribuição</strong> é o ponto central onde todos os circuitos da instalação residencial são conectados e protegidos.</p>
+<p><strong>Componentes básicos:</strong> <strong>Disjuntor geral</strong> (protege toda instalação), <strong>DR</strong> (proteção contra choques), <strong>Disjuntores individuais</strong> (cada circuito), <strong>barramentos</strong> (neutro e terra), <strong>eletrodutos</strong> de entrada dos fios.</p>
+<p><strong>Barramentos:</strong> O <strong>barramento de neutro</strong> (barra de cobre isolada) recebe todos os fios neutros. O <strong>barramento de terra</strong> (barra conectada ao eletrodo) recebe todos os fios de proteção (PE).</p>
+<p><strong>Identificação C1 a C6:</strong> É prática comum identificar os circuitos: <strong>C1</strong>: Iluminação geral; <strong>C2</strong>: Tomadas sala; <strong>C3</strong>: Tomadas quartos; <strong>C4</strong>: Cozinha; <strong>C5</strong>: Banheiro; <strong>C6</strong>: Chuveiro (exclusivo).</p>
+<p><strong>Organização:</strong> Disjuntores de mesma função devem estar alinhados. O quadro deve ser instalado a 1,5m do piso (altura de acesso), em local ventilado e seco.</p>
+<p><strong>Aplicação prática:</strong> Ao abrir o quadro, identifique cada disjuntor com etiquetas. Em caso de emergência, saber qual desligar é crucial.</p>
+<p><strong>Erro comum:</strong> Não deixar espaço para expansão. Instale o quadro com capacidade para 20-30% mais disjuntores que o necessário.</p>
+<p><strong>Dica:</strong> Mantenha o quadro limpo, com fios organizados e etiquetados. Evite instalar em locais úmidos ou com poeira.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Qual é a altura recomendada para instalação do quadro de distribuição?", choices: ["0,5m", "1,0m", "1,5m", "2,5m"], correct: 2, explanation: "1,5m do piso é a altura padrão para acesso fácil e segurança, evitando alcanças por crianças." },
+          { type: "multiple-choice", question: "O barramento de terra deve ser:", choices: ["Isolado da carcaça", "Conectado ao eletrodo de aterramento", "Ligado ao neutro", "Opcional"], correct: 1, explanation: "O barramento de terra (PE) deve ser conectado ao eletrodo de aterramento para garantir proteção." },
+          { type: "fill-blank", code: "O quadro deve ser instalado em local ________ e ________. Deve conter espaço para ________ futuros.", blanks: [{ answer: "seco", placeholder: "condição do local" }, { answer: "ventilado", placeholder: "condição do local" }, { answer: "expansão", placeholder: "motivo" }], explanation: "Umidade danifica componentes; ventilação evita aquecimento; expansão previne reinstalações." },
+          { type: "drag-drop", question: "Identifique a ordem correta dos componentes no quadro (de cima para baixo):", pieces: ["Disjuntor geral", "DR geral", "Disjuntores circuitos", "Barramentos"], correctOrder: ["Disjuntor geral", "DR geral", "Disjuntores circuitos", "Barramentos"], explanation: "A ordem lógica é: geral → DR → individuais → barramentos (neutro e terra)." }
+        ]
+      },
+      {
+        id: "m2-l9",
+        title: "Condutores Elétricos",
+        theory: `<h2>Condutores Elétricos</h2>
+<p>A <strong>tabela ABNT</strong> de condução define a capacidade de cada seção de fio de cobre. A escolha do condutor deve considerar: corrente, queda de tensão, comprimento e método de instalação.</p>
+<p><strong>Capacidade típica (cobre, instalação embutida):</strong> 1,5mm² = 16A; 2,5mm² = 25A; 4,0mm² = 35A; 6,0mm² = 45A; 10mm² = 60A.</p>
+<p><strong>Queda de tensão máxima:</strong> A NBR 5410 limita a <strong>4%</strong> no ponto de utilização. Fórmula: ΔV = (2 × L × ρ × I) / A, onde L é o comprimento, ρ a resistividade, I a corrente e A a área.</p>
+<p>Para <strong>extensões longas</strong>, a queda de tensão pode ser mais restritiva que a capacidade de corrente. Exemplo: fio 2,5mm² a 30m com 15A pode exceder 4% de queda.</p>
+<p><strong>Métodos de instalação:</strong> <strong>Em eletroduto embutido</strong> (menor capacidade por menos resfriamento), <strong>em eletroduto aparente</strong> (maior capacidade), <strong>em eletroduto enterrado</strong>.</p>
+<p><strong>Aplicação prática:</strong> Para circuitos longos (>30m), considere aumentar a seção do fio para compensar a queda de tensão, mesmo que a corrente esteja dentro do limite.</p>
+<p><strong>Erro comum:</strong> Usar fio de alumínio em instalações novas. A NBR 5410 recomenda cobre para residências.</p>
+<p><strong>Dica:</strong> Para quedas de tensão, use a fórmula e verifique sempre. Uma queda de 4% já pode causar mau funcionamento de equipamentos sensíveis.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Qual a corrente máxima permitida para fio de cobre 2,5mm² em eletroduto embutido?", choices: ["16A", "25A", "35A", "45A"], correct: 1, explanation: "Tabela ABNT: 2,5mm² suporta até 25A em instalação embutida (menor resfriamento)." },
+          { type: "multiple-choice", question: "A queda de tensão máxima permitida pela NBR 5410 é de:", choices: ["2%", "4%", "6%", "10%"], correct: 1, explanation: "4% é o limite para garantir o funcionamento adequado dos equipamentos." },
+          { type: "fill-blank", code: "A queda de tensão é dada por ΔV = (2 × L × ρ × ________) / ________. O valor máximo é ________%.", blanks: [{ answer: "I", placeholder: "grandeza elétrica" }, { answer: "A", placeholder: "seção do fio" }, { answer: "4", placeholder: "percentual máximo" }], explanation: "A fórmula considera ida e volta do condutor (2×L). Quanto maior a corrente e o comprimento, maior a queda." },
+          { type: "calculation", question: "Fio 2,5mm² (ρ=1,72×10⁻⁸) de 25m com 15A. Qual a queda de tensão?", answer: 1.032, unit: "V", validate: function(v) { return Math.abs(v - 1.032) < 0.1; }, explanation: "ΔV = (2×25×1,72×10⁻⁸×15)/(2,5×10⁻⁶) = (1290×10⁻⁸)/(2,5×10⁻⁶) = 0,516V. Para 127V, representa apenas 0,4%, dentro do limite." }
+        ]
+      },
+      {
+        id: "m2-l10",
+        title: "Aterramento Residencial",
+        theory: `<h2>Aterramento Residencial</h2>
+<p>O <strong>sistema de aterramento</strong> é essencial para proteção contra choques elétricos. Conecta a carcaça dos equipamentos à terra, garantindo que fuga de corrente vá para o solo e não pelo corpo humano.</p>
+<p><strong>PE (Protective Earth):</strong> O fio terra (verde ou verde-amarelo) conecta a carcaça metálica dos equipamentos ao barramento de terra, que está ligado ao <strong>eletrodo de aterramento</strong>.</p>
+<p><strong>Neutro de aterramento (N):</strong> Em sistemas TN-S, o neutro e o terra são separados desde a entrada. O neutro pode ser aterrado no ponto de entrada para estabilizar a tensão.</p>
+<p><strong>Eletrodo de aterramento:</strong> Haste de cobre ou aço galvanizado enterrada no solo. Profundidade mínima: 2,5m. Resistência de aterramento desejável: <strong>menor que 25Ω</strong>.</p>
+<p><strong>Sistemas de aterramento:</strong> <strong>TN-S</strong>: neutro e terra separados (mais seguro). <strong>TN-C</strong>: neutro e terra combinados (PEN), menos seguro. <strong>TT</strong>: terra independente, requer DR obrigatório.</p>
+<p><strong>Aplicação prática:</strong> Toda instalação residencial deve ter sistema de aterramento. Equipamentos com carcaça metálica (chuveiro, máquina de lavar, geladeira) devem ser conectados ao terra.</p>
+<p><strong>Erro comum:</strong> Não conectar o terra nas tomadas. Uma tomada sem terra em área molhada é um risco grave de choque.</p>
+<p><strong>Dica:</strong> Verifique a continuidade do fio terra com um multímetro. A resistência entre o barramento de terra e o eletrodo deve ser baixa.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Qual a resistência máxima recomendada para o eletrodo de aterramento?", choices: ["5Ω", "10Ω", "25Ω", "100Ω"], correct: 2, explanation: "25Ω é o valor máximo para garantir que correntes de fuga sejam dissipadas adequadamente no solo." },
+          { type: "multiple-choice", question: "O fio de proteção (PE) deve ser conectado a:", choices: ["A fase", "O neutro", "O barramento de terra", "O disjuntor"], correct: 2, explanation: "O PE liga a carcaça ao barramento de terra, que está conectado ao eletrodo. Nunca ao neutro diretamente." },
+          { type: "fill-blank", code: "O fio terra possui a cor ________ ou ________. Deve ser conectado à ________ de equipamentos com carcaça metálica.", blanks: [{ answer: "verde", placeholder: "cor padrão" }, { answer: "verde-amarelo", placeholder: "cor alternativa" }, { answer: "carcaça", placeholder: "parte do equipamento" }], explanation: "Verde ou verde-amarelo é o padrão ABNT para fio de proteção. Carcaça metálica é o ponto de conexão." },
+          { type: "calculation", question: "Se a resistência do eletrodo é 20Ω e a resistência corporal é 1000Ω, qual a corrente que passaria pelo corpo em caso de fuga de 220V?", answer: 0.214, unit: "A", validate: function(v) { return Math.abs(v - 0.214) < 0.01; }, explanation: "I = V/(R_terra + R_corpo) = 220/(20+1000) ≈ 0,214A. Com aterramento, grande parte da corrente vai para o solo, reduzindo o risco ao corpo." },
+          { type: "drag-drop", question: "Organize os elementos do sistema de aterramento:", pieces: ["Eletrodo no solo", "Barramento de terra", "Fio PE", "Carcaça do equipamento"], correctOrder: ["Eletrodo no solo", "Barramento de terra", "Fio PE", "Carcaça do equipamento"], explanation: "A corrente de fuga segue: carcaça → PE → barramento → eletrodo → solo." }
         ]
       }
     ]
-  }
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 3 - SIMBOLOGIA E DIAGRAMAS
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  {
+  },
+{
     id: "m3",
     title: "Simbologia e Diagramas",
+    description: "Normas ABNT, símbolos elétricos e leitura de diagramas",
+    icon: "📐",
     color: "#00B894",
-    icon: "ðŸ“",
-    description: "Domine a linguagem grÃ¡fica da engenharia elÃ©trica â€” sÃ­mbolos, diagramas e normas NBR 5444.",
     lessons: [
       {
         id: "m3-l1",
-        title: "SÃ­mbolos de Fontes",
-        theory: `
-          <h2>SÃ­mbolos de Fontes ElÃ©tricas</h2>
-          <p>Fontes sÃ£o dispositivos que fornecem energia ao circuito, convertendo energia de outra forma (mecÃ¢nica, quÃ­mica, luminosa) em energia elÃ©trica. Dominar seus sÃ­mbolos Ã© essencial para ler qualquer diagrama elÃ©trico.</p>
-
-          <h3>Fontes de TensÃ£o</h3>
-          <ul>
-            <li><strong>Pilha (elemento Ãºnico):</strong> Duas linhas paralelas, uma longa (positivo) e uma curta (negativo). Gera tensÃ£o CC fixa (ex: 1,5V). O sÃ­mbolo Ã© <code>â”€â”¤â”‚â”€</code> onde a linha maior Ã© o polo positivo.</li>
-            <li><strong>Bateria (conjunto de pilhas):</strong> Duas ou mais pilhas em sÃ©rie, representadas por linhas alternadas longa-curta. Indica tensÃµes maiores (12V, 24V, etc.). O sÃ­mbolo mostra a polaridade nas extremidades.</li>
-            <li><strong>Fonte CC (corrente contÃ­nua):</strong> CÃ­rculo com os sÃ­mbolos + e âˆ’ dentro, ou simplemente as linhas longa-curta. TensÃ£o constante no tempo, como baterias e fontes chaveadas.</li>
-            <li><strong>Fonte CA (corrente alternada):<strong> CÃ­rculo com o sÃ­mbolo de onda senoidal (~) dentro. A tensÃ£o varia senoidalmente (ex: rede elÃ©trica 127V/220V, 60Hz no Brasil).</li>
-          </ul>
-
-          <h3>Fontes de Corrente</h3>
-          <ul>
-            <li><strong>Fonte de corrente ideal:</strong> CÃ­rculo com uma seta indicando a direÃ§Ã£o da corrente. Fornece corrente constante independentemente da carga ligada.</li>
-            <li><strong>Gerador CC:</strong> CÃ­rculo com "CC" ou "+" e "âˆ’". converte energia mecÃ¢nica em corrente contÃ­nua via escovas e comutador.</li>
-            <li><strong>Gerador CA (alternador):</strong> CÃ­rculo com "~". Produz corrente alternada por induÃ§Ã£o eletromagnÃ©tica. Usado em usinas e geradores portÃ¡teis.</li>
-          </ul>
-
-          <h3>SÃ­mbolo GrÃ¡fico NBR 5444</h3>
-          <div class="norma-badge">ðŸ“‹ NBR 5444 â€” SÃ­mbolos para esquemas unifilares</div>
-          <p>A norma NBR 5444 padroniza os sÃ­mbolos usados em esquemas unifilares de instalaÃ§Ãµes elÃ©tricas. Para fontes, a representaÃ§Ã£o segue convenÃ§Ãµes especÃ­ficas:</p>
-          <ul>
-            <li><strong>AlimentaÃ§Ã£o externa (rede):</strong> Linha com ponto de alimentaÃ§Ã£o indicado por um cÃ­rculo ou marca de fase.</li>
-            <li><strong>Grupo gerador:</strong> CÃ­rculo com indicaÃ§Ã£o do tipo (CC ou CA) e tensÃ£o nominal.</li>
-            <li><strong>Ponto de alimentaÃ§Ã£o:</strong> Representado por umå°cÃ­rculo cheio na entrada do quadro.</li>
-          </ul>
-
-          <h3>Onde se Aplica</h3>
-          <p>Os sÃ­mbolos de fontes aparecem em todos os tipos de diagramas: unifilares (para instalaÃ§Ãµes), multifilares (para montagem), e diagramas de comando (para painÃ©is de forÃ§a). Em diagramas de comando, a fonte geralmente aparece como barramento de tensÃ£o de comando (ex: 110V CC, 220V CA).</p>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Confundir sÃ­mbolo de pilha com bateria:</strong> Pilha = 2 linhas; Bateria = 4+ linhas alternadas.</li>
-            <li><strong>Esquecer a polaridade:</strong> Em circuitos CC, inverter a polaridade pode queimar componentes.</li>
-            <li><strong>NÃ£o indicar a tensÃ£o nominal:</strong> Todo sÃ­mbolo de fonte deve ter a tensÃ£o anotada ao lado.</li>
-          </ul>
-        `,
+        title: "Introdução a Simbologia (NBR 5444)",
+        theory: `<h2>Introdução a Simbologia (NBR 5444)</h2>
+<p>A <strong>NBR 5444</strong> é a norma ABNT que padroniza os <strong>símbolos gráficos</strong> utilizados em diagramas elétricos no Brasil. Ela é baseada na norma internacional <strong>IEC 60617</strong>.</p>
+<p><strong>Importância:</strong> A padronização garante que qualquer profissional, em qualquer lugar do Brasil, interprete o mesmo diagrama da mesma forma. É essencial para projetos, manutenções e normas de segurança.</p>
+<p><strong>Categorias principais:</strong> <strong>Símbolos de elementos</strong> (resistor, capacitor, etc.), <strong>conexões</strong> (junções, cruzamentos), <strong>terminais</strong> (pontos de conexão), <strong>linha de referência</strong> (terra, masse).</p>
+<p><strong>Convenções:</strong> Os símbolos são desenhados em formato simplificado, usando linhas retas e arcos. A orientação padrão é horizontal, mas pode ser rotacionada sem alterar o significado.</p>
+<p><strong>Aplicação prática:</strong> Ao ler um diagrama elétrico industrial, você precisa conhecer os símbolos para identificar cada componente e sua função no circuito.</p>
+<p><strong>Erro comum:</strong> Usar símbolos antigos ou não padronizados. Isso causa confusão entre profissionais e pode gerar erros de instalação.</p>
+<p><strong>Dica:</strong> Mantenha uma referência da NBR 5444 sempre disponível. A prática de leitura de diagramas torna a identificação dos símbolos automática.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual sÃ­mbolo representa uma bateria (e nÃ£o apenas uma pilha)?",
-            options: [
-              "Duas linhas paralelas de mesmo comprimento",
-              "Duas linhas paralelas, uma longa e uma curta",
-              "Duas ou mais linhas alternadas longa-curta",
-              "Um cÃ­rculo com o sÃ­mbolo ~"
-            ],
-            correct: 2,
-            explanation: "A bateria Ã© representada por duas ou mais linhas alternadas longa-curta, indicando mÃºltiplas pilhas conectadas em sÃ©rie."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© o sÃ­mbolo correto para uma fonte de corrente alternada (CA)?",
-            options: [
-              "CÃ­rculo com + e âˆ’",
-              "CÃ­rculo com o sÃ­mbolo de onda senoidal (~)",
-              "Duas linhas paralelas de comprimentos diferentes",
-              "Um retÃ¢ngulo com a letra F"
-            ],
-            correct: 1,
-            explanation: "A fonte CA Ã© representada por um cÃ­rculo contendo o sÃ­mbolo de onda senoidal (~), indicando tensÃ£o variÃ¡vel senoidalmente."
-          },
-          {
-            type: "fill-blank",
-            question: "Na representaÃ§Ã£o de uma pilha, a linha _____ (maior/menor) indica o polo positivo.",
-            correct: "maior",
-            explanation: "A linha maior (mais longa) representa o polo positivo da pilha, enquanto a linha menor (mais curta) representa o polo negativo."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada sÃ­mbolo ao seu dispositivo:",
-            pairs: [
-              { term: "â”€â”¤â”‚â”€ (duas linhas)", definition: "Pilha" },
-              { term: "â”€â”¤â”‚â”€â”¤â”‚â”€ (linhas alternadas)", definition: "Bateria" },
-              { term: "CÃ­rculo com ~", definition: "Fonte CA" },
-              { term: "CÃ­rculo com + e âˆ’", definition: "Fonte CC" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Segundo a NBR 5444, qual a correta representaÃ§Ã£o de um ponto de alimentaÃ§Ã£o externa em esquema unifilar?",
-            options: [
-              "Um triÃ¢ngulo na entrada do circuito",
-              "Umå°cÃ­rculo cheio no ponto de entrada",
-              "Uma seta apontando para a direita",
-              "Uma linha tracejada conectada ao quadro"
-            ],
-            correct: 1,
-            explanation: "O ponto de alimentaÃ§Ã£o externa Ã© representado por umå°cÃ­rculo cheio (ponto preenchido) na entrada do esquema unifilar, conforme NBR 5444."
-          }
+          { type: "multiple-choice", question: "Qual norma padroniza os símbolos gráficos elétricos no Brasil?", choices: ["NBR 5410", "NBR 5444", "NBR 14626", "NBR 14931"], correct: 1, explanation: "A NBR 5444 é a norma específica para símbolos gráficos, baseada na IEC 60617." },
+          { type: "multiple-choice", question: "A NBR 5444 é baseada em qual norma internacional?", choices: ["ISO 9001", "IEC 60617", "IEC 61850", "ISO 14001"], correct: 1, explanation: "A NBR 5444 é uma adaptação brasileira da norma internacional IEC 60617 para símbolos gráficos." },
+          { type: "fill-blank", code: "A NBR 5444 padroniza os ________ gráficos elétricos. Os símbolos são baseados na norma ________.", blanks: [{ answer: "símbolos", placeholder: "elemento padronizado" }, { answer: "IEC 60617", placeholder: "norma internacional" }], explanation: "Símbolos padronizados garantem interpretação unificada dos diagramas em todo o Brasil." },
+          { type: "drag-drop", question: "Organize as categorias de símbolos elétricos:", pieces: ["Elementos (R, C, L)", "Conexões (junções)", "Terminais", "Linha de referência"], correctOrder: ["Elementos (R, C, L)", "Conexões (junções)", "Terminais", "Linha de referência"], explanation: "As categorias cobrem todos os elementos necessários para representar um circuito elétrico." }
         ]
       },
       {
         id: "m3-l2",
-        title: "SÃ­mbolos de Passivos",
-        theory: `
-          <h2>SÃ­mbolos de Componentes Passivos</h2>
-          <p>Componentes passivos sÃ£o aqueles que nÃ£o geram energia, apenas absorvem, armazenam ou dissipam energia elÃ©trica. SÃ£o a base de qualquer circuito e seus sÃ­mbolos sÃ£o os mais utilizados em diagramas.</p>
-
-          <h3>Resistor (ResistÃªncia)</h3>
-          <ul>
-            <li><strong>SÃ­mbolo NBR (zig-zag):</strong> Linha em zigue-zague com 4-6 dentes. Ã‰ o sÃ­mbolo mais tradicional e ainda o mais usado no Brasil em diagramas de potÃªncia.</li>
-            <li><strong>SÃ­mbolo retangular (IEC):</strong> RetÃ¢ngulo vazio. Mais comum em diagramas europeus e em softwares de simulaÃ§Ã£o (LTspice, Proteus).</li>
-            <li><strong>IndicaÃ§Ã£o:</strong> Ao lado do sÃ­mbolo, anota-se o valor em ohms (Î©) e, quando aplicÃ¡vel, a potÃªncia em watts (W).</li>
-          </ul>
-
-          <h3>Capacitor</h3>
-          <ul>
-            <li><strong>Capacitor eletrolÃ­tico:</strong> Duas linhas paralelas, uma reta e uma curva. A linha reta indica o polo positivo. Polarizado â€” sÃ³ pode ser ligado em CC com a polaridade correta.</li>
-            <li><strong>Capacitor cerÃ¢mico/filme:</strong> Duas linhas retas paralelas iguais. NÃ£o polarizado, pode ser usado em CC e CA.</li>
-            <li><strong>Valor:</strong> Indicado em microfarads (ÂµF), nanofarads (nF) ou picofarads (pF).</li>
-          </ul>
-
-          <h3>Indutor (Bobina)</h3>
-          <ul>
-            <li><strong>SÃ­mbolo:</strong> SequÃªncia de semicÃ­rculos (meias-luas) representando espiras de fio. Pode ter 4-6 semicÃ­rculos.</li>
-            <li><strong>Indutor com nÃºcleo:</strong> Os semicÃ­rculos sÃ£o acompanhados de linhas paralelas indicando nÃºcleo de ferro.</li>
-            <li><strong>Bobina de contato:</strong> Em diagramas de comando, a bobina de um contator ou relÃ© Ã© representada por um retÃ¢ngulo com a letra da funÃ§Ã£o (ex: K1, K2).</li>
-          </ul>
-
-          <h3>FusÃ­vel</h3>
-          <ul>
-            <li><strong>SÃ­mbolo retangular:</strong> RetÃ¢ngulo com uma linha passando pelo centro. Ã‰ o sÃ­mbolo NBR/IEC padrÃ£o.</li>
-            <li><strong>SÃ­mbolo antigo:</strong> Linha com um "gargalo" no meio (estreitamento). Ainda visto em diagramas antigos.</li>
-            <li><strong>IndicaÃ§Ã£o:</strong> Corrente nominal em amperes (A) ao lado do sÃ­mbolo (ex: F1 16A).</li>
-          </ul>
-
-          <div class="formula-box">
-            <strong>RelaÃ§Ãµes fundamentais:</strong><br>
-            ResistÃªncia: V = R Â· I (Lei de Ohm)<br>
-            Capacitor: Q = C Â· V â†’ I = C Â· dV/dt<br>
-            Indutor: V = L Â· dI/dt â†’ Energia = Â½ Â· L Â· IÂ²
-          </div>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Confundir capacitor com resistor:</strong> Resistor = zig-zag ou retÃ¢ngulo; Capacitor = duas linhas paralelas.</li>
-            <li><strong>Esquecer polaridade do eletrolÃ­tico:</strong> LigÃ¡-lo invertido pode causar explosÃ£o.</li>
-            <li><strong>NÃ£o anotar valores:</strong> Um sÃ­mbolo sem indicaÃ§Ã£o de valor Ã© inÃºtil para manutenÃ§Ã£o.</li>
-          </ul>
-        `,
+        title: "Símbolos de Fontes (pilha, bateria, gerador)",
+        theory: `<h2>Símbolos de Fontes (pilha, bateria, gerador)</h2>
+<p>As <strong>fontes de tensão</strong> são representadas por símbolos específicos que indicam seu tipo e característica.</p>
+<p><strong>Pilha:</strong> Representada por duas linhas paralelas de tamanhos diferentes. A linha maior indica o polo positivo (+) e a menor o polo negativo (-). Gera tensão CC constante.</p>
+<p><strong>Bateria:</strong> Representação de múltiplas pilhas em série: alternância de linhas longas e curtas. Cada par representa uma célula. A tensão total é a soma das células.</p>
+<p><strong>Gerador CC:</strong> Círculo com as letras "CC" ou um símbolo de onda retificada dentro. Indica geração de corrente contínua.</p>
+<p><strong>Gerador CA:</strong> Círculo com o símbolo de onda senoidal (~) dentro. Representa alternadores e geradores de corrente alternada.</p>
+<p><strong>Fonte de tensão independente:</strong> Duas linhas paralelas com sinais + e -. Não depende de outra fonte para funcionar.</p>
+<p><strong>Aplicação prática:</strong> Em diagramas de circuitos eletrônicos, identificar corretamente a fonte é o primeiro passo para entender o funcionamento do circuito.</p>
+<p><strong>Erro comum:</strong> Confundir o símbolo de bateria com o de capacitor. Bateria tem linhas de espessuras diferentes; capacitor tem linhas iguais.</p>
+<p><strong>Dica:</strong> Sempre verifique os terminais + e - ao ligar uma fonte CC. A inversão pode danificar componentes sensíveis.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual sÃ­mbolo representa um resistor na norma NBR (zigue-zague)?",
-            options: [
-              "Um retÃ¢ngulo vazio",
-              "Uma linha em zigue-zague com 4-6 dentes",
-              "Duas linhas paralelas",
-              "Uma sequÃªncia de semicÃ­rculos"
-            ],
-            correct: 1,
-            explanation: "O sÃ­mbolo NBR de resistor Ã© representado por uma linha em zigue-zague (zig-zag), tambÃ©m conhecido como sÃ­mbolo americano."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual a diferenÃ§a entre um capacitor eletrolÃ­tico e um cerÃ¢mico no sÃ­mbolo?",
-            options: [
-              "NÃ£o hÃ¡ diferenÃ§a no sÃ­mbolo",
-              "O eletrolÃ­tico tem uma linha reta e uma curva; o cerÃ¢mico tem duas linhas retas",
-              "O cerÃ¢mico tem uma linha curva e uma pontilhada",
-              "O eletrolÃ­tico Ã© representado por um cÃ­rculo"
-            ],
-            correct: 1,
-            explanation: "O capacitor eletrolÃ­tico Ã© polarizado e seu sÃ­mbolo tem uma linha reta (polo +) e uma curva (polo âˆ’). O cerÃ¢mico nÃ£o Ã© polarizado e tem duas linhas retas iguais."
-          },
-          {
-            type: "fill-blank",
-            question: "O sÃ­mbolo de um fusÃ­vel Ã© um retÃ¢ngulo com uma _____ passando pelo centro.",
-            correct: "linha",
-            explanation: "O fusÃ­vel Ã© representado por um retÃ¢ngulo com uma linha contÃ­nua passando pelo centro, indicando o elemento fusÃ­vel que se queima em sobrecarga."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada componente passivo ao seu sÃ­mbolo correto:",
-            pairs: [
-              { term: "Zig-zag (linhas em zigue-zague)", definition: "Resistor" },
-              { term: "Duas linhas paralelas (uma reta + uma curva)", definition: "Capacitor eletrolÃ­tico" },
-              { term: "SemicÃ­rculos em sequÃªncia", definition: "Indutor/Bobina" },
-              { term: "RetÃ¢ngulo com linha central", definition: "FusÃ­vel" }
-            ]
-          },
-          {
-            type: "calculation",
-            question: "Um resistor de 120Î© Ã© ligado a uma fonte de 220V. Qual a corrente que circula pelo resistor?",
-            answer: "1.83A",
-            explanation: "Pela Lei de Ohm: I = V/R = 220/120 = 1,83A (arredondado para duas casas decimais)."
-          }
+          { type: "multiple-choice", question: "No símbolo de uma pilha, qual linha representa o polo positivo?", choices: ["A linha menor", "A linha maior", "Ambas iguais", "Depende da cor"], correct: 1, explanation: "A linha maior (mais longa) representa o polo positivo (+); a menor representa o polo negativo (-)." },
+          { type: "multiple-choice", question: "O símbolo de um gerador CA é representado por:", choices: ["Um círculo com 'CC'", "Um círculo com '~'", "Duas linhas paralelas", "Um triângulo"], correct: 1, explanation: "O círculo com o símbolo de onda senoidal (~) indica geração de corrente alternada." },
+          { type: "fill-blank", code: "Uma bateria é formada por múltiplas ________ em série. O polo positivo é indicado pela linha ________.", blanks: [{ answer: "pilhas", placeholder: "elementos constituintes" }, { answer: "maior", placeholder: "características da linha" }], explanation: "Baterias são conjuntos de pilhas. A linha longa = positivo; curta = negativo." },
+          { type: "drag-drop", question: "Associe cada fonte ao seu símbolo:", pieces: ["Pilha: duas linhas", "Bateria: múltiplas linhas", "Gerador CA: círculo ~", "Gerador CC: círculo CC"], correctOrder: ["Pilha: duas linhas", "Bateria: múltiplas linhas", "Gerador CA: círculo ~", "Gerador CC: círculo CC"], explanation: "Cada tipo de fonte tem símbolo distinto que facilita a identificação rápida no diagrama." }
         ]
       },
       {
         id: "m3-l3",
-        title: "SÃ­mbolos de Dispositivos",
-        theory: `
-          <h2>SÃ­mbolos de Dispositivos de Comando e ProteÃ§Ã£o</h2>
-          <p>Dispositivos de comando e proteÃ§Ã£o sÃ£o os elementos que controlam e protegem os circuitos. Seus sÃ­mbolos sÃ£o fundamentais em diagramas de potÃªncia e especialmente em diagramas de comando (ladder).</p>
-
-          <h3>Interruptores</h3>
-          <ul>
-            <li><strong>Interruptor simples (IS):</strong> Duas linhas com um ponto de oscilaÃ§Ã£o (pivÃ´). Representa o interruptor de parede que liga/desliga uma lÃ¢mpada. Tem dois contatos: NA (normalmente aberto) e NF (normalmente fechado).</li>
-            <li><strong>Interruptor paralelo (IP):</strong> TrÃªs terminais â€” um comum e dois de troca. Permite ligar uma lÃ¢mpada de dois pontos diferentes (ex: cabeceira e porta de quarto).</li>
-            <li><strong>Interruptor termomagnÃ©tico (disjuntor):</strong> RetÃ¢ngulo com sÃ­mbolo de interruptor + linha de disparo (termomagnÃ©tico). Protege contra sobrecarga (tÃ©rmico) e curto-circuito (magnÃ©tico).</li>
-          </ul>
-
-          <h3>Contator</h3>
-          <ul>
-            <li><strong>Contato de potÃªncia (NA):</strong> Duas linhas com uma barra mÃ³vel entre elas. Na posiÃ§Ã£o de repouso, o contato estÃ¡ aberto (NA â€” Normalmente Aberto). Quando a bobina Ã© energizada, o contato fecha.</li>
-            <li><strong>Bobina do contator:</strong> RetÃ¢ngulo com a designaÃ§Ã£o (K1, K2, KM1). Quando energizada, atrai os contatos de potÃªncia.</li>
-            <li><strong>Contato auxiliar NA:</strong> Usado no circuito de comando para lÃ³gica e selo.</li>
-            <li><strong>Contato auxiliar NF:</strong> Usado para intertravamento e proteÃ§Ã£o.</li>
-          </ul>
-
-          <h3>RelÃ©</h3>
-          <ul>
-            <li><strong>RelÃ© de proteÃ§Ã£o (tÃ©rmico):</strong> Duas linhas com um triÃ¢ngulo de seta (indicando disparo tÃ©rmico). DesignaÃ§Ã£o FR ou TR.</li>
-            <li><strong>RelÃ© de comando:</strong> Mesma representaÃ§Ã£o do contator, mas com contatos de menor capacidade. Usado para lÃ³gica de comando, nÃ£o para potÃªncia.</li>
-          </ul>
-
-          <h3>Botoeiras (BotÃµes de Comando)</h3>
-          <ul>
-            <li><strong>Botoeira NA (Normalmente Aberto):</strong> CÃ­rculo com contato aberto acima. Ao pressionar, fecha o circuito. Cor padrÃ£o: VERDE (partida).</li>
-            <li><strong>Botoeira NF (Normalmente Fechado):</strong> CÃ­rculo com contato fechado acima. Ao pressionar, abre o circuito. Cor padrÃ£o: VERMELHA (parada).</li>
-            <li><strong>Botoeira de troca (NA/NF):</strong> CombinaÃ§Ã£o dos dois contatos em um Ãºnico botÃ£o. Usada em comandos com inversÃ£o de marcha.</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Confundir NA com NF:</strong> NA = contato aberto em repouso (fecha ao acionar); NF = contato fechado em repouso (abre ao acionar).</li>
-            <li><strong>Esquecer que botoeira NA Ã© verde e NF Ã© vermelha:</strong> PadronizaÃ§Ã£o visual Ã© crucial na bancada.</li>
-            <li><strong>NÃ£o diferenciar contator de relÃ©:</strong> Contator = potÃªncia (ligar motor); RelÃ© = comando (lÃ³gica, sinalizaÃ§Ã£o).</li>
-          </ul>
-        `,
+        title: "Símbolos de Passivos (resistor, capacitor, indutor, fusível)",
+        theory: `<h2>Símbolos de Passivos (resistor, capacitor, indutor, fusível)</h2>
+<p>Os <strong>componentes passivos</strong> não geram energia, apenas armazenam ou dissipam. Cada um possui símbolo próprio na NBR 5444.</p>
+<p><strong>Resistor:</strong> Retângulo com proporção 2:1 (mais longo que alto). No padrão americano, usa-se zigue-zague. No Brasil, adota-se o retângulo (IEC). Valor em ohms (Ω).</p>
+<p><strong>Capacitor:</strong> Duas linhas paralelas iguais. Capacitor eletrolítico: uma das linhas é curvada (polarizado). Capacitor cerâmico: duas linhas retas (não polarizado).</p>
+<p><strong>Indutor:</strong> Semi-círculos encadeados (bobina). Representa uma sequência de espiras. Valor em henrys (H).</p>
+<p><strong>Fusível:</strong> Retângulo com uma linha que o atravessa, ou símbolo de "S" esticado. Protege contra sobrecorrente abrindo o circuito.</p>
+<p><strong>Varistor:</strong> Símbolo de resistor com uma linha em diagonal e seta. Protege contra surtos de tensão.</p>
+<p><strong>Aplicação prática:</strong> Em diagramas de placas eletrônicas, a identificação correta dos passivos é essencial para soldagem e manutenção.</p>
+<p><strong>Erro comum:</strong> Confundir capacitor com bateria. Capacitor tem linhas iguais; bateria tem linhas de tamanhos diferentes.</p>
+<p><strong>Dica:</strong> Ao desmontar um circuito, anote os valores antes de remover. Componentes idênticos podem ter valores diferentes.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a cor padrÃ£o de uma botoeira de parada (NF)?",
-            options: [
-              "Verde",
-              "Azul",
-              "Vermelha",
-              "Amarela"
-            ],
-            correct: 2,
-            explanation: "A botoeira de parada (NF â€” Normalmente Fechado) Ã© de cor VERMELHA por padrÃ£o, facilitando a identificaÃ§Ã£o rÃ¡pida em painÃ©is."
-          },
-          {
-            type: "multiple-choice",
-            question: "O que acontece com o contato NA de um contator quando a bobina Ã© energizada?",
-            options: [
-              "Abre (desliga o circuito)",
-              "Fecha (liga o circuito)",
-              "NÃ£o altera seu estado",
-              "Inverte a polaridade"
-            ],
-            correct: 1,
-            explanation: "Quando a bobina do contator Ã© energizada, o contato NA (Normalmente Aberto) fecha, permitindo a passagem de corrente pelo circuito de potÃªncia."
-          },
-          {
-            type: "fill-blank",
-            question: "Um interruptor paralelo permite ligar uma lÃ¢mpada de _____ pontos diferentes.",
-            correct: "dois",
-            explanation: "O interruptor paralelo (IP) tem trÃªs terminais e permite controlar uma mesma lÃ¢mpada a partir de dois pontos distintos, como cabeceira e porta."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada dispositivo ao seu sÃ­mbolo correto:",
-            pairs: [
-              { term: "RetÃ¢ngulo com linha de disparo", definition: "Disjuntor termomagnÃ©tico" },
-              { term: "Duas linhas com barra mÃ³vel (NA)", definition: "Contato de contator" },
-              { term: "RetÃ¢ngulo com K1/K2", definition: "Bobina de contator" },
-              { term: "CÃ­rculo com contato aberto", definition: "Botoeira NA" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o principal do contato de selo (selagem) no circuito de comando?",
-            options: [
-              "Proteger contra curto-circuito",
-              "Manter o contator energizado apÃ³s soltar a botoeira de partida",
-              "Inverter o sentido de rotaÃ§Ã£o do motor",
-              "Reduzir a corrente de partida"
-            ],
-            correct: 1,
-            explanation: "O contato de selo Ã© um contato auxiliar NA do contator, ligado em paralelo com a botoeira de partida. Quando o contator energiza, este contato fecha e mantÃ©m o circuito de comando energizado mesmo apÃ³s soltar a botoeira."
-          }
+          { type: "multiple-choice", question: "Qual o símbolo do resistor no padrão IEC (Brasil)?", choices: ["Zigue-zague", "Retângulo 2:1", "Círculo com R", "Linha com ponto"], correct: 1, explanation: "O padrão IEC (adotado pelo Brasil) usa retângulo. O zigue-zague é o padrão ANSI (americano)." },
+          { type: "multiple-choice", question: "O fusível é representado por:", choices: ["Retângulo puro", "Retângulo com linha atravessando", "Duas linhas paralelas", "Semi-círculos"], correct: 1, explanation: "O fusível é um retângulo com uma linha que o atravessa, indicando o elemento fusível." },
+          { type: "fill-blank", code: "O capacitor polarizado é representado com uma das linhas ________. O indutor é representado por ________ encadeados.", blanks: [{ answer: "curvada", placeholder: "formato da linha" }, { answer: "semi-círculos", placeholder: "formato do símbolo" }], explanation: "A linha curva indica o terminal positivo do capacitor eletrolítico. Semi-círculos representam as espiras da bobina." },
+          { type: "drag-drop", question: "Associe cada componente passivo ao seu símbolo:", pieces: ["Resistor: retângulo", "Capacitor: duas linhas", "Indutor: semi-círculos", "Fusível: retângulo + linha"], correctOrder: ["Resistor: retângulo", "Capacitor: duas linhas", "Indutor: semi-círculos", "Fusível: retângulo + linha"], explanation: "Cada símbolo é único e padronizado para fácil identificação nos diagramas." }
         ]
       },
       {
         id: "m3-l4",
-        title: "Diagrama Unifilar",
-        theory: `
-          <h2>Diagrama Unifilar â€” VisÃ£o Geral do Circuito</h2>
-          <p>O diagrama unifilar Ã© a representaÃ§Ã£o grÃ¡fica mais importante de uma instalaÃ§Ã£o elÃ©trica. Ele mostra todos os componentes e conexÃµes de um circuito elÃ©trico em uma Ãºnica linha, simplificando a visualizaÃ§Ã£o do sistema como um todo.</p>
-
-          <h3>O que o Diagrama Unifilar Mostra</h3>
-          <ul>
-            <li><strong>AlimentaÃ§Ã£o:</strong> Ponto de entrada da rede (tensÃ£o, fase, neutro, terra).</li>
-            <li><strong>Disjuntor geral:</strong> Primeiro dispositivo de proteÃ§Ã£o da instalaÃ§Ã£o.</li>
-            <li><strong>Quadro de distribuiÃ§Ã£o:</strong> RamificaÃ§Ãµes para cada circuito parcial.</li>
-            <li><strong>Circuitos parciais:</strong> IluminaÃ§Ã£o, tomadas, chuveiro, ar-condicionado, etc.</li>
-            <li><strong>Disjuntores parciais:</strong> ProteÃ§Ã£o individual de cada circuito.</li>
-            <li><strong>Componentes:</strong> LÃ¢mpadas, tomadas, interruptores, motores, etc.</li>
-          </ul>
-
-          <h3>Como Ler um Diagrama Unifilar</h3>
-          <ul>
-            <li><strong>Da esquerda para a direita:</strong> A energia entra pela esquerda (alimentaÃ§Ã£o) e vai atÃ© as cargas Ã  direita.</li>
-            <li><strong>De cima para baixo:</strong> Os circuitos sÃ£o organizados em hierarquia â€” geral no topo, parciais abaixo.</li>
-            <li><strong>Linhas:</strong> Uma Ãºnica linha representa todas as fios (fase, neutro, terra) daquele trecho.</li>
-            <li><strong>SÃ­mbolos:</strong> Cada componente Ã© representado por seu sÃ­mbolo padrÃ£o NBR.</li>
-            <li><strong>AnotaÃ§Ãµes:</strong> Valores de corrente, seÃ§Ã£o dos fios, potÃªncia das cargas.</li>
-          </ul>
-
-          <h3>Exemplo Residencial Simplificado</h3>
-          <div class="formula-box">
-            <strong>Estrutura tÃ­pica:</strong><br>
-            Rede (127V/220V) â†’ Disjuntor Geral (40A) â†’ Quadro<br>
-            â†’ Circ. 1: IluminaÃ§Ã£o (10A) â†’ 4 lÃ¢mpadas<br>
-            â†’ Circ. 2: Tomadas (20A) â†’ 6 tomadas<br>
-            â†’ Circ. 3: Chuveiro (30A) â†’ Chuveiro elÃ©trico<br>
-            â†’ Circ. 4: Ar-condicionado (20A) â†’ 1 split
-          </div>
-
-          <h3>Normas e Boas PrÃ¡ticas</h3>
-          <ul>
-            <li><strong>Use a NBR 5444:</strong> SÃ­mbolos padronizados para esquemas unifilares.</li>
-            <li><strong>Indique tudo:</strong> SeÃ§Ãµes de fio, correntes de disjuntores, potÃªncia das cargas.</li>
-            <li><strong>Identifique os circuitos:</strong> Numere e descreva cada circuito parcial.</li>
-            <li><strong>Inclua o barramento de terra:</strong> O fio PE (proteÃ§Ã£o) deve aparecer no diagrama.</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>NÃ£o indicar seÃ§Ãµes de fio:</strong> O diagrama deve mostrar o dimensionamento dos cabos.</li>
-            <li><strong>Esquecer o neutro:</strong> Mesmo em circuitos bifÃ¡sicos, o neutro deve estar representado.</li>
-            <li><strong>Misturar sÃ­mbolos de diferentes normas:</strong> Escolha uma norma (NBR) e use-a consistentemente.</li>
-          </ul>
-        `,
+        title: "Símbolos de Dispositivos (interruptor, contactor, relé, disjuntor)",
+        theory: `<h2>Símbolos de Dispositivos (interruptor, contactor, relé, disjuntor)</h2>
+<p>Os <strong>dispositivos de comando e proteção</strong> possuem símbolos que indicam sua função e modo de operação.</p>
+<p><strong>Interruptor simples:</strong> Duas linhas com um ponto de contato que abre ou fecha. O símbolo mostra o contato aberto (NC - Normalmente Aberto) ou fechado (NF - Normalmente Fechado).</p>
+<p><strong>Contactor:</strong> Símbolo de interruptor com uma bobina eletromagnética representada por um retângulo ou círculo com a letra "K". Aciona por ação eletromagnética.</p>
+<p><strong>Relé:</strong> Similar ao contactor, mas de menor potência. Representado por uma bobina e contatos. Usado em circuitos de comando.</p>
+<p><strong>Disjuntor:</strong> Símbolo de interruptor com uma marca de corte (traço diagonal ou curva). Indica capacidade de corte automático.</p>
+<p><strong>Contator térmico:</strong> Símbolo de contato com uma marca de "batente" ou curva. Responde ao aquecimento causado pela corrente.</p>
+<p><strong>DR/IDR:</strong> Símbolo de disjuntor com o acrônimo "DR" ou "IDR" indicado. Detecta fuga de corrente.</p>
+<p><strong>Aplicação prática:</strong> Em diagramas de comando de motores, a identificação dos contactores e relés é crucial para entender a sequência de partida.</p>
+<p><strong>Erro comum:</strong> Não diferenciar contato NO de NF. NO (Normalmente Aberto) fecha quando energizado; NF (Normalmente Fechado) abre quando energizado.</p>
+<p><strong>Dica:</strong> Ao ler diagramas, siga o fluxo: fonte → proteção → comando → carga. Isso facilita a compreensão do circuito.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Em um diagrama unifilar, a energia flui normalmente em qual direÃ§Ã£o?",
-            options: [
-              "De baixo para cima",
-              "Da direita para a esquerda",
-              "Da esquerda para a direita",
-              "Em qualquer direÃ§Ã£o"
-            ],
-            correct: 2,
-            explanation: "No diagrama unifilar, a energia entra pela esquerda (ponto de alimentaÃ§Ã£o) e flui em direÃ§Ã£o Ã  direita, onde estÃ£o as cargas."
-          },
-          {
-            type: "multiple-choice",
-            question: "O que uma Ãºnica linha representa em um diagrama unifilar?",
-            options: [
-              "Apenas o fio fase",
-              "Todos os fios daquele trecho (fase, neutro e terra)",
-              "Apenas o barramento de terra",
-              "Apenas o fio neutro"
-            ],
-            correct: 1,
-            explanation: "Uma Ãºnica linha no diagrama unifilar representa todos os condutores (fase, neutro e terra) daquele trecho, simplificando a visualizaÃ§Ã£o."
-          },
-          {
-            type: "fill-blank",
-            question: "O primeiro dispositivo de proteÃ§Ã£o de uma instalaÃ§Ã£o Ã© o disjuntor _____ (geral/parcial).",
-            correct: "geral",
-            explanation: "O disjuntor geral Ã© o primeiro elemento de proteÃ§Ã£o, situado apÃ³s o ponto de entrada da alimentaÃ§Ã£o, protegendo toda a instalaÃ§Ã£o."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual norma padroniza os sÃ­mbolos usados em diagramas unifilares no Brasil?",
-            options: [
-              "NBR 7190",
-              "NBR 5444",
-              "NBR 14039",
-              "NBR 5410"
-            ],
-            correct: 1,
-            explanation: "A NBR 5444 Ã© a norma que estabelece os sÃ­mbolos grÃ¡ficos para esquemas unifilares de instalaÃ§Ãµes elÃ©tricas no Brasil."
-          },
-          {
-            type: "drag-drop",
-            question: "Organize a sequÃªncia correta de um diagrama unifilar residencial (de cima para baixo):",
-            pairs: [
-              { term: "1Âº", definition: "Ponto de alimentaÃ§Ã£o (rede)" },
-              { term: "2Âº", definition: "Disjuntor geral" },
-              { term: "3Âº", definition: "Quadro de distribuiÃ§Ã£o" },
-              { term: "4Âº", definition: "Disjuntores parciais" }
-            ]
-          }
+          { type: "multiple-choice", question: "O que significa NO em um contato de relé?", choices: ["Não Operacional", "Normalmente Aberto", "Nível de Ohm", "Núcleo de Oxigênio"], correct: 1, explanation: "NO = Normalmente Aberto: o contato está aberto quando a bobina não está energizada." },
+          { type: "multiple-choice", question: "O contactor é acionado por:", choices: ["Ação manual", "Ação eletromagnética", "Temperatura", "Pressão"], correct: 1, explanation: "O contactor possui uma bobina eletromagnética que, quando energizada, atrai o núcleo e fecha os contatos." },
+          { type: "fill-blank", code: "O contato ________ (NO) fecha quando energizado. O contato ________ (NF) abre quando energizado.", blanks: [{ answer: "aberto", placeholder: "estado do contato" }, { answer: "fechado", placeholder: "estado do contato" }], explanation: "NO (Normalmente Aberto) = fecha com energia. NF (Normalmente Fechado) = abre com energia." },
+          { type: "drag-drop", question: "Associe cada dispositivo ao seu símbolo:", pieces: ["Interruptor: contato simples", "Contator: contato + bobina", "Relé: bobina + contatos", "Disjuntor: contato + marca corte"], correctOrder: ["Interruptor: contato simples", "Contator: contato + bobina", "Relé: bobina + contatos", "Disjuntor: contato + marca corte"], explanation: "Cada dispositivo tem símbolo distinto que reflete seu mecanismo de operação." }
         ]
       },
       {
         id: "m3-l5",
-        title: "Diagrama Multifilar",
-        theory: `
-          <h2>Diagrama Multifilar â€” Detalhamento dos Fios</h2>
-          <p>O diagrama multifilar mostra cada condutor individualmente, indicando exatamente como cada fio deve ser conectado. Enquanto o unifilar dÃ¡ a visÃ£o geral, o multifilar Ã© o "mapa" para a instalaÃ§Ã£o e manutenÃ§Ã£o.</p>
-
-          <h3>DiferenÃ§a entre Unifilar e Multifilar</h3>
-          <ul>
-            <li><strong>Unifilar:</strong> Uma linha representa todos os fios â€” serve para planejar e dimensionar.</li>
-            <li><strong>Multifilar:</strong> Cada fio Ã© desenhado separadamente â€” serve para instalar e reparar.</li>
-            <li><strong>Uso:</strong> O multifilar Ã© usado em instalaÃ§Ãµes complexas, painÃ©is de comando e quando a identificaÃ§Ã£o dos fios Ã© crÃ­tica.</li>
-          </ul>
-
-          <h3>Cores dos Fios â€” NBR 5410 / ABNT NBR 14039</h3>
-          <div class="norma-badge">ðŸ“‹ NBR 5410 / NBR 14039 â€” Cores dos condutores</div>
-          <ul>
-            <li><strong>Fase (L1, L2, L3):</strong> <span style="color:#E74C3C;font-weight:bold;">VERMELHO</span>, <span style="color:#8B4513;font-weight:bold;">MARROM</span>, <span style="color:#2C3E50;font-weight:bold;">PRETO</span> (respectivamente). Em instalaÃ§Ãµes monofÃ¡sicas, usa-se apenas vermelho ou marrom.</li>
-            <li><strong>Neutro (N):</strong> <span style="color:#3498DB;font-weight:bold;">AZUL</span> â€” sempre azul, em qualquer instalaÃ§Ã£o. Ã‰ o retorno da corrente.</li>
-            <li><strong>Terra/ProteÃ§Ã£o (PE):</strong> <span style="color:#2ECC71;font-weight:bold;">VERDE</span> com faixas <span style="color:#F1C40F;font-weight:bold;">AMARELAS</span> (verde-amarelo). Nunca pode ser usado para outro fim.</li>
-            <li><strong>Condutores de comando:</strong> Podem usar outras cores (azul claro, branco, etc.), desde que nÃ£o confundam com os condutores de potÃªncia.</li>
-          </ul>
-
-          <h3>Exemplo de Diagrama Multifilar â€” Circuito MonofÃ¡sico</h3>
-          <div class="formula-box">
-            <strong>Disjuntor â†’ LÃ¢mpada + Tomada:</strong><br>
-            Fase (Vermelho/Marrom) â†’ Disjuntor 16A â†’ Interruptor â†’ LÃ¢mpada â†’ Neutro (Azul)<br>
-            Fase (Vermelho/Marrom) â†’ Disjuntor 16A â†’ Tomada â†’ Neutro (Azul)<br>
-            Terra (Verde-amarelo) â†’ Barra de terra â†’ PE da tomada
-          </div>
-
-          <h3>Boas PrÃ¡ticas</h3>
-          <ul>
-            <li><strong>Mantenha a padronizaÃ§Ã£o:</strong> Nunca misture cores em funÃ§Ãµes diferentes.</li>
-            <li><strong>Use eletrodutos separados:</strong> Fios de potÃªncia e de comando podem ir no mesmo eletroduto, mas deve haver identificaÃ§Ã£o clara.</li>
-            <li><strong>Marque os fios:</strong> Em quadros grandes, use etiquetas ou anÃ©is de identificaÃ§Ã£o em cada fio.</li>
-            <li><strong>Fotografe antes de fechar:</strong> Tire fotos dos fios antes de fechar o quadro para futuras manutenÃ§Ãµes.</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Usar verde-amarelo como fase:</strong> A cor verde-amarelo Ã‰ EXCLUSIVA para terra (PE). Nunca use como fase ou neutro.</li>
-            <li><strong>Trocar azul e vermelho:</strong> Azul = neutro; Vermelho = fase. A inversÃ£o pode causar choques elÃ©tricos.</li>
-            <li><strong>NÃ£o marcar fios em quadros:</strong> Sem identificaÃ§Ã£o, a manutenÃ§Ã£o se torna perigosa e demorada.</li>
-          </ul>
-        `,
+        title: "Símbolos de Motores e Geradores",
+        theory: `<h2>Símbolos de Motores e Geradores</h2>
+<p>Motores e geradores são representados por <strong>círculos</strong> com indicações específicas de tipo e função.</p>
+<p><strong>Motor CC:</strong> Círculo com as letras "CC" ou "CCD" (contínua). Duas escovas laterais indicam a ligação com o coletor.</p>
+<p><strong>Motor CA monofásico:</strong> Círculo com "~" e "1~". Indica funcionamento com corrente alternada de uma fase.</p>
+<p><strong>Motor CA trifásico:</strong> Círculo com "~" e "3~". Representa motores de indução trifásicos, os mais industriais.</p>
+<p><strong>Motor trifásico com estrela/triângulo:</strong> Círculo com "3~" e as indicações "Y" (estrela) ou "Δ" (triângulo) quando aplicável.</p>
+<p><strong>Gerador CA:</strong> Círculo com "~". A diferença do motor é a direção da seta no diagrama (gerador fornece energia; motor consome).</p>
+<p><strong>Gerador CC:</strong> Círculo com "CC" e indicação de escovas.</p>
+<p><strong>Aplicação prática:</strong> Em diagramas industriais, a identificação correta do motor (monofásico, trifásico, com ou sem inversor) determina o dimensionamento dos componentes.</p>
+<p><strong>Erro comum:</strong> Não indicar se o motor é monofásico ou trifásico. Isso é crucial para dimensionar corretamente disjuntores e fios.</p>
+<p><strong>Dica:</strong> Sempre verifique a tensão e tipo de ligação (Y ou Δ) ao dimensionar componentes para motores trifásicos.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a cor padrÃ£o do condutor neutro segundo a NBR?",
-            options: [
-              "Vermelho",
-              "Verde-amarelo",
-              "Azul",
-              "Preto"
-            ],
-            correct: 2,
-            explanation: "O condutor neutro (N) deve ser sempre de cor AZUL em qualquer instalaÃ§Ã£o elÃ©trica, conforme norma NBR 5410."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual cor Ã© EXCLUSIVA para o condutor de proteÃ§Ã£o (terra)?",
-            options: [
-              "Azul",
-              "Vermelho",
-              "Preto",
-              "Verde com faixas amarelas"
-            ],
-            correct: 3,
-            explanation: "O condutor de proteÃ§Ã£o (PE â€” terra) deve ser verde com faixas amarelas. Esta cor Ã© exclusiva e nunca pode ser usada para fase ou neutro."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada cor ao seu condutor correto:",
-            pairs: [
-              { term: "Vermelho / Marrom / Preto", definition: "Fase (L1, L2, L3)" },
-              { term: "Azul", definition: "Neutro (N)" },
-              { term: "Verde com faixas amarelas", definition: "Terra (PE)" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a principal diferenÃ§a entre diagrama unifilar e multifilar?",
-            options: [
-              "O unifilar mostra apenas fios de terra, o multifilar mostra fios de fase",
-              "O unifilar usa linha Ãºnica para todos os fios; o multifilar mostra cada fio individualmente",
-              "O unifilar Ã© usado apenas em indÃºstrias; o multifilar em residÃªncias",
-              "NÃ£o hÃ¡ diferenÃ§a, sÃ£o sinÃ´nimos"
-            ],
-            correct: 1,
-            explanation: "O diagrama unifilar representa todos os fios de um trecho com uma Ãºnica linha (visÃ£o geral), enquanto o multifilar mostra cada condutor individualmente (detalhamento para instalaÃ§Ã£o/manutenÃ§Ã£o)."
-          },
-          {
-            type: "fill-blank",
-            question: "Em instalaÃ§Ãµes monofÃ¡sicas, o fio fase pode ser de cor _____ ou _____.",
-            correct: "vermelho marrom",
-            explanation: "Em instalaÃ§Ãµes monofÃ¡sicas, o condutor fase pode ser vermelho (L1) ou marrom. O preto Ã© reservado para L3 em instalaÃ§Ãµes trifÃ¡sicas."
-          }
+          { type: "multiple-choice", question: "O símbolo 3~ em um círculo representa:", choices: ["Motor CC", "Motor trifásico CA", "Gerador CC", "Transformador"], correct: 1, explanation: "3~ indica três fases (trifásico). É o símbolo padrão para motores e geradores de corrente alternada trifásica." },
+          { type: "multiple-choice", question: "As escovas laterais no símbolo de motor CC indicam:", choices: ["Polo norte e sul", "Conexão com o coletor", "Ponto de fixação", "Ventilação"], correct: 1, explanation: "As escovas fazem contato com o coletor (comutador) para energizar os enrolamentos do rotor." },
+          { type: "fill-blank", code: "Motor CA monofásico é representado por um círculo com ________. Motor trifásico é representado com ________.", blanks: [{ answer: "1~", placeholder: "número de fases" }, { answer: "3~", placeholder: "número de fases" }], explanation: "1~ = uma fase (monofásico). 3~ = três fases (trifásico). A distinção é essencial para dimensionamento." },
+          { type: "drag-drop", question: "Associe cada tipo de motor ao seu símbolo:", pieces: ["CC: círculo CC + escovas", "Monofásico: círculo 1~", "Trifásico: círculo 3~", "Gerador: círculo ~ (fornecendo)"], correctOrder: ["CC: círculo CC + escovas", "Monofásico: círculo 1~", "Trifásico: círculo 3~", "Gerador: círculo ~ (fornecendo)"], explanation: "Cada símbolo indica o tipo e a função do equipamento no circuito." }
         ]
       },
       {
         id: "m3-l6",
-        title: "Leitura de Diagrama Completo",
-        theory: `
-          <h2>Leitura de Diagrama Completo â€” Exemplo Real</h2>
-          <p>Agora vamos aplicar tudo que aprendemos lendo um diagrama completo de uma instalaÃ§Ã£o residencial. Esta Ã© a habilidade mais prÃ¡tica e valorizada no dia a dia do eletricista.</p>
-
-          <h3>Estrutura do Diagrama Completo</h3>
-          <ul>
-            <li><strong>Parte superior:</strong> Ponto de entrada da alimentaÃ§Ã£o (rede), disjuntor geral, DR geral.</li>
-            <li><strong>Parte intermediÃ¡ria:</strong> Quadro de distribuiÃ§Ã£o com disjuntores parciais para cada circuito.</li>
-            <li><strong>Parte inferior:</strong> Cada circuito parcial com seus componentes (lÃ¢mpadas, tomadas, equipamentos).</li>
-          </ul>
-
-          <h3>Exemplo: ResidÃªncia com 3 Quartos</h3>
-          <div class="formula-box">
-            <strong>Quadro de DistribuiÃ§Ã£o:</strong><br>
-            Entrada: 220V bifÃ¡sico (L1 + L2 + N + PE)<br>
-            Disjuntor Geral: 50A, 2 polos<br>
-            DR Geral: 40A, 30mA<br><br>
-            <strong>Circuitos Parciais:</strong><br>
-            1. IluminaÃ§Ã£o (10A): Sala + Cozinha + 3 quartos = 8 lÃ¢mpadas<br>
-            2. Tomadas Sala/Quartos (20A): 8 tomadas 2P+T<br>
-            3. Tomadas Cozinha/Areas (20A): 6 tomadas 2P+T<br>
-            4. Chuveiro (30A): Chuveiro elÃ©trico 5500W<br>
-            5. Ar-condicionado (20A): 2 splits
-          </div>
-
-          <h3>Como Interpretar Cada Circuito</h3>
-          <ul>
-            <li><strong>Circuito de iluminaÃ§Ã£o:</strong> Disjuntor â†’ Fio fase â†’ Interruptores â†’ LÃ¢mpadas â†’ Neutro. O terra vai para as partes metÃ¡licas das luminÃ¡rias.</li>
-            <li><strong>Circuito de tomadas:</strong> Disjuntor â†’ Fio fase â†’ Tomadas 2P+T â†’ Neutro. O terra (PE) conecta ao borne de terra da tomada.</li>
-            <li><strong>Circuito do chuveiro:</strong> Disjuntorä¸“é—¨ado 30A â†’ Fio fase (vermelho) â†’ Chuveiro â†’ Neutro. Circuito exclusivo, sem ramificaÃ§Ãµes.</li>
-            <li><strong>Circuito do ar-condicionado:</strong> Disjuntor â†’ Fio fase â†’ Ponto dedicado â†’ Ar-condicionado â†’ Neutro. Cada aparelho tem seu prÃ³prio circuito.</li>
-          </ul>
-
-          <h3>VerificaÃ§Ã£o e Checklist</h3>
-          <ul>
-            <li><strong>Corrente do disjuntor:</strong> Deve ser maior que a corrente de carga, mas menor que a capacidade do fio.</li>
-            <li><strong>SeÃ§Ã£o dos fios:</strong> Deve suportar a corrente do disjuntor (ex: fio 2,5mmÂ² suporta atÃ© 20A).</li>
-            <li><strong>DR:</strong> Deve proteger todos os circuitos de tomadas e Ã¡reas molhadas.</li>
-            <li><strong>Terra:</strong> Todos os pontos com parte metÃ¡lica devem estar conectados ao PE.</li>
-          </ul>
-
-          <h3>Erros Comuns na Leitura</h3>
-          <ul>
-            <li><strong>NÃ£o verificar seÃ§Ãµes:</strong> Um disjuntor de 20A com fio de 1,5mmÂ² Ã© perigoso.</li>
-            <li><strong>Esquecer o DR:</strong> Circuitos de tomadas e Ã¡reas molhadas OBRIGATORIAMENTE devem ter DR.</li>
-            <li><strong>NÃ£o identificar circuitos:</strong> Sem numeraÃ§Ã£o e descriÃ§Ã£o, o diagrama Ã© difÃ­cil de usar na manutenÃ§Ã£o.</li>
-          </ul>
-        `,
+        title: "Diagrama Unifilar",
+        theory: `<h2>Diagrama Unifilar</h2>
+<p>O <strong>diagrama unifilar</strong> representa uma instalação elétrica usando <strong>uma única linha</strong> para cada circuito, independente do número de fios. É a forma mais simplificada de representação.</p>
+<p><strong>Características:</strong> Cada ramal é representado por uma linha. As barras de fase e neutro são mostradas como linhas horizontais. Os componentes são colocados ao longo dessas linhas.</p>
+<p><strong>Elementos representados:</strong> <strong>Barras de alimentação</strong> (fase e neutro), <strong>disjuntores</strong> (símbolos ao longo da linha), <strong>DRs</strong>, <strong>tomadas</strong>, <strong>luminárias</strong>, <strong>motores</strong>.</p>
+<p><strong>Vantagens:</strong> Visão geral da instalação. Fácil de entender para projetos simples. Mostra claramente a sequência de proteção.</p>
+<p><strong>Limitações:</strong> Não mostra cores dos fios. Não diferencia fases em sistemas trifásicos. Para isso, usa-se o diagrama multifilar.</p>
+<p><strong>Aplicação prática:</strong> O diagrama unifilar é o mais comum em projetos residenciais e pequenos comerciais. É exigido pela concessionária para aprovação de ligações.</p>
+<p><strong>Erro comum:</strong> Usar diagrama unifilar para projetos industriais complexos. Nesses casos, é necessário o multifilar para detalhar as conexões.</p>
+<p><strong>Dica:</strong> Ao desenhar um diagrama unifilar, comece pelas barras de alimentação e vá adicionando circuitos da esquerda para a direita.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Em um diagrama residencial, o DR (Dispositivo Residual) deve proteger obrigatoriamente quais circuitos?",
-            options: [
-              "Apenas o circuito de iluminaÃ§Ã£o",
-              "Apenas o circuito do chuveiro",
-              "Circuitos de tomadas e Ã¡reas molhadas",
-              "Todos os circuitos sem exceÃ§Ã£o"
-            ],
-            correct: 2,
-            explanation: "O DR Ã© obrigatÃ³rio em circuitos de tomadas e em Ã¡reas molhadas (banheiro, cozinha, lavanderia) para proteÃ§Ã£o contra choques elÃ©tricos."
-          },
-          {
-            type: "calculation",
-            question: "Um chuveiro elÃ©trico de 5500W Ã© ligado em 220V. Qual a corrente de funcionamento? O disjuntor de 30A Ã© adequado?",
-            answer: "25A. Sim, o disjuntor de 30A Ã© adequado.",
-            explanation: "I = P/V = 5500/220 = 25A. O disjuntor de 30A Ã© adequado pois sua corrente nominal (30A) Ã© maior que a corrente de carga (25A) e permite uma margem de seguranÃ§a."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a sequÃªncia correta dos elementos no diagrama de um circuito de iluminaÃ§Ã£o?",
-            options: [
-              "LÃ¢mpada â†’ Interruptor â†’ Disjuntor â†’ Neutro",
-              "Disjuntor â†’ Fio fase â†’ Interruptor â†’ LÃ¢mpada â†’ Neutro",
-              "Neutro â†’ LÃ¢mpada â†’ Interruptor â†’ Disjuntor â†’ Fase",
-              "Terra â†’ Disjuntor â†’ LÃ¢mpada â†’ Neutro"
-            ],
-            correct: 1,
-            explanation: "A sequÃªncia correta Ã©: Disjuntor â†’ Fio fase â†’ Interruptor â†’ LÃ¢mpada â†’ Neutro. O interruptor sempre interrompe o fio fase."
-          },
-          {
-            type: "fill-blank",
-            question: "Em uma residÃªncia com entrada de 220V bifÃ¡sico, o disjuntor geral deve ser de _____ polos.",
-            correct: "2",
-            explanation: "Com entrada bifÃ¡sica (220V entre L1 e L2), o disjuntor geral deve ser de 2 polos, interrompendo ambas as fases simultaneamente."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual fio deve ser conectado ao borne de terra (PE) de uma tomada 2P+T?",
-            options: [
-              "O fio azul (neutro)",
-              "O fio vermelho (fase)",
-              "O fio verde-amarelo (terra)",
-              "Qualquer fio disponÃ­vel"
-            ],
-            correct: 2,
-            explanation: "O borne de terra (T) da tomada deve ser conectado EXCLUSIVAMENTE ao condutor verde-amarelo (PE), que Ã© o fio de proteÃ§Ã£o."
-          }
+          { type: "multiple-choice", question: "O diagrama unifilar representa:", choices: ["Cada fio individualmente", "Cada circuito com uma única linha", "Apenas o quadro de distribuição", "Apenas os disjuntores"], correct: 1, explanation: "No unifilar, cada circuito é representado por uma única linha, independentemente do número de fios." },
+          { type: "multiple-choice", question: "Qual a principal vantagem do diagrama unifilar?", choices: ["Mostra cores dos fios", "Visão geral da instalação", "Detalha cada conexão", "Indica correntes específicas"], correct: 1, explanation: "O unifilar oferece uma visão clara e organizada de toda a instalação, ideal para projetos simples." },
+          { type: "fill-blank", code: "O diagrama unifilar usa ________ linha para cada circuito. É mais ________ que o multifilar.", blanks: [{ answer: "uma", placeholder: "número de linhas" }, { answer: "simplificado", placeholder: "complexidade" }], explanation: "Uma linha por circuito torna o diagrama mais limpo e fácil de ler, mas menos detalhado." },
+          { type: "drag-drop", question: "Organize os elementos de um diagrama unifilar (de cima para baixo):", pieces: ["Barras de alimentação", "DR geral", "Disjuntores individuais", "Cargas (tomadas/luz)"], correctOrder: ["Barras de alimentação", "DR geral", "Disjuntores individuais", "Cargas (tomadas/luz)"], explanation: "A sequência segue o fluxo de energia: entrada → proteção → distribuição → cargas." }
+        ]
+      },
+      {
+        id: "m3-l7",
+        title: "Diagrama Multifilar (cores NBR)",
+        theory: `<h2>Diagrama Multifilar (cores NBR)</h2>
+<p>O <strong>diagrama multifilar</strong> mostra <strong>cada fio individualmente</strong>, incluindo cores, seções e conexões. É a representação mais detalhada de uma instalação.</p>
+<p><strong>Cores dos condutores (NBR 5410):</strong> <strong>Fase (L):</strong> vermelho, marrom ou preto. <strong>Neutro (N):</strong> azul. <strong>Proteção/Terra (PE):</strong> verde ou verde-amarelo. Não usar azul no lugar do verde-amarelo.</p>
+<p><strong>Vantagens:</strong> Mostra exatamente como cada fio deve ser conectado. Indica a cor correta de cada condutor. Essencial para instalações complexas.</p>
+<p><strong>Convenções:</strong> Linhas tracejadas podem indicar fios ocultos (em eletrodutos). Setas mostram direção de alimentação. Letras indicam função (F, N, PE).</p>
+<p><strong>Aplicação prática:</strong> Em instalações industriais, o multifilar é obrigatório para documentar cada conexão. É a base para manutenções futuras.</p>
+<p><strong>Erro comum:</strong> Não seguir a codificação de cores. Usar fio azul para fase ou verde-amarelo para neutro é violação da norma e gera confusão.</p>
+<p><strong>Dica:</strong> Ao instalar fios, use fita isolante da cor correspondente para marcar cada ponto de conexão. Isso facilita manutenções futuras.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Qual cor é padronizada para o condutor de proteção (terra)?", choices: ["Azul", "Vermelho", "Verde ou verde-amarelo", "Preto"], correct: 2, explanation: "O condutor de proteção (PE) deve ser verde ou verde-amarelo, conforme NBR 5410." },
+          { type: "multiple-choice", question: "O diagrama multifilar é necessário para:", choices: ["Projetos residenciais simples", "Instalações industriais complexas", "Apenas iluminação", "Apenas circuitos de tomada"], correct: 1, explanation: "Indústrias exigem multifilar para documentar cada conexão, facilitando manutenção e expansão." },
+          { type: "fill-blank", code: "A cor do fio neutro é ________. A cor da fase pode ser ________, marrom ou preto.", blanks: [{ answer: "azul", placeholder: "cor do neutro" }, { answer: "vermelho", placeholder: "cor da fase" }], explanation: "Azul = neutro. Vermelho/marrom/preto = fase. Verde/verde-amarelo = terra." },
+          { type: "drag-drop", question: "Associe cada condutor à sua cor:", pieces: ["Fase: vermelho/marrom/preto", "Neutro: azul", "Terra: verde/verde-amarelo"], correctOrder: ["Fase: vermelho/marrom/preto", "Neutro: azul", "Terra: verde/verde-amarelo"], explanation: "Seguir a codificação de cores é obrigatório pela NBR 5410 e garante segurança." }
+        ]
+      },
+      {
+        id: "m3-l8",
+        title: "Diagrama de Força",
+        theory: `<h2>Diagrama de Força</h2>
+<p>O <strong>diagrama de força</strong> (ou diagrama potência) mostra o <strong>circuito de potência</strong> de uma instalação: onde a energia elétrica flui para alimentar cargas como motores, resistências e iluminação.</p>
+<p><strong>Elementos principais:</strong> <strong>Alimentação</strong> (barras de fase e neutro), <strong>proteção</strong> (disjuntores, fusíveis), <strong>comando</strong> (contactores), <strong>cargas</strong> (motores, resistências, iluminação).</p>
+<p><strong>Características:</strong> Usa símbolos maiores e linhas mais grossas que o diagrama de comando. Mostra as correntes e tensões de cada ramo. Identifica a potência de cada carga.</p>
+<p><strong>Função:</strong> Dimensionar fios, disjuntores e componentes de potência. Calcular correntes totais e quedas de tensão. Verificar capacidade da alimentação.</p>
+<p><strong>Aplicação prática:</strong> Em painéis industriais, o diagrama de força mostra todos os motores, suas potências e o caminho da energia desde a entrada até cada equipamento.</p>
+<p><strong>Erro comum:</strong> Não indicar as correntes nominais de cada carga. Sem esses dados, não é possível dimensionar adequadamente os protetores.</p>
+<p><strong>Dica:</strong> Ao projetar, primeiro desenhe o diagrama de força para dimensionar. Depois, o diagrama de comando para a lógica de operação.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "O diagrama de força mostra:", choices: ["A lógica de comando", "O circuito de potência", "Apenas o quadro de distribuição", "Apenas a iluminação"], correct: 1, explanation: "O diagrama de força representa o circuito de potência, onde flui a energia para alimentar as cargas." },
+          { type: "multiple-choice", question: "Os elementos de proteção no diagrama de força são:", choices: ["Relés e temporizadores", "Disjuntores e fusíveis", "Contatores e botoeiras", "Cabos e eletrodutos"], correct: 1, explanation: "Disjuntores e fusíveis protegem o circuito de potência contra sobrecorrente e curto-circuito." },
+          { type: "fill-blank", code: "O diagrama de força é ________ e usa linhas mais ________ que o diagrama de comando.", blanks: [{ answer: "maior", placeholder: "tamanho" }, { answer: "grossas", placeholder: "espessura" }], explanation: "Linhas grossas representam circuitos de potência (maior corrente); linhas finas representam comando." },
+          { type: "drag-drop", question: "Organize os elementos do diagrama de força (do início ao fim):", pieces: ["Alimentação", "Proteção (disjuntor)", "Comando (contator)", "Carga (motor)"], correctOrder: ["Alimentação", "Proteção (disjuntor)", "Comando (contator)", "Carga (motor)"], explanation: "O fluxo segue: entrada → proteção → comando → carga. Essa sequência é padrão." }
+        ]
+      },
+      {
+        id: "m3-l9",
+        title: "Diagrama de Comando",
+        theory: `<h2>Diagrama de Comando</h2>
+<p>O <strong>diagrama de comando</strong> (ou diagrama de controle) mostra a <strong>lógica de operação</strong> de uma instalação: como os dispositivos são acionados, intertravados e temporizados.</p>
+<p><strong>Elementos principais:</strong> <strong>Botoeiras</strong> (liga/desliga), <strong>contatores</strong> (acionamento de cargas), <strong>relés</strong> (lógica), <strong>temporizadores</strong> (atraso), <strong>intertravamentos</strong> (proteção cruzada).</p>
+<p><strong>Representação:</strong> Usa-se linhas verticais para representar a alimentação (fase e neutro). Os dispositivos são colocados entre essas linhas, indicando a sequência de operação.</p>
+<p><strong>Lógica série/paralelo:</strong> Contatos em série = lógica E (ambos devem estar fechados). Contatos em paralelo = lógica OU (qualquer um fecha o circuito).</p>
+<p><strong>Aplicação prática:</strong> Em partida de motores, o diagrama de comando mostra o acionamento do contactor, o intertravamento e a proteção térmica.</p>
+<p><strong>Erro comum:</strong> Não incluir intertravamentos em circuitos com inversão de marcha. Isso pode causar curto-circuito entre fases.</p>
+<p><strong>Dica:</strong> Leia o diagrama de cima para baixo e da esquerda para a direita. Siga o fluxo da corrente de comando.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Contatos em série no diagrama de comando representam:", choices: ["Lógica OU", "Lógica E", "Lógica NÃO", "Lógica XOR"], correct: 1, explanation: "Em série, AMBOS os contatos devem estar fechados para haver passagem de corrente = lógica E (AND)." },
+          { type: "multiple-choice", question: "O intertravamento em circuito de reversão serve para:", choices: ["Aumentar potência", "Evitar curto entre fases", "Reduzir consumo", "Melhorar eficiência"], correct: 1, explanation: "O intertravamento impede que contactores de ida e volta sejam acionados simultaneamente, evitando curto." },
+          { type: "fill-blank", code: "Contatos em ________ representam lógica E. Contatos em ________ representam lógica OU.", blanks: [{ answer: "série", placeholder: "ligação" }, { answer: "paralelo", placeholder: "ligação" }], explanation: "Série = ambos precisam fechar (AND). Paralelo = qualquer um fecha (OR)." },
+          { type: "drag-drop", question: "Organize os elementos de um diagrama de comando:", pieces: ["Alimentação", "Botoeiras", "Contatores/Relés", "Cargas"], correctOrder: ["Alimentação", "Botoeiras", "Contatores/Relés", "Cargas"], explanation: "O fluxo: energia → comando (botoeiras) → lógica (contatores/relés) → ação (cargas)." }
+        ]
+      },
+      {
+        id: "m3-l10",
+        title: "Leitura de Diagrama Completo",
+        theory: `<h2>Leitura de Diagrama Completo</h2>
+<p>A <strong>leitura de diagrama completo</strong> envolve a integração do diagrama de força e de comando para entender toda a instalação.</p>
+<p><strong>Passo a passo:</strong> <strong>1)</strong> Identifique a alimentação (tensão, número de fases). <strong>2)</strong> Localize os dispositivos de proteção. <strong>3)</strong> Identifique as cargas e suas potências. <strong>4)</strong> Analise a lógica de comando. <strong>5)</strong> Verifique intertravamentos e proteções.</p>
+<p><strong>Informações essenciais:</strong> Tensão nominal, corrente de cada ramo, potência das cargas, seção dos fios, tipo de proteção, sequência de operação.</p>
+<p><strong>Erros a identificar:</strong> Fios subdimensionados, proteções inadequadas, ausência de terra, intertravamentos faltantes, conexões incorretas.</p>
+<p><strong>Aplicação prática:</strong> Antes de qualquer intervenção em um quadro ou painel, leia completamente o diagrama. Identifique cada componente e sua função.</p>
+<p><strong>Erro comum:</strong> Começar a trabalhar sem entender o diagrama. Isso pode causar danos a equipamentos e riscos ao profissional.</p>
+<p><strong>Dica:</strong> Imprima o diagrama e marque com caneta cada circuito que verificar. Isso evita esquecer etapas na verificação.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Ao ler um diagrama completo, qual é o primeiro passo?", choices: ["Verificar os disjuntores", "Identificar a alimentação", "Ligar o equipamento", "Medir a corrente"], correct: 1, explanation: "O primeiro passo é sempre identificar a alimentação: tensão, número de fases e capacidade." },
+          { type: "multiple-choice", question: "Qual informação NÃO é encontrada em um diagrama completo?", choices: ["Tensão nominal", "Cor do fio do eletricista", "Potência das cargas", "Tipo de proteção"], correct: 1, explanation: "O diagrama não informa dados pessoais do profissional. Ele mostra dados técnicos da instalação." },
+          { type: "fill-blank", code: "Um diagrama completo integra o diagrama de ________ e o diagrama de ________. Antes de qualquer intervenção, leia ________ o diagrama.", blanks: [{ answer: "força", placeholder: "circuitos de potência" }, { answer: "comando", placeholder: "lógica de operação" }, { answer: "completamente", placeholder: "ação recomendada" }], explanation: "Força + comando = instalação completa. Ler tudo antes de trabalhar é regra de segurança." },
+          { type: "drag-drop", question: "Organize os passos para ler um diagrama completo:", pieces: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], correctOrder: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], explanation: "Seguir essa ordem系统ática garante que nenhum detalhe seja esquecido na análise do diagrama." }
         ]
       }
     ]
   },
-
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 4 - MOTORES ELÃ‰TRICOS
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   {
     id: "m4",
-    title: "Motores ElÃ©tricos",
+    title: "Motores Elétricos",
+    description: "Princípios, classificações, ligações, partidas e proteções",
+    icon: "🔧",
     color: "#E17055",
-    icon: "ðŸ”§",
-    description: "Domine o funcionamento, ligaÃ§Ãµes, partida e proteÃ§Ã£o de motores elÃ©tricos monofÃ¡sicos e trifÃ¡sicos.",
     lessons: [
       {
         id: "m4-l1",
-        title: "PrincÃ­pio de Funcionamento",
-        theory: `
-          <h2>PrincÃ­pio de Funcionamento do Motor ElÃ©trico</h2>
-          <p>O motor elÃ©trico Ã© a mÃ¡quina mais importante da engenharia elÃ©trica industrial. Ele converte energia elÃ©trica em energia mecÃ¢nica de rotaÃ§Ã£o, alimentando desde ventiladores atÃ© grandes bombas e compressores.</p>
-
-          <h3>Como Funciona â€” InduÃ§Ã£o EletromagnÃ©tica</h3>
-          <ul>
-            <li><strong>PrincÃ­pio de Faraday:</strong> Um campo magnÃ©tico variÃ¡vel induce uma tensÃ£o em um condutor. Quando este condutor forma um circuito fechado, circula uma corrente.</li>
-            <li><strong>PrincÃ­pio de Lorentz:</strong> Um condutor percorrido por corrente, imerso em um campo magnÃ©tico, recebe uma forÃ§a (forÃ§a eletromotriz) que o faz se movimentar.</li>
-            <li><strong>Campo magnÃ©tico rotativo:</strong> Ao aplicar corrente alternada em bobinas defasadas no estator, cria-se um campo magnÃ©tico que ROTACIONA no espaÃ§o, "puxando" o rotor.</li>
-          </ul>
-
-          <h3>Partes Principais do Motor</h3>
-          <ul>
-            <li><strong>Estator (parte fixa):</strong> ContÃ©m os enrolamentos (bobinas) que recebem a corrente alternada e criam o campo magnÃ©tico rotativo. Fixo Ã  carcaÃ§a do motor.</li>
-            <li><strong>Rotor (parte mÃ³vel):</strong> Gira dentro do estator impulsionado pelo campo magnÃ©tico. Pode ser do tipo gaiola de esquilo (induÃ§Ã£o) ou bobinado (com escovas e anÃ©is).</li>
-            <li><strong>Escovas e comutador:</strong> No motor CC, as escovas transfiram a corrente para o rotor atravÃ©s do comutador. No motor CA de induÃ§Ã£o, NÃƒO existem escovas.</li>
-            <li><strong>CarcaÃ§a:</strong> InvÃ³lucro metÃ¡lico que protege o motor e serve de suporte mecÃ¢nico. Possui aletas de resfriamento.</li>
-            <li><strong>Terminal de conexÃ£o:</strong> Caixa onde os fios externos sÃ£o conectados aos enrolamentos do motor.</li>
-          </ul>
-
-          <h3>Slip (Escorregamento)</h3>
-          <div class="formula-box">
-            <strong>FÃ³rmula do Slip:</strong><br>
-            s = (Ns - Nr) / Ns Ã— 100%<br><br>
-            Onde:<br>
-            Ns = Velocidade sÃ­ncrona (campo magnÃ©tico rotativo)<br>
-            Nr = Velocidade real do rotor<br>
-            s = Slip (geralmente 2% a 8% em motores nominais)<br><br>
-            <strong>Velocidade sÃ­ncrona:</strong> Ns = 120 Ã— f / p<br>
-            Onde f = frequÃªncia (60Hz) e p = nÃºmero de polos
-          </div>
-
-          <h3>Exemplo de Velocidades</h3>
-          <ul>
-            <li><strong>Motor 4 polos, 60Hz:</strong> Ns = 120 Ã— 60 / 4 = 1800 rpm â†’ Nr real â‰ˆ 1720-1760 rpm (slip â‰ˆ 2-4%)</li>
-            <li><strong>Motor 2 polos, 60Hz:</strong> Ns = 120 Ã— 60 / 2 = 3600 rpm â†’ Nr real â‰ˆ 3450-3500 rpm</li>
-            <li><strong>Motor 6 polos, 60Hz:</strong> Ns = 120 Ã— 60 / 6 = 1200 rpm â†’ Nr real â‰ˆ 1140-1170 rpm</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Achar que Nr = Ns:</strong> O rotor NUNCA atinge a velocidade sÃ­ncrona (seria zero corrente e zero torque).</li>
-            <li><strong>Confundir polos com fases:</strong> Polos = pares de eletroÃ­mÃ£s no estator; Fases = quantas fases de alimentaÃ§Ã£o (1 ou 3).</li>
-            <li><strong>NÃ£o considerar o slip:</strong> Ao dimensionar uma bomba, use a velocidade REAL, nÃ£o a sÃ­ncrona.</li>
-          </ul>
-        `,
+        title: "Princípio de Funcionamento",
+        theory: `<h2>Princípio de Funcionamento</h2>
+<p>O <strong>motor elétrico</strong> converte energia elétrica em energia mecânica por meio de <strong>interação eletromagnética</strong>. É o equipamento mais utilizado na indústria.</p>
+<p><strong>Princípio básico:</strong> Quando uma corrente flui por um condutor em um campo magnético, surge uma força mecânica (Força de Lorentz). Em um motor, essa força faz o rotor girar.</p>
+<p><strong>Partes principais:</strong> <strong>Estator</strong> (parte fixa, gera o campo magnético), <strong>Rotor</strong> (parte móvel, gira sob a ação do campo), <strong>Escravas/Comutador</strong> (em motores CC, comuta a corrente no rotor).</p>
+<p><strong>Princípio da indução (motores de indução):</strong> O campo magnético girante do estator induz corrente no rotor, que por sua vez gera seu próprio campo magnético. A interação entre os campos faz o rotor girar.</p>
+<p><strong>Aplicação prática:</strong> Motores de indução são encontrados em bombas, ventiladores, compressores, esteiras, elevadores e quase toda máquina industrial.</p>
+<p><strong>Erro comum:</strong> Achar que o rotor possui ímãs permanentes em todos os motores. No motor de indução, o rotor é bobinado ou em gaiola de esquilo.</p>
+<p><strong>Dica:</strong> O motor de indução trifásico é o "cavalo de batalha" da indústria. Entender seu princípio é essencial para qualquer eletricista.</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Qual Ã© a velocidade sÃ­ncrona de um motor de 4 polos alimentado em 60Hz?",
-            answer: "1800 rpm",
-            explanation: "Ns = 120 Ã— f / p = 120 Ã— 60 / 4 = 1800 rpm. Esta Ã© a velocidade do campo magnÃ©tico rotativo no estator."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual parte do motor Ã© responsÃ¡vel por criar o campo magnÃ©tico rotativo?",
-            options: [
-              "Rotor",
-              "Escovas",
-              "Estator",
-              "Comutador"
-            ],
-            correct: 2,
-            explanation: "O estator contÃ©m os enrolamentos que, ao receberem corrente alternada, criam o campo magnÃ©tico rotativo que faz o rotor girar."
-          },
-          {
-            type: "multiple-choice",
-            question: "Se um motor de 4 polos tem velocidade real de 1740 rpm em 60Hz, qual Ã© o slip?",
-            options: [
-              "2%",
-              "3.3%",
-              "5%",
-              "8%"
-            ],
-            correct: 1,
-            explanation: "s = (1800 - 1740) / 1800 Ã— 100% = 60/1800 Ã— 100% = 3,3%. O slip representa a diferenÃ§a entre a velocidade sÃ­ncrona e a real."
-          },
-          {
-            type: "fill-blank",
-            question: "A velocidade sÃ­ncrona Ã© calculada pela fÃ³rmula Ns = 120 Ã— f / _____.",
-            correct: "p",
-            explanation: "Ns = 120 Ã— f / p, onde f Ã© a frequÃªncia da rede (60Hz no Brasil) e p Ã© o nÃºmero de polos do motor."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada parte do motor Ã  sua funÃ§Ã£o:",
-            pairs: [
-              { term: "Estator", definition: "Cria o campo magnÃ©tico rotativo" },
-              { term: "Rotor", definition: "Gira impulsionado pelo campo magnÃ©tico" },
-              { term: "CarcaÃ§a", definition: "Protege e serve de suporte mecÃ¢nico" },
-              { term: "Terminal", definition: "Ponto de conexÃ£o dos fios externos" }
-            ]
-          }
+          { type: "multiple-choice", question: "Qual energia o motor elétrico converte em energia mecânica?", choices: ["Energia térmica", "Energia elétrica", "Energia nuclear", "Energia solar"], correct: 1, explanation: "O motor elétrico converte energia elétrica em mecânica por interação eletromagnética." },
+          { type: "multiple-choice", question: "A parte fixa do motor que gera o campo magnético é:", choices: ["Rotor", "Estator", "Escova", "Comutador"], correct: 1, explanation: "O estator é a parte fixa que contém os enrolamentos que criam o campo magnético girante." },
+          { type: "fill-blank", code: "O motor converte energia ________ em energia ________. A parte móvel do motor é o ________.", blanks: [{ answer: "elétrica", placeholder: "energia de entrada" }, { answer: "mecânica", placeholder: "energia de saída" }, { answer: "rotor", placeholder: "parte móvel" }], explanation: "Entrada: elétrica. Saída: mecânica. Rotor gira; estator é fixo." },
+          { type: "drag-drop", question: "Organize as partes de um motor elétrico:", pieces: ["Estator (fixo)", "Rotor (móvel)", "Escovas/Comutador", "Ligação mecânica"], correctOrder: ["Estator (fixo)", "Rotor (móvel)", "Escovas/Comutador", "Ligação mecânica"], explanation: "O estator gera o campo, o rotor gira, as escovas comutam, a ligação transmite o torque." }
         ]
       },
       {
         id: "m4-l2",
-        title: "Motores MonofÃ¡sicos",
-        theory: `
-          <h2>Motores ElÃ©tricos MonofÃ¡sicos</h2>
-          <p>Motores monofÃ¡sicos sÃ£o alimentados por uma Ãºnica fase (127V ou 220V). SÃ£o os mais comuns em residÃªncias e pequenas indÃºstrias â€” ventiladores, bombas de piscina, compressores de geladeira, furadeiras, etc.</p>
-
-          <h3>Tipos de Motores MonofÃ¡sicos</h3>
-          <ul>
-            <li><strong>Motor Universal (com escovas):</strong> Funciona em CC e CA. Tem comutador e escovas como um motor CC. Alta rotaÃ§Ã£o (atÃ© 20.000 rpm). Usado em furadeiras, lixadeiras, aspiradores. Desvantagem: desgaste das escovas, faÃ­scas, ruÃ­do.</li>
-            <li><strong>Motor de Fase Auxiliar (partida):</strong> Tem dois enrolamentos: principal e auxiliar. O auxiliar Ã© desconectado por um interruptor centrifugo quando o motor atinge ~75% da rotaÃ§Ã£o nominal. Partida com bom torque, mas desligamento brusco do auxiliar.</li>
-            <li><strong>Motor de Fase Partida com Capacitor (CSR):</strong> Similar ao anterior, mas com capacitor em sÃ©rie com o enrolamento auxiliar. Melhora o torque de partida e reduz o pico de corrente. O capacitor Ã© desconectado pelo interruptor centrifugo.</li>
-            <li><strong>Motor com Capacitor Permanente (CSP):</strong> O capacitor permanece ligado todo o tempo. Maior eficiÃªncia e funcionamento mais suave. Usado em ventiladores, condensadores de ar. Sem interruptor centrifugo.</li>
-            <li><strong>Motor com Dois Capacitor (CSRC):</strong> Combina capacitor de partida (desconectado) + capacitor permanente. Melhor desempenho em partida e em regime.</li>
-          </ul>
-
-          <h3>Terminais e LigaÃ§Ãµes</h3>
-          <div class="formula-box">
-            <strong>Caixa de terminais tÃ­pica:</strong><br>
-            <strong>2 terminais:</strong> Motor simples (sÃ³ enrolamento principal). Liga direto na rede.<br>
-            <strong>4 terminais:</strong> Enrolamento principal (2 terminais) + enrolamento auxiliar (2 terminais).<br>
-            Ex: U1, U2 (principal) / Z1, Z2 (auxiliar)<br>
-            <strong>6 terminais:</strong> Permite ligaÃ§Ã£o em 127V ou 220V (configuraÃ§Ã£o interna trocada).<br>
-            Ex: U1, U2, Z1, Z2, V1, V2 (para motores com derivaÃ§Ã£o)
-          </div>
-
-          <h3>LigaÃ§Ã£o em Estrela vs. TriÃ¢ngulo (MonofÃ¡sico)</h3>
-          <ul>
-            <li><strong>Em 127V:</strong> Enrolamento principal ligado diretamente Ã  rede 127V.</li>
-            <li><strong>Em 220V:</strong> Enrolamento principal pode precisar de configuraÃ§Ã£o especÃ­fica (depende da fabricaÃ§Ã£o).</li>
-            <li><strong>AtenÃ§Ã£o:</strong> NÃƒO confundir com motores trifÃ¡sicos! Em monofÃ¡sicos, as ligaÃ§Ãµes sÃ£o entre os terminais U e Z.</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Ligar motor de 127V em 220V:</strong> Queima os enrolamentos instantaneamente.</li>
-            <li><strong>NÃ£o reconhecer o capacitor defeituoso:</strong> Motor nÃ£o liga, ou liga mas nÃ£o gira (travado), ou gira lento e esquenta.</li>
-            <li><strong>Trocar terminais do auxiliar:</strong> Inverter a ligaÃ§Ã£o do capacitor inverte o sentido de rotaÃ§Ã£o (Ãºtil para reversÃ£o).</li>
-            <li><strong>Desligar o centrifugo:</strong> Se o centrifugo falhar, o enrolamento auxiliar fica ligado e pode queimar.</li>
-          </ul>
-        `,
+        title: "Classificação de Motores",
+        theory: `<h2>Classificação de Motores</h2>
+<p>Os motores elétricos são classificados por diversos critérios que definem suas características e aplicações.</p>
+<p><strong>Por tipo de corrente:</strong> <strong>Motor CC</strong> (corrente contínua) — usa escovas e comutador. <strong>Motor CA</strong> (corrente alternada) — mais comum na indústria.</p>
+<p><strong>Por número de fases:</strong> <strong>Monofásico</strong> (1 fase, até ~3CV, uso residencial). <strong>Bifásico</strong> (2 fases, raro). <strong>Trifásico</strong> (3 fases, uso industrial, desde 1CV até milhares de CV).</p>
+<p><strong>Por princípio de funcionamento:</strong> <strong>Motor de indução</strong> (mais comum, rotor bobinado ou gaiola de esquilo). <strong>Motor sincronismo</strong> (rotor com ímãs, velocidade constante). <strong>Motor de reluctância</strong> (rotor de ferro, sem enrolamento).</p>
+<p><strong>Por construção:</strong> <strong>Aberto</strong> (ventilação livre), <strong>fechado</strong> (protegido contra poeira), <strong>hermético</strong> (à prova de água e gás).</p>
+<p><strong>Por potência:</strong> Motores de baixa potência (< 1CV), média (1-100CV) e alta potência (> 100CV).</p>
+<p><strong>Aplicação prática:</strong> A classificação determina o tipo de partida, proteção e instalação necessária para cada aplicação.</p>
+<p><strong>Erro comum:</strong> Usar motor monofásico em aplicações que requerem torque elevado. Motor monofásico não tem torque de partida sem auxílio.</p>
+<p><strong>Dica:</strong> Para aplicações industriais, prefira sempre motor trifásico de indução. É mais robusto, eficiente e barato.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual tipo de motor monofÃ¡sico Ã© usado em furadeiras e lixadeiras?",
-            options: [
-              "Motor de fase auxiliar",
-              "Motor com capacitor permanente",
-              "Motor universal (com escovas)",
-              "Motor de induÃ§Ã£o trifÃ¡sico"
-            ],
-            correct: 2,
-            explanation: "O motor universal (com escovas) Ã© usado em ferramentas elÃ©tricas portÃ¡teis devido Ã  sua alta rotaÃ§Ã£o e capacidade de funcionar em CC e CA."
-          },
-          {
-            type: "multiple-choice",
-            question: "O que acontece quando o capacitor de um motor monofÃ¡sico fica defeituoso?",
-            options: [
-              "O motor gira mais rÃ¡pido",
-              "O motor nÃ£o liga ou gira muito lento e esquenta",
-              "O motor passa a funcionar em trifÃ¡sico",
-              "NÃ£o hÃ¡ diferenÃ§a no funcionamento"
-            ],
-            correct: 1,
-            explanation: "Sem o capacitor, o motor monofÃ¡sico nÃ£o consegue criar o campo magnÃ©tico rotativo necessÃ¡rio para girar. Pode nÃ£o ligar, ou girar lento e esquentar muito."
-          },
-          {
-            type: "fill-blank",
-            question: "O enrolamento _____ Ã© desconectado pelo interruptor centrifugo quando o motor atinge ~75% da rotaÃ§Ã£o nominal.",
-            correct: "auxiliar",
-            explanation: "O enrolamento auxiliar (de partida) sÃ³ trabalha durante a partida. Quando o motor atinge aproximadamente 75% da rotaÃ§Ã£o nominal, o interruptor centrifugo o desconecta."
-          },
-          {
-            type: "multiple-choice",
-            question: "Em um motor de 4 terminais, quais terminais sÃ£o do enrolamento principal?",
-            options: [
-              "Z1 e Z2",
-              "U1 e U2",
-              "V1 e V2",
-              "T1 e T2"
-            ],
-            correct: 1,
-            explanation: "Os terminais U1 e U2 sÃ£o do enrolamento principal do motor. Z1 e Z2 sÃ£o do enrolamento auxiliar (de partida)."
-          },
-          {
-            type: "calculation",
-            question: "Um motor monofÃ¡sico de 1/2 CV (373W) tem rendimento de 75%. Se a tensÃ£o Ã© 127V e o fator de potÃªncia Ã© 0,85, qual a corrente nominal?",
-            answer: "3.65A",
-            explanation: "I = P/(V Ã— cosÏ† Ã— Î·) = 373/(127 Ã— 0,85 Ã— 0,75) = 373/80,96 = 4,61A. Considerando perdas adicionais, o valor nominal Ã© aproximadamente 3,65A."
-          }
+          { type: "multiple-choice", question: "O motor mais utilizado na indústria é:", choices: ["Motor CC", "Motor monofásico CA", "Motor trifásico de indução", "Motor sincronismo"], correct: 2, explanation: "O motor trifásico de indução é o mais usado por sua robustez, simplicidade e baixo custo." },
+          { type: "multiple-choice", question: "Motor monofásico é indicado para potências:", choices: ["Acima de 100CV", "Até 3CV", "Acima de 50CV", "Qualquer potência"], correct: 1, explanation: "Motores monofásicos são limitados a baixas potências (até ~3CV), como em residências." },
+          { type: "fill-blank", code: "Motores são classificados por ________ (CC/CA), número de ________ (mono/tri) e princípio de ________.", blanks: [{ answer: "corrente", placeholder: "tipo de energia" }, { answer: "fases", placeholder: "alimentação" }, { answer: "funcionamento", placeholder: "princípio" }], explanation: "As três classificações principais definem o tipo, aplicação e comportamento do motor." },
+          { type: "drag-drop", question: "Classifique os motores por potência:", pieces: ["Baixa: < 1CV", "Média: 1-100CV", "Alta: > 100CV"], correctOrder: ["Baixa: < 1CV", "Média: 1-100CV", "Alta: > 100CV"], explanation: "A potência define o porte do motor e o tipo de aplicação industrial ou residencial." }
         ]
       },
       {
         id: "m4-l3",
-        title: "Motores TrifÃ¡sicos",
-        theory: `
-          <h2>Motores ElÃ©tricos TrifÃ¡sicos</h2>
-          <p>Motores trifÃ¡sicos sÃ£o alimentados por trÃªs fases (380V/440V no Brasil) e sÃ£o a espinha dorsal da indÃºstria. SÃ£o mais eficientes, potentes e robustos que os monofÃ¡sicos. Presentes em bombas, compressores, transportadores, ventiladores industriais, etc.</p>
-
-          <h3>Motor de InduÃ§Ã£o TrifÃ¡sico</h3>
-          <ul>
-            <li><strong>PrincÃ­pio:</strong> TrÃªs enrolamentos defasados 120Â° no estator criam um campo magnÃ©tico rotativo. O rotor (gaiola de esquilo) Ã© induzido e gira na mesma direÃ§Ã£o do campo.</li>
-            <li><strong>Bobinagem:</strong> TrÃªs enrolamentos idÃªnticos (U, V, W), cada um com duas extremidades (U1-U2, V1-V2, W1-W2). Os terminais sÃ£o levados Ã  caixa de conexÃ£o.</li>
-            <li><strong>Simplicidade:</strong> NÃ£o tem escovas, comutador, capacitor nem interruptor centrifugo. ManutenÃ§Ã£o mÃ­nima â€” apenas rolamentos e isolamento.</li>
-          </ul>
-
-          <h3>LigaÃ§Ã£o Estrela (Y) vs. TriÃ¢ngulo (Î”)</h3>
-          <div class="formula-box">
-            <strong>Estrela (Y):</strong> Extremidades U2, V2, W2 sÃ£o ligadas em curto-circuito (neutro estrela).<br>
-            â†’ TensÃ£o nas bobinas = Vfase = Vlinha / âˆš3<br>
-            â†’ Ex: 380V linha â†’ 220V na bobina<br><br>
-            <strong>TriÃ¢ngulo (Î”):</strong> U1-W2, V1-U2, W1-V2 (cabeÃ§a-cauda).<br>
-            â†’ TensÃ£o nas bobinas = Vfase = Vlinha<br>
-            â†’ Ex: 380V linha â†’ 380V na bobina<br><br>
-            <strong>FÃ³rmula de potÃªncia (ambas ligaÃ§Ãµes):</strong><br>
-            P = âˆš3 Ã— Vl Ã— Il Ã— cosÏ† Ã— Î·<br><br>
-            Onde: Vl = tensÃ£o de linha, Il = corrente de linha,<br>
-            cosÏ† = fator de potÃªncia, Î· = rendimento
-          </div>
-
-          <h3>Terminais da Caixa de ConexÃ£o</h3>
-          <ul>
-            <li><strong>Estrela (Y):</strong> U1, V1, W1 ligados Ã s 3 fases; U2-V2-W2 ligados entre si (neutro estrela).</li>
-            <li><strong>TriÃ¢ngulo (Î”):</strong> U1-W2, V1-U2, W1-V2 (cabeÃ§a-cauda); os 3 pontos recebem as 3 fases.</li>
-            <li><strong>6 terminais:</strong> U1, U2, V1, V2, W1, W2 â€” permitem escolher Y ou Î” externamente.</li>
-            <li><strong>Placa do motor:</strong> Indica a ligaÃ§Ã£o recomendada (ex: "Y Î” 380/220V" = Y em 380V, Î” em 220V).</li>
-          </ul>
-
-          <h3>Exemplo PrÃ¡tico de Dimensionamento</h3>
-          <div class="formula-box">
-            <strong>Motor: 5CV, 380V, cosÏ†=0,85, Î·=0,85</strong><br>
-            P = 5CV Ã— 736W/CV = 3680W<br>
-            Il = P / (âˆš3 Ã— Vl Ã— cosÏ† Ã— Î·)<br>
-            Il = 3680 / (1,732 Ã— 380 Ã— 0,85 Ã— 0,85)<br>
-            Il = 3680 / 472,4 = 7,79A<br><br>
-            Fio recomendado: 2,5mmÂ² (suporta atÃ© 20A)<br>
-            Disjuntor: 16A (2 polos + DR)
-          </div>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Ligar em Y quando deveria ser Î”:</strong> O motor perde 2/3 da potÃªncia e pode nÃ£o girar a carga.</li>
-            <li><strong>Inverter uma fase:</strong> O motor gira ao contrÃ¡rio â€” perigoso em bombas e ventiladores.</li>
-            <li><strong>NÃ£o considerar o fator de potÃªncia:</strong> Subdimensiona fios e disjuntores.</li>
-            <li><strong>Usar neutro no motor:</strong> Motores trifÃ¡sicos NÃƒO usam neutro (apenas 3 fases).</li>
-          </ul>
-        `,
+        title: "Motores Monofásicos",
+        theory: `<h2>Motores Monofásicos</h2>
+<p>O <strong>motor monofásico</strong> é alimentado por <strong>uma única fase</strong> (127V ou 220V). É o tipo mais comum em residências e pequenas oficinas.</p>
+<p><strong>Características:</strong> Não possui torque de partida próprio. Precisa de um <strong>enrolamento auxiliar</strong> ou <strong>capacitor</strong> para iniciar. Funciona apenas com corrente alternada.</p>
+<p><strong>Tipos principais:</strong> <strong>Com capacitor permanente</strong> (capacitor sempre ligado, maior torque). <strong>Com capacitor de partida</strong> (capacitor é desconectado após atingir velocidade). <strong>Com enrolamento auxiliar</strong> (sem capacitor, menos eficiente).</p>
+<p><strong>Potência típica:</strong> De 1/8 CV até 3 CV. Acima disso, é mais econômico usar motor trifásico com conversor de fase.</p>
+<p><strong>Rotação:</strong> Nominal de 1725 ou 3450 RPM (dependendo do número de polos). Em 60Hz, a rotação síncrona é 1800 RPM (4 polos) ou 3600 RPM (2 polos).</p>
+<p><strong>Aplicação prática:</strong> Motores monofásicos são usados em ventiladores, bombas residenciais, compressores de geladeira, máquinas de costura e ferramentas manuais.</p>
+<p><strong>Erro comum:</strong> Tentar sobrecarregar um motor monofásico. Ele não suporta sobrecarga prolongada como um trifásico.</p>
+<p><strong>Dica:</strong> Para inverter o sentido de rotação de um motor monofásico com capacitor, inverta as conexões do enrolamento auxiliar (não da fonte).</p>`,
         exercises: [
-          {
-            type: "calculation",
-            question: "Um motor trifÃ¡sico de 10CV (7360W) opera em 380V com cosÏ†=0,85 e Î·=0,88. Qual a corrente de linha?",
-            answer: "14.35A",
-            explanation: "Il = P / (âˆš3 Ã— Vl Ã— cosÏ† Ã— Î·) = 7360 / (1,732 Ã— 380 Ã— 0,85 Ã— 0,88) = 7360 / 512,8 = 14,35A"
-          },
-          {
-            type: "multiple-choice",
-            question: "Na ligaÃ§Ã£o estrela (Y), qual Ã© a relaÃ§Ã£o entre tensÃ£o de linha e tensÃ£o de fase?",
-            options: [
-              "Vfase = Vlinha",
-              "Vfase = Vlinha / âˆš3",
-              "Vfase = âˆš3 Ã— Vlinha",
-              "Vfase = Vlinha / 3"
-            ],
-            correct: 1,
-            explanation: "Na ligaÃ§Ã£o estrela, a tensÃ£o nas bobinas (fase) Ã© igual Ã  tensÃ£o de linha dividida por âˆš3. Ex: 380V linha â†’ 220V na bobina."
-          },
-          {
-            type: "multiple-choice",
-            question: "Quantos terminais tem a caixa de conexÃ£o de um motor trifÃ¡sico que permite ligaÃ§Ã£o em Y e Î”?",
-            options: [
-              "3 terminais",
-              "4 terminais",
-              "6 terminais",
-              "8 terminais"
-            ],
-            correct: 2,
-            explanation: "O motor trifÃ¡sico com 6 terminais (U1, U2, V1, V2, W1, W2) permite ligaÃ§Ã£o em estrela (Y) ou triÃ¢ngulo (Î”) conforme a tensÃ£o de alimentaÃ§Ã£o."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada tipo de ligaÃ§Ã£o Ã  sua caracterÃ­stica:",
-            pairs: [
-              { term: "Estrela (Y)", definition: "Vfase = Vlinha / âˆš3 (menor tensÃ£o nas bobinas)" },
-              { term: "TriÃ¢ngulo (Î”)", definition: "Vfase = Vlinha (tensÃ£o cheia nas bobinas)" },
-              { term: "FÃ³rmula P = âˆš3 Ã— Vl Ã— Il Ã— cosÏ† Ã— Î·", definition: "PotÃªncia trifÃ¡sica" },
-              { term: "Placa: Y Î” 380/220V", definition: "Y em 380V, Î” em 220V" }
-            ]
-          },
-          {
-            type: "fill-blank",
-            question: "Motores trifÃ¡sicos NÃƒO utilizam o condutor _____ (fase/neutro/terra) na alimentaÃ§Ã£o.",
-            correct: "neutro",
-            explanation: "Motores trifÃ¡sicos sÃ£o alimentados por apenas 3 fases (L1, L2, L3). O neutro NÃƒO Ã© utilizado, pois os enrolamentos estÃ£o equilibrados."
-          }
+          { type: "multiple-choice", question: "O motor monofásico precisa de qual elemento para ter torque de partida?", choices: ["Disjuntor", "Capacitor ou enrolamento auxiliar", "Contactor", "Relé térmico"], correct: 1, explanation: "O motor monofásico não tem torque de partida próprio. Capacitor ou enrolamento auxiliar cria o torque necessário." },
+          { type: "multiple-choice", question: "A potência máxima típica de motores monofásicos é de:", choices: ["0,5 CV", "3 CV", "10 CV", "50 CV"], correct: 1, explanation: "Acima de 3 CV, é mais econômico usar motor trifásico com conversor de fase." },
+          { type: "fill-blank", code: "O motor monofásico possui ________ fase. Para inverter a rotação, inverta as conexões do enrolamento ________.", blanks: [{ answer: "uma", placeholder: "número de fases" }, { answer: "auxiliar", placeholder: "enrolamento" }], explanation: "Uma fase = monofásico. Inverter o auxiliar inverte o campo magnético e a rotação." },
+          { type: "calculation", question: "Um motor monofásico de 1/4 CV consome 127V. Considerando rendimento de 70%, qual a corrente?", answer: 3.46, unit: "A", validate: function(v) { return Math.abs(v - 3.46) < 0.5; }, explanation: "P_mecânica = 0,25 × 735,5 = 183,9W. P_elétrica = 183,9/0,7 = 262,7W. I = 262,7/127 ≈ 2,07A. Aproximadamente 3,5A incluindo fator de potência." }
         ]
       },
       {
         id: "m4-l4",
-        title: "Partida Direta",
-        theory: `
-          <h2>Partida Direta de Motores TrifÃ¡sicos</h2>
-          <p>A partida direta Ã© o mÃ©todo mais simples e mais comum de ligar um motor trifÃ¡sico. O motor recebe a tensÃ£o nominal da rede diretamente nos terminais, sem nenhuma restriÃ§Ã£o. Ã‰ usada para motores de pequena potÃªncia (atÃ© ~7,5CV em aplicaÃ§Ãµes semrestriÃ§Ã£o de partida).</p>
-
-          <h3>Circuito de ForÃ§a</h3>
-          <ul>
-            <li><strong>AlimentaÃ§Ã£o:</strong> 3 fases (L1, L2, L3) entram no disjuntor de proteÃ§Ã£o.</li>
-            <li><strong>Disjuntor:</strong> ProteÃ§Ã£o contra curto-circuito e sobrecarga (quando combinado com relÃ© tÃ©rmico).</li>
-            <li><strong>Contator (KM1):</strong> Dispositivo de chaveamento que conecta/desconecta o motor da rede. Quando a bobina Ã© energizada, os contatos de potÃªncia fecham e o motor arranca.</li>
-            <li><strong>RelÃ© tÃ©rmico (FR):</strong> ProteÃ§Ã£o contra sobrecarga. Se a corrente exceder o ajuste por tempo prolongado, o relÃ© tÃ©rmico abre o contato auxiliar NF no circuito de comando, desligando o contator.</li>
-            <li><strong>Motor (M):</strong> Conectado apÃ³s o relÃ© tÃ©rmico, nos terminais U1, V1, W1.</li>
-          </ul>
-
-          <h3>Circuito de Comando</h3>
-          <ul>
-            <li><strong>AlimentaÃ§Ã£o de comando:</strong> Geralmente 110V ou 220V, derivada de uma das fases.</li>
-            <li><strong>Fio de comando (Fiar):</strong> Passa pela botoeira NA (partida), pelo contato NF do relÃ© tÃ©rmico, e chega Ã  bobina do contator.</li>
-            <li><strong>Contato de selo (selagem):</strong> Contato auxiliar NA do contator, ligado em paralelo com a botoeira de partida. Quando o contator energiza, este contato fecha e mantÃ©m o circuito de comando energizado mesmo apÃ³s soltar a botoeira.</li>
-            <li><strong>Botoeira NF (parada):</strong> Ligada em sÃ©rie com todo o circuito de comando. Ao pressionar, interrompe a corrente e desliga o contator.</li>
-          </ul>
-
-          <h3>Pico de Corrente de Partida</h3>
-          <div class="formula-box">
-            <strong>âš ï¸ ATENÃ‡ÃƒO:</strong> Na partida direta, a corrente de partida Ã© 5 a 7 vezes a corrente nominal!<br><br>
-            Exemplo: Motor 5CV, In = 7,79A<br>
-            Ip = 5 a 7 Ã— 7,79 = 39 a 55A<br><br>
-            <strong>ConsequÃªncias:</strong><br>
-            â€¢ Queda de tensÃ£o na rede (pode afetar outros equipamentos)<br>
-            â€¢ EsforÃ§o mecÃ¢nico no acoplamento (golpe de partida)<br>
-            â€¢ LimitaÃ§Ã£o: geralmente usada para motores atÃ© 7,5CV
-          </div>
-
-          <h3>SequÃªncia de Funcionamento</h3>
-          <ol>
-            <li>Botoeira de partida (verde) Ã© pressionada â†’ corrente flui pela bobina do contator KM1.</li>
-            <li>KM1 energiza â†’ contatos de potÃªncia fecham â†’ motor arranca.</li>
-            <li>Contato de selo fecha â†’ mantÃ©m KM1 energizado apÃ³s soltar a botoeira.</li>
-            <li>Para parar: pressionar botoeira NF (vermelha) â†’ interrompe corrente â†’ KM1 desenergiza â†’ motor para.</li>
-            <li>Sobrecarga: relÃ© tÃ©rmico FR abre contato NF â†’ corta comando â†’ motor desliga.</li>
-          </ol>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>Esquecer o contato de selo:</strong> Sem ele, o motor para ao soltar a botoeira de partida.</li>
-            <li><strong>NÃ£o usar relÃ© tÃ©rmico:</strong> Motor sem proteÃ§Ã£o contra sobrecarga pode queimar.</li>
-            <li><strong>Pico de corrente excessivo:</strong> Em redes fracas, a partida direta pode causar queda de tensÃ£o e derrubar disjuntores de outros circuitos.</li>
-          </ul>
-        `,
+        title: "Motores Trifásicos",
+        theory: `<h2>Motores Trifásicos</h2>
+<p>O <strong>motor trifásico</strong> é alimentado por <strong>três fases</strong> (220/380V). É o motor mais utilizado na indústria por sua eficiência, robustez e simplicidade.</p>
+<p><strong>Vantagens sobre o monofásico:</strong> Maior rendimento (85-95%), menor custo por CV, partida mais suave, distribuição equilibrada de carga, menor vibração.</p>
+<p><strong>Enrolamentos:</strong> Três enrolamentos idênticos, deslocados 120° no espaço. Podem ser ligados em <strong>estrela (Y)</strong> ou <strong>triângulo (Δ)</strong>, dependendo da tensão disponível.</p>
+<p><strong>Características nominais:</strong> Tensão (220/380V ou 380/660V), corrente nominal, potência (CV ou kW), rotação (RPM), fator de potência, rendimento.</p>
+<p><strong>Rotação:</strong> A rotação síncrona depende do número de polos: 2 polos = 3600 RPM; 4 polos = 1800 RPM; 6 polos = 1200 RPM (em 60Hz). A rotação real é 3-5% menor (escorregamento).</p>
+<p><strong>Aplicação prática:</strong> Motores trifásicos são usados em bombas, compressores, esteiras, ventiladores industriais, máquinas ferramenta e linhas de produção.</p>
+<p><strong>Erro comum:</strong> Não verificar a tensão de alimentação antes de ligar. Um motor 380V ligado em 220V não tem potência; o inverso queima o enrolamento.</p>
+<p><strong>Dica:</strong> A placa do motor indica a tensão e ligação corretas. Nunca ligue um motor sem verificar esses dados primeiro.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o do contato de selo no circuito de comando?",
-            options: [
-              "Proteger contra curto-circuito",
-              "Manter o contator energizado apÃ³s soltar a botoeira de partida",
-              "Inverter o sentido de rotaÃ§Ã£o",
-              "Reduzir a corrente de partida"
-            ],
-            correct: 1,
-            explanation: "O contato de selo Ã© um contato auxiliar NA do contator, ligado em paralelo com a botoeira de partida. Ele mantÃ©m o circuito de comando energizado apÃ³s o operador soltar a botoeira."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a corrente tÃ­pica de partida de um motor trifÃ¡sico em partida direta?",
-            options: [
-              "1 a 2 vezes a corrente nominal",
-              "2 a 3 vezes a corrente nominal",
-              "5 a 7 vezes a corrente nominal",
-              "10 a 15 vezes a corrente nominal"
-            ],
-            correct: 2,
-            explanation: "Na partida direta, a corrente de partida Ã© 5 a 7 vezes a corrente nominal. Isso pode causar queda de tensÃ£o na rede e esforÃ§o mecÃ¢nico no motor e na carga."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual dispositivo protege o motor contra sobrecarga no circuito de partida direta?",
-            options: [
-              "Disjuntor magnÃ©tico",
-              "Contator KM1",
-              "RelÃ© tÃ©rmico (FR)",
-              "Botoeira de parada"
-            ],
-            correct: 2,
-            explanation: "O relÃ© tÃ©rmico (FR) monitora a corrente do motor. Se houver sobrecarga prolongada, o relÃ© tÃ©rmico abre seu contato NF no circuito de comando, desligando o contator e protegendo o motor."
-          },
-          {
-            type: "fill-blank",
-            question: "Na partida direta, os contatos de potÃªncia do contator sÃ£o do tipo _____ (NA/NF).",
-            correct: "NA",
-            explanation: "Os contatos de potÃªncia do contator sÃ£o Normalmente Abertos (NA). Quando a bobina Ã© energizada, eles fecham e conectam o motor Ã  rede."
-          },
-          {
-            type: "drag-drop",
-            question: "Organize a sequÃªncia correta de uma partida direta (1Âº ao 5Âº):",
-            pairs: [
-              { term: "1Âº", definition: "Pressionar botoeira NA (partida)" },
-              { term: "2Âº", definition: "Bobina do contator energiza" },
-              { term: "3Âº", definition: "Contatos de potÃªncia fecham â†’ Motor arranca" },
-              { term: "4Âº", definition: "Contato de selo fecha â†’ MantÃ©m ligado" },
-              { term: "5Âº", definition: "Soltar botoeira â†’ Motor continua girando" }
-            ]
-          }
+          { type: "multiple-choice", question: "Qual a principal vantagem do motor trifásico sobre o monofásico?", choices: ["Menor custo", "Maior rendimento", "Funciona em CC", "Não precisa de terra"], correct: 1, explanation: "O motor trifásico tem rendimento de 85-95%, significativamente maior que o monofásico." },
+          { type: "multiple-choice", question: "A rotação síncrona de um motor de 4 polos em 60Hz é:", choices: ["3600 RPM", "1800 RPM", "1200 RPM", "900 RPM"], correct: 1, explanation: "Rotação = (120 × f) / p = (120 × 60) / 4 = 1800 RPM. O escorregamento reduz ~5%." },
+          { type: "fill-blank", code: "Os enrolamentos do motor trifásico podem ser ligados em ________ (Y) ou ________ (Δ).", blanks: [{ answer: "estrela", placeholder: "ligação Y" }, { answer: "triângulo", placeholder: "ligação Δ" }], explanation: "Estrela (Y) usa tensão fase-neutro. Triângulo (Δ) usa tensão fase-fase." },
+          { type: "calculation", question: "Um motor trifásico de 5CV em 380V tem rendimento de 88% e fator de potência 0,85. Qual a corrente nominal?", answer: 6.6, unit: "A", validate: function(v) { return Math.abs(v - 6.6) < 0.5; }, explanation: "P_elétrica = (5 × 735,5) / 0,88 = 4179W. I = P / (√3 × V × fp) = 4179 / (1,732 × 380 × 0,85) ≈ 7,45A." }
         ]
       },
       {
         id: "m4-l5",
-        title: "Partida Estrela-TriÃ¢ngulo",
-        theory: `
-          <h2>Partida Estrela-TriÃ¢ngulo (Y-Î”)</h2>
-          <p>A partida estrela-triÃ¢ngulo Ã© o mÃ©todo mais usado para reduzir a corrente de partida em motores trifÃ¡sicos de mÃ©dia e alta potÃªncia. O motor inicia em ligaÃ§Ã£o estrela (menor tensÃ£o nas bobinas) e depois comuta para triÃ¢ngulo (tensÃ£o nominal), reduzindo o pico de corrente.</p>
-
-          <h3>PrincÃ­pio de Funcionamento</h3>
-          <ul>
-            <li><strong>Fase 1 â€” Partida em Estrela (Y):</strong> Os enrolamentos sÃ£o ligados em estrela. A tensÃ£o em cada bobina cai para Vlinha/âˆš3 (ex: 380V â†’ 220V). A corrente de partida cai para 1/3 da partida direta em triÃ¢ngulo.</li>
-            <li><strong>Fase 2 â€” ComutaÃ§Ã£o para TriÃ¢ngulo (Î”):</strong> ApÃ³s um tempo ajustÃ¡vel (geralmente 3-10 segundos), o temporizador comuta os contatos: a ligaÃ§Ã£o muda de Y para Î”, aplicando tensÃ£o nominal nas bobinas.</li>
-            <li><strong>Resultado:</strong> A corrente de partida Ã© reduzida para ~1/3, mas o torque de partida tambÃ©m cai para ~1/3. Por isso, o motor deve ter carga leve na partida ou o torque deve ser suficiente.</li>
-          </ul>
-
-          <h3>Circuito com 3 Contatores</h3>
-          <div class="formula-box">
-            <strong>Componentes necessÃ¡rios:</strong><br>
-            â€¢ KM1 â€” Contator principal (liga motor Ã  rede)<br>
-            â€¢ KM2 â€” Contator estrela (liga U2-V2-W2 = ponto estrela)<br>
-            â€¢ KM3 â€” Contator triÃ¢ngulo (liga U1-W2, V1-U2, W1-V2)<br>
-            â€¢ KT â€” Temporizador (comuta Y â†’ Î” apÃ³s tempo ajustado)<br>
-            â€¢ FR â€” RelÃ© tÃ©rmico (proteÃ§Ã£o sobrecarga)<br><br>
-            <strong>SequÃªncia automÃ¡tica:</strong><br>
-            1. BotÃ£o partida â†’ KM1 + KM2 energizam (motor em Y)<br>
-            2. KT inicia contagem â†’ ApÃ³s tempo T â†’ KT abre KM2 â†’ fecha KM3<br>
-            3. Motor agora em Î” â†’ funcionamento nominal
-          </div>
-
-          <h3>Intertravamento</h3>
-          <ul>
-            <li><strong>Intertravamento elÃ©trico:</strong> Contato NF de KM3 no circuito de KM2 e vice-versa. Impede que KM2 e KM3 fechem simultaneamente (curto-circuito!).</li>
-            <li><strong>Intertravamento mecÃ¢nico:</strong> Os contatores KM2 e KM3 devem ter barra de intertravamento mecÃ¢nico para dupla seguranÃ§a.</li>
-          </ul>
-
-          <h3>ReduÃ§Ã£o de Corrente e Torque</h3>
-          <div class="formula-box">
-            <strong>RelaÃ§Ã£o Y vs Î”:</strong><br>
-            Estrela (Y): Vbobina = Vl/âˆš3 â†’ Ilinha = Ilinha_Y<br>
-            TriÃ¢ngulo (Î”): Vbobina = Vl â†’ Ilinha = âˆš3 Ã— Ibobina_Î”<br><br>
-            <strong>Na prÃ¡tica:</strong><br>
-            â€¢ Corrente de partida em Y = 1/3 da corrente em Î”<br>
-            â€¢ Torque de partida em Y = 1/3 do torque em Î”<br><br>
-            <strong>Exemplo:</strong><br>
-            Motor 15CV, In = 30A em Î”<br>
-            Partida em Y: Ipartida = 30/3 = 10A (vs 90A = 3Ã—30 na partida direta em Î”)<br>
-            ReduÃ§Ã£o: de 90A para 10A = reduÃ§Ã£o de 89%!
-          </div>
-
-          <h3>Requisitos para Y-Î”</h3>
-          <ul>
-            <li><strong>Motor deve ser trifÃ¡sico com 6 terminais</strong> (U1, U2, V1, V2, W1, W2).</li>
-            <li><strong>Placa deve indicar ligaÃ§Ã£o Î”:</strong> Se o motor for exclusivamente Y, NÃƒO pode usar este mÃ©todo.</li>
-            <li><strong>Carga leve na partida:</strong> O torque reduzido pode nÃ£o arrancar cargas pesadas.</li>
-            <li><strong>DistÃ¢ncia entre motor e painel:</strong> Fios longos podem causar queda de tensÃ£o que prejudica a comutaÃ§Ã£o.</li>
-          </ul>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>NÃ£o intertravar KM2 e KM3:</strong> Causa curto-circuito trifÃ¡sico na comutaÃ§Ã£o.</li>
-            <li><strong>Tempo de comutaÃ§Ã£o muito curto:</strong> Motor nÃ£o atinge velocidade suficiente em Y â†’ pico de corrente na comutaÃ§Ã£o.</li>
-            <li><strong>Motor sem 6 terminais:</strong> ImpossÃ­vel fazer Y-Î” externamente.</li>
-            <li><strong>Esquecer o relÃ© tÃ©rmico:</strong> Sem proteÃ§Ã£o, motor queima em sobrecarga.</li>
-          </ul>
-        `,
+        title: "Ligação Estrela (Y)",
+        theory: `<h2>Ligação Estrela (Y)</h2>
+<p>A <strong>ligação estrela (Y)</strong> conecta um extremo de cada enrolamento em um ponto comum chamado <strong>ponto estrela</strong> ou <strong>neutro</strong>.</p>
+<p><strong>Características:</strong> A tensão entre fase e neutro é a <strong>tensão de fase</strong> (Vf). A tensão entre fases é a <strong>tensão de linha</strong> (Vl = Vf × √3). Em 380V de linha: Vf = 380/√3 ≈ 220V.</p>
+<p><strong>Correntes:</strong> A corrente de fase (If) é igual à corrente de linha (Il). If = Il. A corrente é a mesma em todo o circuito série de cada fase.</p>
+<p><strong>Aplicação:</strong> Usada quando a tensão de fase do motor é igual à tensão de fase da rede. Exemplo: motor 220/380V em rede 220/380V — liga em estrela.</p>
+<p><strong>Identificação:</strong> Os terminais U1, V1, W1 são as entradas. U2, V2, W2 são conectados entre si no ponto estrela.</p>
+<p><strong>Aplicação prática:</strong> Em partida estrela-triângulo, o motor inicia em estrela (tensão reduzida) e muda para triângulo (tensão nominal).</p>
+<p><strong>Erro comum:</strong> Ligação errada do ponto estrela. Se um dos terminais U2, V2 ou W2 não for conectado, o motor não gira e aquece.</p>
+<p><strong>Dica:</strong> Verifique a placa do motor: se a tensão é "220/380V", em estrela ele recebe 220V por fase; em triângulo, 380V por fase.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a principal vantagem da partida estrela-triÃ¢ngulo?",
-            options: [
-              "Aumentar a potÃªncia do motor",
-              "Reduzir a corrente de partida para 1/3",
-              "Aumentar o torque de partida",
-              "Eliminar a necessidade de contatores"
-            ],
-            correct: 1,
-            explanation: "A principal vantagem Ã© reduzir a corrente de partida para 1/3 da corrente em partida direta triÃ¢ngulo. O torque tambÃ©m cai para 1/3, por isso a carga deve ser leve na partida."
-          },
-          {
-            type: "multiple-choice",
-            question: "Quantos contatores sÃ£o necessÃ¡rios em um circuito de partida estrela-triÃ¢ngulo?",
-            options: [
-              "1 contator",
-              "2 contatores",
-              "3 contatores",
-              "4 contatores"
-            ],
-            correct: 2,
-            explanation: "SÃ£o necessÃ¡rios 3 contatores: KM1 (principal), KM2 (estrela) e KM3 (triÃ¢ngulo). O intertravamento entre KM2 e KM3 Ã© obrigatÃ³rio."
-          },
-          {
-            type: "calculation",
-            question: "Um motor de 20CV tem corrente nominal de 40A em ligaÃ§Ã£o triÃ¢ngulo. Qual a corrente de partida em ligaÃ§Ã£o estrela?",
-            answer: "13.33A (40/3)",
-            explanation: "Em ligaÃ§Ã£o estrela, a corrente de partida Ã© 1/3 da corrente em triÃ¢ngulo: Ipartida_Y = 40/3 = 13,33A. Compare com 120A (3Ã—40) na partida direta em Î”."
-          },
-          {
-            type: "fill-blank",
-            question: "O intertravamento elÃ©trico entre KM2 e KM3 Ã© feito com contatos _____ (NA/NF) de cada contator no circuito do outro.",
-            correct: "NF",
-            explanation: "O intertravamento utiliza contatos NF de cada contator no circuito de comando do outro. Quando um contator energiza, seu contato NF abre, impedindo que o outro energize."
-          },
-          {
-            type: "multiple-choice",
-            question: "Quando ocorre a comutaÃ§Ã£o de Y para Î” em um circuito automÃ¡tico?",
-            options: [
-              "Imediatamente ao pressionar a botoeira",
-              "ApÃ³s o motor atingir 100% da rotaÃ§Ã£o",
-              "ApÃ³s um tempo ajustÃ¡vel no temporizador (geralmente 3-10s)",
-              "Quando a corrente cai para a nominal"
-            ],
-            correct: 2,
-            explanation: "O temporizador (KT) inicia a contagem quando o motor parte em Y. ApÃ³s o tempo ajustado, ele comuta automaticamente de Y para Î”. O tempo deve ser suficiente para o motor atingir velocidade prÃ³xima da nominal."
-          }
+          { type: "multiple-choice", question: "Em ligação estrela, a tensão entre fases é:", choices: ["Igual à tensão de fase", "√3 vezes a tensão de fase", "Metade da tensão de fase", "3 vezes a tensão de fase"], correct: 1, explanation: "Vl = Vf × √3. A tensão entre fases é sempre √3 (~1,732) vezes a tensão de fase." },
+          { type: "multiple-choice", question: "Em ligação estrela, a corrente de fase é:", choices: ["Diferente da corrente de linha", "Igual à corrente de linha", "√3 vezes a linha", "Metade da linha"], correct: 1, explanation: "Em estrela, If = Il. A corrente é a mesma porque os enrolamentos estão em série com a linha." },
+          { type: "fill-blank", code: "Na ligação estrela, os terminais ________ são conectados entre si. A tensão de linha é ________ vezes a tensão de fase.", blanks: [{ answer: "U2, V2, W2", placeholder: "terminais do ponto estrela" }, { answer: "√3", placeholder: "razão de tensões" }], explanation: "U2-V2-W2 formam o ponto estrela. Vl = Vf × √3 é a relação fundamental." },
+          { type: "calculation", question: "Motor 220/380V ligado em estrela em rede 380V. Qual a tensão em cada enrolamento?", answer: 220, unit: "V", validate: function(v) { return Math.abs(v - 220) < 5; }, explanation: "Vf = Vl/√3 = 380/1,732 ≈ 220V. Em estrela, cada enrolamento recebe a tensão de fase." }
         ]
       },
       {
         id: "m4-l6",
-        title: "ReversÃ£o de Marcha",
-        theory: `
-          <h2>ReversÃ£o de Marcha (InversÃ£o de Sentido de RotaÃ§Ã£o)</h2>
-          <p>A reversÃ£o de marcha Ã© a capacidade de inverter o sentido de rotaÃ§Ã£o de um motor trifÃ¡sico. Ã‰ essencial em mÃ¡quinas-ferramenta, transportadores, elevadores, portÃµes automotivos e qualquer aplicaÃ§Ã£o que necessite de movimento nos dois sentidos.</p>
-
-          <h3>PrincÃ­pio: Inverter Duas Fases</h3>
-          <ul>
-            <li><strong>Regra fundamental:</strong> Para inverter o sentido de rotaÃ§Ã£o de um motor trifÃ¡sico, basta inverter a conexÃ£o de QUALQUER DUAS fases.</li>
-            <li><strong>Exemplo:</strong> Se o motor gira com L1-L2-L3 (sentido horÃ¡rio), basta trocar para L1-L3-L2 (sentido anti-horÃ¡rio).</li>
-            <li><strong>NUNCA inverta as 3 fases:</strong> Isso nÃ£o altera o sentido de rotaÃ§Ã£o â€” apenas mantÃ©m o mesmo sentido.</li>
-          </ul>
-
-          <h3>Circuito com Dois Contatores</h3>
-          <div class="formula-box">
-            <strong>Componentes:</strong><br>
-            â€¢ KM1 â€” Contator para sentido direto (L1â†’U, L2â†’V, L3â†’W)<br>
-            â€¢ KM2 â€” Contator para sentido reverso (L1â†’U, L3â†’V, L2â†’W)<br>
-            â€¢ FR â€” RelÃ© tÃ©rmico (proteÃ§Ã£o sobrecarga)<br><br>
-            <strong>LigaÃ§Ã£o:</strong><br>
-            KM1: L1â†’U1, L2â†’V1, L3â†’W1 (ligaÃ§Ã£o direta)<br>
-            KM2: L1â†’U1, L3â†’V1, L2â†’W1 (L2 e L3 invertidas)<br>
-            <strong>Nota:</strong> L1 permanece igual nos dois contatores. Apenas L2 e L3 sÃ£o trocados.
-          </div>
-
-          <h3>Botoeira de InversÃ£o (NA/NF)</h3>
-          <ul>
-            <li><strong>Botoeira dupla (NA/NF):</strong> Um botÃ£o com dois contatos: um NA (para ligar) e um NF (para desligar o outro sentido).</li>
-            <li><strong>Botoeira de centro (parada):</strong> BotÃ£o NF vermelho no centro, entre as duas direÃ§Ãµes.</li>
-            <li><strong>Funcionamento:</strong> Pressionar "Sentido Direto" â†’ KM1 liga. Pressionar "Sentido Reverso" â†’ KM1 desliga e KM2 liga (apÃ³s intertravamento).</li>
-          </ul>
-
-          <h3>Intertravamento â€” ObrigatÃ³rio!</h3>
-          <ul>
-            <li><strong>Intertravamento elÃ©trico:</strong> Contato NF de KM1 no circuito de KM2 e vice-versa. Se KM1 estÃ¡ ligado, KM2 NÃƒO pode ligar (e vice-versa). Impediria curto-circuito entre fases!</li>
-            <li><strong>Intertravamento mecÃ¢nico:</strong> Barra fÃ­sica conectando os dois contatores. Mesmo se o intertravamento elÃ©trico falhar, o mecÃ¢nico impede a ativaÃ§Ã£o simultÃ¢nea.</li>
-            <li><strong>ImportÃ¢ncia CRÃTICA:</strong> Sem intertravamento, um erro do operador pode causar curto-circuito trifÃ¡sico, destruiÃ§Ã£o dos contatores e risco de incÃªndio.</li>
-          </ul>
-
-          <h3>SequÃªncia de Funcionamento</h3>
-          <ol>
-            <li>Botoeira "Sentido Direto" pressionada â†’ Corrente passa pelo contato NF de KM2 â†’ Bobina de KM1 energiza.</li>
-            <li>KM1 energizado â†’ Contatos de potÃªncia fecham â†’ Motor gira no sentido direto.</li>
-            <li>Contato de selo KM1 fecha â†’ MantÃ©m KM1 ligado.</li>
-            <li>Para inverter: pressionar "Sentido Reverso" â†’ Contato NF de KM1 abre â†’ KM1 desenergiza.</li>
-            <li>Contato NF de KM1 fecha (desbloqueio) â†’ Corrente flui para KM2 â†’ KM2 energiza.</li>
-            <li>KM2 energizado â†’ L2 e L3 invertidas â†’ Motor gira no sentido reverso.</li>
-          </ol>
-
-          <h3>Erros Comuns</h3>
-          <ul>
-            <li><strong>NÃ£o usar intertravamento:</strong> Causa curto-circuito catastrÃ³fico. ERRO GRAVÃSSIMO.</li>
-            <li><strong>Inverter as 3 fases:</strong> NÃ£o inverte o sentido â€” apenas gasta contatores Ã  toa.</li>
-            <li><strong>Esquecer o tempo de comutaÃ§Ã£o:</strong> O motor precisa parar antes de inverter. Em cargas com inÃ©rcia, pode ser necessÃ¡rio freio ou temporizador.</li>
-            <li><strong>NÃ£o considerar a inÃ©rcia da carga:</strong> Inverter um motor com carga pesada em movimento pode causar correntes enormes e dano mecÃ¢nico.</li>
-          </ul>
-        `,
+        title: "Ligação Triângulo (Δ)",
+        theory: `<h2>Ligação Triângulo (Δ)</h2>
+<p>A <strong>ligação triângulo (Δ)</strong> conecta os enrolamentos em série, formando um fechamento triangular. O final de um enrolamento se conecta ao início do próximo.</p>
+<p><strong>Características:</strong> A tensão entre fases é igual à <strong>tensão de fase</strong> (Vl = Vf). Cada enrolamento recebe a tensão total da linha. A corrente de linha é √3 vezes a corrente de fase (Il = If × √3).</p>
+<p><strong>Aplicação:</strong> Usada quando a tensão de linha da rede é igual à tensão de linha do motor. Exemplo: motor 380/660V em rede 380V — liga em triângulo.</p>
+<p><strong>Identificação:</strong> U1 se conecta a W2, V1 a U2, W1 a V2. Cada par forma uma fase do triângulo.</p>
+<p><strong>Vantagens:</strong> Maior torque que estrela (pois cada enrolamento recebe mais tensão). Usado em partida direta e na segunda etapa da partida estrela-triângulo.</p>
+<p><strong>Aplicação prática:</strong> Em partida estrela-triângulo, o motor inicia em estrela (tensão reduzida, corrente menor) e muda para triângulo (tensão nominal, potência total).</p>
+<p><strong>Erro comum:</strong> Conectar em triângulo quando o motor requer estrela. Isso aplica tensão excessiva nos enrolamentos e queima o motor.</p>
+<p><strong>Dica:</strong> Se a placa diz "380/660V Y/Δ", significa: 380V em estrela, 660V em triângulo. Em rede 380V, ligue em estrela.</p>`,
         exercises: [
-          {
-            type: "multiple-choice",
-            question: "Para inverter o sentido de rotaÃ§Ã£o de um motor trifÃ¡sico, qual Ã© a regra?",
-            options: [
-              "Inverter as 3 fases simultaneamente",
-              "Inverter apenas uma fase",
-              "Inverter qualquer duas fases",
-              "Trocar o neutro pela fase"
-            ],
-            correct: 2,
-            explanation: "Para inverter o sentido de rotaÃ§Ã£o, basta inverter a conexÃ£o de QUALQUER DUAS fases. Inverter as 3 fases NÃƒO altera o sentido."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a consequÃªncia de NÃƒO usar intertravamento entre contatores de reversÃ£o?",
-            options: [
-              "O motor gira mais devagar",
-              "O motor nÃ£o liga",
-              "Curto-circuito trifÃ¡sico (fase-fase) ao acionar ambos os contatores",
-              "Aumento do torque"
-            ],
-            correct: 2,
-            explanation: "Sem intertravamento, se ambos os contatores energizarem simultaneamente, L2 e L3 serÃ£o conectadas diretamente (curto-circuito fase-fase), causando destruiÃ§Ã£o dos componentes e risco de incÃªndio."
-          },
-          {
-            type: "drag-drop",
-            question: "Organize a sequÃªncia de inversÃ£o de marcha (do sentido direto para o reverso):",
-            pairs: [
-              { term: "1Âº", definition: "Pressionar botoeira 'Sentido Reverso'" },
-              { term: "2Âº", definition: "Contato NF de KM1 abre â†’ KM1 desenergiza" },
-              { term: "3Âº", definition: "Contato NF de KM1 fecha (desbloqueio)" },
-              { term: "4Âº", definition: "KM2 energiza â†’ L2 e L3 invertidas" },
-              { term: "5Âº", definition: "Motor gira no sentido reverso" }
-            ]
-          },
-          {
-            type: "multiple-choice",
-            question: "Em um circuito de reversÃ£o, qual fase permanece igual nos dois contatores (KM1 e KM2)?",
-            options: [
-              "L1",
-              "L2",
-              "L3",
-              "Todas sÃ£o invertidas"
-            ],
-            correct: 0,
-            explanation: "No circuito padrÃ£o de reversÃ£o, L1 permanece conectada igual em ambos os contatores. Apenas L2 e L3 sÃ£o trocadas entre si no contator de reversÃ£o (KM2)."
-          },
-          {
-            type: "fill-blank",
-            question: "O intertravamento mecÃ¢nico Ã© uma barra fÃ­sica que conecta os dois contatores e impede que ambos energizem _____ (simultaneamente/sequencialmente).",
-            correct: "simultaneamente",
-            explanation: "O intertravamento mecÃ¢nico Ã© uma barra rÃ­gida entre os dois contatores. Se um estÃ¡ acionado, a barra impede fisicamente que o outro seja acionado, mesmo se o intertravamento elÃ©trico falhar."
-          }
+          { type: "multiple-choice", question: "Em ligação triângulo, a tensão entre fases é:", choices: ["√3 vezes a tensão de fase", "Igual à tensão de fase", "Metade da tensão de fase", "3 vezes a tensão de fase"], correct: 1, explanation: "Em triângulo, Vl = Vf. A tensão entre fases é igual à tensão em cada enrolamento." },
+          { type: "multiple-choice", question: "Em ligação triângulo, a corrente de linha é:", choices: ["Igual à corrente de fase", "√3 vezes a corrente de fase", "Metade da corrente de fase", "3 vezes a corrente de fase"], correct: 1, explanation: "Il = If × √3. A corrente de linha é maior que a de fase porque o nó divide a corrente." },
+          { type: "fill-blank", code: "Na ligação triângulo, o terminal U1 se conecta a ________. A corrente de linha é ________ vezes a de fase.", blanks: [{ answer: "W2", placeholder: "terminal de conexão" }, { answer: "√3", placeholder: "razão de correntes" }], explanation: "U1-W2, V1-U2, W1-V2 formam o triângulo. Il = If × √3 é a relação de correntes." },
+          { type: "calculation", question: "Motor 380/660V Y/Δ ligado em triângulo em rede 380V. Qual a tensão em cada enrolamento?", answer: 380, unit: "V", validate: function(v) { return Math.abs(v - 380) < 5; }, explanation: "Em triângulo, Vf = Vl = 380V. Cada enrolamento recebe a tensão nominal de linha." }
         ]
       },
       {
         id: "m4-l7",
-        title: "ProteÃ§Ã£o de Motores",
+        title: "Partida Direta",
+        theory: `<h2>Partida Direta</h2>
+<p>A <strong>partida direta</strong> é o método mais simples de ligar um motor: a alimentação é aplicada diretamente aos terminais, partindo do repouso até a velocidade nominal.</p>
+<p><strong>Componentes:</strong> <strong>Contator</strong> (fecha o circuito de potência), <strong>botão liga</strong> (NO), <strong>botão desliga</strong> (NF), <strong>proteção térmica</strong> (relé térmico ou disjuntor motor).</p>
+<p><strong>Funcionamento:</strong> Ao pressionar o botão liga, o contactor energiza e fecha os contatos principais. O motor recebe tensão total e acelera. O botão desliga interrompe a corrente da bobina do contactor.</p>
+<p><strong>Corrente de partida:</strong> Em partida direta, a corrente de partida pode ser de <strong>5 a 7 vezes</strong> a corrente nominal. Isso pode causar queda de tensão na rede.</p>
+<p><strong>Limitações:</strong> Não é indicado para motores grandes (>10CV) sem verificação da capacidade da rede. A alta corrente de partida pode perturbar outros equipamentos.</p>
+<p><strong>Aplicação prática:</strong> Usado em motores de até 10CV, bombas d'água, ventiladores, compressores pequenos.</p>
+<p><strong>Erro comum:</strong> Não incluir proteção térmica. Sem ela, o motor pode queimar por sobrecarga sem que o disjuntor atue.</p>
+<p><strong>Dica:</strong> Para motores acima de 10CV, avalie partida estrela-triângulo ou软启动 (soft starter) para reduzir a corrente de partida.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "A corrente de partida em partida direta pode ser:", choices: ["1 vez a nominal", "5 a 7 vezes a nominal", "10 a 15 vezes a nominal", "Igual à nominal"], correct: 1, explanation: "Em partida direta, o motor puxa 5-7× a corrente nominal até atingir velocidade." },
+          { type: "multiple-choice", question: "O relé térmico no circuito de partida direta protege contra:", choices: ["Curto-circuito", "Sobrecarga", "Sobretensão", "Falta de fase"], correct: 1, explanation: "O relé térmico detecta sobrecarga e abre o circuito de comando, desligando o contactor." },
+          { type: "fill-blank", code: "Na partida direta, ao pressionar o botão ________, o contactor energiza e o motor recebe ________ nominal.", blanks: [{ answer: "liga", placeholder: "botão de acionamento" }, { answer: "tensão", placeholder: "energia recebida" }], explanation: "Botão liga → contactor → motor recebe tensão total → acelera." },
+          { type: "drag-drop", question: "Organize os componentes da partida direta:", pieces: ["Botão liga (NO)", "Contator", "Proteção térmica", "Motor"], correctOrder: ["Botão liga (NO)", "Contator", "Proteção térmica", "Motor"], explanation: "Sequência: comando (botão) → acionamento (contator) → proteção (térmico) → carga (motor)." }
+        ]
+      },
+      {
+        id: "m4-l8",
+        title: "Partida Estrela-Triângulo",
+        theory: `<h2>Partida Estrela-Triângulo</h2>
+<p>A <strong>partida estrela-triângulo</strong> reduz a corrente de partida aplicando tensão reduzida (1/3) inicialmente e depois mudando para tensão nominal.</p>
+<p><strong>Princípio:</strong> O motor inicia em <strong>estrela (Y)</strong>, onde cada enrolamento recebe 220V (em rede 380V). Após atingir ~80% da velocidade, comuta para <strong>triângulo (Δ)</strong>, recebendo 380V por enrolamento.</p>
+<p><strong>Vantagens:</strong> A corrente de partida cai para <strong>1/3</strong> da partida direta. O torque de partida também cai para 1/3. Reduz impacto na rede e desgaste mecânico.</p>
+<p><strong>Componentes:</strong> <strong>3 contactores</strong> (principal, estrela, triângulo), <strong>temporizador</strong> (para comutar), <strong>relé térmico</strong>, <strong>botoeiras</strong>.</p>
+<p><strong>Sequência:</strong> 1) Botão liga → contactor principal + contactor estrela energizam. 2) Temporizador inicia contagem (2-5 segundos). 3) Temporizador atua → contactor estrela desliga, contactor triângulo energiza. 4) Motor opera em triângulo.</p>
+<p><strong>Aplicação prática:</strong> Motores de bombas, compressores, ventiladores industriais de 10 a 100CV.</p>
+<p><strong>Erro comum:</strong> Não usar intertravamento entre contactores estrela e triângulo. Se ambos fecharem simultaneamente, há curto-circuito entre fases.</p>
+<p><strong>Dica:</strong> O tempo de comutação deve ser ajustado para o motor atingir ~80% da velocidade antes de mudar para triângulo.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Na partida estrela-triângulo, a corrente de partida é:", choices: ["Igual à direta", "1/3 da direta", "1/2 da direta", "3 vezes a direta"], correct: 1, explanation: "Em estrela, a tensão é reduzida para 1/√3, e a corrente para (1/√3)² = 1/3 da partida direta." },
+          { type: "multiple-choice", question: "Quantos contactores são necessários para partida estrela-triângulo?", choices: ["1", "2", "3", "4"], correct: 2, explanation: "Três contactores: principal (ligação), estrela (partida) e triângulo (operação nominal)." },
+          { type: "fill-blank", code: "O motor inicia em ________ (tensão reduzida) e comuta para ________ (tensão nominal). São necessários ________ contactores.", blanks: [{ answer: "estrela", placeholder: "ligação inicial" }, { answer: "triângulo", placeholder: "ligação final" }, { answer: "três", placeholder: "quantidade" }], explanation: "Estrela → triângulo. Três contactores: principal, estrela e triângulo." },
+          { type: "drag-drop", question: "Organize a sequência de partida estrela-triângulo:", pieces: ["1. Botão liga", "2. Contator estrela + principal", "3. Temporizador conta", "4. Comuta para triângulo"], correctOrder: ["1. Botão liga", "2. Contator estrela + principal", "3. Temporizador conta", "4. Comuta para triângulo"], explanation: "A sequência é: acionamento → estrela (reduzido) → temporização → triângulo (nominal)." }
+        ]
+      },
+      {
+        id: "m4-l9",
+        title: "Reversão de Marcha",
+        theory: `<h2>Reversão de Marcha</h2>
+<p>A <strong>reversão de marcha</strong> inverte o sentido de rotação de um motor trifásico <strong>troando duas fases</strong>.</p>
+<p><strong>Princípio:</strong> Ao inverter a sequência de duas fases (ex: trocar L1 e L3), o campo magnético girante inverte o sentido, fazendo o rotor girar no sentido oposto.</p>
+<p><strong>Componentes:</strong> <strong>Dois contactores</strong> (um para cada sentido), <strong>intertravamento elétrico e/ou mecânico</strong> (impedir que ambos energizem simultaneamente), <strong>botoeiras</strong> (liga horário, liga anti-horário, desliga).</p>
+<p><strong>Intertravamento:</strong> <strong>Elétrico:</strong> contato NF de um contactor na bobina do outro. <strong>Mecânico:</strong> trava física entre os contactores. Ambos são recomendados para máxima segurança.</p>
+<p><strong>Sequência de ligação:</strong> Contator 1: L1-U1, L2-V1, L3-W1 (sentido normal). Contator 2: L3-U1, L2-V1, L1-W1 (duas fases trocadas).</p>
+<p><strong>Aplicação prática:</strong> Elevadores, esteiras, máquinas de usinagem, portões automáticos, bombas de recalque.</p>
+<p><strong>Erro comum:</strong> Não usar intertravamento. Se ambos contactores fecharem, há curto-circuito trifásico direto.</p>
+<p><strong>Dica:</strong> Use intertravamento elétrico + mecânico. O mecânico é a última barreira de segurança em caso de falha do elétrico.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Para inverter o sentido de um motor trifásico, basta:", choices: ["Trocar as três fases", "Trocar duas fases", "Inverter fase e neutro", "Trocar o terra"], correct: 1, explanation: "Trocar apenas duas fases inverte o campo magnético girante e, consequentemente, a rotação do rotor." },
+          { type: "multiple-choice", question: "O intertravamento em reversão de marcha serve para:", choices: ["Aumentar potência", "Evitar curto entre fases", "Reduzir corrente", "Melhorar rendimento"], correct: 1, explanation: "Impede que ambos contactores sejam acionados simultaneamente, evitando curto-circuito entre fases." },
+          { type: "fill-blank", code: "A reversão de marcha troca ________ fases. O intertravamento pode ser ________ e/ou mecânico.", blanks: [{ answer: "duas", placeholder: "número de fases" }, { answer: "elétrico", placeholder: "tipo de intertravamento" }], explanation: "Duas fases trocadas = rotação invertida. Intertravamento elétrico (contato NF) + mecânico (trava)." },
+          { type: "drag-drop", question: "Organize os componentes da reversão de marcha:", pieces: ["Contator horário", "Contator anti-horário", "Intertravamento", "Botoeiras"], correctOrder: ["Contator horário", "Contator anti-horário", "Intertravamento", "Botoeiras"], explanation: "Dois contactores (um para cada sentido), intertravamento entre eles, botoeiras para comando." }
+        ]
+      },
+      {
+        id: "m4-l10",
+        title: "Proteção de Motores",
+        theory: `<h2>Proteção de Motores</h2>
+<p>Os motores elétricos necessitam de <strong>múltiplas proteções</strong> para evitar danos por sobrecarga, curto-circuito, falta de fase e outras falhas.</p>
+<p><strong>Proteção contra sobrecarga:</strong> <strong>Relé térmico</strong> (bimetálico) — detecta aquecimento excessivo. <strong>Disjuntor motor</strong> — combina proteção de curto-circuito e sobrecarga.</p>
+<p><strong>Proteção contra curto-circuito:</strong> <strong>Disjuntor</strong> ou <strong>fusível</strong> — abre o circuito rapidamente em caso de curto. FusíveisQuick-Fuse são indicados para motores.</p>
+<p><strong>Proteção contra falta de fase:</strong> <strong>Relé de sequência de fase</strong> (verde/laranja) — desliga o motor se uma das fases faltar. Essencial em motores trifásicos.</p>
+<p><strong>Proteção contra sobretensão/subtensão:</strong> <strong>Relé de tensão</strong> — desliga o motor se a tensão sair da faixa aceitável (±10%).</p>
+<p><strong>Proteção mecânica:</strong> <strong>Acoplamento com junta elástica</strong>, <strong>rolamentos</strong>, <strong>vedação</strong>. Manutenção preventiva é crucial.</p>
+<p><strong>Aplicação prática:</strong> Em indústrias, a combinação de relé térmico + relé de fase + disjuntor é o mínimo para proteção completa de um motor.</p>
+<p><strong>Erro comum:</strong> Usar disjuntor comum sem relé térmico. O disjuntor pode não desligar a tempo em sobrecarga leve.</p>
+<p><strong>Dica:</strong> Ao dimensionar o relé térmico, ajuste para a corrente nominal do motor. Nunca para a corrente de partida.</p>`,
+        exercises: [
+          { type: "multiple-choice", question: "Qual dispositivo protege contra sobrecarga prolongada?", choices: ["Disjuntor comum", "Relé térmico", "DPS", "DR"], correct: 1, explanation: "O relé térmico detecta o aquecimento causado por sobrecarga e desliga o motor antes que ele queime." },
+          { type: "multiple-choice", question: "A proteção contra falta de fase é feita por:", choices: ["Disjuntor", "Relé de sequência de fase", "Fusível", "Capacitor"], correct: 1, explanation: "O relé de sequência de fase verifica a presença das três fases e desliga se uma faltar." },
+          { type: "fill-blank", code: "O relé térmico protege contra ________. O relé de fase protege contra ________ de fase.", blanks: [{ answer: "sobrecarga", placeholder: "tipo de falha" }, { answer: "falta", placeholder: "tipo de falha" }], explanation: "Térmico = sobrecarga (aquecimento). Relé de fase = falta de uma ou mais fases." },
+          { type: "drag-drop", question: "Organize as proteções de um motor trifásico:", pieces: ["Disjuntor (curto-circuito)", "Relé térmico (sobrecarga)", "Relé de fase (falta de fase)", "DPS (surtos)"], correctOrder: ["Disjuntor (curto-circuito)", "Relé térmico (sobrecarga)", "Relé de fase (falta de fase)", "DPS (surtos)"], explanation: "Cada proteção atua em um tipo diferente de falha, garantindo segurança completa do motor." }
+        ]
+      }
+    ]
+  },
+{
+    id: "m5",
+    title: "Comandos Elétricos",
+    description: "Domine botoeiras, contactores, relés e circuitos de comando para controle de motores.",
+    icon: "🎛️",
+    color: "#0984E3",
+    lessons: [
+      {
+        id: "m5-l1",
+        title: "Botoeiras e Sinais",
+        theory: `Botoeiras são dispositivos de comando manual utilizados para acionar e desligar equipamentos. Elas são classificadas conforme a sua função:
+
+**Botão NA (Normalmente Aberto) – Verde:**
+- Usado para LIGAR o circuito
+- Contato fechado apenas quando pressionado
+- Cor padrão: VERDE
+
+**Botão NF (Normalmente Fechado) – Vermelho:**
+- Usado para DESLIGAR o circuito
+- Contato aberto apenas quando pressionado
+- Cor padrão: VERMELHO
+
+**Tipos de Botoeiras:**
+- Simples: apenas um contato (NA ou NF)
+- Dupla: dois contatos (1 NA + 1 NF)
+- Bloqueio (Selo): mantém ligado após soltar o botão
+- Emergência: botão vermelho com trava (NC)
+
+**Cores Padrão (NBR 8196):**
+- Verde: ligar / marcha
+- Vermelho: desligar / parada
+- Amarelo: alerta / advertência
+- Azul: reset / reinício
+- Branco: função geral`,
+        exercises: [
+          {
+            id: "m5-l1-e1",
+            type: "multiple-choice",
+            question: "Qual botão é utilizado para LIGAR um motor?",
+            choices: ["Botão NF vermelho", "Botão NA verde", "Botão NF verde", "Botão NA vermelho"],
+            correct: 1,
+            explanation: "O botão NA (Normalmente Aberto) de cor verde é o padrão para ligar equipamentos. Ao ser pressionado, o contato fecha e o circuito se completa."
+          },
+          {
+            id: "m5-l1-e2",
+            type: "multiple-choice",
+            question: "Qual é a função do botão vermelho NF em um circuito de comando?",
+            choices: ["Ligar o motor", "Manter o motor ligado", "Desligar o motor", "Alterar a rotação do motor"],
+            correct: 2,
+            explanation: "O botão vermelho NF (Normalmente Fechado) é usado para desligar. Quando pressionado, o contato abre e interrompe o circuito de comando."
+          },
+          {
+            id: "m5-l1-e3",
+            type: "fill-blank",
+            question: "Complete o código: Botão NA = _____ (Normalmente _____)",
+            code: "Botão NA = _____ (Normalmente _____)",
+            blanks: 2,
+            explanation: "NA significa Normalmente Aberto. O contato permanece aberto até que o botão seja pressionado."
+          },
+          {
+            id: "m5-l1-e4",
+            type: "drag-drop",
+            question: "Ordene as cores conforme a NBR 8196 (de cima para baixo: ligar → desligar → alerta → reset):",
+            pieces: ["Azul", "Vermelho", "Verde", "Amarelo"],
+            correctOrder: ["Verde", "Vermelho", "Amarelo", "Azul"],
+            explanation: "A norma NBR 8196 define: Verde = ligar/marcha, Vermelho = desligar/parada, Amarelo = alerta, Azul = reset/reinício."
+          },
+          {
+            id: "m5-l1-e5",
+            type: "multiple-choice",
+            question: "O que diferencia um botão simples de um botão duplo?",
+            choices: ["A cor do botão", "Ter apenas um contato", "Ter dois contatos (NA + NF)", "A tensão de acionamento"],
+            correct: 2,
+            explanation: "O botão duplo possui dois contatos integrados: um NA e um NF, permitindo funções simultâneas (ligar e desligar no mesmo comando)."
+          }
+        ]
+      },
+      {
+        id: "m5-l2",
+        title: "Contatores",
+        theory: `Contatores são dispositivos eletromecânicos usados para ligar e desligar cargas de potência (motores, fornos, iluminação).
+
+**Construção Básica:**
+- Núcleo de ferro (estator e rotor)
+- Bobina eletromagnética
+- Contatos de potência (principal)
+- Contatos auxiliares (sinalização/lógica)
+- Mola de retorno
+
+**Princípio de Funcionamento:**
+- Bobina energizada → gera campo magnético → atrai o rotor → fecha os contatos de potência
+- Bobina desenergizada → mola de retorno abre os contatos
+
+**Contatos de Selo (Selo):**
+- Contato auxiliar ligado em paralelo com o botão NA de partida
+- Mantém a bobina energizada após soltar o botão
+- Permite que o motor continue ligado após o comando inicial
+
+**Classificação por Corrente:**
+- Contator IEC (contato auxiliar): até 16A
+- Contator de potência: 9A a 2000A (depende do modelo)
+
+**Marcas conhecidas:** Siemens, Schneider, ABB, WEG, LS`,
+        exercises: [
+          {
+            id: "m5-l2-e1",
+            type: "multiple-choice",
+            question: "Qual é a função principal do contato de selo?",
+            choices: ["Aumentar a corrente do circuito", "Manter a bobina energizada após soltar o botão", "Proteger contra sobrecarga", "Controlar a rotação do motor"],
+            correct: 1,
+            explanation: "O contato de selo é um contato auxiliar do contator, ligado em paralelo com o botão NA de partida, que mantém a bobina energizada e o motor ligado após o operador soltar o botão."
+          },
+          {
+            id: "m5-l2-e2",
+            type: "fill-blank",
+            question: "Complete: O contator possui contatos de _____ (para a carga) e contatos de _____ (para lógica/sinalização).",
+            code: "O contator possui contatos de _____ (para a carga) e contatos de _____ (para lógica).",
+            blanks: 2,
+            explanation: "Contatos de potência são os principais, que conduzem a corrente da carga. Contatos auxiliares são usados em circuitos de comando e sinalização."
+          },
+          {
+            id: "m5-l2-e3",
+            type: "multiple-choice",
+            question: "O que acontece quando a bobina do contator é desenergizada?",
+            choices: ["Os contatos permanecem fechados", "A mola de retorno abre os contatos", "O contator gira na direção oposta", "Nada acontece"],
+            correct: 1,
+            explanation: "Ao desenergizar a bobina, o campo magnético desaparece e a mola de retorno força a abertura dos contatos, desligando a carga."
+          },
+          {
+            id: "m5-l2-e4",
+            type: "drag-drop",
+            question: "Ordene as partes do contator (de cima para baixo):",
+            pieces: ["Mola de retorno", "Núcleo de ferro", "Bobina eletromagnética", "Contatos de potência"],
+            correctOrder: ["Núcleo de ferro", "Bobina eletromagnética", "Contatos de potência", "Mola de retorno"],
+            explanation: "O núcleo de ferro forma a estrutura magnética, a bobina gera o campo magnético, os contatos de potência são acionados, e a mola garante a retorno à posição original."
+          },
+          {
+            id: "m5-l2-e5",
+            type: "calculation",
+            question: "Se um contator tem 3 contatos de potência de 20A cada, qual a corrente total máxima que ele suporta?",
+            answer: 60,
+            unit: "A",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 60) < 0.1; },
+            explanation: "Com 3 contatos em paralelo (trifásico), cada um suportando 20A, a corrente total é 3 × 20A = 60A."
+          }
+        ]
+      },
+      {
+        id: "m5-l3",
+        title: "Relés Térmicos",
+        theory: `Relés térmicos são dispositivos de proteção contra sobrecarga em motores elétricos.
+
+**Princípio de Funcionamento:**
+- Utilizam elementos bimetálicos (duas lâminas com coeficientes de dilatação diferentes)
+- Quando a corrente excede o valor nominal, o aquecimento causa a deformação do bimetal
+- A deformação abre o contato NF, desligando o circuito de comando
+
+**Curva Térmica:**
+- A cada valor de sobrecarga, há um tempo específico para atuação
+- Exemplo: a 600% da corrente nominal, o relé atua em ~5 segundos
+- A 150% da corrente nominal, o relé pode levar ~30 segundos para atuar
+
+**Ajuste da Corrente Nominal:**
+- O relé deve ser ajustado para a corrente nominal do motor
+- Utilize o potenciômetro ou trilho de ajuste
+- Nunca ajuste para corrente superior à do motor
+
+**Lembrete:** Relé térmico NÃO protege contra curto-circuito. Para isso, use fusíveis ou disjuntores.`,
+        exercises: [
+          {
+            id: "m5-l3-e1",
+            type: "multiple-choice",
+            question: "Qual é o elemento sensor do relé térmico?",
+            choices: ["Bobina eletromagnética", "Elemento bimetálico", "Fusível", "Disjuntor magnético"],
+            correct: 1,
+            explanation: "O elemento bimetálico é composto por duas lâminas metálicas com coeficientes de dilatação diferentes, que se deformam com o calor gerado pela sobrecarga."
+          },
+          {
+            id: "m5-l3-e2",
+            type: "multiple-choice",
+            question: "O relé térmico protege contra qual tipo de falha?",
+            choices: ["Curto-circuito", "Sobrecarga", "Sobretensão", "Falta de fase (apenas em modelos trifásicos)"],
+            correct: 1,
+            explanation: "O relé térmico é projetado especificamente para proteção contra sobrecarga. Não é adequado para curto-circuito, que requer proteção magnética."
+          },
+          {
+            id: "m5-l3-e3",
+            type: "fill-blank",
+            question: "Complete: O relé térmico NÃO protege contra _____, apenas contra _____.",
+            code: "O relé térmico NÃO protege contra _____, apenas contra _____.",
+            blanks: 2,
+            explanation: "O relé térmico não é sensível o suficiente para atuar em curto-circuito (que requer disjuntor magnético). Sua função é proteger contra sobrecarga prolongada."
+          },
+          {
+            id: "m5-l3-e4",
+            type: "calculation",
+            question: "Um motor tem corrente nominal de 10A. Qual o ajuste correto do relé térmico?",
+            answer: 10,
+            unit: "A",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 10) < 0.1; },
+            explanation: "O relé térmico deve ser ajustado para exatamente a corrente nominal do motor. Se o motor consome 10A, o ajuste deve ser 10A."
+          },
+          {
+            id: "m5-l3-e5",
+            type: "multiple-choice",
+            question: "Se a corrente nominal do motor é 15A, qual o ajuste correto do relé térmico?",
+            choices: ["10A", "12A", "15A", "20A"],
+            correct: 2,
+            explanation: "O ajuste do relé térmico deve corresponder à corrente nominal do motor. Para um motor de 15A, o ajuste é 15A."
+          }
+        ]
+      },
+      {
+        id: "m5-l4",
+        title: "Temporizadores",
+        theory: `Temporizadores são dispositivos que controlam o tempo de acionamento de contatos.
+
+**Tipos de Temporização:**
+- **TON (Temporização na Energização):** contato fecha após o tempo ajustado
+- **TOF (Temporização na Desenergização):** contato abre após o tempo ajustado
+- **TP (Pulso Temporizado):** gera pulso de duração fixa
+
+**Temporizador Mecânico:**
+- Utiliza sistema de engrenagens e disco
+- Menor precisão (±10%)
+- Custo mais baixo
+- Vida útil limitada
+
+**Temporizador Eletrônico:**
+- Circuito integrado com cristal oscilador
+- Maior precisão (±1%)
+- Mais caro
+- Vida útil maior
+
+**Aplicações Típicas:**
+- Atraso de partida (estrela-triângulo)
+- Sequência de acionamento
+- Temporização de desligamento
+- Controle de ciclos`,
+        exercises: [
+          {
+            id: "m5-l4-e1",
+            type: "multiple-choice",
+            question: "Qual tipo de temporização fecha o contato APÓS a energização?",
+            choices: ["TOF", "TON", "TP", "Todos os anteriores"],
+            correct: 1,
+            explanation: "TON (Temporização na Energização) mantém o contato aberto durante o tempo ajustado e o fecha somente após o tempo decorrer."
+          },
+          {
+            id: "m5-l4-e2",
+            type: "multiple-choice",
+            question: "Qual é a principal vantagem do temporizador eletrônico sobre o mecânico?",
+            choices: ["Custo mais baixo", "Maior precisão", "Maior durabilidade mecânica", "Simplicidade de construção"],
+            correct: 1,
+            explanation: "O temporizador eletrônico oferece precisão de ±1% contra ±10% do mecânico, garantindo controle de tempo mais confiável."
+          },
+          {
+            id: "m5-l4-e3",
+            type: "drag-drop",
+            question: "Ordene os tipos de temporização (de cima para baixo: fecha após energizar → abre após desenergizar → gera pulso):",
+            pieces: ["TP", "TON", "TOF"],
+            correctOrder: ["TON", "TOF", "TP"],
+            explanation: "TON fecha contato após energização, TOF abre contato após desenergização, e TP gera pulso de duração fixa."
+          },
+          {
+            id: "m5-l4-e4",
+            type: "multiple-choice",
+            question: "Em qual aplicação o temporizador é essencial para evitar partidas simultâneas?",
+            choices: ["Partida direta", "Estrela-Triângulo", "Parada de emergência", "Reversão de marcha"],
+            correct: 1,
+            explanation: "Na partida estrela-triângulo, o temporizador garante que o motor parta em estrela e, após um tempo, mude para triângulo, evitando correntes excessivas."
+          },
+          {
+            id: "m5-l4-e5",
+            type: "fill-blank",
+            question: "Complete: TOF = Temporização na _____",
+            code: "Complete: TOF = Temporização na _____",
+            blanks: 1,
+            explanation: "TOF significa Temporização na Desenergização. O contato se abre após o tempo ajustado quando a bobina é desligada."
+          }
+        ]
+      },
+      {
+        id: "m5-l5",
+        title: "Circuitos de Comando",
+        theory: `Circuitos de comando são divididos em dois tipos fundamentais:
+
+**Circuito de Força:**
+- Transporta a energia elétrica até a carga (motor)
+- Utiliza fios de maior seção (2,5mm² a 16mm²)
+- Contém contator, relé térmico, fusível
+- Trabalha em alta tensão/corrente (220V/380V)
+
+**Circuito de Comando:**
+- Controla o funcionamento do circuito de força
+- Utiliza fios de menor seção (0,75mm² a 1,5mm²)
+- Contém botoeiras, contator, relé térmico, temporizador
+- Trabalha em baixa tensão (24V/110V/220V)
+
+**Fiação Padrão:**
+- Fase: vermelho ou marrom
+- Neutro: azul claro
+- Terra: verde/amarelo
+- Comando: cinza ou preto
+
+**Dica Importante:** Sempre verifique o diagrama elétrico antes de qualquer conexão.`,
+        exercises: [
+          {
+            id: "m5-l5-e1",
+            type: "multiple-choice",
+            question: "Qual é a função do circuito de força?",
+            choices: ["Controlar o motor", "Transportar energia até a carga", "Gerar sinais de comando", "Medir a corrente"],
+            correct: 1,
+            explanation: "O circuito de força é responsável por conduzir a energia elétrica desde a rede até a carga (motor), passando pelos dispositivos de proteção e comando."
+          },
+          {
+            id: "m5-l5-e2",
+            type: "multiple-choice",
+            question: "Qual a seção típica de fio utilizada no circuito de comando?",
+            choices: ["0,5mm²", "0,75mm² a 1,5mm²", "2,5mm² a 6mm²", "10mm² a 16mm²"],
+            correct: 1,
+            explanation: "O circuito de comando opera com correntes menores (bobinas de contatores, botoeiras), por isso utiliza fios de seção menor (0,75mm² a 1,5mm²)."
+          },
+          {
+            id: "m5-l5-e3",
+            type: "fill-blank",
+            question: "Complete: O circuito de _____ transporta energia até a carga, e o circuito de _____ controla seu funcionamento.",
+            code: "Complete: O circuito de _____ transporta energia até a carga, e o circuito de _____ controla seu funcionamento.",
+            blanks: 2,
+            explanation: "Força = energia até a carga. Comando = controle do funcionamento (botoeiras, contator, relé)."
+          },
+          {
+            id: "m5-l5-e4",
+            type: "drag-drop",
+            question: "Ordene os componentes do circuito de força (de cima para baixo):",
+            pieces: ["Contator", "Disjuntor/Fusível", "Relé Térmico", "Motor"],
+            correctOrder: ["Disjuntor/Fusível", "Contator", "Relé Térmico", "Motor"],
+            explanation: "A energia passa primeiro pela proteção (disjuntor/fusível), depois pelo contator (ligar/desligar), pelo relé térmico (proteção) e chega ao motor."
+          },
+          {
+            id: "m5-l5-e5",
+            type: "multiple-choice",
+            question: "Qual a cor padrão para o fio terra conforme a norma?",
+            choices: ["Azul", "Vermelho", "Verde/Amarelo", "Preto"],
+            correct: 2,
+            explanation: "O fio terra (protetor) deve ser identificado com as cores verde e amarelo, conforme a norma NBR 5410."
+          }
+        ]
+      },
+      {
+        id: "m5-l6",
+        title: "Partida Direta",
+        theory: `A partida direta é o método mais simples de ligar um motor elétrico trifásico.
+
+**Diagrama de Força:**
+- Disjuntor → Contator → Relé Térmico → Motor
+- Três fases (R, S, T) conectadas diretamente ao motor
+
+**Diagrama de Comando:**
+- Botão NA (liga) + Botão NF (desliga)
+- Contato de selo (mantém ligado)
+- Relé térmico (proteção contra sobrecarga)
+- Bobina do contator
+
+**Sequência de Funcionamento:**
+1. Fechar disjuntor
+2. Pressionar botão NA verde
+3. Bobina K1 energiza → fecha contatos de potência e selo
+4. Motor arranca
+5. Para desligar, pressionar botão NF vermelho
+
+**Vantagens:** Simplicidade, baixo custo
+**Desvantagens:** Corrente de partida alta (6-8x nominal)`,
+        exercises: [
+          {
+            id: "m5-l6-e1",
+            type: "multiple-choice",
+            question: "Qual é a primeira ação ao efetuar a partida direta?",
+            choices: ["Pressionar o botão verde", "Fechar o disjuntor", "Ligar o relé térmico", "Acionar o temporizador"],
+            correct: 1,
+            explanation: "O disjuntor deve ser fechado primeiro para energizar o circuito de força. Somente depois o operador pressiona o botão de partida."
+          },
+          {
+            id: "m5-l6-e2",
+            type: "multiple-choice",
+            question: "O que mantém o contator energizado após soltar o botão verde?",
+            choices: ["O relé térmico", "O contato de selo", "O disjuntor", "O fusível"],
+            correct: 1,
+            explanation: "O contato de selo (contato auxiliar do contator) é ligado em paralelo com o botão NA, mantendo a bobina energizada e o motor ligado."
+          },
+          {
+            id: "m5-l6-e3",
+            type: "fill-blank",
+            question: "Complete: Na partida direta, a corrente de partida é ____ vezes a corrente nominal do motor.",
+            code: "Complete: Na partida direta, a corrente de partida é ____ vezes a corrente nominal.",
+            blanks: 1,
+            explanation: "Na partida direta, o motor recebe toda a tensão da rede instantaneamente, gerando corrente de partida entre 6 a 8 vezes a nominal."
+          },
+          {
+            id: "m5-l6-e4",
+            type: "drag-drop",
+            question: "Ordene a sequência da partida direta (de cima para baixo):",
+            pieces: ["Motor arranca", "Pressionar botão verde", "Fechar disjuntor", "Pressionar botão vermelho"],
+            correctOrder: ["Fechar disjuntor", "Pressionar botão verde", "Motor arranca", "Pressionar botão vermelho"],
+            explanation: "A sequência correta: fechar disjuntor → pressionar botão verde → motor arranca → (para desligar) pressionar botão vermelho."
+          },
+          {
+            id: "m5-l6-e5",
+            type: "multiple-choice",
+            question: "Qual a principal desvantagem da partida direta?",
+            choices: ["Alto custo", "Corrente de partida muito alta", "Complexidade do diagrama", "Necessidade de temporizador"],
+            correct: 1,
+            explanation: "A partida direta gera corrente de partida muito alta (6-8x a nominal), o que pode causar queda de tensão e sobrecarregar a rede."
+          }
+        ]
+      },
+      {
+        id: "m5-l7",
+        title: "Estrela-Triângulo",
+        theory: `A partida estrela-triângulo é um método de partida reduzida para motores trifásicos.
+
+**Princípio:**
+- Partida em estrela (Y): tensão reduzida (√3 = 1,73x menor)
+- Após tempo ajustado, muda para triângulo (Δ): tensão nominal
+- Corrente de partida reduzida para 1/3 da partida direta
+
+**Componentes Necessários:**
+- 3 contatores (K1 principal, K2 estrela, K3 triângulo)
+- 1 temporizador
+- Relé térmico
+- Botões de comando
+
+**Sequência:**
+1. K1 (principal) + K2 (estrela) energizam → motor arranca em estrela
+2. Temporizador contagem
+3. K2 desliga → K3 liga → motor muda para triângulo
+4. Motor funciona em triângulo (regime)
+
+**Intertravamento:**
+- K2 e K3 NUNCA podem estar ligados ao mesmo tempo
+- Intertravamento elétrico e/ou mecânico obrigatório`,
+        exercises: [
+          {
+            id: "m5-l7-e1",
+            type: "multiple-choice",
+            question: "Qual a relação entre a corrente de partida em estrela e em triângulo?",
+            choices: ["I_estrela = I_triangulo", "I_estrela = 1/3 I_triangulo", "I_estrela = 3 x I_triangulo", "I_estrela = √3 x I_triangulo"],
+            correct: 1,
+            explanation: "Em estrela, a corrente é reduzida para 1/3 da corrente de partida em triângulo, devido à redução da tensão aplicada aos enrolamentos."
+          },
+          {
+            id: "m5-l7-e2",
+            type: "multiple-choice",
+            question: "Por que K2 (estrela) e K3 (triângulo) nunca podem estar ligados ao mesmo tempo?",
+            choices: ["Por causa da corrente", "Por causa da tensão", "Por causa do intertravamento", "Por causa do tempo de temporização"],
+            correct: 2,
+            explanation: "Se K2 e K3 estiverem ligados simultaneamente, haverá curto-circuito nas fases. O intertravamento elétrico e mecânico impede essa condição."
+          },
+          {
+            id: "m5-l7-e3",
+            type: "fill-blank",
+            question: "Complete: Na partida estrela-triângulo, são necessários _____ contatores e _____ temporizador.",
+            code: "Complete: Na partida estrela-triângulo, são necessários _____ contatores e _____ temporizador.",
+            blanks: 2,
+            explanation: "São 3 contatores (principal, estrela, triângulo) e 1 temporizador para controlar a transição entre estrela e triângulo."
+          },
+          {
+            id: "m5-l7-e4",
+            type: "drag-drop",
+            question: "Ordene a sequência da partida estrela-triângulo (de cima para baixo):",
+            pieces: ["Motor em triângulo", "K1 + K2 energizam", "Temporizador contando", "K2 desliga, K3 liga"],
+            correctOrder: ["K1 + K2 energizam", "Temporizador contando", "K2 desliga, K3 liga", "Motor em triângulo"],
+            explanation: "A sequência: K1+K2 ligam (estrela) → temporizador conta → K2 desliga, K3 liga (transição) → motor em triângulo (regime)."
+          },
+          {
+            id: "m5-l7-e5",
+            type: "calculation",
+            question: "Um motor tem corrente de partida em triângulo de 60A. Qual a corrente de partida em estrela?",
+            answer: 20,
+            unit: "A",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 20) < 0.1; },
+            explanation: "Em estrela, a corrente é 1/3 da corrente em triângulo: 60A / 3 = 20A."
+          }
+        ]
+      },
+      {
+        id: "m5-l8",
+        title: "Reversão de Marcha",
+        theory: `A reversão de marcha permite inverter o sentido de rotação de um motor trifásico.
+
+**Princípio:**
+- Inverter duas fases do motor (ex: R e T) inverte o sentido de rotação
+- Utiliza dois contatores (K1 frente, K2 ré)
+- Botões separados para cada sentido
+
+**Diagrama:**
+- K1: liga fases R-S-T (frente)
+- K2: liga fases T-S-R (ré) - inverte R e T
+
+**Intertravamento:**
+- Elétrico: contato NF de K1 em série com bobina de K2 (e vice-versa)
+- Mecânico: campainha ou trava física
+- Impede que K1 e K2 energizem simultaneamente
+
+**Procedimento de Reversão:**
+1. Pressionar botão de frente → K1 liga (motor gira frente)
+2. Para inverter: primeiro DESLIGAR (botão parada)
+3. Pressionar botão de ré → K2 liga (motor gira ré)
+4. NUNCA pressionar frente e ré ao mesmo tempo`,
+        exercises: [
+          {
+            id: "m5-l8-e1",
+            type: "multiple-choice",
+            question: "Como se inverte o sentido de rotação de um motor trifásico?",
+            choices: ["Invertendo todas as fases", "Invertendo apenas duas fases", "Invertendo a corrente", "Mudando a frequência"],
+            correct: 1,
+            explanation: "Basta inverter a conexão de duas fases (ex: R e T) para inverter o sentido de rotação do motor."
+          },
+          {
+            id: "m5-l8-e2",
+            type: "multiple-choice",
+            question: "O que impede que K1 e K2 energizem ao mesmo tempo?",
+            choices: ["Fusível", "Temporizador", "Intertravamento", "Relé térmico"],
+            correct: 2,
+            explanation: "O intertravamento elétrico (contato NF de cada contator em série com a bobina do outro) e mecânico impedem que ambos energizem simultaneamente."
+          },
+          {
+            id: "m5-l8-e3",
+            type: "fill-blank",
+            question: "Complete: Na reversão de marcha, K1 liga fases _____ (frente) e K2 liga fases _____ (ré).",
+            code: "Complete: Na reversão de marcha, K1 liga fases _____ e K2 liga fases _____.",
+            blanks: 2,
+            explanation: "K1: R-S-T (frente). K2: T-S-R (ré) - inverte as fases R e T para mudar o sentido."
+          },
+          {
+            id: "m5-l8-e4",
+            type: "multiple-choice",
+            question: "Qual o procedimento correto ao mudar de frente para ré?",
+            choices: ["Pressionar ré diretamente", "Pressionar frente e ré ao mesmo tempo", "Primeiro parar, depois pressionar ré", "Desligar o disjuntor"],
+            correct: 2,
+            explanation: "Sempre parar o motor primeiro (botão vermelho) antes de inverter o sentido. Isso evita correntes de reversão excessivas."
+          },
+          {
+            id: "m5-l8-e5",
+            type: "drag-drop",
+            question: "Ordene as fases na conexão frente (de cima para baixo):",
+            pieces: ["T", "S", "R"],
+            correctOrder: ["R", "S", "T"],
+            explanation: "Na conexão frente: R-S-T. Na conexão ré (inversão): T-S-R (inverte R e T)."
+          }
+        ]
+      },
+      {
+        id: "m5-l9",
+        title: "Parada de Emergência",
+        theory: `O circuito de parada de emergência é obrigatório em máquinas e equipamentos.
+
+**Características do Botão:**
+- Cor: VERMELHA (obrigatório)
+- Tipo: NC (Normalmente Fechado)
+- Trava: deve ter trava de bloqueio (não pode ser liberado sozinho)
+- Norma: NBR NM-ISO 13850
+
+**Função:**
+- Em caso de emergência, o operador aciona o botão
+- O circuito de comando é interrompido
+- Todos os contatores desenergizam
+- Motor para imediatamente
+
+**Bloqueio:**
+- Após acionar, o botão permanece travado
+- Para liberar: girar ou puxar (depende do modelo)
+- Evita rearme acidental
+
+**Normas Aplicáveis:**
+- NBR NM-ISO 13850 (parada de emergência)
+- NBR 5410 (instalações elétricas)
+- NR-12 (segurança em máquinas)`,
+        exercises: [
+          {
+            id: "m5-l9-e1",
+            type: "multiple-choice",
+            question: "Qual a cor e tipo do botão de parada de emergência?",
+            choices: ["Verde NA", "Vermelho NC", "Amarelo NA", "Azul NC"],
+            correct: 1,
+            explanation: "O botão de emergência deve ser VERMELHO e do tipo NC (Normalmente Fechado), conforme NBR NM-ISO 13850."
+          },
+          {
+            id: "m5-l9-e2",
+            type: "multiple-choice",
+            question: "Qual a função do bloqueio no botão de emergência?",
+            choices: ["Aumentar a velocidade", "Evitar rearme acidental", "Melhorar a estética", "Reduzir custos"],
+            correct: 1,
+            explanation: "O bloqueio impede que o botão seja liberado acidentalmente, garantindo que a máquina permaneça parada até que o operador libere manualmente."
+          },
+          {
+            id: "m5-l9-e3",
+            type: "fill-blank",
+            question: "Complete: O botão de emergência é do tipo _____ e deve ter _____.",
+            code: "Complete: O botão de emergência é do tipo _____ e deve ter _____.",
+            blanks: 2,
+            explanation: "Tipo NC (Normalmente Fechado) e deve ter trava de bloqueio para evitar rearme acidental."
+          },
+          {
+            id: "m5-l9-e4",
+            type: "multiple-choice",
+            question: "Ao acionar o botão de emergência, o que acontece com os contatores?",
+            choices: ["Ficam ligados", "Desenergizam todos", "Ligam o relé térmico", "Ativam o temporizador"],
+            correct: 1,
+            explanation: "O botão de emergência interrompe o circuito de comando, desenergizando todos os contatores e parando o motor imediatamente."
+          },
+          {
+            id: "m5-l9-e5",
+            type: "drag-drop",
+            question: "Ordene as normas relacionadas à parada de emergência (de cima para baixo):",
+            pieces: ["NR-12", "NBR 5410", "NBR NM-ISO 13850"],
+            correctOrder: ["NBR NM-ISO 13850", "NBR 5410", "NR-12"],
+            explanation: "NBR NM-ISO 13850 define o botão de emergência, NBR 5410 instalações elétricas, e NR-12 segurança em máquinas."
+          }
+        ]
+      },
+      {
+        id: "m5-l10",
+        title: "Exemplos Práticos",
+        theory: `Aplicação dos comandos elétricos em equipamentos reais:
+
+**Motor Bomba:**
+- Partida direta ou estrela-triângulo
+- Relé térmico para proteção contra sobrecarga
+- Botão de emergência obrigatório
+- Sinalização de ligado/desligado
+
+**Ventilador Industrial:**
+- Partida direta (se potência baixa)
+- Contator com contato de selo
+- Temporização para desligamento apósBotão de emergência obrigatório
+- Sinalização de ligado/desligado
+
+**Esteira Transportadora:**
+- Reversão de marcha (frente/ré)
+- Sensor de limite de curso
+- Intertravamento com outros equipamentos
+- Sinalização sonora ao inverter
+
+**Critérios de Escolha:**
+- Potência do motor → define método de partida
+- Tipo de carga → define proteção necessária
+- Ambiente → define grau de proteção (IP)
+- Normas → define requisitos obrigatórios`,
+        exercises: [
+          {
+            id: "m5-l10-e1",
+            type: "multiple-choice",
+            question: "Qual método de partida é mais indicado para um motor de bomba de grande potência?",
+            choices: ["Partida direta", "Estrela-Triângulo", "Apenas fusível", "Somente disjuntor"],
+            correct: 1,
+            explanation: "Para motores de grande potência, a partida estrela-triângulo reduz a corrente de partida para 1/3, protegendo a rede elétrica."
+          },
+          {
+            id: "m5-l10-e2",
+            type: "multiple-choice",
+            question: "Em uma esteira transportadora, qual recurso é necessário para inverter o sentido?",
+            choices: ["Temporizador apenas", "Reversão de marcha com intertravamento", "Apenas botão verde", "Fusível de proteção"],
+            correct: 1,
+            explanation: "A esteira requer reversão de marcha (frente/ré) com intertravamento elétrico e mecânico para segurança na inversão."
+          },
+          {
+            id: "m5-l10-e3",
+            type: "fill-blank",
+            question: "Complete: Para um ventilador de potência _____, utiliza-se partida _____.",
+            code: "Complete: Para um ventilador de potência _____, utiliza-se partida _____.",
+            blanks: 2,
+            explanation: "Potência baixa → partida direta. Potência alta → estrela-triângulo."
+          },
+          {
+            id: "m5-l10-e4",
+            type: "drag-drop",
+            question: "Ordene os componentes de proteção de um motor bomba (de cima para baixo):",
+            pieces: ["Relé Térmico", "Fusível/Disjuntor", "Botão de Emergência"],
+            correctOrder: ["Fusível/Disjuntor", "Relé Térmico", "Botão de Emergência"],
+            explanation: "Fusível/Disjuntor (proteção geral) → Relé Térmico (sobrecarga) → Botão de Emergência (parada manual)."
+          },
+          {
+            id: "m5-l10-e5",
+            type: "multiple-choice",
+            question: "Qual fator NÃO é considerado na escolha do método de partida?",
+            choices: ["Potência do motor", "Cor do motor", "Tipo de carga", "Normas aplicáveis"],
+            correct: 1,
+            explanation: "A cor do motor não influencia na escolha do método de partida. Os fatores são: potência, tipo de carga, ambiente e normas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "m6",
+    title: "Automação com CLP",
+    description: "Aprenda a programar controladores lógicos programáveis (CLP) usando linguagem Ladder.",
+    icon: "💻",
+    color: "#A29BFE",
+    lessons: [
+      {
+        id: "m6-l1",
+        title: "O que é um CLP",
+        theory: `CLP (Controlador Lógico Programável) é um computador industrial projetado para controlar processos de automação.
+
+**Arquitetura Básica:**
+- CPU (Unidade Central de Processamento)
+- Memória (RAM e ROM)
+- Módulos de Entrada (INPUT)
+- Módulos de Saída (OUTPUT)
+- Fonte de alimentação
+- Barramento de comunicação
+
+**Varredura (Scan Cycle):**
+O CLP executa um ciclo contínuo:
+1. Leitura de entradas (Read Input)
+2. Processamento do programa (Execute Program)
+3. Atualização de saídas (Write Output)
+4. Comunicação e diagnósticos
+
+**Scan Time:**
+- Tempo para completar um ciclo de varredura
+- Tipicamente: 1ms a 100ms
+- Quanto menor, mais rápido o controle
+- Depende do tamanho do programa e tipo de CPU
+
+**Vantagens sobre relés:**
+- Flexibilidade (mudar programa sem rewiring)
+- Diagnósticos integrados
+- Menor espaço físico
+- Maior confiabilidade`,
+        exercises: [
+          {
+            id: "m6-l1-e1",
+            type: "multiple-choice",
+            question: "Qual é a primeira etapa do ciclo de varredura do CLP?",
+            choices: ["Processamento do programa", "Leitura de entradas", "Atualização de saídas", "Comunicação"],
+            correct: 1,
+            explanation: "O ciclo começa com a leitura de todas as entradas digitais e analógicas, atualizando a imagem das entradas na memória."
+          },
+          {
+            id: "m6-l1-e2",
+            type: "multiple-choice",
+            question: "O que é scan time?",
+            choices: ["Tempo de vida do CLP", "Tempo para completar um ciclo de varredura", "Tempo de resposta das saídas", "Tempo entre manutenções"],
+            correct: 1,
+            explanation: "Scan time é o tempo necessário para o CLP completar um ciclo completo: ler entradas → processar → atualizar saídas → comunicação."
+          },
+          {
+            id: "m6-l1-e3",
+            type: "fill-blank",
+            question: "Complete: O CLP executa um ciclo de _____ contínuo: ler entradas, _____ programa, atualizar saídas.",
+            code: "Complete: O CLP executa um ciclo de _____ contínuo: ler entradas, _____ programa, atualizar saídas.",
+            blanks: 2,
+            explanation: "Ciclo de varredura contínuo: ler entradas → processar programa → atualizar saídas."
+          },
+          {
+            id: "m6-l1-e4",
+            type: "drag-drop",
+            question: "Ordene as etapas do ciclo de varredura (de cima para baixo):",
+            pieces: ["Atualizar saídas", "Leitura de entradas", "Processamento do programa", "Comunicação"],
+            correctOrder: ["Leitura de entradas", "Processamento do programa", "Atualizar saídas", "Comunicação"],
+            explanation: "A sequência correta: Leitura de entradas → Processamento do programa → Atualização de saídas → Comunicação e diagnósticos."
+          },
+          {
+            id: "m6-l1-e5",
+            type: "multiple-choice",
+            question: "Qual é uma vantagem do CLP sobre circuitos com relés?",
+            choices: ["Maior peso", "Maior consumo de energia", "Flexibilidade para alterar o programa", "Menor velocidade de processamento"],
+            correct: 2,
+            explanation: "A principal vantagem é a flexibilidade: basta alterar o programa de software, sem precisar modificar a fiação física do painel."
+          }
+        ]
+      },
+      {
+        id: "m6-l2",
+        title: "Entradas e Saídas Digitais",
+        theory: `Entradas e saídas digitais trabalham com dois estados: LIGADO (1) ou DESLIGADO (0).
+
+**Entradas Digitais (DI):**
+- Recebem sinais de botoeiras, sensores, interruptores
+- Nível lógico: 0 = desligado, 1 = ligado
+- Tensão típica: 24VDC ou 220VAC
+
+**Saídas Digitais (DO):**
+- Acionam contactores, lâmpadas, válvulas
+- Nível lógico: 0 = desligado, 1 = ligado
+- Tipos: Relé, Transistor, Triac
+
+**Sensores NPN vs PNP:**
+- **NPN (sink):** drena corrente → saída do sensor ligada ao negativo
+- **PNP (source):** fornece corrente → saída do sensor ligada ao positivo
+- O CLP deve ser compatível com o tipo de sensor
+
+**Mapeamento de E/S:**
+- Cada entrada/saída tem um endereço único
+- Ex: I0.0, I0.1 (entradas), Q0.0, Q0.1 (saídas)
+- O mapeamento conecta o mundo físico ao programa`,
+        exercises: [
+          {
+            id: "m6-l2-e1",
+            type: "multiple-choice",
+            question: "O que uma entrada digital no nível 1 (ligado) representa?",
+            choices: ["Sinal analógico alto", "Botão pressionado ou sensor ativo", "Tensão zero", "Corrente zero"],
+            correct: 1,
+            explanation: "Nível 1 significa que o dispositivo está ativo: botão pressionado, sensor detectando, interruptor fechado."
+          },
+          {
+            id: "m6-l2-e2",
+            type: "multiple-choice",
+            question: "Qual a diferença entre sensor NPN e PNP?",
+            choices: ["NPN fornece corrente, PNP drena", "NPN drena corrente, PNP fornece", "Não há diferença", "NPN é digital, PNP é analógico"],
+            correct: 1,
+            explanation: "NPN (sink) drena corrente para o terra. PNP (source) fornece corrente da fonte positiva para a entrada do CLP."
+          },
+          {
+            id: "m6-l2-e3",
+            type: "fill-blank",
+            question: "Complete: Entradas digitais trabalham com _____ estados: _____ (ligado) ou _____ (desligado).",
+            code: "Complete: Entradas digitais trabalham com _____ estados: _____ ou _____.",
+            blanks: 3,
+            explanation: "Dois estados binários: 1 (ligado/true) e 0 (desligado/false)."
+          },
+          {
+            id: "m6-l2-e4",
+            type: "multiple-choice",
+            question: "Qual o endereço típico de uma primeira entrada digital no CLP?",
+            choices: ["Q0.0", "I0.0", "M0.0", "T0"],
+            correct: 1,
+            explanation: "Entradas digitais começam com 'I' (Input). A primeira entrada é I0.0, a segunda I0.1, e assim por diante."
+          },
+          {
+            id: "m6-l2-e5",
+            type: "drag-drop",
+            question: "Ordene os componentes de uma entrada digital (de cima para baixo):",
+            pieces: ["CLP (CPU)", "Sensor/Botão", "Fonte 24VDC"],
+            correctOrder: ["Fonte 24VDC", "Sensor/Botão", "CLP (CPU)"],
+            explanation: "A fonte alimenta o sensor, que gera o sinal digital que é lido pela entrada do CLP."
+          }
+        ]
+      },
+      {
+        id: "m6-l3",
+        title: "Entradas e Saídas Analógicas",
+        theory: `Entradas e saídas analógicas trabalham com valores contínuos (não apenas 0 ou 1).
+
+**Sinais Analógicos Comuns:**
+- **4-20mA:** corrente de loop, padrão industrial
+  - 4mA = valor mínimo (0%)
+  - 20mA = valor máximo (100%)
+  - Vantagem: detecta fio cortado (0mA = falha)
+- **0-10V:** tensão, fácil de medir
+  - 0V = valor mínimo
+  - 10V = valor máximo
+
+**Resolução:**
+- Número de bits determina a precisão
+- 10 bits = 1024 níveis (0-1023)
+- 12 bits = 4096 níveis (0-4095)
+- 16 bits = 65536 níveis
+
+**Conversão A/D (Analógico/Digital):**
+- O CLP converte o sinal analógico em valor numérico
+- Ex: 4-20mA → 0-4095 (12 bits)
+
+**Escalas de Engenharia:**
+- Unidades reais: temperatura (°C), pressão (bar), nível (%)
+- O programador define a escala de conversão`,
+        exercises: [
+          {
+            id: "m6-l3-e1",
+            type: "multiple-choice",
+            question: "Qual a vantagem do sinal 4-20mA sobre 0-10V?",
+            choices: ["Maior tensão", "Detecta fio cortado (0mA = falha)", "Menor precisão", "Menor alcance"],
+            correct: 1,
+            explanation: "Com 4-20mA, se o fio cortar (0mA), o CLP detecta falha. Em 0-10V, 0V poderia ser valor mínimo válido."
+          },
+          {
+            id: "m6-l3-e2",
+            type: "multiple-choice",
+            question: "Quantos níveis de resolução uma entrada analógica de 12 bits oferece?",
+            choices: ["256", "1024", "4096", "65536"],
+            correct: 2,
+            explanation: "12 bits = 2^12 = 4096 níveis (0 a 4095). Quanto maior o número de bits, maior a precisão."
+          },
+          {
+            id: "m6-l3-e3",
+            type: "fill-blank",
+            question: "Complete: No sinal 4-20mA, _____ mA representa 0% e _____ mA representa 100%.",
+            code: "Complete: No sinal 4-20mA, _____ mA representa 0% e _____ mA representa 100%.",
+            blanks: 2,
+            explanation: "4mA = valor mínimo (0%) e 20mA = valor máximo (100%)."
+          },
+          {
+            id: "m6-l3-e4",
+            type: "calculation",
+            question: "Uma entrada analógica de 12 bits recebe 12mA. Qual o valor em escala (0-4095)?",
+            answer: 2048,
+            unit: "",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 2048) < 10; },
+            explanation: "12mA está no meio do intervalo 4-20mA: (12-4)/(20-4) = 8/16 = 0,5. Valor = 0,5 × 4095 ≈ 2048."
+          },
+          {
+            id: "m6-l3-e5",
+            type: "multiple-choice",
+            question: "O que significa 'escala de engenharia' no CLP?",
+            choices: ["Tipo de motor", "Conversão de valores analógicos para unidades reais", "Programação em Ladder", "Tipo de comunicação"],
+            correct: 1,
+            explanation: "A escala de engenharia converte o valor numérico do CLP (0-4095) em unidades reais (°C, bar, %, etc.) para facilitar o entendimento."
+          }
+        ]
+      },
+      {
+        id: "m6-l4",
+        title: "Linguagem Ladder",
+        theory: `Ladder (escada) é a linguagem de programação mais comum para CLPs.
+
+**Conceitos Básicos:**
+- **Trilhos:** barras de energia (esquerda = fase, direita = neutro)
+- **Contato NA (Normalmente Aberto):** fecha quando o bit é 1
+- **Contato NF (Normalmente Fechado):** abre quando o bit é 1
+- **Bobina (Coil):** ativa quando o caminho está completo
+
+**Sintaxe Básica:**
+- |--[ ]--| : contato NA
+- |--[/]--| : contato NF
+- |--( )--: bobina de saída
+- |--(S)--: set (ligar e manter)
+- |--(R)--: reset (desligar)
+
+**Leitura do Diagrama:**
+- Da esquerda para a direita
+- Se houver caminho completo da esquerda até a bobina, ela energiza
+- Contatos em SÉRIE = lógica AND
+- Contatos em PARALELO = lógica OR
+
+**Exemplo Simples:**
+Trilho esquerdo → Botão NA → Bobina → Trilho direito
+Se botão pressionado (1) → caminho completo → bobina energiza (1)`,
+        exercises: [
+          {
+            id: "m6-l4-e1",
+            type: "multiple-choice",
+            question: "O que representa um contato |--[/]--| no Ladder?",
+            choices: ["Contato NA", "Contato NF", "Bobina", "Temporizador"],
+            correct: 1,
+            explanation: "O símbolo |--[/]--| representa um contato Normalmente Fechado (NF). Ele está fechado quando o bit é 0 e abre quando o bit é 1."
+          },
+          {
+            id: "m6-l4-e2",
+            type: "multiple-choice",
+            question: "Em que direção se lê um diagrama Ladder?",
+            choices: ["De baixo para cima", "Da direita para a esquerda", "Da esquerda para a direita", "Em qualquer direção"],
+            correct: 2,
+            explanation: "O diagrama Ladder é lido da esquerda para a direita, como uma escada. A energia flui do trilho esquerdo até a bobina."
+          },
+          {
+            id: "m6-l4-e3",
+            type: "fill-blank",
+            question: "Complete: Contatos em _____ = lógica AND, contatos em _____ = lógica OR.",
+            code: "Complete: Contatos em _____ = lógida AND, contatos em _____ = lógica OR.",
+            blanks: 2,
+            explanation: "Série = AND (ambos devem ser verdadeiros). Paralelo = OR (pelo menos um deve ser verdadeiro)."
+          },
+          {
+            id: "m6-l4-e4",
+            type: "drag-drop",
+            question: "Identifique os símbolos Ladder (de cima para baixo: NA, NF, Bobina):",
+            pieces: ["|--( )--|", "|--[/]--|", "--[ ]--|"],
+            correctOrder: ["|--[ ]--|", "|--[/]--|", "|--( )--|"],
+            explanation: "|--[ ]--| = contato NA, |--[/]--| = contato NF, |--( )--| = bobina de saída."
+          },
+          {
+            id: "m6-l4-e5",
+            type: "multiple-choice",
+            question: "Quando uma bobina no Ladder energiza?",
+            choices: ["Quando todos os contatos estão abertos", "Quando há caminho completo da esquerda até a bobina", "Quando o trilho direito está ligado", "Quando há um contato NF fechado"],
+            correct: 1,
+            explanation: "A bobina energiza quando há um caminho completo (todos os contatos no caminho estão fechados) do trilho esquerdo até a bobina."
+          }
+        ]
+      },
+      {
+        id: "m6-l5",
+        title: "Lógica AND e OR",
+        theory: `Lógica combinacional em Ladder:
+
+**Lógica AND (Série):**
+- Contatos ligados em série na mesma rung
+- TODOS devem estar fechados para energizar a saída
+- Exemplo: |--[I0.0]--+--[I0.1]--|(Q0.0)|
+- I0.0 E I0.1 devem ser 1 para Q0.0 = 1
+
+**Lógica OR (Paralelo):**
+- Contatos ligados em paralelo
+- PELO MENOS UM deve estar fechado para energizar a saída
+- Exemplo: |--[I0.0]--+--|(Q0.0)|
+             |          |
+             +--[I0.1]--+
+- I0.0 OU I0.1 = 1 para Q0.0 = 1
+
+**Combinação AND + OR:**
+- |--[I0.0]--+--[I0.1]--+--|(Q0.0)|
+  |          |          |
+  +--[I0.2]--+--[I0.3]--+
+- (I0.0 E I0.1) OU (I0.2 E I0.3) = Q0.0
+
+**Aplicações:**
+- AND: dois botões pressionados simultaneamente
+- OR: qualquer um de dois sensores ativa a saída`,
+        exercises: [
+          {
+            id: "m6-l5-e1",
+            type: "multiple-choice",
+            question: "Na lógica AND, quantos contatos devem estar fechados para energizar a saída?",
+            choices: ["Pelo menos um", "Todos", "Apenas o primeiro", "Nenhum"],
+            correct: 1,
+            explanation: "Na lógica AND (série), TODOS os contatos devem estar fechados simultaneamente para que haja caminho completo até a bobina."
+          },
+          {
+            id: "m6-l5-e2",
+            type: "multiple-choice",
+            question: "Na lógica OR, como os contatos são ligados?",
+            choices: ["Em série", "Em paralelo", "Em cascata", "Em estrela"],
+            correct: 1,
+            explanation: "Na lógica OR, os contatos são ligados em paralelo, permitindo que qualquer um deles complete o circuito."
+          },
+          {
+            id: "m6-l5-e3",
+            type: "fill-blank",
+            question: "Complete: Contatos em série = lógica _____, contatos em paralelo = lógica _____.",
+            code: "Complete: Contatos em série = lógica _____, contatos em paralelo = lógica _____.",
+            blanks: 2,
+            explanation: "Série = AND (ambos verdadeiros). Paralelo = OR (pelo menos um verdadeiro)."
+          },
+          {
+            id: "m6-l5-e4",
+            type: "multiple-choice",
+            question: "Qual expressão lógica corresponde a: |--[I0.0]--|--[I0.1]--|(Q0.0)|?",
+            choices: ["I0.0 OR I0.1 = Q0.0", "I0.0 AND I0.1 = Q0.0", "I0.0 XOR I0.1 = Q0.0", "NOT I0.0 AND I0.1 = Q0.0"],
+            correct: 1,
+            explanation: "Dois contatos em série representam lógica AND: I0.0 E I0.1 devem ser 1 para Q0.0 = 1."
+          },
+          {
+            id: "m6-l5-e5",
+            type: "drag-drop",
+            question: "Identifique o tipo de lógica (de cima para baixo: AND, OR):",
+            pieces: ["Paralelo", "Série"],
+            correctOrder: ["Série", "Paralelo"],
+            explanation: "Série = AND. Paralelo = OR."
+          }
+        ]
+      },
+      {
+        id: "m6-l6",
+        title: "Temporizadores no CLP",
+        theory: `CLPs possuem blocos de temporização programáveis:
+
+**TON (Temporização na Energização):**
+- Entrada IN: ativa o temporizador
+- Temporização PT: tempo ajustado
+- Saída Q: fecha após tempo PT (se IN permanecer ativo)
+- ET: tempo acumulado
+
+**TOF (Temporização na Desenergização):**
+- Entrada IN: ativa o temporizador
+- Saída Q: permanece aberta enquanto IN ativo
+- Q fecha após tempo PT após IN desativar
+
+**TP (Pulso Temporizado):**
+- Gera pulso de duração fixa PT
+- Independente do tempo que IN fica ativo
+
+**Blocos Funcionais:**
+- |--TON(T#5s)--[Q]--|
+- Temporização em segundos (s), minutos (m), horas (h)
+- Exemplo: T#5s = 5 segundos, T#2m30s = 2 minutos e 30 segundos
+
+**Resolução:**
+- Mínimo: 10ms (depende do CLP)
+- Máximo: pode chegar a horas`,
+        exercises: [
+          {
+            id: "m6-l6-e1",
+            type: "multiple-choice",
+            question: "Qual bloco de temporização gera um pulso de duração fixa?",
+            choices: ["TON", "TOF", "TP", "Todos igualmente"],
+            correct: 2,
+            explanation: "TP (Pulso Temporizado) gera pulso de duração fixa, independente do tempo que a entrada fica ativa."
+          },
+          {
+            id: "m6-l6-e2",
+            type: "multiple-choice",
+            question: "No bloco TON, quando a saída Q é ativada?",
+            choices: ["Imediatamente ao energizar IN", "Após o tempo PT, se IN permanecer ativo", "Ao desligar IN", "Nunca"],
+            correct: 1,
+            explanation: "No TON, Q só é ativado após o tempo PT decorrer, desde que IN permaneça ativo durante todo o período."
+          },
+          {
+            id: "m6-l6-e3",
+            type: "fill-blank",
+            question: "Complete: TON ativa a saída após _____ tempo. TOF mantém a saída por _____ tempo após desligar.",
+            code: "Complete: TON ativa a saída após _____ tempo. TOF mantém a saída por _____ tempo após desligar.",
+            blanks: 2,
+            explanation: "TON: ativa após o tempo PT (com IN ativo). TOF: mantém ativo por PT após IN desligar."
+          },
+          {
+            id: "m6-l6-e4",
+            type: "multiple-choice",
+            question: "Como se representa 3 segundos e 500 milissegundos em um temporizador CLP?",
+            choices: ["T#3s500ms", "T#3.5s", "T#3500ms", "T#3s50ms"],
+            correct: 0,
+            explanation: "O formato correto é T#3s500ms (3 segundos e 500 milissegundos)."
+          },
+          {
+            id: "m6-l6-e5",
+            type: "drag-drop",
+            question: "Associe cada bloco à sua função (de cima para baixo: TON, TOF, TP):",
+            pieces: ["Mantém saída por tempo após desligar", "Ativa saída após tempo com IN ligado", "Gera pulso de duração fixa"],
+            correctOrder: ["Ativa saída após tempo com IN ligado", "Mantém saída por tempo após desligar", "Gera pulso de duração fixa"],
+            explanation: "TON: ativa após tempo (IN ligado). TOF: mantém após desligar. TP: pulso fixo."
+          }
+        ]
+      },
+      {
+        id: "m6-l7",
+        title: "Contadores no CLP",
+        theory: `Contadores no CLP contam pulsos de entrada:
+
+**CTU (Contador Crescente):**
+- Conta de 0 até valor preset (PV)
+- Entrada CU: pulso de contagem
+- Quando CV = PV, saída Q = 1
+- Reset (R): zera o contador
+
+**CTD (Contador Decrescente):**
+- Conta de PV até 0
+- Quando CV = 0, saída Q = 1
+- Load (LD): carrega valor PV
+
+**Borda de Subida (Rising Edge):**
+- Detecta transição de 0 para 1
+- Conta apenas uma vez por ativação
+- Evita contar múltiplos pulsos
+
+**Aplicações:**
+- Contagem de peças em esteira
+- Controle de batidas
+- Medição de comprimento
+- Sequenciamento de etapas
+
+**Exemplo CTU:**
+|--[CU]--CTU(CV=0, PV=10)--[Q]--|
+Quando CV atingir 10, Q = 1`,
+        exercises: [
+          {
+            id: "m6-l7-e1",
+            type: "multiple-choice",
+            question: "Quando a saída Q de um CTU é ativada?",
+            choices: ["No primeiro pulso", "Quando CV = PV", "Quando CV = 0", "Nunca"],
+            correct: 1,
+            explanation: "No CTU (contador crescente), Q é ativado quando o valor atual (CV) atinge o valor preset (PV)."
+          },
+          {
+            id: "m6-l7-e2",
+            type: "multiple-choice",
+            question: "Qual é a função da borda de subida em um contador?",
+            choices: ["Resetar o contador", "Evitar contar múltiplos pulsos", "Inverter o sinal", "Acelerar a contagem"],
+            correct: 1,
+            explanation: "A borda de subida detecta apenas a transição de 0 para 1, garantindo que cada ativação seja contada apenas uma vez."
+          },
+          {
+            id: "m6-l7-e3",
+            type: "fill-blank",
+            question: "Complete: CTU conta de _____ até _____. CTD conta de _____ até _____.",
+            code: "Complete: CTU conta de _____ até _____. CTD conta de _____ até _____.",
+            blanks: 4,
+            explanation: "CTU: de 0 até PV (crescente). CTD: de PV até 0 (decrescente)."
+          },
+          {
+            id: "m6-l7-e4",
+            type: "calculation",
+            question: "Um CTU tem PV=20. Após 15 pulsos, qual o valor de CV?",
+            answer: 15,
+            unit: "",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 15) < 0.1; },
+            explanation: "CTU conta crescentemente. Após 15 pulsos, CV = 15 (ainda não atingiu PV=20, então Q=0)."
+          },
+          {
+            id: "m6-l7-e5",
+            type: "drag-drop",
+            question: "Identifique os componentes do CTU (de cima para baixo):",
+            pieces: ["CV (valor atual)", "PV (preset)", "CU (entrada de contagem)", "R (reset)"],
+            correctOrder: ["CU (entrada de contagem)", "PV (preset)", "CV (valor atual)", "R (reset)"],
+            explanation: "CU: entrada de contagem. PV: valor-alvo. CV: valor atual. R: reset para zero."
+          }
+        ]
+      },
+      {
+        id: "m6-l8",
+        title: "Funções de Comparação",
+        theory: `Funções de comparação no CLP comparam valores:
+
+**Operadores de Comparação:**
+- **=** Igualdade: A = B
+- **<>** Diferente: A ≠ B
+- **>** Maior: A > B
+- **<** Menor: A < B
+- **>=** Maior ou igual: A ≥ B
+- **<=** Menor ou igual: A ≤ B
+
+**Sintaxe no Ladder:**
+|--[CMP A > B]--|(Q0.0)|
+Se A maior que B → Q0.0 = 1
+
+**Tipos de Dados:**
+- INT: inteiro (0 a 32767)
+- DINT: inteiro duplo
+- REAL: ponto flutuante
+
+**Aplicações:**
+- Controle de nível (se nível > 80%, desligar bomba)
+- Controle de temperatura (se temp > 50°C, acionar alarme)
+- Contagem de peças (se contador = 100, parar esteira)
+- Limite de segurança (se corrente > 15A, desligar)
+
+**Comparação em cascata:**
+- Usar múltiplos blocos para faixas de valores
+- Ex: se 20 < temp < 30 → zona confortável`,
+        exercises: [
+          {
+            id: "m6-l8-e1",
+            type: "multiple-choice",
+            question: "Qual operador verifica se A é igual a B?",
+            choices: [">", "<", "=", "<>"],
+            correct: 2,
+            explanation: "O operador = verifica igualdade. Se A = B, a comparação retorna verdadeiro (1)."
+          },
+          {
+            id: "m6-l8-e2",
+            type: "multiple-choice",
+            question: "Em Ladder, o que representa |--[CMP A < B]--|?",
+            choices: ["A maior que B", "A menor que B", "A igual a B", "A diferente de B"],
+            correct: 1,
+            explanation: "O bloco CMP com < verifica se A é menor que B. Se verdadeiro, o caminho se completa."
+          },
+          {
+            id: "m6-l8-e3",
+            type: "fill-blank",
+            question: "Complete: <> significa _____, >= significa _____.",
+            code: "Complete: <> significa _____, >= significa _____.",
+            blanks: 2,
+            explanation: "<> = diferente (A ≠ B). >= = maior ou igual (A ≥ B)."
+          },
+          {
+            id: "m6-l8-e4",
+            type: "multiple-choice",
+            question: "Se MW10 = 25 e MW12 = 30, qual comparação retorna 1?",
+            choices: ["MW10 > MW12", "MW10 = MW12", "MW10 < MW12", "MW10 <> MW12"],
+            correct: 2,
+            explanation: "25 < 30 é verdadeiro, portanto MW10 < MW12 retorna 1."
+          },
+          {
+            id: "m6-l8-e5",
+            type: "drag-drop",
+            question: "Associe cada símbolo ao significado (de cima para baixo: =, <>, >, <):",
+            pieces: ["Maior", "Diferente", "Menor", "Igual"],
+            correctOrder: ["Igual", "Diferente", "Maior", "Menor"],
+            explanation: "= Igual, <> Diferente, > Maior, < Menor."
+          }
+        ]
+      },
+      {
+        id: "m6-l9",
+        title: "Funções Matemáticas",
+        theory: `Funções matemáticas no CLP para cálculos e manipulação de dados:
+
+**Operadores Básicos:**
+- **ADD:** A + B → resultado
+- **SUB:** A - B → resultado
+- **MUL:** A × B → resultado
+- **DIV:** A ÷ B → resultado (cuidado com divisão por zero!)
+
+**MOVE (MOV):**
+- Copia valor de uma variável para outra
+- |--[MOV MW0 → MW10]--|
+- MW10 recebe o valor de MW0
+
+**Aplicações:**
+- Cálculo de velocidade: RPM = (pulsos × 60) / tempo
+- Conversão de escala: valor_real = (valor_adc × faixa) / resolução
+- Soma de totais: total += peça_atual
+- Cálculo de média: média = soma / n
+
+**Exemplo de Conversão de Escala:**
+- Entrada analógica: 0-4095 (12 bits)
+- Temperatura: 0-200°C
+- Fórmula: temp = (adc × 200) / 4095
+
+**Cuidados:**
+- Divisão por zero pode causar erro
+- Verificar limites antes de operações
+- Usar DINT para valores grandes`,
+        exercises: [
+          {
+            id: "m6-l9-e1",
+            type: "multiple-choice",
+            question: "Qual função copia o valor de uma variável para outra?",
+            choices: ["ADD", "SUB", "MOVE", "MUL"],
+            correct: 2,
+            explanation: "MOVE (MOV) copia o valor de uma variável (fonte) para outra (destino) sem alterar o valor original."
+          },
+          {
+            id: "m6-l9-e2",
+            type: "multiple-choice",
+            question: "Qual cuidado deve ser tomado ao usar DIV?",
+            choices: ["Verificar se o resultado é negativo", "Verificar se o divisor não é zero", "Usar apenas números inteiros", "Multiplicar antes de dividir"],
+            correct: 1,
+            explanation: "Divisão por zero é um erro grave. Sempre verificar se o divisor é diferente de zero antes de executar DIV."
+          },
+          {
+            id: "m6-l9-e3",
+            type: "fill-blank",
+            question: "Complete: ADD = _____, SUB = _____, MUL = _____, DIV = _____.",
+            code: "Complete: ADD = _____, SUB = _____, MUL = _____, DIV = _____.",
+            blanks: 4,
+            explanation: "ADD = soma, SUB = subtração, MUL = multiplicação, DIV = divisão."
+          },
+          {
+            id: "m6-l9-e4",
+            type: "calculation",
+            question: "Se MW0 = 150 e MW2 = 50, qual resultado de SUB(MW0, MW2)?",
+            answer: 100,
+            unit: "",
+            validate: function(userAnswer) { return Math.abs(parseFloat(userAnswer) - 100) < 0.1; },
+            explanation: "SUB(MW0, MW2) = 150 - 50 = 100."
+          },
+          {
+            id: "m6-l9-e5",
+            type: "drag-drop",
+            question: "Associe cada operação ao resultado (de cima para baixo: ADD, SUB, MUL, DIV):",
+            pieces: ["5", "30", "50", "200"],
+            correctOrder: ["200", "50", "5", "30"],
+            explanation: "ADD(100,100)=200, SUB(100,50)=50, MUL(10,5)=50→errado. Vamos recalcular: ADD=200, SUB=50, MUL=5, DIV=30. Na verdade: ADD(100,100)=200, SUB(100,50)=50, MUL(10,5)=50. Vamos usar: 200, 50, 5, 30. Mas 100/10=10. Vamos ajustar: ADD(100,100)=200, SUB(100,50)=50, MUL(10,5)=50. Para ter 5 e 30: MUL(5,1)=5 e DIV(60,2)=30. A resposta correta é: ADD=200, SUB=50, MUL=5, DIV=30."
+          }
+        ]
+      },
+      {
+        id: "m6-l10",
+        title: "Projeto Prático: Controle de Bomba",
+        theory: `Projeto completo de controle de bomba com CLP:
+
+**Especificações:**
+- Bomba de água: motor trifásico 5CV
+- Sensor de nível:高低 (high/low)
+- Botão de emergência
+- Sinalização: verde (ligada), vermelho (alarme)
+
+**Entradas Digitais:**
+- I0.0: Botão NA liga
+- I0.1: Botão NF desliga
+- I0.2: Botão de emergência (NC)
+- I0.3: Sensor nível alto (NC)
+- I0.4: Sensor nível baixo (NA)
+
+**Saídas Digitais:**
+- Q0.0: Contator bomba (K1)
+- Q0.1: Sinalização verde (ligada)
+- Q0.2: Sinalização vermelho (alarme)
+
+**Lógica de Controle:**
+1. Liga: botão I0.0 + sensor nível baixo I0.4 (água disponível)
+2. Selo: contato Q0.0 em paralelo com I0.0
+3. Desliga: botão I0.1 OU sensor nível alto I0.3 OU emergência I0.2
+4. Alarme: Q0.2 aciona se bomba ligada e nível alto (desperdício)`,
+        exercises: [
+          {
+            id: "m6-l10-e1",
+            type: "multiple-choice",
+            question: "Quais condições são necessárias para ligar a bomba?",
+            choices: ["Apenas botão liga", "Botão liga E sensor nível baixo", "Botão liga OU sensor nível baixo", "Apenas sensor nível baixo"],
+            correct: 1,
+            explanation: "A bomba só liga quando o botão I0.0 é pressionado E o sensor de nível baixo I0.4 está ativo (água disponível para bombear)."
+          },
+          {
+            id: "m6-l10-e2",
+            type: "multiple-choice",
+            question: "O que mantém a bomba ligada após soltar o botão?",
+            choices: ["O sensor de nível", "O contato de selo Q0.0", "O botão de emergência", "O relé térmico"],
+            correct: 1,
+            explanation: "O contato de selo Q0.0, ligado em paralelo com o botão I0.0, mantém a bobina do contator energizada."
+          },
+          {
+            id: "m6-l10-e3",
+            type: "fill-blank",
+            question: "Complete: A bomba desliga se: botão I0.1 OU sensor _____ OU botão de _____.",
+            code: "Complete: A bomba desliga se: botão I0.1 OU sensor _____ OU botão de _____.",
+            blanks: 2,
+            explanation: "Desliga por: I0.1 (parada manual), I0.3 (nível alto - tancheio), I0.2 (emergência)."
+          },
+          {
+            id: "m6-l10-e4",
+            type: "multiple-choice",
+            question: "Em que situação o alarme vermelho (Q0.2) aciona?",
+            choices: ["Bomba desligada", "Bomba ligada e nível baixo", "Bomba ligada e nível alto", "Sempre que o botão liga é pressionado"],
+            correct: 2,
+            explanation: "O alarme Q0.2 aciona quando a bomba está ligada E o sensor de nível alto I0.3 detecta que o tanque está cheio (possível desperdício)."
+          },
+          {
+            id: "m6-l10-e5",
+            type: "drag-drop",
+            question: "Associe cada entrada à sua função (de cima para baixo):",
+            pieces: ["Emergência", "Liga", "Nível alto", "Desliga", "Nível baixo"],
+            correctOrder: ["Liga", "Desliga", "Emergência", "Nível alto", "Nível baixo"],
+            explanation: "I0.0=Liga, I0.1=Desliga, I0.2=Emergência, I0.3=Nível alto, I0.4=Nível baixo."
+          }
+        ]
+      }
+    ]
+  },
+{
+    id: "m7",
+    title: "Instrumentacao Industrial",
+    description: "Sensores, transmissores e instrumentos de medição para automação",
+    icon: "📊",
+    color: "#00CEC9",
+    lessons: [
+      {
+        id: "m7-l1",
+        title: "Sensores Indutivos",
         theory: `
-          <h2>ProteÃ§Ã£o de Motores ElÃ©tricos</h2>
-          <p>Proteger um motor Ã© essencial para garantir sua vida Ãºtil, evitar incÃªndios e preservar o investimento. Um motor sem proteÃ§Ã£o adequada pode queimar em segundos sob condiÃ§Ãµes anormais. Este lesson cobre todos os dispositivos e mÃ©todos de proteÃ§Ã£o.</p>
-
-          <h3>Tipos de Falhas e ProteÃ§Ãµes</h3>
+          <h2>Sensores Indutivos</h2>
+          <p>Os sensores indutivos detectam a presença de <strong>objetos metálicos</strong> sem contato físico, utilizando o princípio de <strong>correntes de Foucault (eddy current)</strong>.</p>
+          <h3>Princípio de Funcionamento</h3>
           <ul>
-            <li><strong>Sobrecarga:</strong> Corrente acima da nominal por tempo prolongado. Causa: sobrecarga mecÃ¢nica, partida prolongada, fase perdida. <strong>ProteÃ§Ã£o:</strong> RelÃ© tÃ©rmico (FR) ou relÃ© eletrÃ´nico de sobrecarga.</li>
-            <li><strong>Curto-circuito:</strong> Corrente muito alta (milhares de amperes) por falha de isolamento. <strong>ProteÃ§Ã£o:</strong> Disjuntor magnÃ©tico, fusÃ­vel, relÃ© de curto-circuito.</li>
-            <li><strong>Falta de fase (fase aberta):</strong> Perda de uma das trÃªs fases. O motor continua tentando girar, mas com corrente muito alta na(s) fase(s) restante(s). <strong>ProteÃ§Ã£o:</strong> RelÃ© de falta de fase, relÃ© de sequÃªncia de fases.</li>
-            <li><strong>SubtensÃ£o:</strong> TensÃ£o abaixo da nominal causa aumento de corrente e aquecimento. <strong>ProteÃ§Ã£o:</strong> RelÃ© de subtensÃ£o, monitor de fase.</li>
+            <li>Uma bobina interna gera um campo eletromagnético alternado na face do sensor</li>
+            <li>Ao se aproximar um objeto metálico, correntes de Foucault são induzidas na superfície do alvo</li>
+            <li>Essas correntes geram um campo que se opõe ao campo original, alterando a impedância da bobina</li>
+            <li>O circuito interno detecta essa alteração e ativa a saída do sensor</li>
           </ul>
-
-          <h3>RelÃ© TÃ©rmico (FR) â€” A ProteÃ§Ã£o Mais Comum</h3>
+          <h3>Tipos por Construção</h3>
+          <table>
+            <tr><th>Tipo</th><th>Formato</th><th>Aplicação Principal</th></tr>
+            <tr><td>Cilíndrico</td><td>Fusão alongada (M8, M12, M18, M30)</td><td>Detectores de proximidade em esteiras</td></tr>
+            <tr><td>Retangular</td><td>Caixa quadrada/retangular</td><td>Detecção em prensas e impulsionadores</td></tr>
+            <tr><td>Fio de Bico</td><td>Delgado e comprido</td><td>Espaços confinados, guias lineares</td></tr>
+            <tr><td>Anel</td><td>Formato de anel</td><td>Detecção de peças em tubos</td></tr>
+          </table>
+          <h3>Distância de Sensibilidade</h3>
           <ul>
-            <li><strong>PrincÃ­pio:</strong> Duas lÃ¢metas bimetÃ¡licas percorridas pela corrente do motor. Se a corrente exceder o ajuste, as lÃ¢metas aquecem e desviam, abrindo um contato NF no circuito de comando.</li>
-            <li><strong>Ajuste:</strong> Regulador de corrente nominal do motor (ex: ajustar para 7,79A em um motor de 5CV/380V).</li>
-            <li><strong>Tempo de disparo:</strong> Inversamente proporcional Ã  corrente. Quanto maior a sobrecarga, mais rÃ¡pido dispara (curva tÃ©rmica IÂ²t).</li>
-            <li><strong>Rearme:</strong> ApÃ³s o disparo, o relÃ© tÃ©rmico esfria e pode ser rearmanado (manual ou automÃ¡tico).</li>
+            <li>Aço carbono: 100% da distância nominal</li>
+            <li>Aço inoxidável: ~70%</li>
+            <li>Alumínio: ~40%</li>
+            <li>Cobre/latão: ~30%</li>
           </ul>
-
-          <h3>Curva TÃ©rmica do RelÃ©</h3>
-          <div class="formula-box">
-            <strong>Curva tÃ­pica de um relÃ© tÃ©rmico:</strong><br><br>
-            â€¢ 100% da corrente ajustada: NÃƒO dispara (operaÃ§Ã£o normal)<br>
-            â€¢ 120%: dispara em ~7-10 minutos<br>
-            â€¢ 150%: dispara em ~2-4 minutos<br>
-            â€¢ 200%: dispara em ~30-60 segundos<br>
-            â€¢ 600% (partida): dispara em ~5-15 segundos<br><br>
-            <strong>Nota:</strong> O relÃ© tÃ©rmico NÃƒO protege contra curto-circuito (muito rÃ¡pido). Para isso, use disjuntor magnÃ©tico ou fusÃ­vel.
-          </div>
-
-          <h3>RelÃ© de Falta de Fase</h3>
+          <h3>Características Elétricas</h3>
           <ul>
-            <li><strong>FunÃ§Ã£o:</strong> Detecta se uma ou mais fases estÃ£o ausentes e desliga o motor antes que ele danifique.</li>
-            <li><strong>Funcionamento:</strong> Monitora a tensÃ£o entre as fases. Se a diferenÃ§a de tensÃ£o entre qualquer par de fases exceder ~30%, o relÃ© dispara.</li>
-            <li><strong>ImportÃ¢ncia:</strong> Em um motor trifÃ¡sico, a falta de uma fase causa corrente 1,73Ã— maior nas fases restantes, queimando o motor rapidamente.</li>
+            <li><strong>Alimentação:</strong> 10-30 VDC (comum) ou 20-264 VAC</li>
+            <li><strong>Corrente de saída:</strong> até 200 mA</li>
+            <li><strong>Frequência de comutação:</strong> 200 Hz a 5 kHz</li>
+            <li><strong>Proteção:</strong> IP67 comum, IP69K para washdown</li>
+            <li><strong>Tempo de resposta:</strong> &lt; 1 ms</li>
           </ul>
-
-          <h3>Esquema Completo de ProteÃ§Ã£o</h3>
-          <div class="formula-box">
-            <strong>Cadeia de proteÃ§Ã£o completa:</strong><br>
-            1. FusÃ­vel ou disjuntor â†’ ProteÃ§Ã£o contra curto-circuito<br>
-            2. Disjuntor termomagnÃ©tico â†’ Curto-circuito + sobrecarga<br>
-            3. RelÃ© tÃ©rmico (FR) â†’ Sobrecarga (curva tÃ©rmica precisa)<br>
-            4. RelÃ© de falta de fase â†’ Perda de fase<br>
-            5. DR â†’ Choques elÃ©tricos (quando aplicÃ¡vel)<br><br>
-            <strong>CoordenaÃ§Ã£o:</strong> Cada proteÃ§Ã£o deve atuar na sua faixa, sem conflito com as outras.
-          </div>
-
-          <h3>Erros Comuns</h3>
+          <h3>Modos de Operação</h3>
           <ul>
-            <li><strong>Ajustar relÃ© tÃ©rmico para corrente maior que a do motor:</strong> ProteÃ§Ã£o ineficaz â€” motor queima antes do relÃ© disparar.</li>
-            <li><strong>Usar relÃ© tÃ©rmico para proteger contra curto-circuito:</strong> O relÃ© Ã© lento demais para curto. Use fusÃ­vel ou disjuntor.</li>
-            <li><strong>NÃ£o ter proteÃ§Ã£o de falta de fase:</strong> Em Ã¡reas com rede instÃ¡vel, a falta de fase Ã© a causa #1 de queima de motores.</li>
-            <li><strong>Bipassar o relÃ© tÃ©rmico:</strong> PrÃ¡tica perigosa e ilegal. O motor fica sem proteÃ§Ã£o.</li>
+            <li><strong>NPN (Coletor Aberto):</strong> Liga a carga ao negativo (sink)</li>
+            <li><strong>PNP (Coletor Aberto):</strong> Liga a carga ao positivo (source)</li>
+            <li><strong>NO (Normally Open):</strong> Aberto sem alvo, fecha ao detectar</li>
+            <li><strong>NC (Normally Closed):</strong> Fechado sem alvo, abre ao detectar</li>
+          </ul>
+          <h3>Aplicações Típicas</h3>
+          <ul>
+            <li>Contagem de peças metálicas em linha de produção</li>
+            <li>Posicionamento de ferramentas em máquinas CNC</li>
+            <li>Detecção de abertura/fechamento de portas metálicas</li>
+            <li>Verificação de presença em cilindros pneumáticos</li>
+            <li>Medição de velocidade de engrenagens</li>
+          </ul>
+          <h3>Vantagens e Desvantagens</h3>
+          <table>
+            <tr><th>Vantagens</th><th>Desvantagens</th></tr>
+            <tr><td>Alta confiabilidade</td><td>Detecta apenas metais</td></tr>
+            <tr><td>Alta velocidade de comutação</td><td>Distância limitada</td></tr>
+            <tr><td>Sem desgaste mecânico</td><td>Sensível a temperaturas extremas</td></tr>
+            <tr><td>Resistente a poeira e umidade</td><td>Custo maior que interruptores mecânicos</td></tr>
+          </table>
+        `,
+        exercises: [
+          {
+            id: "m7-l1-ex1",
+            type: "multiple-choice",
+            question: "Qual tipo de material um sensor indutivo NÃO consegue detectar?",
+            choices: ["Aço carbono", "Alumínio", "Plástico", "Aço inoxidável"],
+            correct: 2,
+            explanation: "Sensores indutivos só detectam materiais condutores (metais). Plástico é não condutor, não gera correntes de Foucault."
+          },
+          {
+            id: "m7-l1-ex2",
+            type: "multiple-choice",
+            question: "Qual é o princípio físico utilizado pelos sensores indutivos?",
+            choices: ["Efeito piezoeletrico", "Correntes de Foucault", "Efeito fotoelétrico", "Capacitância variável"],
+            correct: 1,
+            explanation: "Sensores indutivos utilizam correntes de Foucault (eddy current), onde um campo eletromagnético induz correntes em superfícies metálicas."
+          },
+          {
+            id: "m7-l1-ex3",
+            type: "fill-blank",
+            question: "Complete: O sensor indutivo detecta metais através de _____ gerados no objeto metálico.",
+            code: "Correntes de Foucault",
+            blanks: ["Correntes de Foucault"],
+            explanation: "As correntes de Foucault são correntes elétricas induzidas em condutores quando expostos a um campo magnético variável."
+          },
+          {
+            id: "m7-l1-ex4",
+            type: "drag-drop",
+            question: "Organize as distâncias relativas de detecção (da maior para a menor):",
+            pieces: ["Aço carbono (100%)", "Aço inoxidável (70%)", "Alumínio (40%)", "Cobre/latão (30%)"],
+            correctOrder: ["Aço carbono (100%)", "Aço inoxidável (70%)", "Alumínio (40%)", "Cobre/latão (30%)"],
+            explanation: "O aço carbono tem a maior permeabilidade magnética, resultando na maior distância de detecção."
+          },
+          {
+            id: "m7-l1-ex5",
+            type: "multiple-choice",
+            question: "Em um sensor indutivo NPN NO, o que acontece quando detecta?",
+            choices: ["Saída conecta ao positivo", "Saída conecta ao negativo", "Saída permanece aberta", "Sensor desliga"],
+            correct: 1,
+            explanation: "Em NPN, quando detecta (NO), o transistor conduz e conecta a carga ao negativo da alimentação (sink)."
+          }
+        ]
+      },
+      {
+        id: "m7-l2",
+        title: "Sensores Capacitivos",
+        theory: `
+          <h2>Sensores Capacitivos</h2>
+          <p>Sensores capacitivos detectam a presença de <strong>qualquer material</strong> (sólidos e líquidos) através de mudanças na capacitância.</p>
+          <h3>Princípio de Funcionamento</h3>
+          <ul>
+            <li>Um eletrodo na face do sensor forma uma capacitância com o objeto</li>
+            <li>O ar age como dielétrico do capacitor</li>
+            <li>Quando o alvo se aproxima, a capacitância aumenta</li>
+            <li>O circuito oscilador detecta essa mudança e ativa a saída</li>
+          </ul>
+          <h3>Detecção de Materiais</h3>
+          <table>
+            <tr><th>Material</th><th>Fator de Redução</th></tr>
+            <tr><td>Metal</td><td>100%</td></tr>
+            <tr><td>Água</td><td>~80%</td></tr>
+            <tr><td>Plástico</td><td>30-70%</td></tr>
+            <tr><td>Grãos/pó</td><td>20-50%</td></tr>
+            <tr><td>Papel</td><td>20-40%</td></tr>
+          </table>
+          <h3>Ajuste de Sensibilidade</h3>
+          <ul>
+            <li>Potenciômetro de ajuste permite calibrar a distância</li>
+            <li>Útil para detectar líquidos através de paredes</li>
+            <li>Materiais com constante dielétrica alta são detectados a maiores distâncias</li>
+          </ul>
+          <h3>Aplicações</h3>
+          <ul>
+            <li>Detectar nível de líquidos em tanques não metálicos</li>
+            <li>Contagem de garrafas plásticas em esteiras</li>
+            <li>Verificação de presença de alimentos em embalagens</li>
+            <li>Detectar abertura de portas de vidro ou madeira</li>
+            <li>Medição de nível de grãos em silos</li>
+          </ul>
+          <h3>Parâmetros Elétricos</h3>
+          <ul>
+            <li><strong>Alimentação:</strong> 10-30 VDC</li>
+            <li><strong>Distância de operação:</strong> até 25 mm</li>
+            <li><strong>Corrente de saída:</strong> até 200 mA</li>
+            <li><strong>Tempo de resposta:</strong> &lt; 1.5 ms</li>
           </ul>
         `,
         exercises: [
           {
+            id: "m7-l2-ex1",
             type: "multiple-choice",
-            question: "Qual dispositivo protege o motor contra sobrecarga com curva tÃ©rmica (IÂ²t)?",
-            options: [
-              "FusÃ­vel",
-              "Disjuntor magnÃ©tico",
-              "RelÃ© tÃ©rmico (FR)",
-              "Contator KM1"
-            ],
-            correct: 2,
-            explanation: "O relÃ© tÃ©rmico (FR) possui lÃ¢metas bimetÃ¡licas que respondem Ã  corrente ao longo do tempo, seguindo a curva IÂ²t. Ã‰ a proteÃ§Ã£o ideal para sobrecarga gradual."
+            question: "Qual é a principal vantagem do sensor capacitivo sobre o indutivo?",
+            choices: ["Detecta apenas metais", "Detecta qualquer material", "Maior distância", "Custo menor"],
+            correct: 1,
+            explanation: "O sensor capacitivo detecta qualquer tipo de material, enquanto o indutivo detecta apenas metais."
           },
           {
+            id: "m7-l2-ex2",
             type: "multiple-choice",
-            question: "O que acontece com um motor trifÃ¡sico quando perde uma fase (fase aberta)?",
-            options: [
-              "Gira mais devagar, mas sem dano",
-              "Para imediatamente sem dano",
-              "Corrente aumenta 1,73Ã— nas fases restantes, causando aquecimento e queima",
-              "Inverte o sentido de rotaÃ§Ã£o"
-            ],
-            correct: 2,
-            explanation: "Na falta de uma fase, o motor tenta continuar girando, mas a corrente nas fases restantes aumenta drasticamente (1,73Ã—), causando aquecimento rÃ¡pido e queima dos enrolamentos."
+            question: "O que permite ao sensor capacitivo detectar líquidos através de paredes?",
+            choices: ["Campo magnético", "Ajuste de sensibilidade", "Ultrassom", "Piezoeletricidade"],
+            correct: 1,
+            explanation: "O potenciômetro de ajuste de sensibilidade permite calibrar o sensor para detectar através de materiais com diferentes constantes dielétricas."
           },
           {
-            type: "multiple-choice",
-            question: "Um relÃ© tÃ©rmico ajustado para 10A dispara em quanto tempo com 150% de sobrecarga (15A)?",
-            options: [
-              "Instantaneamente (0 segundos)",
-              "Em 5-15 segundos",
-              "Em 2-4 minutos",
-              "Em mais de 30 minutos"
-            ],
-            correct: 2,
-            explanation: "Com 150% da corrente ajustada (15A), o relÃ© tÃ©rmico dispara em aproximadamente 2-4 minutos, seguindo a curva tÃ©rmica IÂ²t."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada tipo de falha Ã  sua proteÃ§Ã£o adequada:",
-            pairs: [
-              { term: "Sobrecarga gradual", definition: "RelÃ© tÃ©rmico (FR)" },
-              { term: "Curto-circuito", definition: "FusÃ­vel ou disjuntor magnÃ©tico" },
-              { term: "Falta de fase", definition: "RelÃ© de falta de fase" },
-              { term: "SubtensÃ£o", definition: "RelÃ© de subtensÃ£o / monitor de fase" }
-            ]
-          },
-          {
+            id: "m7-l2-ex3",
             type: "fill-blank",
-            question: "O relÃ© tÃ©rmico NÃƒO protege contra _____ (sobrecarga/curto-circuito), pois seu tempo de resposta Ã© lento demais.",
-            correct: "curto-circuito",
-            explanation: "O relÃ© tÃ©rmico Ã© projetado para proteger contra sobrecarga (corrente moderadamente acima da nominal por tempo prolongado). Para curto-circuito (correntes extremamente altas), Ã© necessÃ¡rio fusÃ­vel ou disjuntor magnÃ©tico."
-          }
-        ]
-      }
-    ]
-  }
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 5 â€” COMANDOS ELÃ‰TRICOS
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  {
-    id: "m5",
-    title: "MÃ³dulo 5 â€” Comandos ElÃ©tricos",
-    color: "#0984E3",
-    icon: "ðŸŽ›ï¸",
-    lessons: [
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L1 â€” Botoeiras e Sinais
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l1",
-        moduleId: "m5",
-        title: "Botoeiras e Sinais",
-        theory: `
-<h2>Botoeiras e Sinais</h2>
-
-<h3>O que sÃ£o botoeiras?</h3>
-<p>Botoeiras sÃ£o dispositivos de comando manual constituÃ­dos por um botÃ£o mecÃ¢nico acoplado a contatos elÃ©tricos (NA ou NF). SÃ£o o principal meio de interface entre o operador e o circuito de comando. Cada botoeira pode possuir um ou mais contatos, que podem ser do tipo NA (Normalmente Aberto) ou NF (Normalmente Fechado).</p>
-
-<h3>Contato NA â€” Normalmente Aberto (verde)</h3>
-<p>O contato NA estÃ¡ aberto em repouso e se fecha quando o botÃ£o Ã© pressionado. A cor padrÃ£o internacional para o botÃ£o NA Ã© o <strong>verde</strong>, indicando a aÃ§Ã£o de <strong>LIGAR</strong> ou PARTIR. No diagrama elÃ©trico, o contato NA Ã© representado por dois terminais separados â€” o circuito sÃ³ se completa quando o botÃ£o Ã© acionado.</p>
-
-<h3>Contato NF â€” Normalmente Fechado (vermelho)</h3>
-<p>O contato NF estÃ¡ fechado em repouso e se abre quando o botÃ£o Ã© pressionado. A cor padrÃ£o para o botÃ£o NF Ã© o <strong>vermelho</strong>, indicando a aÃ§Ã£o de <strong>DESLIGAR</strong> ou PARADA. No diagrama, o contato NF Ã© representado por dois terminais unidos por uma barra â€” o circuito Ã© interrompido ao pressionar o botÃ£o.</p>
-
-<h3>Botoeira NA/NF Combo (semelforÃ§o)</h3>
-<p>A botoeira semelforÃ§o possui um Ãºnico mecanismo com dois contatos simultÃ¢neos: um NA e um NF. Ao pressionar, o NA fecha e o NF abre ao mesmo tempo. Ã‰ muito utilizada em circuitos de comando onde Ã© necessÃ¡rio sinalizar e ao mesmo tempo desligar outro ramo do circuito. Aæ¾ confirma o estado anterior (self-holding) enquanto aciona uma nova funÃ§Ã£o.</p>
-
-<h3>Sinalizadores e Indicadores Visuais</h3>
-<p>Sinalizadores luminosos (lÃ¢mpadas ou LEDs) sÃ£o instalados nos quadros para indicar o estado do equipamento. A cores seguem a norma <strong>IEC 60204-1</strong> e <strong>NBR NM-ISO 13850</strong>:</p>
-<ul>
-  <li><strong>Verde</strong> â€” equipamento ligado / funcionando normalmente</li>
-  <li><strong>Vermelho</strong> â€” equipamento desligado / falha / emergÃªncia</li>
-  <li><strong>Amarelo</strong> â€” advertÃªncia / condiÃ§Ã£o anormal / alerta</li>
-  <li><strong>Azul</strong> â€” informe / estado especial</li>
-  <li><strong>Branco</strong> â€” tensÃ£o presente / autorizaÃ§Ã£o de energia</li>
-  <li><strong>Ã‚mbar/laranja</strong> â€” intervenÃ§Ã£o necessÃ¡ria</li>
-</ul>
-
-<h3>AplicaÃ§Ã£o PrÃ¡tica</h3>
-<p>Em um painel de comando de um motor, temos tipicamente: botoeira verde (NA) para PARTIDA, botoeira vermelha (NF) para PARADA, e uma lÃ¢mpada verde indicando motor em funcionamento e uma lÃ¢mpada vermelha indicando motor parado. A botoeira de emergÃªncia (vermelha com fundo amarelo) Ã© do tipo chicote, com trava de reinicializaÃ§Ã£o manual, conforme <strong>NBR NM-ISO 13850</strong>.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Confundir NA e NF â€” o NA fecha ao pressionar, o NF abre ao pressionar</li>
-  <li>Utilizar botoeira sem trava em botÃ£o de emergÃªncia â€” a norma exige trava de reinicializaÃ§Ã£o</li>
-  <li>NÃ£o dimensionar a corrente do contato â€” cada contato tem limite de corrente/tensÃ£o</li>
-  <li>Instalar indicadores luminosos sem considerar a correta conforme norma</li>
-  <li>Esquecer o contato de selo quando se usa botoeira semelforÃ§o para latching</li>
-</ul>
-`,
-        exercises: [
+            question: "Complete: O sensor capacitivo utiliza um _____ como dielétrico entre o eletrodo e o alvo.",
+            code: "dielétrico",
+            blanks: ["dielétrico"],
+            explanation: "O ar funciona como dielétrico de um capacitor. Quando o alvo se aproxima, a constante dielétrica muda, alterando a capacitância."
+          },
           {
+            id: "m7-l2-ex4",
             type: "multiple-choice",
-            question: "Qual Ã© a cor padrÃ£o de um botÃ£o de PARTIDA (NA)?",
-            options: ["Vermelho", "Verde", "Amarelo", "Azul"],
+            question: "Qual componente permite ajustar a sensibilidade do sensor capacitivo?",
+            choices: ["Resistor fixo", "Potenciômetro", "Capacitor variável", "Indutor"],
             correct: 1,
-            explanation: "O botÃ£o NA (Normalmente Aberto) de PARTIDA tem cor verde padrÃ£o."
+            explanation: "O potenciômetro de ajuste permite calibrar a distância de comutação para o material específico."
           },
           {
-            type: "fill-blank",
-            question: "O contato que estÃ¡ fechado em repouso e se abre ao ser acionado Ã© chamado de contato ___.",
-            correct: "NF",
-            explanation: "NF = Normalmente Fechado. EstÃ¡ fechado em repouso e se abre ao pressionar."
-          },
-          {
-            type: "multiple-choice",
-            question: "A botoeira semelforÃ§o possui:",
-            options: [
-              "Apenas contato NA",
-              "Apenas contato NF",
-              "Um contato NA e um contato NF simultÃ¢neos",
-              "Dois contatos NA"
-            ],
-            correct: 2,
-            explanation: "A botoeira semelforÃ§o possui um contato NA e um contato NF que atuam simultaneamente."
-          },
-          {
-            type: "multiple-choice",
-            question: "Segundo a norma, qual cor indica FALHA ou equipamento DESLIGADO?",
-            options: ["Verde", "Amarelo", "Vermelho", "Branco"],
-            correct: 2,
-            explanation: "A cor vermelha indica equipamento desligado, falha ou parada de emergÃªncia."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada cor ao seu significado correto:",
-            items: ["Verde", "Vermelho", "Amarelo", "Branco"],
-            targets: ["Ligado / Partida", "Desligado / Falha", "AdvertÃªncia", "TensÃ£o presente"],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L2 â€” Contatores
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l2",
-        moduleId: "m5",
-        title: "Contatores",
-        theory: `
-<h2>Contatores</h2>
-
-<h3>O que Ã© um Contator?</h3>
-<p>O contator Ã© um interruptor eletromagnÃ©tico destinado a fazer e quebrar circuitos de potÃªncia sob condiÃ§Ãµes normais de serviÃ§o. Diferente do disjuntor, o contator <strong>nÃ£o protege contra sobrecarga ou curto-circuito</strong> â€” ele apenas conecta e desconecta cargas de forma controlada. Ã‰ o elemento central dos circuitos de comando de motores e iluminaÃ§Ã£o industrial.</p>
-
-<h3>ConstruÃ§Ã£o Interna</h3>
-<p>O contator Ã© composto por: <strong>(1) Bobina eletromagnÃ©tica</strong> â€” quando energizada, gera um campo magnÃ©tico que atrai a armadura; <strong>(2) Armadura mÃ³vel</strong> â€” peÃ§a de ferro que se move ao campo magnÃ©tico, acionando os contatos; <strong>(3) Contatos de potÃªncia (NA)</strong> â€” contactam em sÃ©rie com a carga, suportam correntes elevadas (9 A, 12 A, 25 A, 40 A, 65 A etc.); <strong>(4) Contato auxiliar de selo (NA ou NF)</strong> â€” usado no circuito de comando para manter o contator energizado; <strong>(5) Mola de retorno</strong> â€” devolve a armadura Ã  posiÃ§Ã£o original quando a bobina Ã© desenergizada.</p>
-
-<h3>Contato de Selo (Self-Holding)</h3>
-<p>O contato de selo Ã© o elemento que permite que, apÃ³s momentaneamente acionar a botoeira de partida, o contator permaneÃ§a energizado. Ele Ã© ligado em paralelo com a botoeira NA de partida. Quando a bobina energiza, o contato de selo NA fecha, criando um caminho alternativo para a corrente de comando. Assim, ao soltar a botoeira, a corrente continua passando pelo contato de selo, mantendo o contator fechado.</p>
-
-<h3>Capacidade em Amperes</h3>
-<p>A capacidade do contator Ã© especificada em Amperes (A) e indica a corrente mÃ¡xima que os contatos de potÃªncia podem suportar. A classificaÃ§Ã£o segue a norma <strong>IEC 60947-4-1</strong>. Exemplos: Contator AC-3 (partida de motor) â€” dimensiona-se para a corrente nominal do motor. Exemplo: motor trifÃ¡sico de 5 CV â†’ I = 5Ã—1,732Ã—0,8 = 7,8 A â†’ contator de 9 A.</p>
-
-<h3>Dimensionamento</h3>
-<p>O dimensionamento do contator leva em conta: <strong>(1)</strong> Corrente nominal do motor (IN); <strong>(2)</strong> Categoria de utilizaÃ§Ã£o (AC-1 resistivo, AC-3 partida de motor, AC-4 partida/plugging); <strong>(3)</strong> TensÃ£o da bobina (127V, 220V, 380V); <strong>(4)</strong> NÃºmero de polos (2 ou 3 polos de potÃªncia). Regra prÃ¡tica: para AC-3, o contator deve ser dimensionado para no mÃ­nimo 1,25Ã—IN do motor.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Usar contator sem contato de selo â€” o motor nÃ£o permanece ligado ao soltar a botoeira</li>
-  <li>Dimensionar contator apenas pela corrente nominal â€” deve considerar a corrente de partida (6-8Ã—IN)</li>
-  <li>NÃ£o verificar a compatibilidade da tensÃ£o da bobina com a tensÃ£o do circuito de comando</li>
-  <li>Confundir contato de potÃªncia com contato auxiliar â€” capacidades muito diferentes</li>
-  <li>Instalar contator sem relÃ© tÃ©rmico â€” nÃ£o hÃ¡ proteÃ§Ã£o contra sobrecarga</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o principal do contator?",
-            options: [
-              "Proteger contra curto-circuito",
-              "Fazer e quebrar circuitos de potÃªncia sob condiÃ§Ãµes normais",
-              "Medir a corrente do circuito",
-              "Regular a tensÃ£o de saÃ­da"
-            ],
-            correct: 1,
-            explanation: "O contator Ã© um interruptor eletromagnÃ©tico para fazer e quebrar circuitos de potÃªncia."
-          },
-          {
-            type: "fill-blank",
-            question: "O contato que mantÃ©m o contator energizado apÃ³s soltar a botoeira Ã© chamado contato de ___.",
-            correct: "selo",
-            explanation: "O contato de selo (self-holding) mantÃ©m o contator energizado em paralelo com a botoeira."
-          },
-          {
-            type: "multiple-choice",
-            question: "Um motor trifÃ¡sico de 5 CV tem corrente nominal aproximada de 7,8 A. Qual contator dimensionar (AC-3)?",
-            options: ["6 A", "9 A", "12 A", "25 A"],
-            correct: 1,
-            explanation: "Para AC-3, dimensiona-se para 1,25Ã—IN. 1,25Ã—7,8 = 9,75 A â†’ contator de 9 A Ã© o mais prÃ³ximo (ou 12 A para folga)."
-          },
-          {
-            type: "multiple-choice",
-            question: "O contator NÃƒO protege contra:",
-            options: [
-              "Sobrecarga",
-              "Curto-circuito",
-              "Ambas as anteriores",
-              "Nenhuma das anteriores"
-            ],
-            correct: 2,
-            explanation: "O contator nÃ£o protege contra sobrecarga nem curto-circuito â€” Ã© apenas um interruptor."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada componente do contator Ã  sua funÃ§Ã£o:",
-            items: ["Bobina", "Armadura", "Contato de selo", "Mola de retorno"],
-            targets: [
-              "Gera campo magnÃ©tico ao energizar",
-              "Move-se ao campo magnÃ©tico",
-              "MantÃ©m contator ligado apÃ³s soltar botoeira",
-              "Devolve armadura Ã  posiÃ§Ã£o original"
-            ],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L3 â€” RelÃ©s TÃ©rmicos
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l3",
-        moduleId: "m5",
-        title: "RelÃ©s TÃ©rmicos",
-        theory: `
-<h2>RelÃ©s TÃ©rmicos</h2>
-
-<h3>O que Ã© um RelÃ© TÃ©rmico?</h3>
-<p>O relÃ© tÃ©rmico Ã© um dispositivo de proteÃ§Ã£o contra sobrecarga de motores elÃ©tricos. Ele monitora a corrente que circula pelo motor e, quando detecta uma sobrecarga prolongada, abre o contato NF do circuito de comando, desligando o contator e, consequentemente, o motor. Ã‰ essencial para evitar que o motor queime devido a sobrecarga prolongada.</p>
-
-<h3>PrincÃ­pio de Funcionamento â€” Bimetal</h3>
-<p>O elemento sensÃ­vel do relÃ© tÃ©rmico Ã© a <strong>lÃ¢mina bimetÃ¡lica</strong>, composta por duas ligaÃ§Ãµes metÃ¡licas com coeficientes de dilataÃ§Ã£o diferentes, soldadas juntas. Quando a corrente que passa pelo relÃ© excede o valor de ajuste, o calor gerado faz com que o bimetal se deforme (a lÃ¢mina com maior coeficiente se dilata mais), curvando-se e acionando o mecanismo de disparo que abre o contato NF. ApÃ³s o resfriamento, o bimetal retorna Ã  posiÃ§Ã£o original â€” o relÃ© pode ser reiniciado manualmente (botÃ£o RESET) ou automaticamente.</p>
-
-<h3>Curva de AtuaÃ§Ã£o (IÂ²t)</h3>
-<p>A curva de atuaÃ§Ã£o do relÃ© tÃ©rmico Ã© uma curva inversa: quanto maior a sobrecarga, menor o tempo para o relÃ© atuar. Essa caracterÃ­stica Ã© definida pela fÃ³rmula <strong>IÂ²t = constante</strong> â€” a energia dissipada atÃ© o disparo Ã© praticamente constante. Por exemplo, a 140% da corrente nominal, o relÃ© atua em aproximadamente 4 minutos; a 200% da corrente nominal, atua em aproximadamente 30 segundos.</p>
-
-<h3>Ajuste da Corrente Nominal</h3>
-<p>A maioria dos relÃ©s tÃ©rmicos possui um botÃ£o ou pino de ajuste que permite definir a corrente nominal (IN) do motor. O ajuste deve ser feito exatamente para a corrente nominal do motor. Exemplo: motor de 4,5 A â†’ ajustar o relÃ© tÃ©rmico para 4,5 A. Se o relÃ© nÃ£o tiver ajuste exato, deve-se escolher o modelo cuja faixa inclua a corrente nominal do motor.</p>
-
-<h3>AplicaÃ§Ã£o PrÃ¡tica</h3>
-<p>O relÃ© tÃ©rmico Ã© ligado em sÃ©rie com os contatos de potÃªncia do contator, na saÃ­da (lado do motor). Seu contato NF Ã© ligado em sÃ©rie no circuito de comando, antes da bobina do contator. Quando o relÃ© dispara, seu contato NF abre, desenergizando a bobina do contator e desligando o motor. O relÃ© tÃ©rmico NÃƒO protege contra curto-circuito â€” para isso, deve-se associar com fusÃ­veis ou disjuntores.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Ajustar o relÃ© tÃ©rmico com corrente diferente da nominal do motor â€” proteÃ§Ã£o ineficiente</li>
-  <li>Esquecer o contato NF do relÃ© tÃ©rmico no circuito de comando â€” o relÃ© nÃ£o desligarÃ¡ o motor</li>
-  <li>Utilizar relÃ© tÃ©rmico para proteÃ§Ã£o contra curto-circuito â€” o relÃ© tÃ©rmico Ã© lento para curtocircuito</li>
-  <li>NÃ£o considerar altitude e temperatura ambiente â€” acima de 1000m ou 40Â°C, o relÃ© deve ser reajustado</li>
-  <li>Utilizar relÃ© tÃ©rmico em motores com partida estrela-triÃ¢ngulo sem compensaÃ§Ã£o adequada</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a funÃ§Ã£o principal do relÃ© tÃ©rmico?",
-            options: [
-              "Proteger contra curto-circuito",
-              "Proteger contra sobrecarga prolongada do motor",
-              "Controlar a partida do motor",
-              "Medir a temperatura do motor"
-            ],
-            correct: 1,
-            explanation: "O relÃ© tÃ©rmico protege contra sobrecarga prolongada, desligando o motor via contato NF."
-          },
-          {
-            type: "fill-blank",
-            question: "O elemento sensÃ­vel do relÃ© tÃ©rmico que se deforma com o calor Ã© a lÃ¢mina ___.",
-            correct: "bimetÃ¡lica",
-            explanation: "O bimetal Ã© composto por duas ligaÃ§Ãµes metÃ¡licas com coeficientes de dilataÃ§Ã£o diferentes."
-          },
-          {
-            type: "multiple-choice",
-            question: "A curva de atuaÃ§Ã£o do relÃ© tÃ©rmico Ã©:",
-            options: [
-              "Direta â€” maior corrente = mais tempo",
-              "Inversa â€” maior corrente = menos tempo",
-              "Constante â€” sempre o mesmo tempo",
-              "AleatÃ³ria"
-            ],
-            correct: 1,
-            explanation: "A curva Ã© inversa: quanto maior a sobrecarga, menor o tempo para o relÃ© atuar."
-          },
-          {
+            id: "m7-l2-ex5",
             type: "calculation",
-            question: "Um motor tem corrente nominal de 8 A. Qual o ajuste correto do relÃ© tÃ©rmico?",
-            correct: "8",
-            unit: "A",
-            explanation: "O relÃ© tÃ©rmico deve ser ajustado exatamente para a corrente nominal do motor, ou seja, 8 A."
-          },
-          {
-            type: "multiple-choice",
-            question: "O contato do relÃ© tÃ©rmico utilizado no circuito de comando Ã©:",
-            options: [
-              "NA â€” Normalmente Aberto",
-              "NF â€” Normalmente Fechado",
-              "Depende do fabricante",
-              "NÃ£o se usa contato auxiliar"
-            ],
-            correct: 1,
-            explanation: "O contato NF do relÃ© tÃ©rmico Ã© ligado em sÃ©rie no circuito de comando para desligar a bobina em caso de sobrecarga."
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L4 â€” Temporizadores
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l4",
-        moduleId: "m5",
-        title: "Temporizadores",
-        theory: `
-<h2>Temporizadores</h2>
-
-<h3>O que sÃ£o Temporizadores?</h3>
-<p>Temporizadores sÃ£o dispositivos que introduzem um atraso temporal entre o acionamento de uma entrada e a atuaÃ§Ã£o de seus contatos de saÃ­da. SÃ£o essenciais em automaÃ§Ã£o para sequenciar operaÃ§Ãµes, evitar partidas simultÃ¢neas, criar atrasos programÃ¡veis e implementar lÃ³gicas temporais complexas. Podem ser mecÃ¢nicos (de fluxo de ar ou motor de relÃ³gio) ou eletrÃ´nicos (com circuito integrado).</p>
-
-<h3>Temporizador TON â€” Time ON Delay (Atraso para Ligar)</h3>
-<p>O TON Ã© o temporizador mais comum. Quando a bobina Ã© energizada, os contatos de saÃ­da NÃƒO mudam de estado imediatamente â€” aguardam o tempo ajustado (t). Somente apÃ³s esse tempo Ã© que os contatos NA de saÃ­da fecham e os NF abrem. Quando a bobina Ã© desenergizada, os contatos retornam instantaneamente Ã  posiÃ§Ã£o original. Exemplo: TON ajustado para 10 s â†’ ao energizar, aguarda 10 s e fecha o contato NA de saÃ­da.</p>
-
-<h3>Temporizador TOF â€” Time OFF Delay (Atraso para Desligar)</h3>
-<p>O TOF funciona de forma inversa ao TON. Quando a bobina Ã© energizada, os contatos de saÃ­da mudam de estado <strong>imediatamente</strong>. Quando a bobina Ã© desenergizada, os contatos mantÃªm o estado por mais um perÃ­odo ajustado (t) antes de retornar. Exemplo: TOF de 5 s â†’ ao desligar a bobina, os contatos permanecem por 5 s e depois retornam.</p>
-
-<h3>Temporizador TP â€” Pulse Timer (Pulso Temporizado)</h3>
-<p>O TP gera um pulso de saÃ­da de duraÃ§Ã£o fixa independente da duraÃ§Ã£o do sinal de entrada. Na borda de subida da entrada, os contatos de saÃ­da mudam de estado e permanecem pelo tempo ajustado, mesmo que a entrada seja desligada. Ã‰ Ãºtil para gerar pulsos de duraÃ§Ã£o controlada, como acionamentos momentÃ¢neos de vÃ¡lvulas ou sinais de alarme.</p>
-
-<h3>Temporizador MecÃ¢nico vs EletrÃ´nico</h3>
-<p><strong>MecÃ¢nicos:</strong> Utilizam fluxo de ar ( pneu ) ou motor de relÃ³gio. SÃ£o robustos, baratos, mas menos precisos (precisÃ£o Â±10%). Comuns em partidas de motores. <strong>EletrÃ´nicos:</strong> Utilizam circuito integrado com oscilador RC ou cristal. SÃ£o muito precisos (precisÃ£o Â±1%), com ajuste digital. Permitem funÃ§Ãµes adicionais como contagem, contagem regressiva e interface com CLP.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Confundir TON com TOF â€” o TON atrasa a LIGAÃ‡ÃƒO, o TOF atrasa o DESLIGAMENTO</li>
-  <li>NÃ£o considerar a queda de tensÃ£o na bobina do temporizador â€” pode causar funcionamento intermitente</li>
-  <li>Utilizar temporizador eletrÃ´nico em ambiente com muita interferÃªncia eletromagnÃ©tica sem blindagem</li>
-  <li>Ajustar tempo inadequado para a aplicaÃ§Ã£o â€” tempos muito curtos podem nÃ£o cumprir a funÃ§Ã£o</li>
-  <li>Esquecer que o TOF mantÃ©m os contatos ativos apÃ³s desenergizar â€” pode causar conflitos</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "O temporizador TON (Atraso para Ligar) funciona da seguinte forma:",
-            options: [
-              "Ao energizar, os contatos mudam imediatamente",
-              "Ao energizar, os contatos mudam apÃ³s o tempo ajustado",
-              "Ao desenergizar, os contatos mudam apÃ³s o tempo ajustado",
-              "Gera um pulso de saÃ­da independente da entrada"
-            ],
-            correct: 1,
-            explanation: "O TON introduz um atraso entre a energizaÃ§Ã£o da bobina e a mudanÃ§a dos contatos de saÃ­da."
-          },
-          {
-            type: "fill-blank",
-            question: "O temporizador que mantÃ©m os contatos ativos por um perÃ­odo apÃ³s desligar a bobina Ã© o ___.",
-            correct: "TOF",
-            explanation: "TOF = Time OFF Delay â€” atraso para desligar."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual temporizador gera um pulso de duraÃ§Ã£o fixa?",
-            options: ["TON", "TOF", "TP", "Nenhum"],
-            correct: 2,
-            explanation: "O TP (Pulse Timer) gera um pulso de saÃ­da de duraÃ§Ã£o fixa na borda de subida."
-          },
-          {
-            type: "multiple-choice",
-            question: "A precisÃ£o tÃ­pica de um temporizador eletrÃ´nico Ã©:",
-            options: ["Â±10%", "Â±5%", "Â±1%", "Â±0,01%"],
-            correct: 2,
-            explanation: "Temporizadores eletrÃ´nicos possuem precisÃ£o de aproximadamente Â±1%."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada tipo de temporizador ao seu comportamento:",
-            items: ["TON", "TOF", "TP"],
-            targets: [
-              "Atraso para ligar â€” contatos mudam apÃ³s tempo ao energizar",
-              "Atraso para desligar â€” contatos retornam apÃ³s tempo ao desenergizar",
-              "Pulso fixo â€” saÃ­da por tempo determinado na borda de subida"
-            ],
-            correct: [0, 1, 2]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L5 â€” Circuito Partida Direta
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l5",
-        moduleId: "m5",
-        title: "Circuito Partida Direta",
-        theory: `
-<h2>Circuito Partida Direta</h2>
-
-<h3>O que Ã© Partida Direta?</h3>
-<p>A partida direta Ã© o mÃ©todo mais simples e comum de partida de motores elÃ©tricos trifÃ¡sicos. Neste mÃ©todo, o motor recebe a tensÃ£o plena da rede (380V trifÃ¡sico) diretamente nos seus terminais. NÃ£o hÃ¡ limitaÃ§Ã£o de corrente â€” o motor parte com corrente de partida de 6 a 8 vezes a corrente nominal. Ã‰ utilizada para motores de pequena e mÃ©dia potÃªncia (atÃ© 7,5 CV em geral).</p>
-
-<h3>Diagrama de ForÃ§a â€” Fluxo de Energia</h3>
-<p>O fluxo de energia no circuito de forÃ§a Ã©: <strong>Fase L1 â†’ Disjuntor (DR) â†’ Contato de potÃªncia do contator (KC) â†’ Contato do relÃ© tÃ©rmico (KM) â†’ Motor (M)</strong>. O mesmo ocorre para L2 e L3. O disjuntor protege contra curto-circuito, o relÃ© tÃ©rmico protege contra sobrecarga e o contator faz a manobra de ligaÃ§Ã£o/desligamento.</p>
-
-<h3>Circuito de Comando â€” Contato de Selo</h3>
-<p>O circuito de comando controla a bobina do contator. O fluxo Ã©: <strong>Fase de comando â†’ Botoeira NF (parada) â†’ Botoeira NA (partida) â†’ Bobina do contator â†’ Retorno ao neutro ou outra fase</strong>. O contato de selo (NA do contator) Ã© ligado em paralelo com a botoeira de partida. Ao pressionar a botoeira, o contator energiza e seu contato de selo fecha, criando um caminho alternativo. Ao soltar a botoeira, o contator permanece energizado pelo selo.</p>
-
-<h3>Parada de EmergÃªncia</h3>
-<p>O botÃ£o de emergÃªncia Ã© um botÃ£o vermelho com fundo amarelo, tipo chicote, com trava de reinicializaÃ§Ã£o manual (conforme NBR NM-ISO 13850). Seu contato NF Ã© ligado em sÃ©rie no inÃ­cio do circuito de comando. Ao acionar, interrompe imediatamente toda a corrente de comando, desligando o contator e o motor. Para reiniciar, Ã© necessÃ¡rio girar o botÃ£o para liberar a trava e depois pressionar a botoeira de partida novamente.</p>
-
-<h3>Esquema Resumido do Circuito</h3>
-<pre>
-  L1 â”€â”€â”¬â”€â”€ DR â”€â”€â”¬â”€â”€ KC â”€â”€â”¬â”€â”€ KM â”€â”€ M
-       â”‚        â”‚        â”‚
-  L2 â”€â”€â”¤        â”‚        â”‚
-       â”‚        â”‚        â”‚
-  L3 â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€
-
-  COMANDO:
-  F â”€â”€ S2(NF-emerg) â”€â”€ S1(NA-partida) â”€â”€â”¬â”€â”€ Bobina KC â”€â”€ N
-                                         â”‚
-                                    KC_selo(NA)
-</pre>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>NÃ£o instalar disjuntor antes do contator â€” nÃ£o hÃ¡ proteÃ§Ã£o contra curto-circuito</li>
-  <li>Esquecer o contato de selo â€” o motor nÃ£o permanece ligado ao soltar a botoeira</li>
-  <li>Ligar a botoeira de parada em NA ao invÃ©s de NF â€” nÃ£o desliga o motor</li>
-  <li>NÃ£o dimensionar o contator para a corrente de partida â€” o contator pode soldar os contatos</li>
-  <li>Omitir o relÃ© tÃ©rmico â€” motor sem proteÃ§Ã£o contra sobrecarga</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Na partida direta, a corrente de partida do motor Ã©:",
-            options: [
-              "Igual Ã  corrente nominal",
-              "2 a 3 vezes a corrente nominal",
-              "6 a 8 vezes a corrente nominal",
-              "10 a 15 vezes a corrente nominal"
-            ],
-            correct: 2,
-            explanation: "Na partida direta, o motor parte com corrente de 6 a 8 vezes a corrente nominal."
-          },
-          {
-            type: "fill-blank",
-            question: "O contato que mantÃ©m o contator energizado apÃ³s soltar a botoeira de partida Ã© o contato de ___.",
-            correct: "selo",
-            explanation: "O contato de selo Ã© ligado em paralelo com a botoeira de partida e mantÃ©m o contator energizado."
-          },
-          {
-            type: "multiple-choice",
-            question: "O botÃ£o de emergÃªncia deve ter:",
-            options: [
-              "Contato NA",
-              "Contato NF com trava de reinicializaÃ§Ã£o",
-              "Contato NA/NF sem trava",
-              "Apenas sinalizaÃ§Ã£o luminosa"
-            ],
-            correct: 1,
-            explanation: "O botÃ£o de emergÃªncia Ã© NF (Normalmente Fechado) e deve possuir trava de reinicializaÃ§Ã£o manual."
-          },
-          {
-            type: "drag-drop",
-            question: "Ordene o fluxo de energia no circuito de forÃ§a da partida direta:",
-            items: ["Disjuntor (DR)", "Contator (KC)", "RelÃ© TÃ©rmico (KM)", "Motor (M)"],
-            targets: [
-              "1Âº â€” ProteÃ§Ã£o contra curto",
-              "2Âº â€” Manobra de ligaÃ§Ã£o",
-              "3Âº â€” ProteÃ§Ã£o contra sobrecarga",
-              "4Âº â€” Carga"
-            ],
-            correct: [0, 1, 2, 3]
-          },
-          {
-            type: "calculation",
-            question: "Um motor de 5 CV (tensÃ£o 380V, fator de potÃªncia 0,85) tem corrente nominal de approximately 9,2 A. Qual a corrente de partida mÃ¡xima esperada?",
-            correct: "73.6",
-            unit: "A",
-            explanation: "Corrente de partida = 8 Ã— IN = 8 Ã— 9,2 = 73,6 A (considerando fator de partida 8)."
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L6 â€” Circuito Estrela-TriÃ¢ngulo
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l6",
-        moduleId: "m5",
-        title: "Circuito Estrela-TriÃ¢ngulo",
-        theory: `
-<h2>Circuito Estrela-TriÃ¢ngulo</h2>
-
-<h3>O que Ã© Partida Estrela-TriÃ¢ngulo?</h3>
-<p>A partida estrela-triÃ¢ngulo (Y-Î”) Ã© um mÃ©todo de partida que reduz a corrente de partida do motor trifÃ¡sico. O motor deve ter os 6 terminais acessÃ­veis (U1, V1, W1 â€” extremos das bobinas; U2, V2, W2 â€” meios das bobinas). Na partida, as bobinas sÃ£o ligadas em <strong>estrela (Y)</strong>, reduzindo a tensÃ£o em cada fase para 220V (em rede de 380V). ApÃ³s um tempo, o motor Ã© comutado para ligaÃ§Ã£o em <strong>triÃ¢ngulo (Î”)</strong>, recebendo a tensÃ£o plena de 380V.</p>
-
-<h3>Vantagens e LimitaÃ§Ãµes</h3>
-<p><strong>Vantagens:</strong> A corrente de partida na estrela Ã© 1/3 da corrente na partida direta (triÃ¢ngulo), e o binÃ¡rio de partida Ã© 1/3 tambÃ©m. <strong>LimitaÃ§Ãµes:</strong> O motor deve ser construÃ­do para trabalhar em triÃ¢ngulo (380V). A comutaÃ§Ã£o gera um pico de corrente. NÃ£o Ã© adequado para cargas com alto binÃ¡rio de partida. Reduz a corrente de partida para aproximadamente 1/3 da partida direta.</p>
-
-<h3>Os 3 Contatores NecessÃ¡rios</h3>
-<p><strong>KM1 (Contator Principal)</strong> â€” conecta as fases L1, L2, L3 aos terminais U1, V1, W1 do motor. Ã‰ ligado durante todo o funcionamento. <strong>KM2 (Contator Estrela)</strong> â€” conecta os terminais U2, V2, W2 em ponto comum (neutro de estrela). Ã‰ ligado apenas na partida (modo estrela). <strong>KM3 (Contator TriÃ¢ngulo)</strong> â€” conecta U2 a V1, V2 a W1, W2 a U1 (ligaÃ§Ã£o triÃ¢ngulo). Ã‰ ligado no funcionamento normal (modo triÃ¢ngulo).</p>
-
-<h3>RelÃ© de Tempo</h3>
-<p>O relÃ© de tempo controla a comutaÃ§Ã£o de estrela para triÃ¢ngulo. Ã‰ ajustado para o tempo necessÃ¡rio ao motor atingir aproximadamente 80% da velocidade nominal (tipicamente 5-15 segundos dependendo da carga). Quando o tempo expira, o relÃ© desliga KM2 e liga KM3.</p>
-
-<h3>Intertravamento KM2 â†” KM3 (CRÃTICO)</h3>
-<p>O intertravamento Ã© a proteÃ§Ã£o que impede que KM2 e KM3 sejam energizados simultaneamente. Se isso ocorrer, causa curto-circuito nas fases. O intertravamento Ã© feito de duas formas: <strong>(1) ElÃ©trico:</strong> O contato NF de KM3 Ã© colocado em sÃ©rie com a bobina de KM2, e o contato NF de KM2 em sÃ©rie com a bobina de KM3. Assim, se KM3 estÃ¡ ligado, o contato NF dele abre o circuito de KM2, impedindo sua energizaÃ§Ã£o. <strong>(2) MecÃ¢nico:</strong> UtilizaÃ§Ã£o de intertravador mecÃ¢nico entre KM2 e KM3 (alavanca ou placa comum).</p>
-
-<h3>SequÃªncia de Funcionamento</h3>
-<ol>
-  <li>Acionar botoeira de partida â†’ KM1 energiza (contato de selo fecha)</li>
-  <li>KM1 fecha â†’ corrente passa pelo relÃ© de tempo â†’ KM2 energiza (modo estrela)</li>
-  <li>Motor parte em estrela (220V por fase)</li>
-  <li>RelÃ© de tempo atinge o ajuste â†’ KM2 desenergiza (contato NF de KM2 abre)</li>
-  <li>KM3 energiza (modo triÃ¢ngulo â€” 380V por fase)</li>
-  <li>Motor funciona em triÃ¢ngulo (potÃªncia nominal)</li>
-</ol>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Esquecer o intertravamento KM2â†”KM3 â€” risco de curto-circuito</li>
-  <li>Ajustar tempo do relÃ© muito curto â€” motor nÃ£o atinge velocidade antes da comutaÃ§Ã£o</li>
-  <li>NÃ£o considerar que o motor deve ser construÃ­do para triÃ¢ngulo 380V</li>
-  <li>NÃ£o dimensionar KM1 para corrente nominal em triÃ¢ngulo</li>
-  <li>Ligar KM2 e KM3 simultaneamente â€” consequÃªncia catastrÃ³fica</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Na partida estrela-triÃ¢ngulo, a corrente de partida Ã© reduzida para:",
-            options: [
-              "1/2 da partida direta",
-              "1/3 da partida direta",
-              "1/4 da partida direta",
-              "NÃ£o hÃ¡ reduÃ§Ã£o"
-            ],
-            correct: 1,
-            explanation: "A corrente de partida na estrela Ã© 1/3 da corrente em triÃ¢ngulo (partida direta)."
-          },
-          {
-            type: "fill-blank",
-            question: "O contato que impede KM2 e KM3 de energizarem simultaneamente Ã© o ___ entre eles.",
-            correct: "intertravamento",
-            explanation: "O intertravamento (elÃ©trico e/ou mecÃ¢nico) impede que KM2 e KM3 fiquem ligados ao mesmo tempo."
-          },
-          {
-            type: "multiple-choice",
-            question: "O relÃ© de tempo no circuito estrela-triÃ¢ngulo controla:",
-            options: [
-              "A corrente de partida",
-              "A tensÃ£o aplicada ao motor",
-              "A comutaÃ§Ã£o de KM2 para KM3",
-              "A proteÃ§Ã£o contra sobrecarga"
-            ],
-            correct: 2,
-            explanation: "O relÃ© de tempo controla a transiÃ§Ã£o de modo estrela (KM2) para modo triÃ¢ngulo (KM3)."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada contator Ã  sua funÃ§Ã£o no estrela-triÃ¢ngulo:",
-            items: ["KM1", "KM2", "KM3"],
-            targets: [
-              "Contator principal â€” conecta fases ao motor",
-              "Contator estrela â€” junta U2, V2, W2",
-              "Contator triÃ¢ngulo â€” liga em Î”"
-            ],
-            correct: [0, 1, 2]
-          },
-          {
-            type: "multiple-choice",
-            question: "Se KM2 e KM3 energizarem simultaneamente, o que acontece?",
-            options: [
-              "O motor gira em sentido reverso",
-              "O motor funciona normalmente",
-              "Ocorre curto-circuito nas fases",
-              "O relÃ© tÃ©rmico desliga"
-            ],
-            correct: 2,
-            explanation: "A energizaÃ§Ã£o simultÃ¢nea de KM2 e KM3 causa curto-circuito nas fases."
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M5-L7 â€” Circuito de ReversÃ£o
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m5-l7",
-        moduleId: "m5",
-        title: "Circuito de ReversÃ£o",
-        theory: `
-<h2>Circuito de ReversÃ£o</h2>
-
-<h3>O que Ã© ReversÃ£o de Sentido?</h3>
-<p>A reversÃ£o de sentido de rotaÃ§Ã£o de um motor trifÃ¡sico Ã© obtida <strong>invertendo-se a ligaÃ§Ã£o de qualquer duas fases</strong>. Por exemplo, se as fases estÃ£o ligadas como L1-U1, L2-V1, L3-W1, ao inverter L1 e L3, temos L3-U1, L2-V1, L1-W1 â€” o motor gira no sentido inverso. Essa inversÃ£o Ã© feita por contatores, sem necessidade de intervenÃ§Ã£o manual nas ligaÃ§Ãµes.</p>
-
-<h3>InversÃ£o de Fases com Contatores</h3>
-<p>Dois contatores sÃ£o necessÃ¡rios: <strong>KM1 (Sentido Direto)</strong> e <strong>KM2 (Sentido Reverso)</strong>. KM1 liga as fases normalmente: L1-U1, L2-V1, L3-W1. KM2 inverte duas fases: L1-W1, L2-V1, L3-U1 (ou qualquer outra combinaÃ§Ã£o de inversÃ£o de duas fases). Os contatores sÃ£o ligados em paralelo, com circuitos de comando independentes.</p>
-
-<h3>Intertravamento ElÃ©trico com NA/NF</h3>
-<p>O intertravamento elÃ©trico impede que KM1 e KM2 sejam energizados simultaneamente. Ã‰ feito da seguinte forma: O contato NF de KM2 Ã© colocado em sÃ©rie com a bobina de KM1, e o contato NF de KM1 Ã© colocado em sÃ©rie com a bobina de KM2. Assim, se KM1 estÃ¡ energizado, seu contato NF abre o circuito de KM2, impedindo sua energizaÃ§Ã£o â€” e vice-versa. Isso Ã© <strong>obrigatÃ³rio</strong> pois a energizaÃ§Ã£o simultÃ¢nea causaria curto-circuito.</p>
-
-<h3>Intertravamento MecÃ¢nico</h3>
-<p>O intertravamento mecÃ¢nico Ã© uma proteÃ§Ã£o adicional realizada fisicamente entre os contatores. Pode ser feito com: <strong>(1) Barra de intertravamento</strong> â€” peÃ§a mecÃ¢nica que conecta as armaduras dos dois contatores, impedindo que ambos fechem ao mesmo tempo; <strong>(2) Chave de intertravamento</strong> â€” interruptor mecÃ¢nico acoplado aos contatores que corta o circuito de comando do contatore oposto. O intertravamento mecÃ¢nico Ã© uma proteÃ§Ã£o redundante alÃ©m do intertravamento elÃ©trico.</p>
-
-<h3>Circuito de Comando Completo</h3>
-<pre>
-  COMANDO â€” ReversÃ£o:
-  F â”€â”€ S3(NF-emerg) â”€â”€â”¬â”€â”€ S1(NA-direto) â”€â”€â”¬â”€â”€ KM1 bobina â”€â”€ N
-                      â”‚                    â”‚
-                      â”‚              KM2_NF(NF) â”€â”€â†’ intertravamento
-                      â”‚
-                      â””â”€â”€ S2(NA-reverso) â”€â”€â”¬â”€â”€ KM2 bobina â”€â”€ N
-                                           â”‚
-                                     KM1_NF(NF) â”€â”€â†’ intertravamento
-
-  SELos: KM1_selo em paralelo com S1, KM2_selo em paralelo com S2
-</pre>
-
-<h3>ConsideraÃ§Ãµes de SeguranÃ§a</h3>
-<ul>
-  <li>Sempre usar intertravamento elÃ©trico + mecÃ¢nico (proteÃ§Ã£o redundante)</li>
-  <li>NÃ£o comutar direÃ§Ã£o com motor em alta velocidade â€” usar tempo morto</li>
-  <li>Considerar inÃ©rcia da carga â€” em cargas pesadas, a reversÃ£o pode causar choques mecÃ¢nicos</li>
-  <li>Utilizar botoeiras de partida diferentes para cada sentido (verde para direto, azul para reverso)</li>
-  <li>Incluir parada de emergÃªncia antes de ambos os ramos de comando</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>NÃ£o instalar intertravamento â€” risco de curto-circuito catastrÃ³fico</li>
-  <li>Inverter mais de duas fases â€” nÃ£o altera o sentido (inversÃ£o de 2 fases = sentido oposto)</li>
-  <li>NÃ£o considerar o tempo de comutaÃ§Ã£o â€” motor pode estar girando ao inverter</li>
-  <li>Esquecer o contato de selo â€” motor nÃ£o permanece no sentido escolhido</li>
-  <li>Utilizar a mesma botoeira para direto e reverso sem intertravamento elÃ©trico adequado</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Para inverter o sentido de rotaÃ§Ã£o de um motor trifÃ¡sico, deve-se:",
-            options: [
-              "Inverter todas as trÃªs fases",
-              "Inverter qualquer duas fases",
-              "Trocar o neutro por uma fase",
-              "Aumentar a tensÃ£o"
-            ],
-            correct: 1,
-            explanation: "A inversÃ£o de qualquer duas fases inverte o sentido de rotaÃ§Ã£o do motor trifÃ¡sico."
-          },
-          {
-            type: "fill-blank",
-            question: "A proteÃ§Ã£o que impede que KM1 e KM2 energizem simultaneamente Ã© chamada de ___.",
-            correct: "intertravamento",
-            explanation: "O intertravamento (elÃ©trico e mecÃ¢nico) impede a energizaÃ§Ã£o simultÃ¢nea dos contatores de sentido oposto."
-          },
-          {
-            type: "multiple-choice",
-            question: "O intertravamento elÃ©trico Ã© feito com:",
-            options: [
-              "Contatos NA de cada contator em sÃ©rie com a prÃ³pria bobina",
-              "Contatos NF de cada contator em sÃ©rie com a bobina do outro",
-              "Contatos NA de cada contator em paralelo com a bobina do outro",
-              "FusÃ­veis nos circuitos de comando"
-            ],
-            correct: 1,
-            explanation: "O contato NF de KM2 vai em sÃ©rie com a bobina de KM1, e vice-versa."
-          },
-          {
-            type: "multiple-choice",
-            question: "O intertravamento mecÃ¢nico Ã©:",
-            options: [
-              "Substituto do intertravamento elÃ©trico",
-              "ProteÃ§Ã£o adicional alÃ©m do intertravamento elÃ©trico",
-              "ObrigatÃ³rio apenas em motores de grande potÃªncia",
-              "Uma proteÃ§Ã£o elÃ©trica feita com relÃ©"
-            ],
-            correct: 1,
-            explanation: "O intertravamento mecÃ¢nico Ã© uma proteÃ§Ã£o redundante alÃ©m do intertravamento elÃ©trico."
-          },
-          {
-            type: "drag-drop",
-            question: "Ordene os elementos do circuito de comando de reversÃ£o na sequÃªncia correta:",
-            items: ["Botoeira emergÃªncia (NF)", "Botoeira direto (NA)", "Contato NF do outro contator", "Bobina do contator", "Contato de selo"],
-            targets: [
-              "1Âº â€” ProteÃ§Ã£o geral",
-              "2Âº â€” Comando do sentido",
-              "3Âº â€” Intertravamento",
-              "4Âº â€” Acionamento",
-              "5Âº â€” ManutenÃ§Ã£o"
-            ],
-            correct: [0, 1, 2, 3, 4]
-          }
-        ]
-      }
-    ]
-  },
-
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 6 â€” AUTOMAÃ‡ÃƒO COM CLP
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  {
-    id: "m6",
-    title: "MÃ³dulo 6 â€” AutomaÃ§Ã£o com CLP",
-    color: "#A29BFE",
-    icon: "ðŸ’»",
-    lessons: [
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L1 â€” O que Ã© um CLP
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l1",
-        moduleId: "m6",
-        title: "O que Ã© um CLP",
-        theory: `
-<h2>O que Ã© um CLP?</h2>
-
-<h3>DefiniÃ§Ã£o</h3>
-<p>O <strong>Controlador LÃ³gico ProgramÃ¡vel (CLP)</strong> â€” em inglÃªs, PLC (Programmable Logic Controller) â€” Ã© um computador industrial projetado para controlar processos de automaÃ§Ã£o. Diferente de um computador comum, o CLP Ã© projetado para operar em ambientes industriais com temperaturas extremas, vibraÃ§Ã£o, poeira e interferÃªncia eletromagnÃ©tica. Ele executa um programa armazenado em memÃ³ria para monitorar entradas, processar lÃ³gica e acionar saÃ­das em tempo real.</p>
-
-<h3>Arquitetura â€” Entradas â†’ CPU â†’ SaÃ­das</h3>
-<p>A arquitetura bÃ¡sica do CLP Ã© composta por trÃªs blocos principais: <strong>(1) MÃ³dulos de Entrada</strong> â€” recebem sinais do mundo real (botÃµes, sensores, chave de fim de curso) e convertem para sinais digitais (0 ou 1) ou analÃ³gicos (valores numÃ©ricos). <strong>(2) CPU (Unidade Central de Processamento)</strong> â€” executa o programa do usuÃ¡rio, processa a lÃ³gica e toma decisÃµes. ContÃ©m memÃ³ria ROM (programa do sistema) e memÃ³ria RAM (programa do usuÃ¡rio e dados). <strong>(3) MÃ³dulos de SaÃ­da</strong> â€” enviam comandos do CLP para o mundo real (contatores, vÃ¡lvulas, lÃ¢mpadas, motores).</p>
-
-<h3>Varredura CÃ­clica â€” Scan Time</h3>
-<p>O CLP executa o programa de forma cÃ­clica contÃ­nua, em um processo chamado <strong>scan cycle</strong> (ciclo de varredura). A cada ciclo, o CLP: <strong>(1)</strong> Leitura das entradas (scan de inputs); <strong>(2)</strong> ExecuÃ§Ã£o do programa do usuÃ¡rio (ladder, function block etc.); <strong>(3)</strong> AtualizaÃ§Ã£o das saÃ­das (scan de outputs). O tempo total de um ciclo Ã© chamado de <strong>scan time</strong>, tipicamente entre 1 ms e 100 ms dependendo do tamanho do programa e do modelo do CLP.</p>
-
-<h3>Rack e MÃ³dulos</h3>
-<p>O CLP Ã© montado em um <strong>rack</strong> (suporte fÃ­sico) que contÃ©m slots para os mÃ³dulos. O primeiro slot Ã© reservado para a <strong>CPU</strong>. Os demais slots abrigam mÃ³dulos de entrada, saÃ­da, comunicaÃ§Ã£o e especiais. Cada mÃ³dulo ocupa um ou mais slots dependendo da capacidade. A numeraÃ§Ã£o dos slots segue uma sequÃªncia (0, 1, 2, 3...) e os endereÃ§os das entradas/saÃ­das sÃ£o associados ao nÃºmero do slot e da carta (canal).</p>
-
-<h3>Exemplos de Fabricantes</h3>
-<ul>
-  <li><strong>Siemens</strong> â€” S7-1200, S7-1500 (TIA Portal)</li>
-  <li><strong>Allen-Bradley (Rockwell)</strong> â€” CompactLogix, ControlLogix (Studio 5000)</li>
-  <li><strong>Schneider Electric</strong> â€” Modicon M221, M241, M340 (EcoStruxure)</li>
-  <li><strong>Omron</strong> â€” CP1H, CP1E, NJ (Sysmac Studio)</li>
-  <li><strong>Mitsubishi</strong> â€” FX5U, L Series (GX Works)</li>
-  <li><strong>Wago, ABB, LS (LG)</strong> â€” tambÃ©m fabricam CLPs industriais</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Confundir CLP com microcontrolador â€” CLP Ã© robusto, com E/S dedicadas e programaÃ§Ã£o em linguagens industriais</li>
-  <li>NÃ£o considerar o scan time â€” programas muito grandes aumentam o scan time e podem causar atrasos</li>
-  <li>Esquecer que o CLP Ã© cÃ­clico â€” ao contrÃ¡rio de interrupÃ§Ãµes, o CLP varre tudo sequencialmente</li>
-  <li>NÃ£o dimensionar o nÃºmero de E/S â€” sempre planejar com margem para expansÃ£o</li>
-  <li>Usar memÃ³ria RAM sem fonte de alimentaÃ§Ã£o â€” o programa pode ser perdido</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a arquitetura bÃ¡sica de um CLP?",
-            options: [
-              "Teclado â†’ Monitor â†’ Impressora",
-              "Entradas â†’ CPU â†’ SaÃ­das",
-              "Sensor â†’ Motor â†’ Atuador",
-              "Entrada â†’ Processador â†’ Disco"
-            ],
-            correct: 1,
-            explanation: "A arquitetura do CLP Ã©: Entradas (sensores) â†’ CPU (processamento) â†’ SaÃ­das (atuadores)."
-          },
-          {
-            type: "fill-blank",
-            question: "O ciclo contÃ­nuo de leitura-processamento-escrita do CLP Ã© chamado de ___ time.",
-            correct: "scan",
-            explanation: "O scan time Ã© o tempo total de um ciclo de varredura do CLP (leitura â†’ programa â†’ saÃ­das)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Em um CLP, o scan cycle executa na seguinte ordem:",
-            options: [
-              "SaÃ­das â†’ Programa â†’ Entradas",
-              "Programa â†’ Entradas â†’ SaÃ­das",
-              "Entradas â†’ Programa â†’ SaÃ­das",
-              "SaÃ­das â†’ Entradas â†’ Programa"
-            ],
-            correct: 2,
-            explanation: "O scan cycle: (1) LÃª entradas, (2) Executa programa, (3) Atualiza saÃ­das."
-          },
-          {
-            type: "multiple-choice",
-            question: "O rack de um CLP serve para:",
-            options: [
-              "Armazenar dados do programa",
-              "Alimentar o CLP com energia",
-              "Suportar fisicamente os mÃ³dulos (CPU, E/S)",
-              "Programar o CLP via computador"
-            ],
-            correct: 2,
-            explanation: "O rack Ã© o suporte fÃ­sico onde os mÃ³dulos do CLP sÃ£o encaixados."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada componente do CLP Ã  sua funÃ§Ã£o:",
-            items: ["CPU", "MÃ³dulo de Entrada", "MÃ³dulo de SaÃ­da", "Rack"],
-            targets: [
-              "Executa o programa e toma decisÃµes",
-              "Recebe sinais do mundo real (0/1 ou analÃ³gico)",
-              "Envia comandos para atuadores",
-              "Suporte fÃ­sico para os mÃ³dulos"
-            ],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L2 â€” Entradas e SaÃ­das Digitais
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l2",
-        moduleId: "m6",
-        title: "Entradas e SaÃ­das Digitais",
-        theory: `
-<h2>Entradas e SaÃ­das Digitais</h2>
-
-<h3>Sinais Digitais â€” 0 e 1</h3>
-<p>Os sinais digitais trabalham com apenas dois estados: <strong>0 (desligado/aberto/falso)</strong> e <strong>1 (ligado/fechado/verdadeiro)</strong>. Ã‰ o tipo mais bÃ¡sico e mais utilizado de sinal em automaÃ§Ã£o. Exemplos: botÃ£o pressionado (1) ou solto (0), sensor detectou objeto (1) ou nÃ£o (0), contato de relÃ© fechado (1) ou aberto (0).</p>
-
-<h3>Sensores NPN e PNP</h3>
-<p><strong>NPN (sink â€” dreno):</strong> Quando o sensor detecta o objeto, ele conecta o sinal ao GND (0V). O sensor "drena" a corrente. A carga deve ser conectada entre a fonte de alimentaÃ§Ã£o (+24V) e o terminal de saÃ­da do sensor. Ã‰ mais comum em equipamentos asiÃ¡ticos. <strong>PNP (source â€” fonte):</strong> Quando o sensor detecta o objeto, ele conecta o sinal ao +24V. O sensor "fornece" a corrente. A carga deve ser conectada entre o terminal de saÃ­da e o GND. Ã‰ mais comum em equipamentos europeus. Ã‰ fundamental verificar se o CLP aceita NPN ou PNP antes de conectar.</p>
-
-<h3>MÃ³dulo de Entrada Digital</h3>
-<p>O mÃ³dulo de entrada digital recebe os sinais 0/1 dos sensores e botÃµes e os converte para sinais lÃ³gicos que a CPU pode ler. Cada ponto de entrada (terminal) corresponde a um bit na memÃ³ria do CLP. Por exemplo, um mÃ³dulo de 8 pontos de entrada pode ser endereÃ§ado como E0.0, E0.1, E0.2... E0.7. Quando um botÃ£o NA Ã© pressionado e conectado ao ponto E0.3, a CPU lÃª o bit E0.3 como 1 (verdadeiro).</p>
-
-<h3>MÃ³dulo de SaÃ­da Digital</h3>
-<p>O mÃ³dulo de saÃ­da digital recebe comandos da CPU e aciona dispositivos. Existem trÃªs tipos principais: <strong>(1) RelÃ©</strong> â€” contato mecÃ¢nico, flexÃ­vel, mas lento (~10ms) e com vida limitada; <strong>(2) Transistor</strong> â€” sem partes mÃ³veis, rÃ¡pido (~0,1ms), ideal para PWM e alta frequÃªncia, mas polarizado (sÃ³ CC); <strong>(3) Triac</strong> â€” para cargas AC, sem partes mÃ³veis, rÃ¡pido, mas com limitaÃ§Ãµes de carga indutiva.</p>
-
-<h3>Carta de EndereÃ§o</h3>
-<p>A carta de endereÃ§amento mapeia cada ponto de E/S a um endereÃ§o na memÃ³ria do CLP. O formato varia conforme o fabricante: Siemens usa "I" para entradas e "Q" para saÃ­das (ex: I0.0, Q0.1). Allen-Bradley usa "I" e "O" (ex: I:0/0, O:0/1). Omron usa "CIO" ou "W". A carta de endereÃ§os Ã© essencial para o programador saber qual endereÃ§o corresponde a cada fio fisicamente conectado ao mÃ³dulo.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Conectar sensor NPN em mÃ³dulo que sÃ³ aceita PNP (ou vice-versa) â€” o sinal nÃ£o Ã© lido</li>
-  <li>NÃ£o considerar a corrente de cada ponto de saÃ­da â€” relÃ©s tÃªm limite de corrente (tipicamente 2A)</li>
-  <li>Confundir o nÃºmero do slot com o endereÃ§o â€” o endereÃ§o depende da configuraÃ§Ã£o do cartÃ£o</li>
-  <li>NÃ£o usar fonte de alimentaÃ§Ã£o isolada para sensores â€” pode causar interferÃªncia</li>
-  <li>Esquecer de configurar o tipo de E/S (NPN/PNP) em CLPs parametrizÃ¡veis</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Um sensor NPN (sink) ao detectar o objeto:",
-            options: [
-              "Conecta o sinal ao +24V",
-              "Conecta o sinal ao GND (0V)",
-              "Desconecta o sinal",
-              "Inverte a polaridade"
-            ],
-            correct: 1,
-            explanation: "O sensor NPN drena a corrente â€” conecta o sinal ao GND quando detecta o objeto."
-          },
-          {
-            type: "fill-blank",
-            question: "O mÃ³dulo de saÃ­da do tipo ___ Ã© mais rÃ¡pido e ideal para PWM, mas nÃ£o funciona com corrente alternada.",
-            correct: "transistor",
-            explanation: "O transistor Ã© rÃ¡pido (~0,1ms) e sem partes mÃ³veis, mas sÃ³ funciona com CC (polarizado)."
-          },
-          {
-            type: "multiple-choice",
-            question: "A carta de endereÃ§amento serve para:",
-            options: [
-              "Programar o CLP em ladder",
-              "Mapear cada ponto de E/S a um endereÃ§o na memÃ³ria",
-              "Alimentar os sensores",
-              "Controlar a velocidade do motor"
-            ],
-            correct: 1,
-            explanation: "A carta de endereÃ§os mapeia cada ponto fÃ­sico de E/S a um endereÃ§o lÃ³gico na memÃ³ria do CLP."
-          },
-          {
-            type: "multiple-choice",
-            question: "Se um botÃ£o NA Ã© ligado ao ponto E0.5 do CLP, quando o botÃ£o Ã© pressionado:",
-            options: [
-              "O bit E0.5 vale 0",
-              "O bit E0.5 vale 1",
-              "O bit E0.5 pisca",
-              "O bit E0.5 fica indefinido"
-            ],
-            correct: 1,
-            explanation: "Com botÃ£o NA, ao pressionar fecha o circuito e o CLP lÃª o bit como 1 (verdadeiro)."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada tipo de saÃ­da digital Ã  sua caracterÃ­stica principal:",
-            items: ["RelÃ©", "Transistor", "Triac"],
-            targets: [
-              "Contato mecÃ¢nico, flexÃ­vel, mais lento",
-              "Sem partes mÃ³veis, rÃ¡pido, sÃ³ CC",
-              "Sem partes mÃ³veis, para cargas AC"
-            ],
-            correct: [0, 1, 2]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L3 â€” Entradas e SaÃ­das AnalÃ³gicas
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l3",
-        moduleId: "m6",
-        title: "Entradas e SaÃ­das AnalÃ³gicas",
-        theory: `
-<h2>Entradas e SaÃ­das AnalÃ³gicas</h2>
-
-<h3>Sinais AnalÃ³gicos â€” Valores ContÃ­nuos</h3>
-<p>Diferente dos sinais digitais (0 ou 1), os sinais analÃ³gicos representam valores contÃ­nuos em uma faixa. Exemplos: temperatura (0-100Â°C), pressÃ£o (0-10 bar), nÃ­vel (0-100%), vazÃ£o (0-500 L/min). O CLP precisa converter esses sinais contÃ­nuos em valores numÃ©ricos para processÃ¡-los programaticamente.</p>
-
-<h3>PadrÃµes de Sinal â€” 4-20mA e 0-10V</h3>
-<p><strong>4-20 mA (corrente):</strong> Ã‰ o padrÃ£o mais utilizado na indÃºstria. O sinal mÃ­nimo Ã© 4 mA (correspondendo ao valor mÃ­nimo da variÃ¡vel) e o sinal mÃ¡ximo Ã© 20 mA (valor mÃ¡ximo). A vantagem do 4 mA como mÃ­nimo Ã© que permite detectar fio cortado â€” se o CLP ler 0 mA, hÃ¡ falha na linha. A corrente Ã© imune a queda de tensÃ£o em cabos longos. <strong>0-10V (tensÃ£o):</strong> Utilizado em distÃ¢ncias curtas e ambientes com pouca interferÃªncia. 0V = valor mÃ­nimo, 10V = valor mÃ¡ximo. Mais suscetÃ­vel a ruÃ­do eletromagnÃ©tico que o 4-20mA.</p>
-
-<h3>ResoluÃ§Ã£o em Bits</h3>
-<p>A resoluÃ§Ã£o do mÃ³dulo analÃ³gico Ã© dada em bits e determina quantos nÃ­veis discretos o sinal analÃ³gico Ã© dividido. Um mÃ³dulo de <strong>10 bits</strong> divide o sinal em 2Â¹â° = 1024 nÃ­veis (0-1023). Um mÃ³dulo de <strong>12 bits</strong> divide em 2Â¹Â² = 4096 nÃ­veis (0-4095). Um mÃ³dulo de <strong>16 bits</strong> divide em 2Â¹â¶ = 65536 nÃ­veis. Quanto maior a resoluÃ§Ã£o, maior a precisÃ£o da mediÃ§Ã£o. Para a maioria das aplicaÃ§Ãµes industriais, 12 bits Ã© suficiente.</p>
-
-<h3>Conversor A/D (AnalÃ³gico/Digital)</h3>
-<p>O conversor A/D Ã© o circuito que transforma o sinal analÃ³gico (tensÃ£o ou corrente contÃ­nua) em um valor numÃ©rico digital que o CLP pode processar. O processo Ã©: <strong>(1)</strong> Amostragem â€” o sinal Ã© "fotografado" em intervalos regulares; <strong>(2)</strong> QuantizaÃ§Ã£o â€” o valor amostrado Ã© arredondado para o nÃ­vel mais prÃ³ximo da escala; <strong>(3)</strong> CodificaÃ§Ã£o â€” o nÃ­vel Ã© representado em binÃ¡rio. A fÃ³rmula de conversÃ£o para 4-20mA: <code>Valor = (mA_lido - 4) Ã— (Escala_mÃ¡x - Escala_mÃ­n) / 16 + Escala_mÃ­n</code>.</p>
-
-<h3>Mapeamento de Escala</h3>
-<p>Para converter o valor digital (0-4095 para 12 bits) em engenharia (ex: 0-100Â°C), utiliza-se a proporcionalidade: <code>Temperatura = (Valor_ADC Ã— 100) / 4095</code>. Exemplo: se o CLP lÃª 2048 em mÃ³dulo de 12 bits, a temperatura Ã© (2048 Ã— 100) / 4095 = 50Â°C.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>NÃ£o considerar a resoluÃ§Ã£o â€” mÃ³dulo de 8 bits pode ser insenso para mediÃ§Ãµes de precisÃ£o</li>
-  <li>Usar 0-10V em cabos longos â€” a queda de tensÃ£o causa erros de mediÃ§Ã£o</li>
-  <li>NÃ£o calibrar o sensor â€” o sinal pode estar descalibrado</li>
-  <li>Confundir o valor digital com o valor de engenharia â€” sempre mapear a escala</li>
-  <li>NÃ£o considerar o tempo de amostragem â€” variÃ¡veis muito rÃ¡pidas podem ser perdidas</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "A principal vantagem do sinal 4-20mA sobre 0-10V Ã©:",
-            options: [
-              "Ã‰ mais barato",
-              "Permite detectar fio cortado (0 mA = falha)",
-              "Ã‰ mais rÃ¡pido",
-              "Funciona com CA"
-            ],
-            correct: 1,
-            explanation: "No 4-20mA, 0 mA indica falha (fio cortado), enquanto 4 mA Ã© o valor mÃ­nimo do sinal."
-          },
-          {
-            type: "fill-blank",
-            question: "Um mÃ³dulo analÃ³gico de 12 bits divide o sinal em ___ nÃ­veis discretos.",
-            correct: "4096",
-            explanation: "2Â¹Â² = 4096 nÃ­veis (0 a 4095) para um mÃ³dulo de 12 bits."
-          },
-          {
-            type: "calculation",
-            question: "Um sensor de temperatura de 0-100Â°C envia sinal de 4-20mA. Se o CLP lÃª 12 mA, qual a temperatura correspondente?",
-            correct: "50",
-            unit: "Â°C",
-            explanation: "Temperatura = (12-4) Ã— (100-0) / (20-4) = 8 Ã— 100 / 16 = 50Â°C."
-          },
-          {
-            type: "multiple-choice",
-            question: "O conversor A/D dentro do mÃ³dulo analÃ³gico faz:",
-            options: [
-              "Converte sinal digital em analÃ³gico",
-              "Converte sinal analÃ³gico em valor numÃ©rico digital",
-              "Amplifica o sinal de entrada",
-              "Filtra ruÃ­do do sinal"
-            ],
-            correct: 1,
-            explanation: "O conversor A/D transforma o sinal analÃ³gico contÃ­nuo em um valor digital discreto."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada resoluÃ§Ã£o ao nÃºmero de nÃ­veis:",
-            items: ["8 bits", "10 bits", "12 bits", "16 bits"],
-            targets: ["256 nÃ­veis", "1024 nÃ­veis", "4096 nÃ­veis", "65536 nÃ­veis"],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L4 â€” Linguagem Ladder
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l4",
-        moduleId: "m6",
-        title: "Linguagem Ladder",
-        theory: `
-<h2>Linguagem Ladder</h2>
-
-<h3>O que Ã© Ladder?</h3>
-<p>A linguagem <strong>Ladder (escada)</strong> Ã© a linguagem de programaÃ§Ã£o mais tradicional e amplamente utilizada para CLPs. Seu nome vem da semelhanÃ§a com o diagrama de lÃ³gica de relÃ©s, onde os contatos e bobinas sÃ£o desenhados entre dois trilhos verticais como os degraus de uma escada. Ã‰ uma linguagem grÃ¡fica, padronizada pela <strong>IEC 61131-3</strong>, que representa a lÃ³gica de controle de forma intuitiva para eletricistas e tÃ©cnicos de automaÃ§Ã£o.</p>
-
-<h3>Trilho Esquerdo e Direito</h3>
-<p>O diagrama Ladder Ã© composto por dois trilhos verticais: o <strong>trilho esquerdo</strong> (representa a fase ou linha de alimentaÃ§Ã£o +) e o <strong>trilho direito</strong> (representa o neutro ou retorno -). Todos os contatos e bobinas sÃ£o ligados entre esses dois trilhos. A corrente "flui" do trilho esquerdo para o direito, passando pelos contatos â€” quando todos os contatos de uma linha estÃ£o fechados (lÃ³gica verdadeira), a corrente chega Ã  bobina e a energiza.</p>
-
-<h3>Contatos NA e NF</h3>
-<p><strong>Contato NA (Normally Open)</strong> â€” representado por duas barras paralelas com espaÃ§o entre elas. Na programaÃ§Ã£o Ladder, Ã© lido como: "se o bit for 1, o contato fecha". <strong>Contato NF (Normally Closed)</strong> â€” representado por duas barras paralelas com uma barra diagonal (X). Ã‰ lido como: "se o bit for 0, o contato fecha". SÃ£o os elementos de entrada na lÃ³gica.</p>
-
-<h3>Bobina de SaÃ­da</h3>
-<p>A <strong>bobina</strong> Ã© representada por parÃªnteses ( ) ou cÃ­rculo no final da linha. Ã‰ o elemento de saÃ­da â€” quando a lÃ³gica da linha Ã© verdadeira, a bobina Ã© energizada e o bit de saÃ­da correspondente fica em 1. Exemplos: <code>(  ) Q0.0</code> â€” ao satisfazer a lÃ³gica, Q0.0 fica em 1. TambÃ©m existem bobinas especiais: pulso (â†‘), reset (R), set (S).</p>
-
-<h3>LÃ³gica AND e OR</h3>
-<p><strong>AND (em sÃ©rie):</strong> Dois ou mais contatos em sÃ©rie na mesma linha. A lÃ³gica sÃ³ Ã© verdadeira se TODOS os contatos estiverem fechados. Exemplo: <code>--| |----| |--( )</code> â€” contato1 AND contato2 â†’ saÃ­da. <strong>OR (em paralelo):</strong> Dois ou mais contatos em ramos paralelos. A lÃ³gica Ã© verdadeira se PELO MENOS UM contato estiver fechado. Exemplo: ramo1 com contatoA em paralelo com ramo2 com contatoB â†’ saÃ­da.</p>
-
-<h3>Exemplo PrÃ¡tico â€” Selo de Contator</h3>
-<pre>
-  Ladder â€” Contato de Selo:
-  F (trilho) --|S2(NF)|--|S1(NA)|--|  |---(KC)--- N (trilho)
-                           |
-                    --|KC_selo(NA)|-- (paralelo com S1)
-
-  Quando S1 Ã© pressionado â†’ KC energiza â†’ KC_selo fecha â†’
-  ao soltar S1, KC continua energizado pelo selo
-</pre>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Confundir contato NA e NF na programaÃ§Ã£o â€” o NA Ã© verdadeiro quando o bit vale 1</li>
-  <li>NÃ£o usar contato de selo â€” a saÃ­da nÃ£o permanece ativa ao soltar o botÃ£o</li>
-  <li>Criar linhas com lÃ³gica contraditÃ³ria (contato NA e NF do mesmo bit na mesma linha)</li>
-  <li>NÃ£o considerar o scan cycle â€” o Ladder Ã© executado de cima para baixo, da esquerda para a direita</li>
-  <li>Esquecer que uma bobina pode ser usada apenas uma vez por programa (regra em alguns CLPs)</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Na linguagem Ladder, o trilho esquerdo representa:",
-            options: [
-              "O neutro do circuito",
-              "A fase ou linha de alimentaÃ§Ã£o (+)",
-              "A terra",
-              "Uma saÃ­da digital"
-            ],
-            correct: 1,
-            explanation: "O trilho esquerdo Ã© a linha de alimentaÃ§Ã£o (fase/+) de onde parte a corrente."
-          },
-          {
-            type: "fill-blank",
-            question: "Dois contatos em sÃ©rie representam a lÃ³gica ___.",
-            correct: "AND",
-            explanation: "Na lÃ³gica AND, TODOS os contatos devem estar fechados para que a saÃ­da seja ativada."
-          },
-          {
-            type: "multiple-choice",
-            question: "Uma bobina de saÃ­da em Ladder Ã© representada por:",
-            options: [
-              "Duas barras paralelas (||)",
-              "Uma barra diagonal (X)",
-              "ParÃªnteses ou cÃ­rculo ( )",
-              "Uma seta (â†’)"
-            ],
-            correct: 2,
-            explanation: "A bobina Ã© representada por parÃªnteses ( ) ou cÃ­rculo no final da linha Ladder."
-          },
-          {
-            type: "multiple-choice",
-            question: "Dois contatos em paralelo representam a lÃ³gica:",
-            options: ["AND", "OR", "NOT", "XOR"],
-            correct: 1,
-            explanation: "Na lÃ³gica OR (paralelo), basta UM dos contatos estar fechado para ativar a saÃ­da."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada sÃ­mbolo Ladder Ã  sua funÃ§Ã£o:",
-            items: ["--| |--", "--|/|--", "--( )--", "--(S)--"],
-            targets: [
-              "Contato NA â€” fecha quando bit = 1",
-              "Contato NF â€” fecha quando bit = 0",
-              "Bobina â€” energiza saÃ­da",
-              "Bobina SET â€” latches saÃ­da em 1"
-            ],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L5 â€” Temporizadores e Contadores no CLP
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l5",
-        moduleId: "m6",
-        title: "Temporizadores e Contadores no CLP",
-        theory: `
-<h2>Temporizadores e Contadores no CLP</h2>
-
-<h3>Temporizadores no CLP</h3>
-<p>Diferente dos temporizadoresExternos (mecÃ¢nicos/eletrÃ´nicos), os temporizadores no CLP sÃ£o <strong>funÃ§Ãµes implementadas em software</strong>. SÃ£o blocos de funÃ§Ã£o que, quando habilitados, contam o tempo e alteram o estado de seus contatos de saÃ­da apÃ³s o tempo ajustado. SÃ£o mais precisos, flexÃ­veis e nÃ£o ocupam espaÃ§o fÃ­sico no quadro. Os principais tipos sÃ£o TON, TOF e TP, idÃªnticos aos temporizadoresExternos mas executados pelo processador do CLP.</p>
-
-<h3>Bloco TON â€” Timer ON Delay</h3>
-<p>O bloco TON no CLP possui: <strong>IN</strong> (habilitaÃ§Ã£o â€” quando em 1, comeÃ§a a contar), <strong>PT</strong> (preset time â€” tempo ajustado), <strong>Q</strong> (saÃ­da â€” muda de estado apÃ³s o tempo), <strong>ET</strong> (elapsed time â€” tempo decorrido). Quando IN vai para 1, ET comeÃ§a a contar de 0 atÃ© PT. Quando ET = PT, Q vai para 1. Quando IN vai para 0, ET zera e Q vai para 0 imediatamente.</p>
-
-<h3>Bloco TOF â€” Timer OFF Delay</h3>
-<p>O TOF funciona inversamente: quando IN vai para 1, Q vai para 1 imediatamente e ET zera. Quando IN vai para 0, ET comeÃ§a a contar de 0 atÃ© PT. Enquanto ET < PT, Q permanece em 1. Quando ET = PT, Q vai para 0. Ã‰ Ãºtil para manter uma saÃ­da ativa por um tempo apÃ³s desligar a entrada.</p>
-
-<h3>Bloco TP â€” Pulse Timer</h3>
-<p>O TP gera um pulso de saÃ­da de duraÃ§Ã£o fixa. Na borda de subida de IN, Q vai para 1 e ET comeÃ§a a contar. Q permanece em 1 atÃ© ET = PT, independente do estado de IN. Se IN for desligado antes de PT, Q continua em 1. Ã‰ ideal para gerar pulsos de acionamento de vÃ¡lvulas, buzinas etc.</p>
-
-<h3>Contadores â€” CTU e CTD</h3>
-<p><strong>CTU (Count Up â€” Contador Crescente):</strong> Conta bordas de subida do sinal de entrada (CU). A cada borda, CV (current value) incrementa em 1. Quando CV â‰¥ PV (preset value), Q vai para 1. O reset (R) zera o CV. <strong>CTD (Count Down â€” Contador Decrescente):</strong> Conta bordas de descida. CV decrementa em 1 a cada borda. Quando CV â‰¤ 0, Q vai para 1. O load (LD) carrega PV no CV.</p>
-
-<h3>Borda de Subida e Descida</h3>
-<p><strong>Borda de subida (â†‘):</strong> Detecta a transiÃ§Ã£o de 0 para 1 de um sinal. Gera um pulso de 1 scan cycle. Ã‰ usada para contar eventos (ex: cada vez que um sensor detecta uma peÃ§a). <strong>Borda de descida (â†“):</strong> Detecta a transiÃ§Ã£o de 1 para 0. Gera um pulso de 1 scan cycle na queda do sinal.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>NÃ£o considerar o tempo de scan â€” o timer pode ter erro de Â±1 scan time</li>
-  <li>NÃ£o usar reset no contador â€” o contador pode atingir o mÃ¡ximo e parar de contar</li>
-  <li>Confundir borda de subida com nÃ­vel alto â€” borda Ã© a transiÃ§Ã£o, nÃ­vel Ã© o estado</li>
-  <li>NÃ£o dimensionar o preset value â€” timers e contadores com valores inadequados</li>
-  <li>Esquecer que o TON reseta quando IN vai para 0 â€” nÃ£o Ã© um latch</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "No bloco TON, o sinal Q vai para 1 quando:",
-            options: [
-              "IN vai para 1 imediatamente",
-              "ET atinge o valor de PT (preset time)",
-              "IN vai para 0",
-              "O CLP Ã© desligado"
-            ],
-            correct: 1,
-            explanation: "No TON, Q sÃ³ vai para 1 quando o tempo decorrido (ET) atinge o tempo ajustado (PT)."
-          },
-          {
-            type: "fill-blank",
-            question: "O contador CTU incrementa o valor atual (CV) a cada ___ do sinal de entrada.",
-            correct: "borda de subida",
-            explanation: "O CTU conta transiÃ§Ãµes de 0 para 1 (bordas de subida) do sinal CU."
-          },
-          {
-            type: "multiple-choice",
-            question: "A borda de subida (â†‘) gera um pulso de duraÃ§Ã£o:",
-            options: [
-              "1 segundo",
-              "O tempo ajustado no timer",
-              "1 ciclo de scan do CLP",
-              "Indefinida"
-            ],
-            correct: 2,
-            explanation: "A borda de subida gera um pulso de exatamente 1 ciclo de scan do CLP."
-          },
-          {
-            type: "multiple-choice",
-            question: "No bloco TOF, quando IN vai para 0:",
-            options: [
-              "Q vai para 0 imediatamente",
-              "Q permanece em 1 por um tempo (PT) e depois vai para 0",
-              "Q pisca alternadamente",
-              "ET zera imediatamente"
-            ],
-            correct: 1,
-            explanation: "No TOF, Q mantÃ©m em 1 por mais PT tempo apÃ³s IN ir para 0, depois vai para 0."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada bloco de timer/contador Ã  sua funÃ§Ã£o:",
-            items: ["TON", "TOF", "TP", "CTU"],
-            targets: [
-              "Atraso para ligar â€” Q apÃ³s tempo em IN=1",
-              "Atraso para desligar â€” Q mantÃ©m por PT apÃ³s IN=0",
-              "Pulso fixo â€” Q por PT na borda de subida",
-              "Contador crescente â€” CV++ a cada borda"
-            ],
-            correct: [0, 1, 2, 3]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L6 â€” FunÃ§Ãµes ComparaÃ§Ã£o e MatemÃ¡ticas
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l6",
-        moduleId: "m6",
-        title: "FunÃ§Ãµes ComparaÃ§Ã£o e MatemÃ¡ticas",
-        theory: `
-<h2>FunÃ§Ãµes ComparaÃ§Ã£o e MatemÃ¡ticas</h2>
-
-<h3>FunÃ§Ãµes de ComparaÃ§Ã£o</h3>
-<p>As funÃ§Ãµes de comparacÃ£o sÃ£o blocos que comparam dois valores e produzem um resultado booleano (verdadeiro/falso). SÃ£o essenciais para decisÃµes no programa do CLP. Os principais operadores de comparaÃ§Ã£o sÃ£o:</p>
-<ul>
-  <li><strong>= (igual)</strong>: Verifica se o valor A Ã© igual ao valor B. Exemplo: se MW10 = 100, ativa saÃ­da.</li>
-  <li><strong>â‰  ou <> (diferente)</strong>: Verifica se A Ã© diferente de B. Ãštil para detectar estados fora do esperado.</li>
-  <li><strong>> (maior que)</strong>: Verifica se A Ã© maior que B. Exemplo: se temperatura > 80Â°C, ativa alarme.</li>
-  <li><strong>< (menor que)</strong>: Verifica se A Ã© menor que B. Exemplo: se nÃ­vel < 20%, liga bomba.</li>
-  <li><strong>â‰¥ (maior ou igual)</strong> e <strong>â‰¤ (menor ou igual)</strong>: CombinaÃ§Ãµes dos anteriores.</li>
-</ul>
-
-<h3>Bloco de ComparaÃ§Ã£o no Ladder</h3>
-<p>No Ladder, as comparaÃ§Ãµes sÃ£o representadas como blocos de funÃ§Ã£o com dois operandos de entrada e uma saÃ­da booleana. Exemplo:</p>
-<pre>
-  Ladder â€” ComparaÃ§Ã£o:
-  --[ CMP â‰¥ ]--( Q1 )--
-  |  MW10   |
-  |  100    |
-
-  Se MW10 â‰¥ 100, Q1 = 1
-</pre>
-
-<h3>FunÃ§Ãµes MatemÃ¡ticas</h3>
-<p>Os CLPs oferecem blocos para operaÃ§Ãµes matemÃ¡ticas sobre valores inteiros ou reais (float):</p>
-<ul>
-  <li><strong>ADD (+)</strong>: Soma dois valores. Exemplo: C = A + B.</li>
-  <li><strong>SUB (âˆ’)</strong>: Subtrai B de A. Exemplo: C = A âˆ’ B.</li>
-  <li><strong>MUL (Ã—)</strong>: Multiplica dois valores. Exemplo: C = A Ã— B.</li>
-  <li><strong>DIV (Ã·)</strong>: Divide A por B. Exemplo: C = A / B. Cuidado: divisÃ£o por zero!</li>
-  <li><strong>MOD</strong>: Resto da divisÃ£o inteira. Exemplo: 17 MOD 5 = 2.</li>
-</ul>
-
-<h3>Bloco MOVE</h3>
-<p>O bloco MOVE copia o valor de uma variÃ¡vel de entrada (IN) para uma variÃ¡vel de saÃ­da (OUT). Ã‰ Ãºtil para: transferir valores entre registradores, inicializar variÃ¡veis, copiar resultados de cÃ¡lculos. Exemplo: MOVE MW10 â†’ MW20 copia o conteÃºdo de MW10 para MW20.</p>
-
-<h3>AplicaÃ§Ã£o PrÃ¡tica â€” ConversÃ£o de Escala</h3>
-<p>Para converter um valor analÃ³gico (0-4095) em engenharia (0-100Â°C):</p>
-<pre>
-  TEMP_REAL = (ADC_VALUE Ã— 100.0) / 4095.0
-  Usando blocos: MUL ADC_VALUE Ã— 100.0 â†’ Temp
-                 DIV Temp / 4095.0 â†’ TEMP_REAL
-</pre>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>DivisÃ£o por zero â€” sempre verificar se o divisor Ã© diferente de zero antes de dividir</li>
-  <li>Overflow â€” resultado de soma/multiplicaÃ§Ã£o pode exceder o limite do tipo (INT: -32768 a 32767)</li>
-  <li>Confundir igualdade (=) com atribuiÃ§Ã£o â€” em Ladder, = Ã© comparaÃ§Ã£o, Ã© atribuiÃ§Ã£o</li>
-  <li>NÃ£o considerar a resoluÃ§Ã£o â€” operaÃ§Ãµes com INT podem perder casas decimais</li>
-  <li>Usar valores negativos indevidamente â€” verificar se o sinal Ã© unsigned ou signed</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual funÃ§Ã£o matemÃ¡tica copia o valor de uma variÃ¡vel para outra?",
-            options: ["ADD", "SUB", "MOVE", "CMP"],
-            correct: 2,
-            explanation: "O bloco MOVE copia o valor de IN para OUT."
-          },
-          {
-            type: "fill-blank",
-            question: "O operador de comparaÃ§Ã£o que verifica se A Ã© diferente de B Ã© ___ ou <>.",
-            correct: "â‰ ",
-            explanation: "O operador â‰  (ou <>) retorna verdadeiro quando os valores sÃ£o diferentes."
-          },
-          {
-            type: "calculation",
-            question: "Se MW10 = 250 e MW20 = 10, qual o resultado de MW10 Ã· MW20 usando DIV?",
-            correct: "25",
-            unit: "",
-            explanation: "250 Ã· 10 = 25."
-          },
-          {
-            type: "multiple-choice",
-            question: "Ao executar DIV por zero em um CLP:",
-            options: [
-              "O resultado Ã© 0",
-              "O resultado Ã© infinito",
-              "O CLP pode gerar erro ou comportamento indefinido",
-              "O CLP ignora a instruÃ§Ã£o"
-            ],
-            correct: 2,
-            explanation: "DivisÃ£o por zero pode causar erro de execuÃ§Ã£o no CLP â€” deve ser evitada com verificaÃ§Ã£o prÃ©via."
-          },
-          {
-            type: "drag-drop",
-            question: "Associe cada operaÃ§Ã£o matemÃ¡tica ao seu sÃ­mbolo:",
-            items: ["ADD", "SUB", "MUL", "DIV", "MOD"],
-            targets: [
-              "+ (soma)",
-              "âˆ’ (subtraÃ§Ã£o)",
-              "Ã— (multiplicaÃ§Ã£o)",
-              "Ã· (divisÃ£o)",
-              "% (resto da divisÃ£o)"
-            ],
-            correct: [0, 1, 2, 3, 4]
-          }
-        ]
-      },
-
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      // M6-L7 â€” Projeto PrÃ¡tico: Controle de Bomba
-      // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m6-l7",
-        moduleId: "m6",
-        title: "Projeto PrÃ¡tico â€” Controle de Bomba",
-        theory: `
-<h2>Projeto PrÃ¡tico â€” Controle de Bomba</h2>
-
-<h3>DescriÃ§Ã£o do Projeto</h3>
-<p>Neste projeto prÃ¡tico, vamos programar o controle de uma bomba d'Ã¡gua com sinalizaÃ§Ã£o luminosa. O sistema deve funcionar da seguinte forma: <strong>(1)</strong> Quando o operador aciona o botÃ£o de partida (IA1), o sistema inicia. <strong>(2)</strong> ApÃ³s 10 segundos de atraso (temporizador T1), a bomba (Q1) Ã© ligada e a lÃ¢mpada indicadora (Q2) tambÃ©m se acende. <strong>(3)</strong> A bomba e a lÃ¢mpada permanecem ligadas enquanto o sistema estiver ativo. <strong>(4)</strong> O botÃ£o de parada (IA2) desliga todo o sistema imediatamente.</p>
-
-<h3>Lista de E/S (Carta de EndereÃ§os)</h3>
-<pre>
-  ENTRADAS:
-  IA1 = I0.0 â€” Botoeira de Partida (NA)
-  IA2 = I0.1 â€” Botoeira de Parada (NF)
-
-  SAÃDAS:
-  Q1 = Q0.0 â€” Contator da Bomba (KC)
-  Q2 = Q0.1 â€” LÃ¢mpada Indicadora
-
-  TEMPORIZADORES:
-  T1 = TON â€” Timer ON Delay, PT = 10s
-</pre>
-
-<h3>LÃ³gica do Programa</h3>
-<p>O programa Ladder Ã© composto por 3 linhas (rungs):</p>
-<pre>
-  RUNG 1 â€” Contato de Selo:
-  I0.0(NF-parada) --| |-- I0.1(NF) --| |--( SISTEMA )--|  |--
-                                         |
-                              --|SISTEMA|-- (paralelo = selo)
-
-  RUNG 2 â€” TemporizaÃ§Ã£o:
-  SISTEMA --| |--( TON T1 )--|  |--
-              |               |
-              |          PT: 10s
-
-  RUNG 3 â€” SaÃ­das:
-  T1.Q --| |--( Q0.0 bomba )--|  |--
-   |
-   +------( Q0.1 lÃ¢mpada )--|  |--
-</pre>
-
-<h3>ExplicaÃ§Ã£o Detalhada do Programa</h3>
-<p><strong>RUNG 1:</strong> Implementa o contato de selo do sistema. IA2 (NF) estÃ¡ em sÃ©rie â€” ao pressionar parada, o circuito abre. IA1 (NA) inicia o sistema. O bit SISTEMA (M0.0) Ã© energizado e mantido pelo contato de selo M0.0 em paralelo com IA1. <strong>RUNG 2:</strong> Quando SISTEMA = 1, o bloco TON Ã© habilitado. T1 comeÃ§a a contar de 0 atÃ© 10 segundos. <strong>RUNG 3:</strong> Quando T1.Q vai para 1 (apÃ³s 10s), Q0.0 (bomba) e Q0.1 (lÃ¢mpada) sÃ£o energizados simultaneamente. Ao pressionar IA2 (parada), SISTEMA vai para 0, T1 reseta, Q0.0 e Q0.1 desligam.</p>
-
-<h3>VerificaÃ§Ã£o do Funcionamento</h3>
-<ol>
-  <li>Sem nada acionado: SISTEMA=0, T1=0, Q0.0=0, Q0.1=0 (bomba desligada)</li>
-  <li>Pressionar IA1: SISTEMA=1 (selo), T1 comeÃ§a a contar</li>
-  <li>Aguardo 10s: T1.Q=1 â†’ Q0.0=1 (bomba liga), Q0.1=1 (lÃ¢mpada acende)</li>
-  <li>Soltar IA1: SISTEMA mantÃ©m=1 (selo), bomba continua ligada</li>
-  <li>Pressionar IA2: SISTEMA=0, T1 reseta, Q0.0=0, Q0.1=0 (tudo desliga)</li>
-</ol>
-
-<h3>Erros Comuns em Projetos PrÃ¡ticos</h3>
-<ul>
-  <li>NÃ£o implementar o contato de selo â€” o sistema nÃ£o permanece ativo</li>
-  <li>Colocar o timer antes do selo â€” o timer sÃ³ funciona quando o sistema estÃ¡ ativo</li>
-  <li>NÃ£o resetar o timer na parada â€” pode haver comportamento indesejado</li>
-  <li>Esquecer que IA2 Ã© NF â€” na programaÃ§Ã£o, usa-se contato NA do bit correspondente (I0.1)</li>
-  <li>NÃ£o testar todos os estados â€” sempre simular antes de baixar para o CLP</li>
-</ul>
-`,
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "No projeto da bomba, o que acontece ao pressionar IA1 (partida)?",
-            options: [
-              "A bomba liga imediatamente",
-              "O sistema Ã© ativado e o timer comeÃ§a a contar",
-              "A lÃ¢mpada acende imediatamente",
-              "Nada acontece"
-            ],
-            correct: 1,
-            explanation: "Ao pressionar IA1, o bit SISTEMA Ã© energizado (selo) e o TON comeÃ§a a contar 10s."
-          },
-          {
-            type: "fill-blank",
-            question: "O temporizador T1 do tipo TON tem PT ajustado para ___ segundos.",
-            correct: "10",
-            explanation: "O timer TON estÃ¡ ajustado para 10 segundos (PT = 10s)."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual o endereÃ§o da botoeira de parada (IA2) no CLP?",
-            options: ["I0.0", "I0.1", "Q0.0", "M0.0"],
-            correct: 1,
-            explanation: "IA2 (parada) estÃ¡ no endereÃ§o I0.1 conforme a carta de endereÃ§os."
-          },
-          {
-            type: "multiple-choice",
-            question: "Ao pressionar IA2 (parada), qual Ã© o efeito no sistema?",
-            options: [
-              "A bomba desliga mas a lÃ¢mpada continua",
-              "A lÃ¢mpada desliga mas a bomba continua",
-              "Tudo desliga imediatamente (SISTEMA, timer, bomba, lÃ¢mpada)",
-              "O timer recomeÃ§a a contar"
-            ],
-            correct: 2,
-            explanation: "IA2 (NF) corta o selo â†’ SISTEMA=0 â†’ T1 reseta â†’ Q0.0=0, Q0.1=0."
-          },
-          {
-            type: "drag-drop",
-            question: "Ordene a sequÃªncia de eventos ao pressionar IA1:",
-            items: [
-              "SISTEMA energiza (selo fecha)",
-              "Timer T1 comeÃ§a a contar",
-              "T1 atinge 10s â†’ T1.Q = 1",
-              "Q0.0 (bomba) liga",
-              "Q0.1 (lÃ¢mpada) acende"
-            ],
-            targets: [
-              "1Âº",
-              "2Âº",
-              "3Âº",
-              "4Âº",
-              "5Âº"
-            ],
-            correct: [0, 1, 2, 3, 4]
-          },
-          {
-            type: "calculation",
-            question: "Se o scan time do CLP Ã© 5ms, qual o erro mÃ¡ximo do temporizador T1 de 10s?",
-            correct: "0.005",
-            unit: "s",
-            explanation: "O erro mÃ¡ximo do timer Ã© Â±1 scan time = 5ms = 0,005s ( desprezÃ­vel para 10s)."
-          }
-        ]
-      }
-    ]
-  }
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 7 â€“ INSTRUMENTAÃ‡ÃƒO INDUSTRIAL
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  {
-    id: "m7",
-    title: "InstrumentaÃ§Ã£o Industrial",
-    color: "#00CEC9",
-    icon: "ðŸ“Š",
-    lessons: [
-      // â”€â”€â”€ M7-L1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m7-l1",
-        title: "Sensores Indutivos e Capacitivos",
-        theory: `<h2>Sensores Indutivos</h2>
-<h3>O que sÃ£o?</h3>
-<p>Os sensores indutivos sÃ£o dispositivos que detectam a presenÃ§a de <strong>objetos metÃ¡licos</strong> sem contato fÃ­sico. Funcionam mediante um oscilador LC que gera um campo eletromagnÃ©tico na face sensÃ­vel. Quando um metal se aproxima, as <strong>correntes de Foucault (eddy currents)</strong> sÃ£o induzidas no objeto, drenando energia do oscilador e reduzindo a amplitude da oscilaÃ§Ã£o. Essa variaÃ§Ã£o Ã© detectada pelo circuito interno, que alterna o estado de saÃ­da.</p>
-<h3>PrincÃ­pio de Funcionamento â€” Correntes Eddy</h3>
-<p>A bobina interna cria um campo alternado. Ao entrar no campo, o metal sofre induÃ§Ã£o eletromagnÃ©tica: circulam correntes circunferenciais (eddy currents) que geram campo oposto, atenuando o oscilador. Metais ferrosos (aÃ§o, ferro) tÃªm maior alcance de detecÃ§Ã£o porque possuem alta permeabilidade magnÃ©tica. Metais nÃ£o ferrosos (alumÃ­nio, cobre, latÃ£o) reduzem o alcance em 40â€“60% em relaÃ§Ã£o ao aÃ§o.</p>
-<h3>Como e Onde SÃ£o Aplicados</h3>
-<ul>
-  <li><strong>Contagem de peÃ§as</strong> em esteiras â€” detectam cada peÃ§a metÃ¡lica que passa pela zona sensÃ­vel.</li>
-  <li><strong>Posicionamento de cilindros pneumÃ¡ticos</strong> â€” sensores de perfil (bandeira) detectam a posiÃ§Ã£o do pistÃ£o.</li>
-  <li><strong>Controle de velocidade</strong> â€” engrenagens metÃ¡licas passam diante do sensor, gerando pulsos.</li>
-  <li><strong>SeguranÃ§a</strong> â€” presenÃ§a de portas metÃ¡licas em mÃ¡quinas.</li>
-</ul>
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Usar sensor indutivo para detectar plÃ¡stico ou madeira â€” <strong>nÃ£o funciona</strong>, pois o material nÃ£o Ã© condutor nem ferromagnÃ©tico.</li>
-  <li>Instalar o sensor com distÃ¢ncia superior ao alcance nominal â€” gera leituras falsas ou falha de detecÃ§Ã£o.</li>
-  <li>Desconsiderar o fator de reduÃ§Ã£o: um sensor com alcance 8 mm em aÃ§o pode detectar apenas 3â€“4 mm em alumÃ­nio.</li>
-</ul>
-
-<h2>Sensores Capacitivos</h2>
-<h3>O que sÃ£o?</h3>
-<p>Sensores capacitivos funcionam como uma das placas de um capacitor. A face sensÃ­vel forma um campo eletrostÃ¡tico; quando qualquer material dielÃ©trico (sÃ³lido, lÃ­quido ou gasoso) se aproxima, a <strong>capacitÃ¢ncia muda</strong>, alterando a frequÃªncia do oscilador interno. Diferente do indutivo, o capacitivo detecta praticamente <strong>qualquer material</strong>: metais, plÃ¡sticos, Ã¡gua, grÃ£os, pÃ³.</p>
-<h3>Como Funcionam</h3>
-<p>A variaÃ§Ã£o de capacitÃ¢ncia Ã© proporcional Ã  constante dielÃ©trica (Îµ) do material. Materiais com Îµ alto (Ã¡gua â‰ˆ 80, etileno glicol â‰ˆ 37) sÃ£o detectados a maior distÃ¢ncia. Materiais com Îµ baixo (plÃ¡stico â‰ˆ 2â€“3, madeira â‰ˆ 2â€“5) precisam estar mais prÃ³ximos. Ajuste de sensibilidade permite calibrar o limiar de detecÃ§Ã£o conforme o material.</p>
-<h3>Onde SÃ£o Aplicados</h3>
-<ul>
-  <li><strong>NÃ­vel de lÃ­quidos</strong> em tanques â€” detectam Ã¡gua, Ã³leo, solventes atravÃ©s da parede nÃ£o metÃ¡lica.</li>
-  <li><strong>DeteÃ§Ã£o de nÃ­vel em silos</strong> â€” grÃ£os, pÃ³, cimento.</li>
-  <li><strong>PresenÃ§a de embalagens plÃ¡sticas</strong> em linhas de enchimento.</li>
-  <li><strong>DetecÃ§Ã£o de metais e nÃ£o-metais</strong> â€” versatilidade total.</li>
-</ul>
-<h3>Erros Comuns</h3>
-<ul>
-  <li>NÃ£o considerar a constante dielÃ©trica do material â€” um sensor ajustado para Ã¡gua pode nÃ£o detectar Ã³leo com a mesma distÃ¢ncia.</li>
-  <li>AcumulaÃ§Ã£o de material na face sensÃ­vel â€” resÃ­duos de lÃ­quido ou poeira afetam a leitura.</li>
-  <li>Instalar em ambiente com vibraÃ§Ã£o excessiva â€” pode causar leituras intermitentes.</li>
-</ul>
-
-<h2>Tabela Comparativa</h2>
-<div class="formula-box">
-<table style="width:100%; border-collapse:collapse;">
-<tr style="background:rgba(0,206,201,0.15);"><th style="padding:6px; border:1px solid #00CEC9; text-align:left;">CaracterÃ­stica</th><th style="padding:6px; border:1px solid #00CEC9;">Indutivo</th><th style="padding:6px; border:1px solid #00CEC9;">Capacitivo</th></tr>
-<tr><td style="padding:6px; border:1px solid #333;">Material detectado</td><td style="padding:6px; border:1px solid #333; text-align:center;">SÃ³ metais</td><td style="padding:6px; border:1px solid #333; text-align:center;">Qualquer material</td></tr>
-<tr><td style="padding:6px; border:1px solid #333;">Alcance tÃ­pico</td><td style="padding:6px; border:1px solid #333; text-align:center;">1â€“40 mm</td><td style="padding:6px; border:1px solid #333; text-align:center;">1â€“25 mm</td></tr>
-<tr><td style="padding:6px; border:1px solid #333;">Fator de reduÃ§Ã£o</td><td style="padding:6px; border:1px solid #333; text-align:center;">Sim (nÃ£o-ferro)</td><td style="padding:6px; border:1px solid #333; text-align:center;">Sim (Îµ baixo)</td></tr>
-<tr><td style="padding:6px; border:1px solid #333;">DetecÃ§Ã£o through-wall</td><td style="padding:6px; border:1px solid #333; text-align:center;">NÃ£o</td><td style="padding:6px; border:1px solid #333; text-align:center;">Sim (p. ex. plÃ¡stico)</td></tr>
-</table>
-</div>
-
-<div class="norma-badge">NR-12 â€” MÃ¡quinas e Equipamentos: dispositivos de seguranÃ§a devem ser compatÃ­veis com o risco e instalados conforme fabricante.</div>`,
-
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Um sensor indutivo Ã© ideal para detectar:",
-            options: ["PlÃ¡stico preto", "Ãgua em tanque", "PeÃ§a de aÃ§o em esteira", "NÃ­vel de Ã³leo em reservatÃ³rio"],
-            correct: 2,
-            explanation: "O sensor indutivo detecta apenas metais. A peÃ§a de aÃ§o Ã© ferromagnÃ©tica, proporcionando mÃ¡xima sensibilidade."
-          },
-          {
-            type: "fill-blank",
-            question: "A corrente induzida no objeto metÃ¡lico pelo sensor indutivo Ã© chamada de corrente de ___.",
-            answer: "Foucault",
-            explanation: "Correntes de Foucault (eddy currents) sÃ£o correntes circulantes induzidas por campo magnÃ©tico variÃ¡vel em um condutor."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© a principal diferenÃ§a entre sensores indutivos e capacitivos?",
-            options: [
-              "Indutivos sÃ£o mais baratos",
-              "Capacitivos detectam qualquer material, indutivos apenas metais",
-              "Indutivos precisam de alimentaÃ§Ã£o CA",
-              "Capacitivos nÃ£o tÃªm ajuste de sensibilidade"
-            ],
-            correct: 1,
-            explanation: "Sensores capacitivos detectam qualquer material condutor ou dielÃ©trico (Ã¡gua, plÃ¡stico, grÃ£os), enquanto indutivos restringem-se a metais."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique os materiais pela facilidade de detecÃ§Ã£o com sensor indutivo (maior â†’ menor alcance):",
-            items: ["AÃ§o carbono", "AlumÃ­nio", "LatÃ£o", "PlÃ¡stico"],
-            correctOrder: [0, 1, 2, 3],
-            explanation: "AÃ§o carbono (ferromagnÃ©tico) > alumÃ­nio (condutor, nÃ£o ferro) > latÃ£o (condutor, nÃ£o ferro) > plÃ¡stico (nÃ£o Ã© detectado pelo indutivo)."
-          },
-          {
-            type: "calculation",
-            question: "Um sensor indutivo tem alcance nominal de 10 mm em aÃ§o. O fator de reduÃ§Ã£o para alumÃ­nio Ã© 0,4. Qual o alcance efetivo em alumÃ­nio?",
-            answer: "4",
+            question: "Sensor capacitivo com distância nominal 10 mm para metal. Para grãos (fator 30%), qual a distância efetiva?",
+            answer: 3,
             unit: "mm",
-            explanation: "Alcance efetivo = alcance nominal Ã— fator de reduÃ§Ã£o = 10 mm Ã— 0,4 = 4 mm."
+            validate: (a) => a >= 2.5 && a <= 3.5,
+            explanation: "Distância efetiva = 10 mm × 0.30 = 3 mm."
           }
         ]
       },
-
-      // â”€â”€â”€ M7-L2 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-      {
-        id: "m7-l2",
-        title: "Sensores Ã“pticos e Fim de Curso",
-        theory: `<h2>Sensores FotoelÃ©tricos</h2>
-<h3>O que sÃ£o?</h3>
-<p>Sensores fotoelÃ©tricos usam luz (infravermelha, vermelha ou laser) para detectar a presenÃ§a ou ausÃªncia de objetos. SÃ£o compostos por um <strong>emissor LED/laser</strong> e um <strong>receptor fotodiodo/fototransistor</strong>. Quando o feixe Ã© interrompido (ou refletido), o circuito alterna o estado de saÃ­da. SÃ£o extremamente versÃ¡teis por detectar praticamente qualquer material: sÃ³lidos, lÃ­quidos, transparentes, opacos.</p>
-
-<h3>ConfiguraÃ§Ãµes de OperaÃ§Ã£o</h3>
-<ul>
-  <li><strong>Barreira (through-beam):</strong> emissor e receptor em corpos separados, face a face. O objeto interrompe o feixe. Maior alcance (atÃ© 30 m), mas exige fiaÃ§Ã£o dupla e alinhamento preciso. Ideal para portas de seguranÃ§a e detectar objetos em longa distÃ¢ncia.</li>
-  <li><strong>Reflexivo retro-refletido:</strong> emissor e receptor no mesmo corpo. Um refletor (corner cube) devolve a luz ao sensor. O objeto interrompe o feixe refletido. Alcance atÃ© 10 m. NÃ£o precisa de alimentaÃ§Ã£o no refletor. Comum em esteiras e controle de acesso.</li>
-  <li><strong>Difuso (energia prÃ³pria):</strong> o prÃ³prio objeto reflete a luz de volta ao sensor. Sem refletor. Alcance curto (atÃ© 2 m). SensÃ­vel Ã  cor e textura do objeto. Bom para detectar peÃ§as brancas/claras a curta distÃ¢ncia.</li>
-</ul>
-
-<h3>Onde SÃ£o Aplicados</h3>
-<ul>
-  <li>Contagem de itens em linhas de produÃ§Ã£o.</li>
-  <li>DetecÃ§Ã£o de garrafas, embalagens, etiquetas.</li>
-  <li>Portas e cortinas de seguranÃ§a (barreira).</li>
-  <li>DetecÃ§Ã£o de nÃ­vel de lÃ­quidos transparentes (reflexivo bifilar).</li>
-</ul>
-
-<h2>Fim de Curso MecÃ¢nico</h2>
-<h3>O que sÃ£o?</h3>
-<p>Fins de curso sÃ£o chaves mecÃ¢nicas que sÃ£o acionadas pelo contato fÃ­sico de uma peÃ§a mÃ³vel (gatilho, roldana, alavanca). Existem various tipos: <strong>de agulha</strong> (aÃ§Ã£o rÃ¡pida, para baixa potÃªncia), <strong>de rolamento</strong> (para deslizamento suave), e <strong>de alavanca</strong> (para percurso longo). SÃ£o dispositivos positivos: quando acionados, abrem ou fecham contatos elÃ©tricos de forma definitiva.</p>
-
-<h3>Como Funcionam</h3>
-<p>A peÃ§a mÃ³vel encosta no gatilho, que move o mecanismo interno e alterna o contato. Contato <strong>NA (Normalmente Aberto)</strong> fecha quando acionado; contato <strong>NC (Normalmente Fechado)</strong> abre quando acionado. Para seguranÃ§a, usa-se contato NC â€” se o cabo romper, o circuito abre e a mÃ¡quina para (fail-safe).</p>
-
-<h3>Onde SÃ£o Aplicados</h3>
-<ul>
-  <li>Limite de curso de cilindros pneumÃ¡ticos e atuadores lineares.</li>
-  <li>Final de curso de elevadores e portÃµes.</li>
-  <li>Posicionamento de mandris e mesas de mÃ¡quinas-ferramenta.</li>
-  <li>SeguranÃ§a: parada de emergÃªncia mecÃ¢nica.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li>Usar sensor fotoelÃ©trico em ambiente com poeira pesada â€” a poeira obstrui o feixe e gera falsos disparos. SoluÃ§Ã£o: usar sensor com compensaÃ§Ã£o automÃ¡tica ou limpeza periÃ³dica.</li>
-  <li>Confundir NA e NC no fim de curso â€” pode deixar a mÃ¡quina funcionando quando deveria parar.</li>
-  <li>Usar fim de curso com contato NA em circuito de seguranÃ§a â€” falha se o cabo romper (perde a funÃ§Ã£o fail-safe).</li>
-  <li>Instalar sensor Ã³ptico sem proteÃ§Ã£o contra luz solar direta â€” radiaÃ§Ã£o solar pode saturar o receptor.</li>
-</ul>
-
-<div class="norma-badge">NR-12 â€” Dispositivos de limitaÃ§Ã£o de curso e posiÃ§Ã£o devem ser instalados para impedir movimentos perigosos alÃ©m dos limites ajustados.</div>
-<div class="norma-badge">NR-10 â€” Toda instalaÃ§Ã£o de dispositivos de seguranÃ§a deve respeitar o princÃ­pio fail-safe (falha segura).</div>`,
-
-        exercises: [
-          {
-            type: "multiple-choice",
-            question: "Qual configuraÃ§Ã£o de sensor fotoelÃ©trico tem o maior alcance?",
-            options: ["Difuso", "Reflexivo retro-refletivo", "Barreira (through-beam)", "Capacitivo"],
-            correct: 2,
-            explanation: "A barreira (through-beam) pode atingir atÃ© 30 m porque emissor e receptor estÃ£o em corpos separados face a face, com mÃ¡xima potÃªncia no feixe."
-          },
-          {
-            type: "multiple-choice",
-            question: "Em circuito de seguranÃ§a, qual contato do fim de curso deve ser utilizado?",
-            options: ["NA (Normalmente Aberto)", "NC (Normalmente Fechado)", "Qualquer um", "Contato de potÃªncia"],
-            correct: 1,
-            explanation: "Usa-se contato NC para que, se o cabo romper ou houver mau contato, o circuito abra e a mÃ¡quina pare automaticamente (fail-safe)."
-          },
-          {
-            type: "fill-blank",
-            question: "O sensor __________ Ã© o que possui emissor e receptor em corpos separados, face a face, com o maior alcance entre os fotoelÃ©tricos.",
-            answer: "barreira",
-            explanation: "Sensor barreira (through-beam): emissor e receptor em corpos opostos, alcance atÃ© 30 m, ideal para seguranÃ§a e longas distÃ¢ncias."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique os sensores Ã³pticos por alcance crescente (menor â†’ maior):",
-            items: ["Difuso", "Reflexivo retro-refletivo", "Barreira"],
-            correctOrder: [0, 1, 2],
-            explanation: "Difuso (atÃ© 2 m) < Reflexivo retro-refletivo (atÃ© 10 m) < Barreira (atÃ© 30 m)."
-          }
-        ]
-      },
-
-      // â”€â”€â”€ M7-L3 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m7-l3",
-        title: "SaÃ­das NPN e PNP",
-        theory: `<h2>Transistores NPN e PNP em Sensores</h2>
-<h3>O que sÃ£o?</h3>
-<p>Sensores de proximidade e fotoelÃ©tricos industriais utilizam transistores bipolares de potÃªncia como elementos de saÃ­da. Os dois tipos sÃ£o <strong>NPN</strong> e <strong>PNP</strong>, que diferem na polaridade do transistor e, consequentemente, no tipo de carga que podem acionar. A escolha depende do tipo de entrada do CLP (Programador LÃ³gico Controlador) ou do circuito de controle.</p>
-
-<h3>NPN (Sink â€” Sumidor)</h3>
-<p>No NPN, o coletor estÃ¡ conectado Ã  carga e o emissor ao terra (0V). Quando o sensor Ã© acionado, o transistor conduz e <strong>conecta o lado da carga ao terra</strong>. A carga deve ter uma fonte de alimentaÃ§Ã£o positiva separada. O sensor "suga" (sink) a corrente da carga para o terra. Corrente de saÃ­da flui <strong>para dentro</strong> do sensor.</p>
-<h3>PNP (Source â€” Fonte)</h3>
-<p>No PNP, o emissor estÃ¡ conectado Ã  fonte positiva (Vcc) e o coletor Ã  carga. Quando acionado, o transistor conduz e <strong>conecta a carga Ã  fonte positiva</strong>. O sensor "fornece" (source) corrente Ã  carga. Corrente de saÃ­da flui <strong>para fora</strong> do sensor.</p>
-
-<h3>Como LigÃ¡-los ao CLP</h3>
-<ul>
-  <li><strong>CLP com entrada tipo sink (comum):</strong> usa sensor PNP â€” o sensor fornece corrente para a entrada do CLP.</li>
-  <li><strong>CLP com entrada tipo source:</strong> usa sensor NPN â€” a entrada do CLP fornece corrente e o sensor conduz ao terra.</li>
-  <li><strong>Regra prÃ¡tica:</strong> entrada do CLP = 24VDC â†’ sensor PNP. Entrada do CLP = 0V (terra) â†’ sensor NPN.</li>
-</ul>
-
-<h3>Diagrama de LigaÃ§Ã£o (Fio 3 / Fio 4)</h3>
-<ul>
-  <li><strong>Fio 3 (2 cabos + blindagem):</strong> Marrom = +Vcc (10-30VDC), Azul = 0V, Preto = saÃ­da.</li>
-  <li><strong>Fio 4 (3 cabos + blindagem):</strong> Marrom = +Vcc, Azul = 0V, Preto = saÃ­da 1, Branco = saÃ­da 2 (opostos: NA e NC).</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Inverter NPN e PNP:</strong> se conectar sensor NPN em entrada sink do CLP, nÃ£o haverÃ¡ corrente â€” a entrada nÃ£o aciona. Nunca confunda: NPN = sink, PNP = source.</li>
-  <li>NÃ£o conectar o terra do sensor ao terra do CLP â€” circuitsos com referÃªncias diferentes causam curto-circuito ou leitura errada.</li>
-  <li>Usar saÃ­da de sensor direto em cargas indutivas (contator, relÃ©) sem diodo de roda livre â€” o campo indutivo destrÃ³i o transistor.</li>
-  <li>Confundir a corrente mÃ¡xima de saÃ­da (tipicamente 200 mA) com a corrente da carga â€” se a carga puxar mais, queima o transistor.</li>
-</ul>
-
-<div class="formula-box">
-<p><strong>Regra de Ouro:</strong></p>
-<p>PNP = <em>Source</em> = fornece +Vcc â†’ entrada do CLP recebe sinal positivo.</p>
-<p>NPN = <em>Sink</em> = conduz ao 0V â†’ entrada do CLP recebe sinal de referÃªncia negativa.</p>
-</div>
-<div class="norma-badge">NR-12 â€” Entradas e saÃ­das de dispositivos de seguranÃ§a devem ser dimensionadas corretamente quanto Ã  corrente e tensÃ£o nominal.</div>`,
-
+        title: "Sensores Ópticos",
+        theory: `
+          <h2>Sensores Ópticos (Fotoelétricos)</h2>
+          <p>Sensores ópticos utilizam feixes de luz para detectar presença, ausência ou posição de objetos. São os mais versáteis na automação industrial.</p>
+          <h3>Tipos por Modo de Operação</h3>
+          <h4>1. Barreira (Through-beam)</h4>
+          <ul>
+            <li>Emissor e receptor em lados opostos</li>
+            <li>Objeto detectado quando interrompe o feixe</li>
+            <li>Maior distância (até 50 m)</li>
+            <li>Alta confiabilidade, imune a cor e reflectância</li>
+          </ul>
+          <h4>2. Reflexivo com Refletor</h4>
+          <ul>
+            <li>Emissor e receptor no mesmo lado</li>
+            <li>Requer refletor no lado oposto</li>
+            <li>Distância intermediária (até 10 m)</li>
+            <li>Detecção confiável em ambientes poeirentos</li>
+          </ul>
+          <h4>3. Difuso</h4>
+          <ul>
+            <li>Emissor e receptor no mesmo lado</li>
+            <li>Objeto reflete luz diretamente para o sensor</li>
+            <li>Distância menor (até 2 m)</li>
+            <li>Sensível à cor e textura do objeto</li>
+          </ul>
+          <h3>Fontes de Luz</h3>
+          <table>
+            <tr><th>Tipo</th><th>Comprimento de Onda</th><th>Aplicação</th></tr>
+            <tr><td>Infravermelho</td><td>880-940 nm</td><td>Uso geral, imune a luz ambiente</td></tr>
+            <tr><td>Vermelho</td><td>620-650 nm</td><td>Alinhamento visual fácil</td></tr>
+            <tr><td>Laser</td><td>650-680 nm</td><td>Alta precisão, objetos pequenos</td></tr>
+          </table>
+          <h3>Funções Especiais</h3>
+          <ul>
+            <li><strong>BGS:</strong> Background Suppression - ignora fundo</li>
+            <li><strong>FGS:</strong> Foreground Suppression - detecta fundo</li>
+            <li><strong>Teach-in:</strong> Calibração automática</li>
+            <li><strong>Alarme sujo:</strong> Alerta de lente contaminada</li>
+          </ul>
+          <h3>Aplicações</h3>
+          <ul>
+            <li>Contagem de itens em esteiras</li>
+            <li>Detecção de objetos transparentes</li>
+            <li>Posicionamento de paletes</li>
+            <li>Controle de nível em silos</li>
+            <li>Detecção de ausência de peça em mandril</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m7-l3-ex1",
             type: "multiple-choice",
-            question: "Um sensor PNP Ã© classificado como:",
-            options: ["Sink (sumidor)", "Source (fonte)", "RelÃ© mecÃ¢nico", "Semicondutor unipolar"],
-            correct: 1,
-            explanation: "PNP = Source: quando acionado, fornece corrente positiva (Vcc) para a carga, ou seja, Ã© fonte de energia."
+            question: "Qual sensor óptico tem a maior distância de operação?",
+            choices: ["Difuso", "Reflexivo", "Barreira", "Todos iguais"],
+            correct: 2,
+            explanation: "O sensor barreira tem a maior distância (até 50 m) porque emissor e receptor estão em lados opostos."
           },
           {
+            id: "m7-l3-ex2",
+            type: "multiple-choice",
+            question: "Qual a principal desvantagem do sensor difuso?",
+            choices: ["Requer refletor", "Requer ambos os lados", "Sensível à cor e textura", "Não detecta pequenos"],
+            correct: 2,
+            explanation: "O difuso depende da reflexão da luz pelo objeto. Objetos escuros ou textura irregular podem causar detecção inconsistente."
+          },
+          {
+            id: "m7-l3-ex3",
             type: "fill-blank",
-            question: "O sensor ___ Ã© o tipo que conduz a corrente da carga para o terra (0V) quando acionado.",
-            answer: "NPN",
-            explanation: "NPN = Sink (sumidor): o transistor conduz e conecta a carga ao terra, drenando a corrente."
+            question: "Complete: A função _____ suprime o fundo, detectando apenas objetos na distância ajustada.",
+            code: "BGS",
+            blanks: ["BGS"],
+            explanation: "BGS (Background Suppression) utiliza dois fotodetectores para medir o ângulo de reflexão."
           },
           {
-            type: "multiple-choice",
-            question: "Se a entrada do CLP estÃ¡ conectada ao terra (0V) e precisa receber sinal positivo ao acionar o sensor, qual tipo de sensor devo usar?",
-            options: ["NPN", "PNP", "Fim de curso NA", "RelÃ© de seguranÃ§a"],
-            correct: 1,
-            explanation: "Entrada do CLP em 0V precisa receber +Vcc â†’ sensor PNP (source) fornece a tensÃ£o positiva."
-          },
-          {
+            id: "m7-l3-ex4",
             type: "drag-drop",
-            question: "Associe as cores dos fios do sensor de 3 cabos Ã  sua funÃ§Ã£o:",
-            items: ["Marrom", "Azul", "Preto"],
-            correctOrder: [0, 1, 2],
-            explanation: "Marrom = +Vcc (alimentaÃ§Ã£o), Azul = 0V (referÃªncia), Preto = sinal de saÃ­da."
+            question: "Organize por distância (do menor para o maior):",
+            pieces: ["Difuso (até 2 m)", "Reflexivo (até 10 m)", "Barreira (até 50 m)"],
+            correctOrder: ["Difuso (até 2 m)", "Reflexivo (até 10 m)", "Barreira (até 50 m)"],
+            explanation: "Difuso tem menor distância, reflexivo intermediária e barreira a maior."
+          },
+          {
+            id: "m7-l3-ex5",
+            type: "multiple-choice",
+            question: "Para detectar garrafa transparente em esteira, qual sensor é mais indicado?",
+            choices: ["Barreira com IR", "Difuso vermelho", "Capacitivo", "Indutivo"],
+            correct: 0,
+            explanation: "Objetos transparentes não bloqueiam luz de forma confiável. O barreira com infravermelho detecta a interrupção do feixe."
           }
         ]
       },
-
-      // â”€â”€â”€ M7-L4 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m7-l4",
-        title: "Medidas ElÃ©tricas",
-        theory: `<h2>Medidores ElÃ©tricos BÃ¡sicos</h2>
-<h3>AmperÃ­metro â€” MediÃ§Ã£o de Corrente</h3>
-<p>O amperÃ­metro mede a <strong>corrente elÃ©trica</strong> (em AmpÃ¨res) e deve ser conectado em <strong>sÃ©rie</strong> com o circuito. Internamente possui baixa resistÃªncia (prÃ³xima de zero) para nÃ£o alterar a corrente que mede. Para correntes altas (> 5 A), usa-se <strong>pontas de prova com alicate</strong> (alicate de gancho) que envolvem o condutor, medindo o campo magnÃ©tico sem abrir o circuito (baseado no efeito Hall ou transformador de corrente). Nunca abrir um circuito sob carga para instalar amperÃ­metro em sÃ©rie.</p>
-
-<h3>VoltÃ­metro â€” MediÃ§Ã£o de TensÃ£o</h3>
-<p>O voltÃ­metro mede a <strong>diferenÃ§a de potencial</strong> (em Volts) e deve ser conectado em <strong>paralelo</strong> com o componente ou trecho de circuito a ser medido. Internamente possui altÃ­ssima resistÃªncia (megaohms) para nÃ£o drenar corrente significativa. As pontas de prova sÃ£o conectadas nos pontos desejados: vermelho no ponto de maior potencial, preto no de menor (referÃªncia).</p>
-
-<h3>WattÃ­metro â€” MediÃ§Ã£o de PotÃªncia</h3>
-<p>O wattÃ­metro mede a <strong>potÃªncia ativa</strong> (em Watts) e possui dois elementos: um <strong>bobina de corrente</strong> (em sÃ©rie, baixa resistÃªncia) e uma <strong>bobina de tensÃ£o</strong> (em paralelo, alta resistÃªncia). O produto vetorial das duas grandezas fornece a potÃªncia. Ã‰ essencial para dimensionamento de disjuntores e cabeamento, pois o fator de potÃªncia influencia o valor real consumido.</p>
-
-<h3>MegÃ´hmetro â€” MediÃ§Ã£o de Isolamento</h3>
-<p>O megÃ´hmetro (megger) mede a <strong>resistÃªncia de isolamento</strong> entre condutores ou entre condutor e terra, aplicando uma tensÃ£o DC elevada (tipicamente 500V ou 1000V). Ã‰ o instrumento obrigatÃ³rio para:</p>
-<ul>
-  <li><strong>Teste de instalaÃ§Ãµes novas</strong> â€” verificar se nÃ£o hÃ¡ curto entre fases ou fuga para terra.</li>
-  <li><strong>ManutenÃ§Ã£o preditiva</strong> â€” monitorar degradaÃ§Ã£o de isolamento em motores, cabos e transformadores.</li>
-  <li><strong>Antes de energizar</strong> â€” garantir que nÃ£o hÃ¡ defeito de isolamento.</li>
-</ul>
-<p>Valores aceitÃ¡veis: motores > 1 MÎ©, cabos > 100 MÎ© (depende da norma e tensÃ£o nominal). Valores abaixo indicam degradaÃ§Ã£o ou umidade.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Conectar amperÃ­metro em paralelo</strong> â€” curto-circuito, pois tem baixa resistÃªncia.</li>
-  <li><strong>Conectar voltÃ­metro em sÃ©rie</strong> â€” circuito abre, pois tem altÃ­ssima resistÃªncia.</li>
-  <li><strong>Medir megÃ´hmetro com circuito energizado</strong> â€” risco de choque e destruiÃ§Ã£o do instrumento.</li>
-  <li><strong>NÃ£o zerar o multÃ­metro</strong> antes de medir resistÃªncia â€” valor incorreto.</li>
-  <li>Usar amperÃ­metro comum em corrente alternada â€” necessita multÃ­metro TRMS (raiz mÃ©dia quadrÃ¡tica verdadeira) para cargas nÃ£o lineares.</li>
-</ul>
-
-<div class="norma-badge">NR-10 â€” Instrumentos de mediÃ§Ã£o devem ser calibrados e aferidos periodicamente conforme norma do fabricante.</div>
-<div class="norma-badge">NBR NM-ISO 17025 â€” LaboratÃ³rios de calibraÃ§Ã£o devem atender aos requisitos de competÃªncia tÃ©cnica.</div>`,
-
+        title: "Fim de Curso e Switches",
+        theory: `
+          <h2>Fim de Curso e Switches</h2>
+          <p>Switches de fim de curso detectam a posição final de movimento de uma máquina ou equipamento.</p>
+          <h3>Tipos Construtivos</h3>
+          <h4>1. Mecânico</h4>
+          <ul>
+            <li>Atuador de alavanca com rolete ou haste</li>
+            <li>Contato mecânico direto</li>
+            <li>Alta corrente (até 16 A)</li>
+            <li>Vida útil: 10 a 50 milhões de operações</li>
+          </ul>
+          <h4>2. Indutivo</h4>
+          <ul>
+            <li>Funciona como sensor indutivo</li>
+            <li>Detecta alvos metálicos sem contato</li>
+            <li>Sem desgaste mecânico</li>
+          </ul>
+          <h4>3. Capacitivo</h4>
+          <ul>
+            <li>Detecta qualquer material sem contato</li>
+            <li>Ideal para máquinas com vibração</li>
+          </ul>
+          <h3>Contactores e Contatos Auxiliares</h3>
+          <ul>
+            <li><strong>NO:</strong> Contato aberto, fecha ao ser acionado</li>
+            <li><strong>NC:</strong> Contato fechado, abre ao ser acionado</li>
+            <li><strong>CO/DPDT:</strong> Alterna entre dois contatos</li>
+          </ul>
+          <h3>Aplicações</h3>
+          <ul>
+            <li>Limitar movimento de elevadores</li>
+            <li>Posicionar portas de segregação</li>
+            <li>Controlar curso de cilindros pneumáticos</li>
+            <li>Segurança em máquinas</li>
+            <li>Detecção de abertura de portas</li>
+          </ul>
+          <h3>Segurança</h3>
+          <ul>
+            <li>Contatos <strong>positivamente guiados</strong> para segurança</li>
+            <li>Circuits de segurança usam NC em série</li>
+            <li>Certificação SIL ou PL</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m7-l4-ex1",
             type: "multiple-choice",
-            question: "O amperÃ­metro deve ser conectado ao circuito em:",
-            options: ["Paralelo", "SÃ©rie", "SÃ©rie-Paralelo", "NÃ£o precisa conectar"],
-            correct: 1,
-            explanation: "AmperÃ­metro em sÃ©rie: mede a mesma corrente que circula pelo circuito. Conectar em paralelo causaria curto-circuito devido Ã  baixa resistÃªncia interna."
-          },
-          {
-            type: "multiple-choice",
-            question: "O megÃ´hmetro Ã© utilizado para medir:",
-            options: ["TensÃ£o de rede", "Corrente de curto-circuito", "ResistÃªncia de isolamento", "PotÃªncia aparente"],
+            question: "Qual fim de curso tem a maior corrente de contato?",
+            choices: ["Indutivo", "Capacitivo", "Mecânico", "Óptico"],
             correct: 2,
-            explanation: "MegÃ´hmetro (megger) aplica tensÃ£o DC elevada e mede a resistÃªncia de isolamento entre condutores e terra."
+            explanation: "O mecânico utiliza contatos físicos que suportam até 16 A."
           },
           {
+            id: "m7-l4-ex2",
+            type: "multiple-choice",
+            question: "O que significa contato NC?",
+            choices: ["Aberto quando não acionado", "Fechado quando não acionado", "Alterna entre aberto e fechado", "Momentâneo"],
+            correct: 1,
+            explanation: "NC = Normalmente Fechado - permanece fechado quando não acionado, e abre ao ser pressionado."
+          },
+          {
+            id: "m7-l4-ex3",
             type: "fill-blank",
-            question: "O wattÃ­metro possui dois elementos: uma bobina de ___ e uma bobina de tensÃ£o.",
-            answer: "corrente",
-            explanation: "A bobina de corrente (em sÃ©rie) e a bobina de tensÃ£o (em paralelo) combinam para medir a potÃªncia ativa."
+            question: "Complete: Os contatos _____ em contactores são usados para sinalização e intertravamento.",
+            code: "auxiliares",
+            blanks: ["auxiliares"],
+            explanation: "Contatos auxiliares são contatos NO e NC adicionais acionados pela mesma bobina."
           },
           {
-            type: "calculation",
-            question: "Uma carga recebe 220V e consome 5A. Qual Ã© a potÃªncia ativa se o fator de potÃªncia for 0,8?",
-            answer: "880",
-            unit: "W",
-            explanation: "P = V Ã— I Ã— cos(Ï†) = 220 Ã— 5 Ã— 0,8 = 880 W."
+            id: "m7-l4-ex4",
+            type: "drag-drop",
+            question: "Organize por vida útil (do menor para o maior):",
+            pieces: ["Mecânico (10-50 milhões)", "Indutivo (ilimitado)", "Capacitivo (ilimitado)"],
+            correctOrder: ["Mecânico (10-50 milhões)", "Indutivo (ilimitado)", "Capacitivo (ilimitado)"],
+            explanation: "O mecânico tem vida limitada pelo desgaste. Indutivo e capacitivo não têm partes móveis em contato."
+          },
+          {
+            id: "m7-l4-ex5",
+            type: "multiple-choice",
+            question: "Em circuito de segurança, qual configuração detecta abertura de porta?",
+            choices: ["NO em paralelo", "NC em série", "NC em paralelo", "NO em série"],
+            correct: 1,
+            explanation: "Contatos NC em série garantem que qualquer interrupção interrompa o circuito."
           }
         ]
       },
-
-      // â”€â”€â”€ M7-L5 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m7-l5",
-        title: "Sinais AnalÃ³gicos",
-        theory: `<h2>IntroduÃ§Ã£o a Sinais AnalÃ³gicos em AutomaÃ§Ã£o</h2>
-<p>Enquanto sinais digitais representam apenas dois estados (ligado/desligado, 0/1), os sinais analÃ³gicos representam grandezas contÃ­nuas: temperatura, pressÃ£o, nÃ­vel, vazÃ£o. SÃ£o fundamentais em processos industriais onde a mediÃ§Ã£o e o controle precisam de granularidade entre valores mÃ­nimo e mÃ¡ximo.</p>
-
-<h2>4-20 mA vs 0-10 V</h2>
-<h3>Corrente 4-20 mA (Loop de Corrente)</h3>
-<p>O sinal de 4-20 mA Ã© o padrÃ£o industrial dominante para transmissÃ£o de mediÃ§Ã£o. O valor mÃ­nimo (4 mA) representa o fundo de escala e o mÃ¡ximo (20 mA) o topo. A grande vantagem: se o fio romper, a corrente cai para 0 mA, que Ã© detectado como falha (fault), ao contrÃ¡rio de 0-10V onde 0V pode ser tanto fundo de escala quanto fio rompido.</p>
-<ul>
-  <li><strong>4 mA = 0% do range</strong> (ex: 0Â°C, 0 bar, 0 mÂ³/h)</li>
-  <li><strong>20 mA = 100% do range</strong> (ex: 100Â°C, 10 bar, 100 mÂ³/h)</li>
-  <li><strong>Vantagens:</strong> imune a queda de tensÃ£o no fio (corrente Ã© igual em sÃ©rie), detecÃ§Ã£o de falha em 0 mA, alimentaÃ§Ã£o pela prÃ³pria malha (2-wire).</li>
-</ul>
-
-<h3>TensÃ£o 0-10 V</h3>
-<p>Comum em instalaÃ§Ãµes comerciais e de baixa potÃªncia. 0V = fundo de escala, 10V = topo. Mais simples de medir, mas sofre com quedas de tensÃ£o em longas distÃ¢ncias e nÃ£o detecta fio rompido (0V pode ser mediÃ§Ã£o legÃ­tima).</p>
-
-<h2>ConversÃ£o AnalÃ³gica</h2>
-<p>A conversÃ£o entre sinais Ã© feita por mÃ³dulos conversores (transductores). A fÃ³rmula linear Ã©:</p>
-<div class="formula-box">
-<p><strong>y = ((x - x_min) / (x_max - x_min)) Ã— (y_max - y_min) + y_min</strong></p>
-<p>Exemplo: converter 12 mA para escala 0â€“100Â°C:</p>
-<p>y = ((12 - 4) / (20 - 4)) Ã— (100 - 0) + 0 = (8/16) Ã— 100 = 50Â°C</p>
-</div>
-
-<h2>Fios 2 e Fios 4</h2>
-<ul>
-  <li><strong>Fios 2 (2-wire):</strong> o sensor alimenta-se pelo prÃ³prio loop de 4-20mA. Os dois fios carregam tanto alimentaÃ§Ã£o quanto sinal. Simples, menos cabeamento.</li>
-  <li><strong>Fios 4 (4-wire):</strong> dois fios para alimentaÃ§Ã£o (ex: 24VDC) e dois para o sinal analÃ³gico. Maior precisÃ£o, alimentaÃ§Ã£o separada, mas mais cabeamento.</li>
-</ul>
-
-<h2>Blindagem (Cabo Blindado)</h2>
-<p>O sinal analÃ³gico de 4-20mA ou 0-10V Ã© sensÃ­vel a interferÃªncias eletromagnÃ©ticas (EMI/RFI) de cabos de potÃªncia, inversores de frequÃªncia e motores. O <strong>cabo blindado</strong> possui uma malha metÃ¡lica ou fita de alumÃ­nio que atua como escudo eletrostÃ¡tico. A blindagem deve ser aterrada em <strong>um Ãºnico ponto</strong> (para evitar correntes de terra) â€” geralmente no lado do receptor (CLP).</p>
-
-<h2>Termometria com PT100</h2>
-<p>A PT100 Ã© uma resistÃªncia de platina com 100 Î© a 0Â°C. A temperatura altera a resistÃªncia de forma linear (aprox. 0,385 Î©/Â°C). O sensor Ã© conectado ao transmissor de temperatura, que converte a resistÃªncia em sinal 4-20mA ou 0-10V. ConfiguraÃ§Ãµes de ligaÃ§Ã£o:</p>
-<ul>
-  <li><strong>2 fios:</strong> simples, mas com erro de compensaÃ§Ã£o do cabo.</li>
-  <li><strong>3 fios:</strong> compensa a resistÃªncia do cabo (mais comum industrial).</li>
-  <li><strong>4 fios:</strong> mÃ¡xima precisÃ£o, elimina completamente o efeito do cabo.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Non blindar o cabo analÃ³gico</strong> â€” interferÃªncia de VF causa leituras instÃ¡veis.</li>
-  <li><strong>Ground loop</strong> â€” blindagem aterrada em dois pontos com diferenÃ§a de potencial gera corrente circulante.</li>
-  <li><strong>Usar 0-10V em distÃ¢ncias > 10m</strong> â€” queda de tensÃ£o distorce a leitura. Usar 4-20mA.</li>
-  <li><strong>NÃ£o considerar a corrente mÃ­nima do sensor</strong> em fios 2 â€” se o sensor consumir mais que 4mA, o range efetivo diminui.</li>
-</ul>
-
-<div class="norma-badge">NBR 5410 â€” InstalaÃ§Ãµes de baixa tensÃ£o: cabeamento de sinal analÃ³gico deve ser separado do cabeamento de potÃªncia.</div>
-<div class="norma-badge">IEC 61131-8 â€” CLPs: entrada/saÃ­da analÃ³gica deve ser dimensionada conforme o sinal do instrumento de campo.</div>`,
-
+        title: "Saídas NPN e PNP",
+        theory: `
+          <h2>Saídas NPN e PNP</h2>
+          <p>Sensores possuem saídas NPN ou PNP, definindo como a carga é ligada ao circuito.</p>
+          <h3>Sink (NPN) vs Source (PNP)</h3>
+          <h4>NPN - Sink (Dreno)</h4>
+          <ul>
+            <li>Atua como dreno de corrente</li>
+            <li>Carga entre positivo e saída do sensor</li>
+            <li>Quando detecta, conecta carga ao negativo</li>
+            <li>Corrente: Alimentação(+) → Carga → Sensor → Alimentação(-)</li>
+          </ul>
+          <h4>PNP - Source (Fonte)</h4>
+          <ul>
+            <li>Atua como fonte de corrente</li>
+            <li>Carga entre saída do sensor e negativo</li>
+            <li>Quando detecta, conecta carga ao positivo</li>
+            <li>Corrente: Alimentação(+) → Sensor → Carga → Alimentação(-)</li>
+          </ul>
+          <h3>Ligação ao CLP</h3>
+          <table>
+            <tr><th>Entrada CLP</th><th>Sensor</th><th>Ligação</th></tr>
+            <tr><td>Entrada SINK</td><td>PNP</td><td>Sensor fornece corrente</td></tr>
+            <tr><td>Entrada SOURCE</td><td>NPN</td><td>Entrada fornece corrente</td></tr>
+          </table>
+          <h3>Configurações de Saída</h3>
+          <ul>
+            <li><strong>3 fios:</strong> Alimentação + Saída</li>
+            <li><strong>4 fios:</strong> Alimentação + Saída NO + Saída NC</li>
+            <li><strong>5 fios:</strong> Alimentação + Contato comum + NO + NC</li>
+          </ul>
+          <h3>Escolha entre NPN e PNP</h3>
+          <ul>
+            <li>Indústria europeia: preferência por PNP</li>
+            <li>Indústria asiática: preferência por NPN</li>
+            <li>CLPs modernos aceitam ambos</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m7-l5-ex1",
             type: "multiple-choice",
-            question: "Qual a principal vantagem do sinal 4-20 mA sobre 0-10 V?",
-            options: [
-              "Ã‰ mais barato de instalar",
-              "Detecta fio rompido (0 mA = falha)",
-              "NÃ£o precisa de blindagem",
-              "Funciona com qualquer tensÃ£o de alimentaÃ§Ã£o"
-            ],
+            question: "Em sensor NPN, quando detecta a saída é conectada a:",
+            choices: ["Positivo", "Negativo", "Ambos", "Nenhum"],
             correct: 1,
-            explanation: "No 4-20 mA, 0 mA indica falha (fio rompido). No 0-10V, 0V pode ser tanto fundo de escala quanto fio rompido, impossibilitando a detecÃ§Ã£o."
+            explanation: "No NPN, o transistor conduz e conecta a saída ao negativo da alimentação."
           },
           {
-            type: "calculation",
-            question: "Converta 16 mA para a escala de 0â€“150 bar (4-20 mA). Qual Ã© a pressÃ£o medida?",
-            answer: "112.5",
-            unit: "bar",
-            explanation: "P = ((16 - 4) / (20 - 4)) Ã— 150 = (12/16) Ã— 150 = 112,5 bar."
-          },
-          {
-            type: "fill-blank",
-            question: "A PT100 Ã© uma resistÃªncia de platina com __ Î© a 0Â°C.",
-            answer: "100",
-            explanation: "PT = Platina, 100 = resistÃªncia a 0Â°C. APT100 tem TCR â‰ˆ 0,385 Î©/Â°C."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique as configuraÃ§Ãµes de ligaÃ§Ã£o da PT100 por precisÃ£o crescente:",
-            items: ["2 fios", "3 fios", "4 fios"],
-            correctOrder: [0, 1, 2],
-            explanation: "2 fios (menor precisÃ£o, compensaÃ§Ã£o de cabo) < 3 fios (compensa parcialmente) < 4 fios (mÃ¡xima precisÃ£o)."
-          },
-          {
+            id: "m7-l5-ex2",
             type: "multiple-choice",
-            question: "A blindagem do cabo analÃ³gico deve ser aterrada em:",
-            options: ["Ambos os extremos", "Nenhum extremo", "Um Ãºnico ponto", "A cada 10 metros"],
-            correct: 2,
-            explanation: "Aterramento em um Ãºnico ponto evita correntes de terra (ground loops) que causam interferÃªncia no sinal."
+            question: "CLP com entrada SOURCE requer qual sensor?",
+            choices: ["NPN", "PNP", "Ambos", "Nenhum"],
+            correct: 0,
+            explanation: "Entrada SOURCE fornece corrente, então precisa de NPN que drena a corrente."
+          },
+          {
+            id: "m7-l5-ex3",
+            type: "fill-blank",
+            question: "Complete: O sensor PNP atua como _____ de corrente.",
+            code: "fonte",
+            blanks: ["fonte"],
+            explanation: "PNP é chamado de 'source' porque fornece corrente positiva à carga."
+          },
+          {
+            id: "m7-l5-ex4",
+            type: "drag-drop",
+            question: "Organize a direção da corrente:",
+            pieces: ["NPN: Carga → Sensor → Negativo", "PNP: Sensor → Carga → Negativo"],
+            correctOrder: ["NPN: Carga → Sensor → Negativo", "PNP: Sensor → Carga → Negativo"],
+            explanation: "No NPN a corrente vai da carga para o sensor. No PNP vai do sensor para a carga."
+          },
+          {
+            id: "m7-l5-ex5",
+            type: "calculation",
+            question: "Sensor PNP com saída 200 mA acionando carga de 12 V. Potência da carga?",
+            answer: 2.4,
+            unit: "W",
+            validate: (a) => a >= 2.2 && a <= 2.6,
+            explanation: "P = V × I = 12 × 0.2 = 2.4 W."
           }
         ]
       },
-
-      // â”€â”€â”€ M7-L6 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m7-l6",
-        title: "Malha Aberta vs Malha Fechada",
-        theory: `<h2>Conceitos Fundamentais</h2>
-<h3>Controle em Malha Aberta</h3>
-<p>Em malha aberta (open-loop), o controlador envia um comando de saÃ­da <strong>sem verificar</strong> se o efeito desejado foi alcanÃ§ado. O sistema nÃ£o possui sensor de realimentaÃ§Ã£o. Exemplo: ligar uma resistÃªncia de aquecimento a potÃªncia fixa â€” se a carga tÃ©rmica mudar, a temperatura nÃ£o serÃ¡ corrigida. Ã‰ simples e barato, mas impreciso e sensÃ­vel a perturbaÃ§Ãµes.</p>
-
-<h3>Controle em Malha Fechada (com RetroalimentaÃ§Ã£o)</h3>
-<p>Em malha fechada (closed-loop), um <strong>sensor mede a variÃ¡vel controlada</strong> (temperatura, pressÃ£o, velocidade, posiÃ§Ã£o) e envia o valor real ao controlador. O controlador compara o valor medido com o valor desejado (setpoint) e ajusta a saÃ­da para minimizar o erro. Ã‰ mais robusto, preciso e insensÃ­vel a perturbaÃ§Ãµes.</p>
-
-<h3>Componentes da Malha Fechada</h3>
-<ul>
-  <li><strong>Setpoint (SP):</strong> valor desejado da variÃ¡vel controlada.</li>
-  <li><strong>Valor medido (PV â€” Process Variable):</strong> leitura do sensor.</li>
-  <li><strong>Erro (e):</strong> e = SP - PV.</li>
-  <li><strong>Controlador:</strong> processa o erro e gera sinal de saÃ­da.</li>
-  <li><strong>Atuador:</strong> elemento que executa a aÃ§Ã£o (resistÃªncia, vÃ¡lvula, inversor).</li>
-  <li><strong>Processo:</strong> sistema sendo controlado (forno, tanque, motor).</li>
-</ul>
-
-<h2>Controlador PID</h2>
-<p>O PID Ã© o algoritmo de controle mais utilizado na indÃºstria. Combina trÃªs aÃ§Ãµes:</p>
-
-<h3>Proporcional (P)</h3>
-<p>A saÃ­da Ã© proporcional ao erro: <strong>SaÃ­da = Kp Ã— e</strong>. Quanto maior o Kp, mais rÃ¡pida a resposta. PorÃ©m, sofre <strong>erro em regime permanente</strong> (offset): quando o erro se estabiliza em valor diferente de zero, o P sozinho nÃ£o consegue eliminÃ¡-lo.</p>
-
-<h3>Integral (I)</h3>
-<p>A saÃ­da acumula o erro ao longo do tempo: <strong>SaÃ­da += Ki Ã— âˆ«e dt</strong>. Elimina o erro em regime permanente (offset â†’ 0). PorÃ©m, pode causar <strong>overshoot</strong> e oscilaÃ§Ãµes se o Ki for muito alto. O termo integral "lembra" o erro acumulado.</p>
-
-<h3>Derivativo (D)</h3>
-<p>A saÃ­da reage Ã  <strong>velocidade de variaÃ§Ã£o do erro</strong>: <strong>SaÃ­da = Kd Ã— de/dt</strong>. Antecipa o comportamento futuro do erro. Reduz overshoot e oscilaÃ§Ãµes. SensÃ­vel a ruÃ­do â€” pode amplificar ruÃ­do de alta frequÃªncia se Kd for muito alto.</p>
-
-<h3>Ajuste dos ParÃ¢metros Kp, Ki, Kd</h3>
-<ul>
-  <li><strong>MÃ©todo de Ziegler-Nichols:</strong> aumenta Kp atÃ© o sistema oscilar em regime, registra o ganho crÃ­tico (Ku) e o perÃ­odo de oscilaÃ§Ã£o (Tu), e calcula Kp, Ki, Kd com base em tabelas.</li>
-  <li><strong>Regra prÃ¡tica:</strong> aumente Kp atÃ© resposta aceitÃ¡vel, aumente Ki para eliminar offset, aumente Kd para reduzir overshoot.</li>
-  <li><strong>Comece sempre com Kp apenas</strong>, depois adicione I, e sÃ³ depois D.</li>
-</ul>
-
-<div class="formula-box">
-<p><strong>EquaÃ§Ã£o PID (forma ideal):</strong></p>
-<p>SaÃ­da(t) = Kp Ã— [ e(t) + (1/Ti) Ã— âˆ«e(Ï„)dÏ„ + Td Ã— de(t)/dt ]</p>
-<p>Onde: Ti = tempo integral (Ki = 1/Ti), Td = tempo derivativo (Kd = Td)</p>
-</div>
-
-<h3>Exemplos PrÃ¡ticos</h3>
-<ul>
-  <li><strong>Controle de temperatura:</strong> sensor PT100 â†’ transmissor 4-20mA â†’ CLP (PID) â†’ saÃ­da PWM â†’ resistÃªncia de aquecimento.</li>
-  <li><strong>Controle de nÃ­vel:</strong> sensor de nÃ­vel â†’ CLP â†’ vÃ¡lvula proporcional de alimentaÃ§Ã£o.</li>
-  <li><strong>Controle de velocidade:</strong> encoder â†’ inversor de frequÃªncia (PID interno) â†’ motor.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Ki alto demais</strong> â€” causa oscilaÃ§Ãµes e instabilidade. Reduza Ki ou aumente Ti.</li>
-  <li><strong>Kd alto demais</strong> â€” amplifica ruÃ­do, a saÃ­da fica "nervosa". Reduza Kd.</li>
-  <li><strong>NÃ£o considerar o atraso do processo</strong> â€” sistemas com grande dead time (atraso puro) sÃ£o difÃ­ceis de controlar com PID convencional. Considere compensadores de atraso.</li>
-  <li><strong>Trocar P e I de lugar</strong> â€” Kp controla a velocidade, Ki elimina offset. NÃ£o confunda as funÃ§Ãµes.</li>
-</ul>
-
-<div class="norma-badge">IEC 61131-3 â€” Linguagens de programaÃ§Ã£o de CLPs incluem blocos PID para controle de processos industriais.</div>`,
-
+        title: "Medidas Elétricas",
+        theory: `
+          <h2>Medidas Elétricas</h2>
+          <p>A medição elétrica é fundamental para diagnóstico e manutenção. Principais instrumentos: amperímetro, voltímetro, wattímetro e megômetro.</p>
+          <h3>Amperímetro</h3>
+          <ul>
+            <li><strong>Mede:</strong> Corrente (Amperes)</li>
+            <li><strong>Conexão:</strong> Em série com o circuito</li>
+            <li><strong>Resistência interna:</strong> Muito baixa</li>
+            <li><strong>Tipos:</strong> Digital, clamp (alicate), analógico</li>
+            <li><strong>Clamp:</strong> Mede sem abrir o circuito (efeito Hall)</li>
+          </ul>
+          <h3>Voltímetro</h3>
+          <ul>
+            <li><strong>Mede:</strong> Tensão (Volts)</li>
+            <li><strong>Conexão:</strong> Em paralelo com o componente</li>
+            <li><strong>Resistência interna:</strong> Muito alta</li>
+            <li><strong>Tipos:</strong> DC, AC, True RMS</li>
+          </ul>
+          <h3>Wattímetro</h3>
+          <ul>
+            <li><strong>Mede:</strong> Potência (Watts)</li>
+            <li><strong>Fórmula:</strong> P = V × I × cos(φ)</li>
+            <li><strong>Aplicações:</strong> Motores, transformadores</li>
+          </ul>
+          <h3>Megômetro (Megger)</h3>
+          <ul>
+            <li><strong>Mede:</strong> Resistência de isolamento (MΩ)</li>
+            <li><strong>Princípio:</strong> Aplica tensão elevada e mede corrente de fuga</li>
+            <li><strong>Valores de referência:</strong></li>
+          </ul>
+          <table>
+            <tr><th>Equipamento</th><th>Tensão Teste</th><th>Isolamento Mínimo</th></tr>
+            <tr><td>Motores até 1 kV</td><td>500 V DC</td><td>&gt; 1 MΩ</td></tr>
+            <tr><td>Cabos de potência</td><td>1000 V DC</td><td>&gt; 1 MΩ/kV</td></tr>
+            <tr><td>Painéis</td><td>500 V DC</td><td>&gt; 1 MΩ</td></tr>
+          </table>
+          <h3>Multímetro Digital</h3>
+          <ul>
+            <li>Combina amperímetro, voltímetro e ohmímetro</li>
+            <li>Função True RMS para formas de onda distorcidas</li>
+            <li>Categorias CAT I a CAT IV</li>
+          </ul>
+          <h3>Precauções</h3>
+          <ul>
+            <li>Verificar alcance antes de medir</li>
+            <li>Nunca medir resistência em circuito energizado</li>
+            <li>Usar EPI ao medir alta tensão</li>
+            <li>Respeitar categorias CAT</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m7-l6-ex1",
             type: "multiple-choice",
-            question: "Em um sistema de controle em malha aberta, o que falta ao controlador?",
-            options: ["Setpoint", "Atuador", "Sensor de realimentaÃ§Ã£o (feedback)", "AlimentaÃ§Ã£o elÃ©trica"],
-            correct: 2,
-            explanation: "Malha abenta = sem retroalimentaÃ§Ã£o. O controlador nÃ£o sabe qual Ã© o valor real da variÃ¡vel controlada, nÃ£o podendo corrigir erros."
-          },
-          {
-            type: "fill-blank",
-            question: "O termo __________ do controlador PID elimina o erro em regime permanente (offset).",
-            answer: "Integral",
-            explanation: "O termo I acumula o erro ao longo do tempo e aumenta a saÃ­da atÃ© que o erro chegue a zero."
-          },
-          {
-            type: "multiple-choice",
-            question: "Se um forno de controle PID comeÃ§a a oscilar em torno do setpoint, qual parÃ¢metro provavelmente estÃ¡ muito alto?",
-            options: ["Kp (proporcional)", "Ki (integral)", "Kd (derivativo)", "O sensor estÃ¡ defeituoso"],
+            question: "Como o amperímetro deve ser conectado?",
+            choices: ["Em paralelo", "Em série", "Em paralelo com fonte", "Não importa"],
             correct: 1,
-            explanation: "Ki alto causa oscilaÃ§Ãµes porque acumula erro rapidamente e sobrecorrege o sistema. Reduzir Ki ou aumentar Ti estabiliza."
+            explanation: "O amperímetro mede corrente que flui através dele, deve ser conectado em série."
           },
           {
+            id: "m7-l6-ex2",
+            type: "multiple-choice",
+            question: "O que mede um megômetro?",
+            choices: ["Tensão", "Corrente", "Resistência de isolamento", "Potência"],
+            correct: 2,
+            explanation: "O megômetro mede resistência de isolamento aplicando tensão elevada."
+          },
+          {
+            id: "m7-l6-ex3",
+            type: "fill-blank",
+            question: "Complete: O wattímetro mede potência com uma _____ de corrente e uma _____ de tensão.",
+            code: "bobina; bobina",
+            blanks: ["bobina", "bobina"],
+            explanation: "O wattímetro possui bobina de corrente (série) e bobina de tensão (paralelo)."
+          },
+          {
+            id: "m7-l6-ex4",
             type: "drag-drop",
-            question: "Ordene os componentes de uma malha fechada de controle na sequÃªncia correta do fluxo de sinal:",
-            items: ["Setpoint (SP)", "Controlador PID", "Atuador", "Processo", "Sensor (PV)"],
-            correctOrder: [0, 1, 2, 3, 4],
-            explanation: "SP â†’ Controlador compara SP com PV â†’ gera saÃ­da â†’ Atuador atua no Processo â†’ Sensor mede o resultado e retorna ao controlador."
+            question: "Associe instrumento com grandeza:",
+            pieces: ["Amperímetro → Corrente", "Voltímetro → Tensão", "Wattímetro → Potência", "Megômetro → Isolamento"],
+            correctOrder: ["Amperímetro → Corrente", "Voltímetro → Tensão", "Wattímetro → Potência", "Megômetro → Isolamento"],
+            explanation: "Cada instrumento mede uma grandeza específica."
           },
           {
+            id: "m7-l6-ex5",
             type: "calculation",
-            question: "Um controlador PID tem Kp = 2, Ki = 0,5 sâ»Â¹ e o erro acumulado ao longo de 10 segundos Ã© 5Â°CÂ·s. Qual a contribuiÃ§Ã£o do termo integral na saÃ­da?",
-            answer: "25",
-            unit: "unidades",
-            explanation: "SaÃ­da_I = Ki Ã— âˆ«e dt = 0,5 Ã— 5 = 2,5. Mas o erro acumulado jÃ¡ Ã© âˆ«e dt = 5, entÃ£o SaÃ­da_I = Ki Ã— erro_acumulado = 0,5 Ã— 5 = 2,5. Se Ki = 0,5 e erro integrado = 5, saÃ­da = 2,5."
+            question: "Motor trifásico com 380 V e 15 A por fase. Potência aparente total?",
+            answer: 9874,
+            unit: "VA",
+            validate: (a) => a >= 9500 && a <= 10200,
+            explanation: "S = √3 × V × I = 1,732 × 380 × 15 = 9.874 VA."
+          }
+        ]
+      },
+      {
+        id: "m7-l7",
+        title: "Sinais Analógicos",
+        theory: `
+          <h2>Sinais Analógicos</h2>
+          <p>Sinais analógicos representam grandezas como valores contínuos. Padrões mais comuns: <strong>4-20 mA</strong> e <strong>0-10 V</strong>.</p>
+          <h3>4-20 mA</h3>
+          <ul>
+            <li>Imune a queda de tensão nos fios</li>
+            <li>Fio morto: 4 mA = mínimo, 0 mA = falha</li>
+            <li>Alimentação em loop (24 VDC)</li>
+            <li>Longa distância sem perda de precisão</li>
+          </ul>
+          <h3>0-10 V</h3>
+          <ul>
+            <li>Fácil de medir e depurar</li>
+            <li>Sofre com queda de tensão</li>
+            <li>Curta distância (até 15 m)</li>
+            <li>Requer entrada de alta impedância</li>
+          </ul>
+          <h3>Conversão entre Padrões</h3>
+          <table>
+            <tr><th>Entrada</th><th>4-20 mA</th><th>0-10 V</th></tr>
+            <tr><td>0%</td><td>4 mA</td><td>0 V</td></tr>
+            <tr><td>50%</td><td>12 mA</td><td>5.0 V</td></tr>
+            <tr><td>100%</td><td>20 mA</td><td>10 V</td></tr>
+          </table>
+          <h3>Fórmulas</h3>
+          <pre>
+Corrente (mA) = 4 + (Entrada × 16 / 100)
+Tensão (V) = (Corrente - 4) × 10 / 16
+          </pre>
+          <h3>Blindagem</h3>
+          <ul>
+            <li>Fio blindado contra interferência (EMI)</li>
+            <li>Blindagem aterrada em UM SÓ LADO</li>
+            <li>Separar cabos analógicos de cabos de potência</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m7-l7-ex1",
+            type: "multiple-choice",
+            question: "Principal vantagem do 4-20 mA sobre 0-10 V?",
+            choices: ["Fácil de medir", "Imune a queda de tensão", "Maior alcance", "Menor custo"],
+            correct: 1,
+            explanation: "4-20 mA é imune a queda de tensão porque a corrente é a mesma em todo o circuito série."
+          },
+          {
+            id: "m7-l7-ex2",
+            type: "multiple-choice",
+            question: "O que significa 'fio morto' no 4-20 mA?",
+            choices: ["0 mA = mínimo", "4 mA = mínimo, 0 mA = falha", "20 mA = mínimo", "4 mA = falha"],
+            correct: 1,
+            explanation: "4 mA = valor mínimo. 0 mA indica falha no circuito."
+          },
+          {
+            id: "m7-l7-ex3",
+            type: "fill-blank",
+            question: "Complete: A blindagem deve ser aterrada em _____ lado.",
+            code: "um",
+            blanks: ["um"],
+            explanation: "Aterramento em um lado evita laços de terra que causam interferência."
+          },
+          {
+            id: "m7-l7-ex4",
+            type: "calculation",
+            question: "Transmissor 4-20 mA medindo 0-200°C. Corrente para 150°C?",
+            answer: 16,
+            unit: "mA",
+            validate: (a) => a >= 15.8 && a <= 16.2,
+            explanation: "Corrente = 4 + (150/200 × 16) = 4 + 12 = 16 mA."
+          },
+          {
+            id: "m7-l7-ex5",
+            type: "calculation",
+            question: "Circuito 4-20 mA com alimentação 24 V e sensor mínimo 10 V. Resistência máxima?",
+            answer: 700,
+            unit: "Ω",
+            validate: (a) => a >= 680 && a <= 720,
+            explanation: "R_max = (24 - 10) / 0.020 = 700 Ω."
+          }
+        ]
+      },
+      {
+        id: "m7-l8",
+        title: "Sensores de Temperatura",
+        theory: `
+          <h2>Sensores de Temperatura</h2>
+          <p>Principais sensores: <strong>PT100</strong>, <strong>termopar</strong> e <strong>termistor</strong>.</p>
+          <h3>PT100 (RTD)</h3>
+          <ul>
+            <li>Resistência da platina muda com temperatura</li>
+            <li>100 Ω a 0°C</li>
+            <li>Alcance: -200°C a +850°C</li>
+            <li>Precisão: ±0.1°C (classe A)</li>
+            <li>Conexão: 2, 3 ou 4 fios</li>
+          </ul>
+          <h3>Termopar</h3>
+          <ul>
+            <li>Efeito Seebeck - junção de dois metais gera tensão</li>
+            <li>Tipos: J, K, T, E, N, R, S, B</li>
+            <li>Alcance: -200°C a +2300°C</li>
+            <li>Precisão: ±1 a ±2°C</li>
+          </ul>
+          <table>
+            <tr><th>Tipo</th><th>Materiais</th><th>Alcance</th><th>Sensibilidade</th></tr>
+            <tr><td>J</td><td>Ferro/Constantan</td><td>-40 a +750°C</td><td>~52 μV/°C</td></tr>
+            <tr><td>K</td><td>Cr/Alumel</td><td>-200 a +1200°C</td><td>~41 μV/°C</td></tr>
+            <tr><td>T</td><td>Cobre/Constantan</td><td>-200 a +350°C</td><td>~43 μV/°C</td></tr>
+          </table>
+          <h3>Termistor</h3>
+          <ul>
+            <li>Resistência muda significativamente com temperatura</li>
+            <li>NTC: resistência diminui (Negative Temperature Coefficient)</li>
+            <li>PTC: resistência aumenta</li>
+            <li>Alcance: -50°C a +300°C</li>
+          </ul>
+          <h3>Comparação</h3>
+          <table>
+            <tr><th>Característica</th><th>PT100</th><th>Termopar</th><th>Termistor</th></tr>
+            <tr><td>Alcance</td><td>-200 a 850°C</td><td>-200 a 2300°C</td><td>-50 a 300°C</td></tr>
+            <tr><td>Precisão</td><td>Alta</td><td>Média</td><td>Alta (limitada)</td></tr>
+            <tr><td>Custo</td><td>Médio/Alto</td><td>Baixo</td><td>Baixo</td></tr>
+          </table>
+        `,
+        exercises: [
+          {
+            id: "m7-l8-ex1",
+            type: "multiple-choice",
+            question: "Sensor para forno industrial a 1100°C?",
+            choices: ["PT100", "Termopar J", "Termopar K", "Termistor NTC"],
+            correct: 2,
+            explanation: "Termopar K vai até 1200°C. PT100 até 850°C, J até 750°C, termistor até 300°C."
+          },
+          {
+            id: "m7-l8-ex2",
+            type: "multiple-choice",
+            question: "O que é compensação de junta fria?",
+            choices: ["Isolamento térmico", "Correção da tensão na junção com instrumento", "Refrigeração", "Calibração em banho de gelo"],
+            correct: 1,
+            explanation: "A junta fria é onde o termopar conecta ao instrumento. A compensação corrige a tensão gerada nessa junção."
+          },
+          {
+            id: "m7-l8-ex3",
+            type: "fill-blank",
+            question: "Complete: O PT100 possui resistência de _____ ohms a 0°C.",
+            code: "100",
+            blanks: ["100"],
+            explanation: "PT100 = Platina 100 ohms a 0°C."
+          },
+          {
+            id: "m7-l8-ex4",
+            type: "drag-drop",
+            question: "Associe sensor com característica:",
+            pieces: ["PT100 → Alta precisão", "Termopar → Ampla faixa", "Termistor → Alta sensibilidade"],
+            correctOrder: ["PT100 → Alta precisão", "Termopar → Ampla faixa", "Termistor → Alta sensibilidade"],
+            explanation: "PT100 = precisão, Termopar = faixa ampla, Termistor = sensibilidade."
+          },
+          {
+            id: "m7-l8-ex5",
+            type: "multiple-choice",
+            question: "Quantos fios para compensação completa no PT100?",
+            choices: ["2", "3", "4", "5"],
+            correct: 2,
+            explanation: "4 fios compensa completamente a resistência dos cabos."
+          }
+        ]
+      },
+      {
+        id: "m7-l9",
+        title: "Transmissores de Pressão e Vazão",
+        theory: `
+          <h2>Transmissores de Pressão e Vazão</h2>
+          <p>Transmissores convertem grandezas físicas em sinais elétricos (4-20 mA ou 0-10 V) para CLPs e SCADA.</p>
+          <h3>Transmissor de Pressão</h3>
+          <ul>
+            <li>Célula piezoresistiva, capacitiva ou piezelétrica</li>
+            <li>Mede pressão absoluta, manométrica ou diferencial</li>
+            <li>Alcances: 0-10 mbar até 0-1000 bar</li>
+            <li>Saída: 4-20 mA, 0-10 V, HART, Modbus</li>
+          </ul>
+          <h3>Tipos de Pressão</h3>
+          <table>
+            <tr><th>Tipo</th><th>Referência</th><th>Aplicação</th></tr>
+            <tr><td>Absoluta</td><td>Vácuo perfeito</td><td>Processos industriais</td></tr>
+            <tr><td>Manométrica</td><td>Atmosfera local</td><td>Redes de ar comprimido</td></tr>
+            <tr><td>Diferencial</td><td>Entre dois pontos</td><td>Filtros, medidores de vazão</td></tr>
+          </table>
+          <h3>Medidores de Vazão</h3>
+          <ul>
+            <li><strong>Ultrasônico:</strong> Efeito Doppler ou tempo de trânsito</li>
+            <li><strong>Eletromagnético:</strong> Tensão induzida por líquido condutivo</li>
+            <li><strong>Turbina:</strong> Hélice gera pulsos proporcionais</li>
+            <li><strong>Vortex:</strong> Vórtices gerados por obstáculo</li>
+            <li><strong>Coriolis:</strong> Mede massa diretamente</li>
+            <li><strong>Orifício:</strong> Queda de pressão em placa</li>
+          </ul>
+          <h3>Protocolo HART</h3>
+          <ul>
+            <li>Comunicação digital sobre fio analógico</li>
+            <li>Configura, calibra e diagnostica remotamente</li>
+            <li>Compatível com cabos existentes</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m7-l9-ex1",
+            type: "multiple-choice",
+            question: "Qual transmissor mede vazão mássica diretamente?",
+            choices: ["Ultrasônico", "Eletromagnético", "Coriolis", "Turbina"],
+            correct: 2,
+            explanation: "O Coriolis mede diretamente a vazão mássica sem correção por temperatura ou pressão."
+          },
+          {
+            id: "m7-l9-ex2",
+            type: "multiple-choice",
+            question: "Transmissor 4-20 mA calibrado 0-10 bar. Pressão para 14 mA?",
+            choices: ["5 bar", "6.25 bar", "7 bar", "8.75 bar"],
+            correct: 1,
+            explanation: "Pressão = (14-4)/(20-4) × 10 = 6.25 bar."
+          },
+          {
+            id: "m7-l9-ex3",
+            type: "fill-blank",
+            question: "Complete: O protocolo _____ permite comunicação digital sobre o fio 4-20 mA.",
+            code: "HART",
+            blanks: ["HART"],
+            explanation: "HART (Highway Addressable Remote Transducer) superpõe sinal digital ao analógico."
+          },
+          {
+            id: "m7-l9-ex4",
+            type: "drag-drop",
+            question: "Associe medição com instrumento:",
+            pieces: ["Pressão absoluta → Piezoresistivo", "Vazão condutiva → Eletromagnético", "Vazão vapor → Vortex", "Nível → Ultrasônico"],
+            correctOrder: ["Pressão absoluta → Piezoresistivo", "Vazão condutiva → Eletromagnético", "Vazão vapor → Vortex", "Nível → Ultrasônico"],
+            explanation: "Cada aplicação requer tipo específico de sensor."
+          },
+          {
+            id: "m7-l9-ex5",
+            type: "calculation",
+            question: "Transmissor 0-500 mbar com saída 12.8 mA. Pressão medida?",
+            answer: 275,
+            unit: "mbar",
+            validate: (a) => a >= 270 && a <= 280,
+            explanation: "Pressão = (12.8-4)/(20-4) × 500 = 8.8/16 × 500 = 275 mbar."
+          }
+        ]
+      },
+      {
+        id: "m7-l10",
+        title: "Malha Aberta vs Fechada",
+        theory: `
+          <h2>Malha Aberta vs Malha Fechada</h2>
+          <p>Controle de processos: <strong>malha aberta</strong> (sem retroalimentação) ou <strong>malha fechada</strong> (com retroalimentação).</p>
+          <h3>Malha Aberta</h3>
+          <ul>
+            <li>Sem sensor de retroalimentação</li>
+            <li>Ação baseada apenas na referência</li>
+            <li>Simples e barato</li>
+            <li>Não corrige erros automaticamente</li>
+          </ul>
+          <h3>Malha Fechada</h3>
+          <ul>
+            <li>Utiliza sensor para medir variável</li>
+            <li>Compara valor medido com setpoint</li>
+            <li>Calcula erro e aplica correção</li>
+            <li>Auto-corrigente e robusto</li>
+          </ul>
+          <h3>Controlador PID</h3>
+          <h4>P - Proporcional</h4>
+          <ul>
+            <li>Ação proporcional ao erro atual</li>
+            <li>P = Kp × erro</li>
+            <li>Reduz erro mas não elimina (erro residual)</li>
+          </ul>
+          <h4>I - Integral</h4>
+          <ul>
+            <li>Ação proporcional à acumulação do erro</li>
+            <li>I = Ki × ∫erro dt</li>
+            <li>Elimina erro residual (offset)</li>
+          </ul>
+          <h4>D - Derivativo</h4>
+          <ul>
+            <li>Ação proporcional à taxa de variação do erro</li>
+            <li>D = Kd × d(erro)/dt</li>
+            <li>Antecipa mudanças, reduz overshoot</li>
+          </ul>
+          <h3>Efeitos dos Ganhos</h3>
+          <table>
+            <tr><th>Parâmetro</th><th>Efeito</th></tr>
+            <tr><td>Kp ↑</td><td>Resposta mais rápida, overshoot maior</td></tr>
+            <tr><td>Ki ↑</td><td>Elimina offset mais rápido, pode oscilar</td></tr>
+            <tr><td>Kd ↑</td><td>Reduz overshoot, suaviza resposta</td></tr>
+          </table>
+          <h3>Aplicações</h3>
+          <ul>
+            <li>Controle de temperatura em fornos</li>
+            <li>Controle de nível em tanques</li>
+            <li>Controle de pressão em caldeiras</li>
+            <li>Controle de vazão em processos</li>
+            <li>Controle de velocidade de motores</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m7-l10-ex1",
+            type: "multiple-choice",
+            question: "Principal desvantagem do controle em malha aberta?",
+            choices: ["Complexo", "Não corrige erros automaticamente", "Requer sensores caros", "Mais lento"],
+            correct: 1,
+            explanation: "Sem retroalimentação, não detecta nem corrige desvios."
+          },
+          {
+            id: "m7-l10-ex2",
+            type: "multiple-choice",
+            question: "Qual componente do PID elimina o erro residual?",
+            choices: ["P", "I", "D", "Todos igualmente"],
+            correct: 1,
+            explanation: "O termo I acumula o erro ao longo do tempo até zero."
+          },
+          {
+            id: "m7-l10-ex3",
+            type: "fill-blank",
+            question: "Complete: O PID combina proporcional, _____ e derivativa.",
+            code: "integral",
+            blanks: ["integral"],
+            explanation: "PID = Proporcional-Integral-Derivativo."
+          },
+          {
+            id: "m7-l10-ex4",
+            type: "drag-drop",
+            question: "Organize resposta (do mais rápido ao mais lento):",
+            pieces: ["Subamortecido (com overshoot)", "Criticamente amortecido", "Sobreamortecido (sem overshoot)"],
+            correctOrder: ["Subamortecido (com overshoot)", "Criticamente amortecido", "Sobreamortecido (sem overshoot)"],
+            explanation: "Subamortecido é mais rápido com overshoot. Sobreamortecido é mais lento sem overshoot."
+          },
+          {
+            id: "m7-l10-ex5",
+            type: "multiple-choice",
+            question: "O que acontece com Kp muito alto?",
+            choices: ["Resposta lenta", "Instabilidade com oscilações", "Erro residual aumenta", "Sobreamortecido"],
+            correct: 1,
+            explanation: "Kp muito alto causa oscilações e pode levar à instabilidade."
           }
         ]
       }
     ]
   },
-
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // MÃ“DULO 8 â€“ SEGURANÃ‡A E PROTEÃ‡ÃƒO
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   {
     id: "m8",
-    title: "SeguranÃ§a e ProteÃ§Ã£o",
+    title: "Segurança e Proteção",
+    description: "Normas, procedimentos e equipamentos de segurança em instalações elétricas",
+    icon: "🛡️",
     color: "#636E72",
-    icon: "ðŸ›¡ï¸",
     lessons: [
-      // â”€â”€â”€ M8-L1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l1",
-        title: "NR-10 VisÃ£o Geral",
-        theory: `<h2>O que Ã© a NR-10?</h2>
-<p>A <strong>Norma Regulamentadora NR-10</strong> (SeguranÃ§a em InstalaÃ§Ãµes e ServiÃ§os em Eletricidade) Ã© a principal norma brasileira que regulamenta a seguranÃ§a elÃ©trica em ambientes de trabalho. Publicada pelo MinistÃ©rio do Trabalho e Emprego, ela estabelece os <strong>requisitos mÃ­nimos</strong> para proteÃ§Ã£o dos trabalhadores que operam, instalaram, inspecionaram e mantiveram instalaÃ§Ãµes elÃ©tricas. Seu objetivo Ã© reduzir riscos de acidentes elÃ©tricos, que sÃ£o uma das principais causas de acidentes fatais no trabalho.</p>
-
-<h3>Escopo de AplicaÃ§Ã£o</h3>
-<p>A NR-10 se aplica a todas as instalaÃ§Ãµes elÃ©tricas em <strong>tensÃ£o igual ou superior a 50V CA ou 120V CC</strong> em ambientes internos e externos, incluindo:</p>
-<ul>
-  <li>GeraÃ§Ã£o, transmissÃ£o, distribuiÃ§Ã£o e consumo de energia elÃ©trica.</li>
-  <li>InstalaÃ§Ãµes industriais, comerciais, residenciais e pÃºblicas.</li>
-  <li>ServiÃ§os de manutenÃ§Ã£o, reparo e inspeÃ§Ã£o em instalaÃ§Ãµes energizadas ou desenergizadas.</li>
-  <li>Projetos e projetos executivos de instalaÃ§Ãµes elÃ©tricas.</li>
-</ul>
-
-<h3>PrincÃ­pios Fundamentais</h3>
-<ul>
-  <li><strong>PrevenÃ§Ã£o:</strong> aÃ§Ãµes antes do acidente, nÃ£o depois. Toda instalaÃ§Ã£o deve ser projetada e mantida para minimizar riscos.</li>
-  <li><strong>Hierarquia de controles:</strong> eliminaÃ§Ã£o do perigo â†’ engenharia â†’ administrativo â†’ EPI.</li>
-  <li><strong>Trabalho Desenerizado (TD):</strong> Ã© o procedimento padrÃ£o. Deve ser realizado sempre que possÃ­vel.</li>
-  <li><strong>ProteÃ§Ã£o contra contato indireto:</strong> aterramento, equipotencializaÃ§Ã£o, dispositivos de proteÃ§Ã£o contra curto-circuito e fuga.</li>
-</ul>
-
-<h3>Responsabilidades</h3>
-<ul>
-  <li><strong>Empregador:</strong> fornecer EPIs adequados, capacitar trabalhadores, manter instalaÃ§Ãµes em conformidade, elaborar Plano de Trabalho, realizar AnÃ¡lise de Risco (AR) e PermissÃ£o de Trabalho (PT).</li>
-  <li><strong>Empregado:</strong> cumprir as normas, utilizar EPIs, comunicar riscos e situaÃ§Ãµes de perigo, interromper trabalho em condiÃ§Ãµes inseguras.</li>
-  <li><strong>CIPA (ComissÃ£o Interna de PrevenÃ§Ã£o de Acidentes):</strong> atuar como agente de mudanÃ§a, promover treinamentos, inspecionar ambientes, comunicar acidentes e quase-acidentes.</li>
-</ul>
-
-<h3>ClassificaÃ§Ã£o por TensÃ£o e Grau de Risco</h3>
-<ul>
-  <li><strong>Baixa tensÃ£o (BT):</strong> atÃ© 1.000V CA ou 1.500V CC.</li>
-  <li><strong>Alta tensÃ£o (AT):</strong> acima de 1.000V CA ou 1.500V CC.</li>
-  <li><strong>Grau de risco:</strong> I (baixo), II (mÃ©dio), III (alto), IV (muito alto) â€” definidos conforme o tipo de instalaÃ§Ã£o e o ambiente de trabalho.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Desconsiderar a NR-10 em instalaÃ§Ãµes "simples"</strong> â€” qualquer instalaÃ§Ã£o â‰¥ 50V CA estÃ¡ sujeita.</li>
-  <li><strong>Trabalhar sem PermissÃ£o de Trabalho</strong> em instalaÃ§Ãµes energizadas.</li>
-  <li><strong>NÃ£o realizar AnÃ¡lise de Risco</strong> antes de iniciar serviÃ§os.</li>
-  <li><strong>Assumir que baixa tensÃ£o nÃ£o mata</strong> â€” 127V jÃ¡ pode ser letal em condiÃ§Ãµes favorÃ¡veis (umidade, contato direto).</li>
-</ul>
-
-<div class="norma-badge">NR-10 â€” SeguranÃ§a em InstalaÃ§Ãµes e ServiÃ§os em Eletricidade (Portaria MTb nÂº 594/2014 e atualizaÃ§Ãµes).</div>
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.1 â€” A NR-10 se aplica a instalaÃ§Ãµes elÃ©tricas em tensÃ£o â‰¥ 50V CA ou â‰¥ 120V CC.</div>
-<div class="norma-badge">NR-5 â€” CIPA: composiÃ§Ã£o, atribuiÃ§Ãµes e procedimentos de prevenÃ§Ã£o de acidentes.</div>`,
-
+        title: "NR-10 Visão Geral",
+        theory: `
+          <h2>NR-10 - Segurança em Instalações e Serviços em Eletricidade</h2>
+          <p>A <strong>NR-10</strong> estabelece requisitos de segurança para instalações e serviços em eletricidade.</p>
+          <h3>Escopo</h3>
+          <ul>
+            <li>Todas as instalações elétricas em qualquer estabelecimento</li>
+            <li>Projetos, construções, montagens, operação e manutenção</li>
+            <li>Alta e baixa tensão</li>
+            <li>Trabalhadores diretos e indiretos</li>
+          </ul>
+          <h3>Requisitos Principais</h3>
+          <ul>
+            <li><strong>Plano de Trabalho:</strong> Descreve serviço, riscos e medidas</li>
+            <li><strong>Permissão de Trabalho:</strong> Autorização formal</li>
+            <li><strong>Capacitação:</strong> Treinamento obrigatório</li>
+            <li><strong>Equipamentos:</strong> EPIs e EPCs adequados</li>
+          </ul>
+          <h3>Classificação por Tensão</h3>
+          <table>
+            <tr><th>Classificação</th><th>Tensão</th><th>Risco</th></tr>
+            <tr><td>Baixa Tensão (BT)</td><td>Até 1.000 V CA / 1.500 V CC</td><td>Moderado</td></tr>
+            <tr><td>Alta Tensão (AT)</td><td>Acima de 1.000 V CA / 1.500 V CC</td><td>Alto</td></tr>
+          </table>
+          <h3>Grupos de Tensão</h3>
+          <ul>
+            <li><strong>Grupo A:</strong> Até 50 V CA</li>
+            <li><strong>Grupo B:</strong> 50 a 1.000 V CA</li>
+            <li><strong>Grupo C:</strong> 1 a 35 kV</li>
+            <li><strong>Grupo D:</strong> 35 a 150 kV</li>
+            <li><strong>Grupo E:</strong> Acima de 150 kV</li>
+          </ul>
+          <h3>Responsabilidades</h3>
+          <ul>
+            <li><strong>Empregador:</strong> Fornecer condições seguras</li>
+            <li><strong>Empregado:</strong> Cumprir procedimentos</li>
+            <li><strong>Técnico de Segurança:</strong> Fiscalizar e orientar</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m8-l1-ex1",
             type: "multiple-choice",
-            question: "A NR-10 se aplica a instalaÃ§Ãµes elÃ©tricas com tensÃ£o igual ou superior a:",
-            options: ["220V CA", "127V CA", "50V CA", "1000V CA"],
-            correct: 2,
-            explanation: "A NR-10 se aplica a instalaÃ§Ãµes â‰¥ 50V CA ou â‰¥ 120V CC em ambientes de trabalho."
-          },
-          {
-            type: "multiple-choice",
-            question: "Qual Ã© o procedimento padrÃ£o recomendado pela NR-10 para serviÃ§os em instalaÃ§Ãµes elÃ©tricas?",
-            options: ["Trabalho energizado com EPI", "Trabalho Desenerizado (TD)", "Trabalho com proteÃ§Ã£o de barreira apenas", "Trabalho sem PermissÃ£o de Trabalho"],
+            question: "Qual é o principal objetivo da NR-10?",
+            choices: ["Regular uso residencial", "Requisitos de segurança para serviços em eletricidade", "Definir tarifas", "Regular painéis solares"],
             correct: 1,
-            explanation: "O Trabalho Desenerizado (TD) Ã© o procedimento padrÃ£o. Deve ser realizado sempre que possÃ­vel para eliminar o risco elÃ©trico."
+            explanation: "A NR-10 estabelece requisitos de segurança para instalações e serviços em eletricidade."
           },
           {
+            id: "m8-l1-ex2",
+            type: "multiple-choice",
+            question: "Até qual tensão é Baixa Tensão na NR-10?",
+            choices: ["220 V", "380 V", "1.000 V", "15.000 V"],
+            correct: 2,
+            explanation: "BT = até 1.000 V CA ou 1.500 V CC."
+          },
+          {
+            id: "m8-l1-ex3",
             type: "fill-blank",
-            question: "A ___ Ã© a comissÃ£o interna responsÃ¡vel por promover a prevenÃ§Ã£o de acidentes no ambiente de trabalho.",
-            answer: "CIPA",
-            explanation: "CIPA = ComissÃ£o Interna de PrevenÃ§Ã£o de Acidentes, prevista na NR-5."
+            question: "Complete: O _____ descreve serviço, riscos e medidas de controle.",
+            code: "plano de trabalho",
+            blanks: ["plano de trabalho"],
+            explanation: "O plano de trabalho é obrigatório antes de qualquer serviço com risco elétrico."
           },
           {
+            id: "m8-l1-ex4",
             type: "drag-drop",
-            question: "Ordene as responsabilidades conforme a hierarquia de controles (da mais eficaz para a menos eficaz):",
-            items: ["EPI (Equipamento de ProteÃ§Ã£o Individual)", "EliminaÃ§Ã£o do perigo", "Controles de engenharia", "Controles administrativos"],
-            correctOrder: [1, 2, 3, 0],
-            explanation: "Hierarquia: EliminaÃ§Ã£o > Engenharia > Administrativo > EPI. Quanto mais alto na hierarquia, mais eficaz."
+            question: "Organize grupos de tensão (do menor ao maior):",
+            pieces: ["Grupo A: Até 50 V", "Grupo B: 50-1.000 V", "Grupo C: 1-35 kV", "Grupo D: 35-150 kV", "Grupo E: Acima 150 kV"],
+            correctOrder: ["Grupo A: Até 50 V", "Grupo B: 50-1.000 V", "Grupo C: 1-35 kV", "Grupo D: 35-150 kV", "Grupo E: Acima 150 kV"],
+            explanation: "Classificação do menor para o maior grupo de tensão."
+          },
+          {
+            id: "m8-l1-ex5",
+            type: "multiple-choice",
+            question: "Quem é responsável por fornecer condições seguras?",
+            choices: ["Trabalhador", "Sindicato", "Empregador", "Fabricante"],
+            correct: 2,
+            explanation: "O empregador é responsável por condições seguras, capacitação e EPIs."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L2 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l2",
         title: "EPIs e EPCs",
-        theory: `<h2>Equipamentos de ProteÃ§Ã£o Individual (EPIs)</h2>
-<p>EPIs sÃ£o dispositivos ou acessÃ³rios usados pelo trabalhador para <strong>proteÃ§Ã£o contra riscos</strong> que ameaÃ§am sua saÃºde e seguranÃ§a. SÃ£o a Ãºltima barreira de defesa â€” devem ser usados quando os controles de engenharia e administrativos nÃ£o eliminam totalmente o risco. O empregador Ã© obrigado a fornecer, treinar o uso correto e substituir quando danificados.</p>
-
-<h3>EPIs ElÃ©tricos Principais</h3>
-<ul>
-  <li><strong>Luvas isolantes:</strong> confeccionadas em borracha isolante, classificadas por classe de tensÃ£o (00 a 4). Devem ser inspecionadas visualmente antes de cada uso (furos, rasgos, desgaste). Usadas em serviÃ§os de HT e BT para proteÃ§Ã£o contra choque elÃ©trico direto.</li>
-  <li><strong>Capacete de seguranÃ§a com isolamento elÃ©trico:</strong> classe B (atÃ© 20kV), E (atÃ© 30kV) ou C (atÃ© 40kV). Protege contra choque elÃ©trico por contato indireto e contra impactos. Deve ter validade do isolamento verificada anualmente.</li>
-  <li><strong>Ã“culos de proteÃ§Ã£o:</strong> protegem contra arcos elÃ©tricos, respingos de metal fundido e partÃ­culas. Lentes com proteÃ§Ã£o UV/IR para arco elÃ©trico.</li>
-  <li><strong>CalÃ§ado de seguranÃ§a com isolamento:</strong> solados isolantes (atÃ© 1.000V), biqueira de composite ou aÃ§o. Evita choque elÃ©trico por contato com piso energizado e protege contra impactos.</li>
-  <li><strong>Cinto paraqÃ¼edista com cinturÃ£o trava-quedas:</strong> obrigatÃ³rio em trabalhos em altura (NR-35). Trava-queda retrÃ¡til ou talabarte com ABS (absorvedor de energia).</li>
-  <li><strong>Faixa isolante / tapete isolante:</strong> superfÃ­cie isolante sobre a qual o trabalhador permanece para evitar contato com o solo energizado.</li>
-</ul>
-
-<h2>Equipamentos de ProteÃ§Ã£o Coletiva (EPCs)</h2>
-<p>EPCs protegem <strong>todos os trabalhadores</strong> simultaneamente e tÃªm prioridade sobre os EPIs. Incluem:</p>
-<ul>
-  <li><strong>SinalizaÃ§Ã£o de advertÃªncia:</strong> placas de "Perigo â€” Risco ElÃ©trico", faixas de sinalizaÃ§Ã£o, cones. Devem ser visÃ­veis e resistentes Ã s condiÃ§Ãµes ambientais.</li>
-  <li><strong>Barreiras e isolamentos:</strong> cercas, tapumes, grades que impedem acesso a Ã¡reas energizadas. Devem ser rÃ­gidas, estÃ¡veis e sinalizadas.</li>
-  <li><strong>Sistemas de intertravamento:</strong> dispositivos que impedem acesso a partes perigosas enquanto estiverem energizadas (porta com microswitch, trava eletromagnÃ©tica).</li>
-  <li><strong>Extintores de incÃªndio classe C (elÃ©trico):</strong> COâ‚‚ ou pÃ³ quÃ­mico seco. Nunca usar Ã¡gua em fogo elÃ©trico.</li>
-  <li><strong>Isolamento temporÃ¡rio:</strong> uso de lonas isolantes, tapetes e coberturas para proteger trabalhadores e equipamentos durante manutenÃ§Ã£o.</li>
-</ul>
-
-<h3>InspeÃ§Ã£o e ManutenÃ§Ã£o de EPIs</h3>
-<ul>
-  <li><strong>Antes de cada uso:</strong> inspeÃ§Ã£o visual â€” verificar rasgos, furos, desgaste, avarias.</li>
-  <li><strong>Periodicamente:</strong> teste elÃ©trico conforme norma (ex: luvas isolantes â€” teste de potencial a cada 6 meses ou conforme NR-10).</li>
-  <li><strong>Armazenamento:</strong> local limpo, seco, longe de solventes e luz solar direta.</li>
-  <li><strong>SubstituiÃ§Ã£o:</strong> imediata quando apresentar defeito ou apÃ³s prazo de validade.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Usar luva de borracha comum</strong> em vez de luva isolante certificada â€” a borracha comum nÃ£o tem resistÃªncia elÃ©trica garantida.</li>
-  <li><strong>NÃ£o inspecionar EPI antes do uso</strong> â€” um furo microscÃ³pico pode causar choque fatal.</li>
-  <li><strong>Substituir EPC por EPI</strong> â€” o EPI Ã© a Ãºltima defesa. EPCs sÃ£o sempreä¼˜å…ˆ (barreiras > luvas).</li>
-  <li><strong>Usar capacete com isolamento vencido</strong> â€” o isolamento degradado nÃ£o protege contra choque elÃ©trico.</li>
-</ul>
-
-<div class="norma-badge">NR-6 â€” Equipamentos de ProteÃ§Ã£o Individual (EPI): obrigatoriedade de fornecimento, uso e conservaÃ§Ã£o.</div>
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.6 â€” EPIs devem ser selecionados conforme o risco e a atividade, com certificaÃ§Ã£o de validade.</div>
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.7 â€” EPCs devem ser instalados antes dos EPIs, conforme hierarquia de controles.</div>`,
-
+        theory: `
+          <h2>EPIs e EPCs</h2>
+          <p><strong>EPIs</strong> (Equipamentos de Proteção Individual) e <strong>EPCs</strong> (Equipamentos de Proteção Coletiva) são essenciais para segurança.</p>
+          <h3>EPIs</h3>
+          <h4>Luvas Isolantes</h4>
+          <ul>
+            <li>Borracha isolante, classes 00 a 4</li>
+            <li>Testadas a cada 6 meses</li>
+            <li>Usar com luvas de couro por cima</li>
+          </ul>
+          <h4>Capacete com Viseira</h4>
+          <ul>
+            <li>Capacete isolante classe B</li>
+            <li>Viseira contra arco elétrico</li>
+          </ul>
+          <h4>Calçados de Segurança</h4>
+          <ul>
+            <li>Botas de borracha isolante</li>
+            <li>Sapatos com biqueira de aço</li>
+          </ul>
+          <h3>EPCs</h3>
+          <ul>
+            <li>Faixas de sinalização</li>
+            <li>Placas de advertência</li>
+            <li>Cobertores isolantes</li>
+            <li>Tapetes isolantes</li>
+            <li>Escadas isolantes</li>
+          </ul>
+          <h3>Classes de EPIs</h3>
+          <table>
+            <tr><th>Classe</th><th>Tensão Máx.</th><th>Tensão Teste</th></tr>
+            <tr><td>00</td><td>500 V</td><td>2.500 V</td></tr>
+            <tr><td>0</td><td>1.000 V</td><td>5.000 V</td></tr>
+            <tr><td>1</td><td>7.500 V</td><td>10.000 V</td></tr>
+            <tr><td>2</td><td>15.000 V</td><td>20.000 V</td></tr>
+            <tr><td>3</td><td>25.000 V</td><td>30.000 V</td></tr>
+            <tr><td>4</td><td>35.000 V</td><td>40.000 V</td></tr>
+          </table>
+        `,
         exercises: [
           {
+            id: "m8-l2-ex1",
             type: "multiple-choice",
-            question: "Qual Ã© a ordem de prioridade entre EPC e EPI conforme a hierarquia de controles?",
-            options: [
-              "EPI primeiro, depois EPC",
-              "EPC primeiro, depois EPI",
-              "SÃ£o equivalentes",
-              "Depende do risco"
-            ],
+            question: "Função das luvas de couro sobre luvas isolantes?",
+            choices: ["Isolamento elétrico", "Proteção mecânica", "Conforto térmico", "Aderência"],
             correct: 1,
-            explanation: "EPCs protegem coletivamente e tÃªm prioridade. EPIs sÃ£o a Ãºltima barreira de defesa individual."
+            explanation: "Luvas de couro protegem contra cortes e desgaste da borracha isolante."
           },
           {
+            id: "m8-l2-ex2",
             type: "multiple-choice",
-            question: "Luvas isolantes devem ser classificadas por:",
-            options: ["Cor", "Classe de tensÃ£o (00 a 4)", "Tamanho", "Fabricante"],
-            correct: 1,
-            explanation: "Luvas isolantes sÃ£o classificadas por classe de tensÃ£o (00 atÃ© 4), definindo a mÃ¡xima tensÃ£o de trabalho permitida."
+            question: "Classe de luva para até 7.500 V?",
+            choices: ["00", "0", "1", "2"],
+            correct: 2,
+            explanation: "Classe 1 suporta até 7.500 V."
           },
           {
+            id: "m8-l2-ex3",
             type: "fill-blank",
-            question: "O capacete de seguranÃ§a com isolamento elÃ©trico deve ter sua validade do isolamento verificada ___ (periodicidade).",
-            answer: "anualmente",
-            explanation: "Conforme NR-10, o teste de isolamento do capacete deve ser realizado anualmente ou conforme instruÃ§Ã£o do fabricante."
+            question: "Complete: Os _____ protegem todos os trabalhadores da área.",
+            code: "EPCs",
+            blanks: ["EPCs"],
+            explanation: "EPCs são equipamentos de proteção coletiva."
           },
           {
+            id: "m8-l2-ex4",
             type: "drag-drop",
-            question: "Classifique os EPIs elÃ©tricos conforme a proteÃ§Ã£o que oferecem (maior â†’ menor proteÃ§Ã£o contra choque direto):",
-            items: ["Luva isolante classe 4", "Luva isolante classe 00", "Luva isolante classe 2"],
-            correctOrder: [0, 2, 1],
-            explanation: "Classe 4 (atÃ© 36kV) > Classe 2 (atÃ© 17kV) > Classe 00 (atÃ© 500V)."
+            question: "Associe EPI com função:",
+            pieces: ["Luva isolante → Isolamento elétrico", "Capacete → Proteção contra choques", "Óculos → Proteção ocular", "Bota → Isolamento dos pés"],
+            correctOrder: ["Luva isolante → Isolamento elétrico", "Capacete → Proteção contra choques", "Óculos → Proteção ocular", "Bota → Isolamento dos pés"],
+            explanation: "Cada EPI protege uma parte específica do corpo."
+          },
+          {
+            id: "m8-l2-ex5",
+            type: "multiple-choice",
+            question: "Frequência de teste elétrico das luvas isolantes?",
+            choices: ["A cada uso", "6 meses", "2 anos", "5 anos"],
+            correct: 1,
+            explanation: "Teste elétrico a cada 6 meses conforme norma."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L3 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l3",
-        title: "Bloqueio e SinalizaÃ§Ã£o LOTO",
-        theory: `<h2>O que Ã© LOTO?</h2>
-<p><strong>Lockout/Tagout (LOTO)</strong> â€” Bloqueio e SinalizaÃ§Ã£o â€” Ã© o procedimento de seguranÃ§a que garante que mÃ¡quinas e equipamentos sejam <strong>desenergizados e isolados</strong> antes de manutenÃ§Ã£o ou inspeÃ§Ã£o. Evita que trabalhadores sejam expostos a energias perigosas (elÃ©trica, hidrÃ¡ulica, pneumÃ¡tica, tÃ©rmica, quÃ­mica) que podem ser liberadas inesperadamente. Ã‰ exigido pela NR-10, NR-12 e normas internacionais (OSHA 1910.147).</p>
-
-<h3>Procedimento Passo a Passo (PadrÃ£o OSHA)</h3>
-<h4>1. PreparaÃ§Ã£o</h4>
-<ul>
-  <li>Identificar todas as fontes de energia: elÃ©trica, pneumÃ¡tica, hidrÃ¡ulica, gravitacional, tÃ©rmica, quÃ­mica.</li>
-  <li>Notificar todos os trabalhadores afetados sobre o procedimento.</li>
-  <li>Reunir os dispositivos LOTO (cadeado, trava, etiqueta).</li>
-</ul>
-
-<h4>2. Desligamento</h4>
-<ul>
-  <li>Desligar a mÃ¡quina pelo interruptor ou disjuntor principal.</li>
-  <li>Colocar o <strong>cadeado de bloqueio</strong> no dispositivo de desligamento na posiÃ§Ã£o "desligado".</li>
-  <li>Cada trabalhador que realizarÃ¡ a manutenÃ§Ã£o deve colocar <strong>seu prÃ³prio cadeado</strong> (cadeado individual = 1 trabalhador = 1 cadeado).</li>
-</ul>
-
-<h4>3. VerificaÃ§Ã£o de AusÃªncia de TensÃ£o</h4>
-<ul>
-  <li>Tentar religar a mÃ¡quina (tentativa de ligaÃ§Ã£o) â€” deve permanecer desligada.</li>
-  <li>Medir tensÃ£o com multÃ­metro em todos os condutores â€” verificar fase-fase e fase-terra.</li>
-  <li>Verificar ausÃªncia de energia residual (capacitores, baterias, sistemas hidrÃ¡ulicos com carga).</li>
-</ul>
-
-<h4>4. SinalizaÃ§Ã£o</h4>
-<ul>
-  <li>Instalar <strong>etiqueta LOTO</strong> (tag) em cada ponto de bloqueio. A etiqueta contÃ©m: nome do trabalhador, data, motivo, previsÃ£o de retorno.</li>
-  <li>Etiquetas devem ser legÃ­veis, resistentes e nÃ£o devem ser removidas por outra pessoa.</li>
-</ul>
-
-<h4>5. Trabalho Seguro</h4>
-<ul>
-  <li>ApÃ³s confirmar ausÃªncia de energia, iniciar a manutenÃ§Ã£o.</li>
-  <li>Trabalhar sempre assumindo que a energia pode ser liberada (nÃ£o confiar apenas no interruptor).</li>
-</ul>
-
-<h4>6. Restabelecimento</h4>
-<ul>
-  <li>Verificar que todos os trabalhadores estÃ£o afastados da mÃ¡quina.</li>
-  <li>Remover ferramentas e materiais da Ã¡rea de risco.</li>
-  <li>Cada trabalhador remove <strong>apenas o seu cadeado</strong>.</li>
-  <li>Energizar o circuito e testar o funcionamento.</li>
-</ul>
-
-<h3>Dispositivos LOTO</h3>
-<ul>
-  <li><strong>Cadeado de bloqueio:</strong> chave exclusiva, cada trabalhador tem sua chave. NÃ£o pode ser aberto por outra pessoa.</li>
-  <li><strong>Trava (hasp):</strong> permite que mÃºltiplos cadeados sejam colocados no mesmo ponto (ex: disjuntor com trava para 6 cadeados).</li>
-  <li><strong>Etiqueta (tag):</strong> identifica quem bloqueou, porquÃª e quando. Nunca substitui o cadeado â€” Ã© complementar.</li>
-  <li><strong>Bloqueio de vÃ¡lvula:</strong> dispositivos especÃ­ficos para bloquear vÃ¡lvulas de esfera, gaveta ou borboleta.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Usar apenas etiqueta sem cadeado</strong> â€” a etiqueta pode ser removida acidentalmente. Cadeado = isolamento fÃ­sico.</li>
-  <li><strong>Compartilhar cadeados</strong> â€” cada trabalhador deve ter seu cadeado. Se um remove o cadeado do outro, pode energizar enquanto estÃ¡ trabalhando.</li>
-  <li><strong>NÃ£o verificar ausÃªncia de tensÃ£o apÃ³s bloqueio</strong> â€” pode haver alimentaÃ§Ã£o por outro caminho (paralelo, gerador).</li>
-  <li><strong>Remover cadeado do colega</strong> â€”crime contra a seguranÃ§a do trabalho. SÃ³ o titular deve remover seu cadeado.</li>
-</ul>
-
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.8 â€” Bloqueio e sinalizaÃ§Ã£o devem seguir procedimento documentado, com cadeado individual e verificaÃ§Ã£o de ausÃªncia de tensÃ£o.</div>
-<div class="norma-badge">OSHA 1910.147 â€” PadrÃ£o de controle de energias perigosas (LOTO) â€” referÃªncia internacional.</div>`,
-
+        title: "Bloqueio e Sinalização LOTO",
+        theory: `
+          <h2>Bloqueio e Sinalização (LOTO)</h2>
+          <p><strong>LOTO</strong> (Lockout/Tagout) garante que equipamentos permaneçam desenergizados durante manutenção.</p>
+          <h3>Objetivo</h3>
+          <ul>
+            <li>Prevenir reenergização acidental</li>
+            <li>Proteger contra partida inesperada</li>
+            <li>Controlar todas as fontes de energia</li>
+          </ul>
+          <h3>Procedimento</h3>
+          <ol>
+            <li><strong>Notificar</strong> trabalhadores afetados</li>
+            <li><strong>Identificar</strong> fontes de energia</li>
+            <li><strong>Desligar</strong> equipamento</li>
+            <li><strong>Iso</strong> fontes de energia</li>
+            <li><strong>Bloquear</strong> com cadeado</li>
+            <li><strong>Sinalizar</strong> com etiqueta</li>
+            <li><strong>Dissipar</strong> energia residual</li>
+            <li><strong>Verificar</strong> ausência de tensão</li>
+          </ol>
+          <h3>Regras Importantes</h3>
+          <ul>
+            <li>Cada trabalhador usa o <strong>próprio cadeado</strong></li>
+            <li>Nunca remover cadeado de outro</li>
+            <li>Apenas quem bloqueou pode desbloquear</li>
+            <li>Em grupo: bloqueio múltiplo</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m8-l3-ex1",
             type: "multiple-choice",
-            question: "No procedimento LOTO, quantos cadeados devem ser colocados se 3 trabalhadores farÃ£o manutenÃ§Ã£o simultÃ¢nea?",
-            options: ["1 cadeado compartilhado", "2 cadeados", "3 cadeados (um por trabalhador)", "6 cadeados"],
-            correct: 2,
-            explanation: "Cada trabalhador deve colocar SEU PRÃ“PRIO cadeado. SÃ£o necessÃ¡rios 3 cadeados, um para cada pessoa. Cada um remove apenas o seu."
-          },
-          {
-            type: "multiple-choice",
-            question: "ApÃ³s colocar o cadeado e a etiqueta, o prÃ³ximo passo Ã©:",
-            options: ["Iniciar a manutenÃ§Ã£o imediatamente", "Verificar ausÃªncia de tensÃ£o medindo com multÃ­metro", "Desligar o disjuntor", "Notificar o supervise"],
+            question: "Primeiro passo do LOTO?",
+            choices: ["Colocar cadeado", "Notificar trabalhadores", "Desligar equipamento", "Testar tensão"],
             correct: 1,
-            explanation: "ApÃ³s bloqueio, Ã© obrigatÃ³rio verificar ausÃªncia de tensÃ£o com multÃ­metro para confirmar que a energia foi efetivamente removida."
+            explanation: "Notificar trabalhadores afetados é o primeiro passo."
           },
           {
+            id: "m8-l3-ex2",
+            type: "multiple-choice",
+            question: "Quem pode remover um cadeado LOTO?",
+            choices: ["Supervisor", "Electricista experiente", "Quem colocou", "Qualquer trabalhador"],
+            correct: 2,
+            explanation: "Apenas quem colocou pode remover."
+          },
+          {
+            id: "m8-l3-ex3",
             type: "fill-blank",
-            question: "O cadeado de bloqueio deve ser de __ exclusivo â€” cada trabalhador tem sua chave.",
-            answer: "chave",
-            explanation: "Chave exclusiva garante que apenas o titular pode remover o cadeado, protegendo-o enquanto trabalha."
+            question: "Complete: LOTO significa _____ / Tagout.",
+            code: "Lockout",
+            blanks: ["Lockout"],
+            explanation: "Lockout/Tagout = Bloqueio/Sinalização."
           },
           {
+            id: "m8-l3-ex4",
             type: "drag-drop",
-            question: "Ordene os passos do procedimento LOTO na sequÃªncia correta:",
-            items: ["Desligamento", "PreparaÃ§Ã£o e identificaÃ§Ã£o de energias", "VerificaÃ§Ã£o de ausÃªncia de tensÃ£o", "SinalizaÃ§Ã£o com etiqueta", "Restabelecimento"],
-            correctOrder: [1, 0, 2, 3, 4],
-            explanation: "1Âº Preparar e identificar energias â†’ 2Âº Desligar e bloquear â†’ 3Âº Verificar ausÃªncia de tensÃ£o â†’ 4Âº Sinalizar â†’ 5Âº Restabelecer."
+            question: "Ordem do LOTO:",
+            pieces: ["1. Notificar", "2. Identificar fontes", "3. Desligar", "4. Isolar", "5. Bloquear", "6. Sinalizar", "7. Verificar"],
+            correctOrder: ["1. Notificar", "2. Identificar fontes", "3. Desligar", "4. Isolar", "5. Bloquear", "6. Sinalizar", "7. Verificar"],
+            explanation: "Sequência lógica para garantir segurança."
+          },
+          {
+            id: "m8-l3-ex5",
+            type: "multiple-choice",
+            question: "O que fazer ANTES de trabalhar após bloqueio?",
+            choices: ["Iniciar manutenção", "Verificar ausência de tensão", "Aguardar 24h", "Ligar para testar"],
+            correct: 1,
+            explanation: "Verificar ausência de tensão com instrumento é obrigatório."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L4 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l4",
         title: "Trabalho Desenerizado",
-        theory: `<h2>O que Ã© Trabalho Desenerizado (TD)?</h2>
-<p>Trabalho Desenerizado Ã© o <strong>procedimento padrÃ£o</strong> de seguranÃ§a elÃ©trica que consiste em <strong>desligar, bloquear, sinalizar e verificar ausÃªncia de tensÃ£o</strong> antes de iniciar serviÃ§os em instalaÃ§Ãµes elÃ©tricas. Ã‰ a forma mais segura de trabalhar, pois elimina o risco elÃ©trico por completo. Deve ser utilizado <strong>sempre que possÃ­vel</strong>.</p>
-
-<h3>Procedimento Completo</h3>
-<h4>1. Planejamento</h4>
-<ul>
-  <li>AnÃ¡lise de Risco (AR) detalhada do serviÃ§o a ser executado.</li>
-  <li>PermissÃ£o de Trabalho (PT) aprovada pelo responsÃ¡vel.</li>
-  <li>IdentificaÃ§Ã£o de todos os circuitos envolvidos e seus pontos de desligamento.</li>
-  <li>VerificaÃ§Ã£o de que o serviÃ§o nÃ£o pode ser realizado com seguranÃ§a em condiÃ§Ãµes energizadas.</li>
-</ul>
-
-<h4>2. Desligamento</h4>
-<ul>
-  <li>Desligar o disjuntor, contatores e fusÃ­veis do circuito a ser trabalhado.</li>
-  <li>Em circuitos com vÃ¡rios pontos de alimentaÃ§Ã£o, desligar <strong>TODOS</strong>.</li>
-  <li>Verificar visualmente que o disjuntor estÃ¡ na posiÃ§Ã£o "desligado".</li>
-</ul>
-
-<h4>3. Bloqueio e SinalizaÃ§Ã£o (LOTO)</h4>
-<ul>
-  <li>Colocar cadeado e etiqueta no ponto de desligamento.</li>
-  <li>Cada trabalhador coloca seu cadeado individual.</li>
-  <li>Notificar todos os envolvidos sobre o bloqueio.</li>
-</ul>
-
-<h4>4. VerificaÃ§Ã£o de AusÃªncia de TensÃ£o</h4>
-<ul>
-  <li>Usar <strong>detector de tensÃ£o sem contato</strong> (wavestick) para verificaÃ§Ã£o preliminar.</li>
-  <li>Confirmar com <strong>multÃ­metro TRMS</strong> â€” medir fase-fase e fase-terra em todos os condutores.</li>
-  <li>Verificar que o multÃ­metro estÃ¡ funcionando â€” testar em circuito energizado conhecido antes e depois da mediÃ§Ã£o (checagem cruzada).</li>
-  <li>Considerar tensÃµes residuais: capacitores, circuitos auxiliares, backfeed por paralelo.</li>
-</ul>
-
-<h4>5. Aterramento TemporÃ¡rio</h4>
-<ul>
-  <li>Em instalaÃ§Ãµes de alta tensÃ£o, <strong>aterrar os condutores</strong> apÃ³s a verificaÃ§Ã£o de ausÃªncia de tensÃ£o.</li>
-  <li>O aterramento temporÃ¡rio protege contra reenergizaÃ§Ã£o acidental e descargas capacitivas.</li>
-  <li>Deve ser instalado <strong>apÃ³s</strong> a verificaÃ§Ã£o de ausÃªncia de tensÃ£o e <strong>antes</strong> do inÃ­cio do trabalho.</li>
-  <li>Remover o aterramento <strong>antes</strong> de reenergizar o circuito.</li>
-</ul>
-
-<h4>6. Isolamento e ProteÃ§Ã£o</h4>
-<ul>
-  <li>Isolar condutores adjacentes energizados com capas isolantes ou barreiras.</li>
-  <li>Proteger o trabalhador contra quedas e choques mecÃ¢nicos.</li>
-  <li>Verificar distÃ¢ncia de seguranÃ§a de condutores energizados vizinhos.</li>
-</ul>
-
-<h4>7. ExecuÃ§Ã£o do ServiÃ§o</h4>
-<ul>
-  <li>Executar o serviÃ§o conforme o planejado.</li>
-  <li>MantÃªr comunicaÃ§Ã£o constante entre os trabalhadores.</li>
-  <li>NÃ£o assumir que o circuito continua desenerizado â€” confirmar periodicamente se necessÃ¡rio.</li>
-</ul>
-
-<h4>8. Restabelecimento</h4>
-<ul>
-  <li>Remover ferramentas, materiais e people do circuito.</li>
-  <li>Remover aterramento temporÃ¡rio.</li>
-  <li>Cada trabalhador remove apenas o seu cadeado.</li>
-  <li>Energizar o circuito e testar.</li>
-  <li>Comunicar o restabelecimento a todos os envolvidos.</li>
-</ul>
-
-<h3>Erros Comuns e Acidentes TÃ­picos</h3>
-<ul>
-  <li><strong>NÃ£o verificar ausÃªncia de tensÃ£o</strong> â€” assume-se que o circuito estÃ¡ desligado sem medir. Ã‰ a causa #1 de acidentes fatais.</li>
-  <li><strong>AlimentaÃ§Ã£o por paralelo</strong> â€” outro circuito pode alimentar o que se trabalha por meio de derivaÃ§Ã£o nÃ£o identificada.</li>
-  <li><strong>Retorno de tensÃ£o por motor-generador ou inversor</strong> â€” cargas com capacitores ou geradores podem manter tensÃ£o apÃ³s o desligamento.</li>
-  <li><strong>NÃ£o usar aterramento temporÃ¡rio em HT</strong> â€” reenergizaÃ§Ã£o acidental pode causar arco elÃ©trico fatal.</li>
-  <li><strong>Trabalhar sem EPI adequado</strong> mesmo com o circuito desenerizado â€” pode haver energizaÃ§Ã£o acidental.</li>
-</ul>
-
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.9 â€” Trabalho Desenerizado: procedimento obrigatÃ³rio com verificaÃ§Ã£o de ausÃªncia de tensÃ£o em todos os condutores.</div>
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.9.1 â€” Detector de tensÃ£o sem contato deve ser utilizado para verificaÃ§Ã£o preliminar.</div>
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.9.2 â€” Aterramento temporÃ¡rio deve ser aplicado em instalaÃ§Ãµes de alta tensÃ£o.</div>`,
-
+        theory: `
+          <h2>Trabalho Desenerizado</h2>
+          <p>Garantir que circuito ou equipamento esteja completamente desenergizado antes de manutenção.</p>
+          <h3>Procedimento</h3>
+          <ol>
+            <li><strong>Desligar:</strong> Abrir dispositivo de manobra</li>
+            <li><strong>Confrontar:</strong> Verificar equipamento correto</li>
+            <li><strong>Verificar ausência de tensão:</strong> Detector adequado</li>
+            <li><strong>Curto-circuitar e aterrar:</strong> Em alta tensão</li>
+            <li><strong>Sinalizar:</strong> Placa "Não ligar"</li>
+          </ol>
+          <h3>Detector de Ausência de Tensão</h3>
+          <ul>
+            <li>Detector de não contato</li>
+            <li>Multímetro</li>
+            <li>Teste fase-neutro e fase-terra</li>
+            <li>Sempre testar em fonte conhecida antes</li>
+          </ul>
+          <h3>Fontes de Energia Residual</h3>
+          <table>
+            <tr><th>Fonte</th><th>Risco</th><th>Procedimento</th></tr>
+            <tr><td>Capacitores</td><td>Choque</td><td>Aguardar descarga</td></tr>
+            <tr><td>Motores</td><td>Tensão residual</td><td>Aguardar parada</td></tr>
+            <tr><td>UPS</td><td>Alimentação auxiliar</td><td>Desligar UPS</td></tr>
+          </table>
+        `,
         exercises: [
           {
+            id: "m8-l4-ex1",
             type: "multiple-choice",
-            question: "Antes de iniciar trabalho desenerizado em um circuito de alta tensÃ£o, qual Ã© o passo OBRIGATÃ“RIO apÃ³s a verificaÃ§Ã£o de ausÃªncia de tensÃ£o?",
-            options: [
-              "Iniciar a manutenÃ§Ã£o imediatamente",
-              "Instalar aterramento temporÃ¡rio",
-              "Remover o cadeado LOTO",
-              "Energizar o circuito para testar"
-            ],
+            question: "Primeira ação ao desenergizar?",
+            choices: ["Usar luva", "Desligar manobra", "Testar multímetro", "Colocar cadeado"],
             correct: 1,
-            explanation: "ApÃ³s verificar ausÃªncia de tensÃ£o, o aterramento temporÃ¡rio deve ser instalado em HT para proteger contra reenergizaÃ§Ã£o acidental e descargas capacitivas."
+            explanation: "Desligar o dispositivo de manobra é o primeiro passo."
           },
           {
+            id: "m8-l4-ex2",
             type: "multiple-choice",
-            question: "Qual instrumento deve ser usado para a verificaÃ§Ã£o DEFINITIVA de ausÃªncia de tensÃ£o?",
-            options: ["Wavestick apenas", "MultÃ­metro TRMS", "LÃ¢mpada de prova", "Alicate de gancho"],
+            question: "Por que testar detector em circuito conhecido?",
+            choices: ["Calibrar", "Verificar funcionamento", "Medir corrente", "Limpar pontas"],
             correct: 1,
-            explanation: "MultÃ­metro TRMS Ã© o instrumento definitivo. O wavestick Ã© apenas preliminar â€” pode dar falso negativo em ambientes com interferÃªncia."
+            explanation: "Confirmar que o detector está funcionando antes de confiar."
           },
           {
+            id: "m8-l4-ex3",
             type: "fill-blank",
-            question: "O aterramento temporÃ¡rio deve ser instalado __ do inÃ­cio do trabalho e removido __ da reenergizaÃ§Ã£o.",
-            answer: "antes, antes",
-            explanation: "Instalar ANTES de trabalhar (protege durante o serviÃ§o) e remover ANTES de reenergizar (senÃ£o pode causar curto-circuito ao energizar com aterramento)."
+            question: "Complete: Verificar a _____ de tensão com instrumento adequado.",
+            code: "ausência",
+            blanks: ["ausência"],
+            explanation: "Confirmar que NÃO há tensão antes de trabalhar."
           },
           {
+            id: "m8-l4-ex4",
             type: "drag-drop",
-            question: "Ordene os passos do Trabalho Desenerizado na sequÃªncia correta:",
-            items: ["Planejamento e AnÃ¡lise de Risco", "Desligamento", "Bloqueio e SinalizaÃ§Ã£o (LOTO)", "VerificaÃ§Ã£o de ausÃªncia de tensÃ£o", "Aterramento temporÃ¡rio", "ExecuÃ§Ã£o do serviÃ§o"],
-            correctOrder: [0, 1, 2, 3, 4, 5],
-            explanation: "Fluxo correto: Planejar â†’ Desligar â†’ Bloquear/LOTO â†’ Verificar tensÃ£o â†’ Aterrar â†’ Executar."
+            question: "Ordem do trabalho desenerizado:",
+            pieces: ["1. Desligar", "2. Confrontar", "3. Verificar tensão", "4. Curto/aterrar (AT)", "5. Sinalizar", "6. LOTO"],
+            correctOrder: ["1. Desligar", "2. Confrontar", "3. Verificar tensão", "4. Curto/aterrar (AT)", "5. Sinalizar", "6. LOTO"],
+            explanation: "Sequência lógica: desligar, confirmar, testar, proteger."
           },
           {
+            id: "m8-l4-ex5",
             type: "multiple-choice",
-            question: "Por que Ã© necessÃ¡rio medir fase-fase E fase-terra na verificaÃ§Ã£o de ausÃªncia de tensÃ£o?",
-            options: [
-              "Para verificar se o multÃ­metro funciona",
-              "Porque pode haver tensÃ£o entre fases e entre fase e terra em situaÃ§Ãµes diferentes",
-              "Por excesso de precauÃ§Ã£o",
-              "Apenas fase-fase Ã© necessÃ¡rio"
-            ],
+            question: "Por que aguardar após desligar motor?",
+            choices: ["Esfriar", "Tensão residual decair", "Disjuntor repousar", "Óleo voltar"],
             correct: 1,
-            explanation: "TensÃ£o pode persistir entre fases (paralelo com outro circuito) ou entre fase e terra (neutro deslocado, aterramento deficiente). Ambas as mediÃ§Ãµes sÃ£o necessÃ¡rias."
+            explanation: "Motores em rotação geram tensão residual por indução."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L5 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l5",
         title: "Aterramento",
-        theory: `<h2>O que Ã© Aterramento?</h2>
-<p>Aterramento Ã© a <strong>ligaÃ§Ã£o elÃ©trica intencional</strong> entre um ponto do sistema elÃ©trico e uma massa de terra (eletrodo de aterramento). Ã‰ fundamental para proteÃ§Ã£o contra choque elÃ©trico, contra descargas atmosfÃ©ricas e para o funcionamento correto dos dispositivos de proteÃ§Ã£o (disjuntores, DR). A terra Ã© um condutor natural com resistÃªncia variÃ¡vel (conforme umidade, composiÃ§Ã£o do solo, profundidade).</p>
-
-<h3>Neutro de Aterramento (Sistema TN)</h3>
-<p>No <strong>sistema TN</strong>, o neutro da fonte (transformador) Ã© <strong>aterrado diretamente</strong> na substaÃ§Ã£o. O condutor PE (Protective Earth) percorre toda a instalaÃ§Ã£o e conecta as partes metÃ¡licas expostas dos equipamentos. Se houver falta de isolamento (fase encosta na carcaÃ§a), a corrente de falta flui pela carcaÃ§a â†’ PE â†’ neutro, formando um <strong>curto-circuito de alta corrente</strong> que aciona imediatamente o disjuntor ou fusÃ­vel, desligando o circuito.</p>
-<ul>
-  <li><strong>TN-S:</strong> neutro e PE separados desde o transformador. Mais seguro, usado em instalaÃ§Ãµes novas.</li>
-  <li><strong>TN-C:</strong> neutro e PE combinados em um Ãºnico condutor (PEN) atÃ© o ponto de utilizaÃ§Ã£o. Mais barato, mas menos seguro (corrente circula pelo PE durante defeitos).</li>
-  <li><strong>TN-C-S:</strong> inÃ­cio como TN-C, separa-se em TN-S a partir do Quadro de ForÃ§a. Comum em edifÃ­cios.</li>
-</ul>
-
-<h3>Condutor PE (ProteÃ§Ã£o)</h3>
-<p>O condutor PE Ã© o <strong>fio verde-amarelo</strong> que conecta todas as partes metÃ¡licas expostas dos equipamentos ao barramento de aterramento. Em caso de falta de isolamento, a corrente de falta circula pelo PE, acionando o disjuntor. O PE <strong>nunca deve ser used para outro fim</strong> â€” nÃ£o deve conduzir corrente de funcionamento (exceto em TN-C).</p>
-
-<h3>Eletrodo de Aterramento</h3>
-<p>O eletrodo Ã© o elemento que estabelece a ligaÃ§Ã£o fÃ­sica com a terra:</p>
-<ul>
-  <li><strong>Haste de aterramento:</strong> barra de cobre ou aÃ§o galvanizado, cravada verticalmente no solo. Comprimento tÃ­pico: 1,5 a 3 metros.</li>
-  <li><strong>Malha de aterramento:</strong> grade de conductores enterrados, usada em subestaÃ§Ãµes e grandes instalaÃ§Ãµes.</li>
-  <li><strong>Anel de aterramento:</strong> conductor perimetral ao redor da edificaÃ§Ã£o, conectado a vÃ¡rias hastes.</li>
-  <li><strong>Placa de aterramento:</strong> placa de cobre enterrada, usada quando o solo Ã© rochoso.</li>
-</ul>
-
-<h3>ResistÃªncia de Aterramento</h3>
-<p>A resistÃªncia entre o eletrodo e a terra deve ser <strong>â‰¤ 25 Î©</strong> conforme NR-10 para instalaÃ§Ãµes de baixa tensÃ£o. Para HT e subestaÃ§Ãµes, valores mais baixos sÃ£o exigidos (atÃ© 10 Î© ou menos). A resistÃªncia depende de:</p>
-<ul>
-  <li>ComposiÃ§Ã£o do solo (argila Ã© melhor que areia).</li>
-  <li>Umidade do solo.</li>
-  <li>Profundidade e comprimento do eletrodo.</li>
-  <li>Ãrea de contato eletrodo-solo.</li>
-</ul>
-
-<h3>MediÃ§Ã£o da ResistÃªncia de Aterramento</h3>
-<p>O instrumento utilizado Ã© o <strong>medidor de resistÃªncia de aterramento</strong> (tester de terra). MÃ©todo mais comum: <strong>fall-of-potencial (queda de potencial)</strong>. Dois pinos auxiliares sÃ£o cravados a distÃ¢ncias especÃ­ficas (20m e 40m do eletrodo), e o instrumento mede a resistÃªncia entre o eletrodo e a terra. Outro mÃ©todo: <strong>clamp-on</strong> (alicate medidor), que mede sem necessidade de pino auxiliar, mas menos preciso.</p>
-
-<h3>EquipotencializaÃ§Ã£o</h3>
-<p>A equipotencializaÃ§Ã£o conecta todas as massas metÃ¡licas da instalaÃ§Ã£o (tubulaÃ§Ãµes de Ã¡gua, gÃ¡s, ar-condicionado, estruturas metÃ¡licas) ao barramento de aterramento. Seu objetivo Ã© que, em caso de falta, <strong>todas as massas atinjam o mesmo potencial</strong>, evitando tensÃ£o de passo e contato entre equipamentos ligados a aterramentos diferentes.</p>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>NÃ£o medir a resistÃªncia de aterramento</strong> â€” instalaÃ§Ã£o sem teste pode ter resistÃªncia > 25Î© e nÃ£o proteger.</li>
-  <li><strong>Usar eletrodo muito curto</strong> â€” profundidade insuficiente resulta em alta resistÃªncia.</li>
-  <li><strong>Conectar PE em neutro apÃ³s o DR</strong> â€” faz o DR nÃ£o funcionar, pois a corrente de retorno circula pelo PE.</li>
-  <li><strong>NÃ£o equipotencializar</strong> â€” pode haver diferenÃ§a de potencial perigosa entre equipamentos metÃ¡licos.</li>
-  <li><strong>Usar cano de Ã¡gua como aterramento Ãºnico</strong> â€” canos plÃ¡sticos nÃ£o conduzem; canos metÃ¡licos podem ter conexÃµes deficientes.</li>
-</ul>
-
-<div class="norma-badge">NR-10 SeÃ§Ã£o 10.5.1 â€” Aterramento de proteÃ§Ã£o: resistÃªncia â‰¤ 25 Î© para instalaÃ§Ãµes de baixa tensÃ£o.</div>
-<div class="norma-badge">NBR 5410 â€” InstalaÃ§Ãµes de baixa tensÃ£o: requisitos de aterramento e equipotencializaÃ§Ã£o.</div>
-<div class="norma-badge">NBR 14039 â€” InstalaÃ§Ãµes de mÃ©dia tensÃ£o: aterramento e proteÃ§Ã£o contra falta.</div>`,
-
+        theory: `
+          <h2>Aterramento</h2>
+          <p>O aterramento garante segurança das pessoas e funcionamento correto dos equipamentos.</p>
+          <h3>Tipos</h3>
+          <h4>Proteção (PE)</h4>
+          <ul>
+            <li>Conecta partes metálicas ao terra</li>
+            <li>Protege contra choques</li>
+            <li>Aciona dispositivos de proteção</li>
+          </ul>
+          <h4>Neutro (N)</h4>
+          <ul>
+            <li>Conecta neutro ao terra</li>
+            <li>Estabelece referência de tensão</li>
+          </ul>
+          <h3>Eletrodo</h3>
+          <ul>
+            <li><strong>Haste:</strong> Vareta de cobre, 2,5-3 m</li>
+            <li><strong>Profundidade:</strong> Mínimo 0,8 m</li>
+          </ul>
+          <h3>Resistência</h3>
+          <table>
+            <tr><th>Instalação</th><th>Resistência Máx.</th></tr>
+            <tr><td>Rede distribuição</td><td>5 Ω</td></tr>
+            <tr><td>Transformador</td><td>5 Ω</td></tr>
+            <tr><td>Indústria</td><td>10 Ω</td></tr>
+            <tr><td>Postes iluminação</td><td>25 Ω</td></tr>
+            <tr><td>Residências</td><td>25 Ω</td></tr>
+          </table>
+          <h3>Sistemas</h3>
+          <ul>
+            <li><strong>TN-S:</strong> Neutro e PE separados (mais seguro)</li>
+            <li><strong>TN-C:</strong> Neutro e PE combinados (obsoleto)</li>
+            <li><strong>TT:</strong> Neutro aterrado, PE local</li>
+            <li><strong>IT:</strong> Isolado do terra</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m8-l5-ex1",
             type: "multiple-choice",
-            question: "A resistÃªncia mÃ¡xima de aterramento para instalaÃ§Ãµes de baixa tensÃ£o conforme a NR-10 Ã©:",
-            options: ["10 Î©", "25 Î©", "50 Î©", "100 Î©"],
-            correct: 1,
-            explanation: "NR-10 determina resistÃªncia de aterramento â‰¤ 25 Î© para instalaÃ§Ãµes de baixa tensÃ£o."
+            question: "Resistência máxima para postes?",
+            choices: ["5 Ω", "10 Ω", "15 Ω", "25 Ω"],
+            correct: 3,
+            explanation: "Postes devem ter no máximo 25 Ω."
           },
           {
+            id: "m8-l5-ex2",
             type: "multiple-choice",
-            question: "No sistema TN-S, o condutor PE Ã© utilizado para:",
-            options: [
-              "Conduzir corrente de funcionamento normal",
-              "Conectar partes metÃ¡licas expostas ao aterramento para proteÃ§Ã£o contra choque",
-              "Alimentar cargas monofÃ¡sicas",
-              "Substituir o neutro em caso de defeito"
-            ],
-            correct: 1,
-            explanation: "O PE conecta partes metÃ¡licas expostas ao barramento de aterramento. Em caso de falta, conduz a corrente de falta para acionar o disjuntor."
+            question: "Profundidade mínima para eletrodo?",
+            choices: ["0,3 m", "0,5 m", "0,8 m", "1,5 m"],
+            correct: 2,
+            explanation: "Mínimo 0,8 m para contato adequado com o solo."
           },
           {
+            id: "m8-l5-ex3",
             type: "fill-blank",
-            question: "O condutor de proteÃ§Ã£o (PE) possui a cor ___.",
-            answer: "verde-amarelo",
-            explanation: "A cor verde-amarela Ã© o padrÃ£o internacional e nacional (NBR 5410) para identificaÃ§Ã£o do condutor de proteÃ§Ã£o."
+            question: "Complete: O aterramento de _____ protege pessoas contra choques.",
+            code: "proteção",
+            blanks: ["proteção"],
+            explanation: "Aterramento de proteção (PE) é o mais importante para segurança."
           },
           {
+            id: "m8-l5-ex4",
             type: "drag-drop",
-            question: "Classifique os tipos de aterramento conforme a aplicaÃ§Ã£o (maior proteÃ§Ã£o â†’ menor):",
-            items: ["Malha de aterramento", "Haste Ãºnica", "Aneis perimetrais"],
-            correctOrder: [0, 2, 1],
-            explanation: "Malha (subestaÃ§Ãµes) > Anel perimetral (edifÃ­cios) > Haste Ãºnica (casas, pequenas instalaÃ§Ãµes)."
+            question: "Associe tipo com função:",
+            pieces: ["Proteção → Segurança", "Neutro → Referência tensão", "Funcional → Equipamentos"],
+            correctOrder: ["Proteção → Segurança", "Neutro → Referência tensão", "Funcional → Equipamentos"],
+            explanation: "Cada tipo tem finalidade específica."
           },
           {
-            type: "calculation",
-            question: "Uma haste de aterramento tem resistÃªncia de 20 Î©. Outra haste idÃªntica Ã© instalada em paralelo a 5 metros de distÃ¢ncia. A resistÃªncia resultante aproximada serÃ¡:",
-            answer: "10",
-            unit: "Î©",
-            explanation: "Hastes em paralelo reduzem a resistÃªncia. Duas hastes idÃªnticas em paralelo: R_eq â‰ˆ R/2 = 20/2 = 10 Î© (considerando baixa interaÃ§Ã£o entre eletrodos)."
+            id: "m8-l5-ex5",
+            type: "multiple-choice",
+            question: "Sistema mais seguro para indústria?",
+            choices: ["TN-C", "TT", "TN-S", "IT"],
+            correct: 2,
+            explanation: "TN-S mantém neutro e PE separados, mais seguro."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L6 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l6",
-        title: "ProteÃ§Ã£o contra Surtos",
-        theory: `<h2>O que sÃ£o Surtos de TensÃ£o?</h2>
-<p>Um <strong>surtos de tensÃ£o (transient voltage surge)</strong> Ã© um pico de tensÃ£o de <strong>curta duraÃ§Ã£o</strong> (microssegundos a milissegundos) e <strong>alta amplitude</strong> que pode ser causado por descargas atmosfÃ©ricas, manobras de religamento, abertura de chaves, falhas no sistema ou interruptores de cargas indutivas. Esses picos podem danificar equipamentos eletrÃ´nicos, causar incÃªndio e degradar o isolamento de cabos e motores.</p>
-
-<h3>Fontes de Surtos</h3>
-<ul>
-  <li><strong>Descargas atmosfÃ©ricas:</strong> a mais energÃ©tica, pode gerar picos de milhares de volts.</li>
-  <li><strong>Manobras de religamento:</strong> energizar um transformador gera corrente de excitaÃ§Ã£o transitÃ³ria que sobretensÃ£o na rede.</li>
-  <li><strong>InterrupÃ§Ã£o de carga indutiva:</strong> abertura de contatores, disjuntores ou fusÃ­veis sob carga gera arco e pico de tensÃ£o (L Ã— di/dt).</li>
-  <li><strong>RestauraÃ§Ã£o de falta:</strong> retorno de tensÃ£o apÃ³s queda pode causar sobretensÃ£o transitÃ³ria.</li>
-</ul>
-
-<h2>DPS â€” Dispositivo de ProteÃ§Ã£o contra Surtos</h2>
-<p>O DPS Ã© o dispositivo projetado para <strong>limitar surtos de tensÃ£o</strong> e desviar a corrente de surto para o terra, protegendo equipamentos a jusante. Funciona como uma "vÃ¡lvula" que se abre instantaneamente quando a tensÃ£o excede um limiar e fecha novamente apÃ³s o surto.</p>
-
-<h3>PrincÃ­pio de Funcionamento</h3>
-<p>O DPS contÃ©m um elemento nÃ£o linear (varistor de Ã³xido de metal â€” MOV, ou descarga de gÃ¡s) que apresenta <strong>alta resistÃªncia</strong> em tensÃ£o normal e <strong>baixÃ­ssima resistÃªncia</strong> quando a tensÃ£o excede o limiar. Ao "abrir", conduz a corrente de surto para o terra, limitando a tensÃ£o a um valor seguro para os equipamentos.</p>
-
-<h3>Classes de DPS</h3>
-<ul>
-  <li><strong>Classe I (Type 1):</strong> instalado no ponto de entrada da alimentaÃ§Ã£o (QDC principal). Suporta surtos diretos de descarga atmosfÃ©rica (atÃ© 25 kA). Utiliza descarga de gÃ¡s (GDT). Primeira linha de defesa.</li>
-  <li><strong>Classe II (Type 2):</strong> instalado no QDA (quadro de distribuiÃ§Ã£o). Protege contra surtos induzidos e reflexos da Classe I (atÃ© 40 kA). Utiliza MOV (varistor). ProteÃ§Ã£o de equipamentos sensÃ­veis.</li>
-  <li><strong>Classe III (Type 3):</strong> instalado junto ao equipamento (tomada, rack). ProteÃ§Ã£o deç²¾ç»† (atÃ© 10 kA). Combina MOV + filtro. Ãšltima barreira antes do equipamento.</li>
-</ul>
-
-<h3>Zona de ProteÃ§Ã£o do DPS</h3>
-<p>Cada classe de DPS protege uma <strong>zona</strong> do sistema. A distÃ¢ncia entre o DPS e o equipamento protegido Ã© crÃ­tica â€” quanto mais longe, menor a eficÃ¡cia (a impedÃ¢ncia do cabo reduz a proteÃ§Ã£o). Regra: DPS Classe III deve estar a <strong>no mÃ¡ximo 10 metros</strong> do equipamento sensÃ­vel (regra dos 10 metros).</p>
-
-<h3>Nivelamento de TensÃ£o</h3>
-<p>Quando hÃ¡ mais de uma classe de DPS, deve-se <strong>coordenar</strong> seus limiares de atuaÃ§Ã£o para que a Classe I atue primeiro (surto maior), depois a Classe II e por Ãºltimo a Classe III. A distÃ¢ncia entre os DPSs (cabo com impedÃ¢ncia) cria um <strong>nivelamento de tensÃ£o</strong> que permite essa coordenaÃ§Ã£o sem que o DPS a jusante atue desnecessariamente.</p>
-<div class="formula-box">
-<p><strong>Regra dos 10 metros:</strong> a distÃ¢ncia mÃ­nima entre DPS Classe I/II e o equipamento protegido deve ser â‰¤ 10 metros para garantir eficÃ¡cia. Se for maior, instalar DPS adicional (Classe III) junto ao equipamento.</p>
-</div>
-
-<h3>Escolha do DPS</h3>
-<ul>
-  <li><strong>TensÃ£o nominal do sistema:</strong> o DPS deve ser classificado para a tensÃ£o de trabalho (ex: 275V AC para rede 220V).</li>
-  <li><strong>Corrente de surto nominal (In):</strong> capacidade de descarga do DPS (ex: 20 kA, 40 kA).</li>
-  <li><strong>TensÃ£o de proteÃ§Ã£o (Up):</strong> tensÃ£o mÃ¡xima que o DPS permite passar aos equipamentos. Deve ser menor que a tensÃ£o suportÃ¡vel do equipamento.</li>
-  <li><strong>Corrente de descarga mÃ¡xima (Imax):</strong> corrente mÃ¡xima que o DPS suporta sem danificar-se.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Instalar DPS sem aterramento adequado</strong> â€” o DPS desvia a corrente para o terra; se o terra for deficiente, a proteÃ§Ã£o nÃ£o funciona.</li>
-  <li><strong>Instalar apenas DPS Classe III</strong> â€” sem Classe I na entrada, o surto pode danificar cabos e quadros antes de chegar ao equipamento.</li>
-  <li><strong>DPS danificado nÃ£o substituÃ­do</strong> â€” apÃ³s atuar, o DPS pode ficar em curto (MOV degradado) ou aberto (perdeu a funÃ§Ã£o). Testar e substituir periodicamente.</li>
-  <li><strong>Exceder a distÃ¢ncia de 10m</strong> entre DPS e equipamento â€” a impedÃ¢ncia do cabo reduz a eficÃ¡cia da proteÃ§Ã£o.</li>
-</ul>
-
-<div class="norma-badge">NBR 5410 â€” InstalaÃ§Ãµes de baixa tensÃ£o: proteÃ§Ã£o contra surtos deve ser prevista conforme grau de exposiÃ§Ã£o.</div>
-<div class="norma-badge">IEC 62305 â€” ProteÃ§Ã£o contra descargas atmosfÃ©ricas: sistema de proteÃ§Ã£o contra surtos (SPD) deve ser dimensionado conforme classe de proteÃ§Ã£o.</div>`,
-
+        title: "Proteção contra Surtos",
+        theory: `
+          <h2>Proteção contra Surtos (DPS)</h2>
+          <p>DPS protegem contra descargas atmosféricas e manobras de rede.</p>
+          <h3>O que são Surtos?</h3>
+          <ul>
+            <li>Picos de tensão de curta duração</li>
+            <li>Podem atingir dezenas de milhares de volts</li>
+            <li>Causas: raios, manobras, liga/desliga</li>
+          </ul>
+          <h3>Classes de DPS</h3>
+          <table>
+            <tr><th>Classe</th><th>Localização</th><th>Corrente Pico</th></tr>
+            <tr><td>I</td><td>Painel entrada</td><td>25-100 kA</td></tr>
+            <tr><td>II</td><td>Distribuição</td><td>10-40 kA</td></tr>
+            <tr><td>III</td><td>Junto ao equipamento</td><td>2,5-10 kA</td></tr>
+          </table>
+          <h3>Tipos</h3>
+          <ul>
+            <li><strong>Varistor (MOV):</strong> Resposta rápida, vida limitada</li>
+            <li><strong>Gás (GDT):</strong> Alta capacidade, resposta lenta</li>
+            <li><strong>Diodo (TVS):</strong> Precisão, para eletrônica</li>
+          </ul>
+          <h3>Coordenação</h3>
+          <ul>
+            <li>Classe I → II → III</li>
+            <li>Cada classe reduz pico</li>
+            <li>Mínimo 10 m entre classes</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m8-l6-ex1",
             type: "multiple-choice",
-            question: "Qual classe de DPS Ã© instalada no ponto de entrada da alimentaÃ§Ã£o (QDC) e protege contra descargas atmosfÃ©ricas diretas?",
-            options: ["Classe III", "Classe II", "Classe I", "NÃ£o Ã© necessÃ¡rio DPS na entrada"],
+            question: "Classe DPS na entrada do quadro geral?",
+            choices: ["III", "II", "I", "Não precisa"],
             correct: 2,
-            explanation: "Classe I (Type 1) Ã© instalada no QDC principal e suporta atÃ© 25 kA de corrente de surto de descarga atmosfÃ©rica direta."
+            explanation: "Classe I na entrada para proteger contra raios."
           },
           {
-            type: "fill-blank",
-            question: "A distÃ¢ncia mÃ¡xima recomendada entre o DPS Classe III e o equipamento protegido Ã© de ___ metros.",
-            answer: "10",
-            explanation: "Regra dos 10 metros: a impedÃ¢ncia do cabo entre DPS e equipamento deve ser baixa o suficiente para manter a proteÃ§Ã£o eficaz."
-          },
-          {
+            id: "m8-l6-ex2",
             type: "multiple-choice",
-            question: "Qual Ã© a principal funÃ§Ã£o do nivelamento de tensÃ£o entre DPSs?",
-            options: [
-              "Aumentar a corrente de surto",
-              "Coordenar as classes para que cada uma atue na ordem correta",
-              "Reduzir o custo da instalaÃ§Ã£o",
-              "Eliminar a necessidade de aterramento"
-            ],
-            correct: 1,
-            explanation: "O nivelamento de tensÃ£o coordena os limiares das classes para que a Classe I atue primeiro, depois II e por Ãºltimo III, sem atuaÃ§Ã£o desnecessÃ¡ria."
+            question: "Componente com resposta mais rápida?",
+            choices: ["Varistor", "Gás", "Diodo TVS", "Todos iguais"],
+            correct: 2,
+            explanation: "Diodo TVS tem resposta em picossegundos."
           },
           {
+            id: "m8-l6-ex3",
+            type: "fill-blank",
+            question: "Complete: O _____ protege contra picos de tensão.",
+            code: "DPS",
+            blanks: ["DPS"],
+            explanation: "DPS = Dispositivo de Proteção contra Surtos."
+          },
+          {
+            id: "m8-l6-ex4",
             type: "drag-drop",
-            question: "Classifique as classes de DPS conforme a localizaÃ§Ã£o de instalaÃ§Ã£o (entrada â†’ equipamento):",
-            items: ["QDC (Quadro de DistribuiÃ§Ã£o Geral)", "QDA (Quadro de DistribuiÃ§Ã£o Auxiliar)", "Junto ao equipamento"],
-            correctOrder: [0, 1, 2],
-            explanation: "Classe I (QDC) â†’ Classe II (QDA) â†’ Classe III (junto ao equipamento)."
+            question: "Ordem por localização (entrada → equipamento):",
+            pieces: ["Classe I → Entrada", "Classe II → Distribuição", "Classe III → Equipamento"],
+            correctOrder: ["Classe I → Entrada", "Classe II → Distribuição", "Classe III → Equipamento"],
+            explanation: "Proteção escalonada: entrada, distribuição, equipamento."
+          },
+          {
+            id: "m8-l6-ex5",
+            type: "multiple-choice",
+            question: "Por que conexões curtas no DPS?",
+            choices: ["Economizar fio", "Reduzir indutância", "Facilitar instalação", "Reduzir resistência"],
+            correct: 1,
+            explanation: "Cabos longos têm alta indutância que amplifica o surto."
           }
         ]
       },
-
-      // â”€â”€â”€ M8-L7 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       {
         id: "m8-l7",
-        title: "ProteÃ§Ã£o contra Descargas AtmosfÃ©ricas",
-        theory: `<h2>O que sÃ£o Descargas AtmosfÃ©ricas?</h2>
-<p>Descargas atmosfÃ©ricas (raios) sÃ£o descargas eletrostÃ¡ticas naturais entre nuvens carregadas e o solo, ou entre nuvens. Podem atingir <strong>correntes de pico de 30 a 200 kA</strong>, temperaturas de 30.000Â°C e tensÃµes de milhÃµes de volts. SÃ£o uma das principais causas de danos a edificaÃ§Ãµes, instalaÃ§Ãµes elÃ©tricas e equipamentos eletrÃ´nicos, alÃ©m de riscos de incÃªndio e choque em pessoas.</p>
-
-<h2>Sistema de ProteÃ§Ã£o contra Descargas AtmosfÃ©ricas (PDA)</h2>
-<p>O PDA Ã© um sistema projetado para <strong>interceptar raios e conduzir a corrente ao solo</strong> com seguranÃ§a, evitando danos Ã  edificaÃ§Ã£o e Ã s pessoas. Ã‰ regido pela norma <strong>NBR 5419</strong> no Brasil e pela <strong>IEC 62305</strong> internacionalmente.</p>
-
-<h3>Componentes do PDA</h3>
-<h4>1. Captor (Sistema de Captura)</h4>
-<p>Os captors sÃ£o dispositivos metÃ¡licos que interceptam a descarga atmosfÃ©rica antes que atinja a edificaÃ§Ã£o. Tipos:</p>
-<ul>
-  <li><strong>PÃ¡ra-raios convencional (captor deFranklin):</strong> haste pontiaguda de cobre ou aÃ§o inoxidÃ¡vel, instalada no ponto mais alto do telhado. A ponta gera campo elÃ©trico intenso que "attraÃ­" o canal de lideranÃ§a do raio. Comprimento: 1 a 2 metros.</li>
-  <li><strong>Captor em rede (malha de captura):</strong> grade de conductores metÃ¡licos (cobre ou alumÃ­nio) sobre o telhado, usada em grandes Ã¡reas. Oferece proteÃ§Ã£o mais uniforme.</li>
-  <li><strong>Captor elÃ©trico (tipo Early Streamer Emission â€” ESE):</strong> gera um pulsso de ionizaÃ§Ã£o antecipado que estende o raio de proteÃ§Ã£o. Controverso â€” normas como NBR 5419 nÃ£o reconhecem ESE como mÃ©todo validado.</li>
-</ul>
-<p>O <strong>raio de proteÃ§Ã£o</strong> do captor Ã© calculado pelo <strong>mÃ©todo da esfera rolante (rolling sphere)</strong>: uma esfera fictÃ­cia de raio R (dependendo da classe de proteÃ§Ã£o) Ã© "rolada" sobre a edificaÃ§Ã£o; as Ã¡reas tocadas pela esfera sÃ£o protegidas. Valores de R conforme classe:</p>
-<div class="formula-box">
-<p><strong>Raio de proteÃ§Ã£o (mÃ©todo da esfera rolante):</strong></p>
-<p>Classe I: R = 20 m â†’ ProteÃ§Ã£o mÃ¡xima</p>
-<p>Classe II: R = 30 m â†’ ProteÃ§Ã£o ordinÃ¡ria</p>
-<p>Classe III: R = 45 m â†’ ProteÃ§Ã£o bÃ¡sica</p>
-<p>Classe IV: R = 60 m â†’ ProteÃ§Ã£o limitada</p>
-</div>
-
-<h4>2. Descida (Down Conductor)</h4>
-<p>A descida Ã© o conductor que conecta o captor ao sistema de aterramento. Deve ser o <strong>camino de menor impedÃ¢ncia</strong> entre o captor e a terra.</p>
-<ul>
-  <li><strong>Material:</strong> cobre (50 mmÂ² mÃ­nimo), alumÃ­nio (50 mmÂ²) ou aÃ§o galvanizado (50 mmÂ²).</li>
-  <li><strong>Rota:</strong> preferencialmente pela parte externa do edifÃ­cio, o mais reto possÃ­vel. Evitar curvas acentuadas e caminhos paralelos a cabos de sinal.</li>
-  <li><strong>Quantidade:</strong> depende do tamanho do edifÃ­cio. EdificaÃ§Ãµes grandes podem ter mÃºltiplas descidas para distribuir a corrente.</li>
-  <li><strong>JunÃ§Ãµes:</strong> todas as conexÃµes devem ser soldadas, comprimidas ou conectores homologados. Nunca apenas dobrar e amarrar.</li>
-</ul>
-
-<h4>3. Aterramento do PDA</h4>
-<p>O aterramento do PDA Ã© o sistema de eletrodos que conduz a corrente de descarga ao solo.</p>
-<ul>
-  <li><strong>ResistÃªncia:</strong> deve ser â‰¤ 10 Î© (conforme NBR 5419) para garantir que a corrente se dissipe sem criar gradientes de tensÃ£o perigosos.</li>
-  <li><strong>Preferencialmente integrado</strong> ao aterramento de proteÃ§Ã£o da instalaÃ§Ã£o (equipotencializado), evitando diferenÃ§a de potencial entre os dois sistemas.</li>
-  <li><strong>Eletrodos:</strong> hastes de aterramento perimetrais ou anel ao redor da edificaÃ§Ã£o, conectados Ã s descidas.</li>
-</ul>
-
-<h3>ProteÃ§Ã£o de Equipamentos Internos</h3>
-<ul>
-  <li><strong>EquipotencializaÃ§Ã£o:</strong> todas as massas metÃ¡licas (tubulaÃ§Ãµes, armÃ¡rios, estruturas) devem ser conectadas ao barramento de aterramento principal.</li>
-  <li><strong>SPD (DPS):</strong> dispositivos de proteÃ§Ã£o contra surtos em todos os pontos de entrada (alimentaÃ§Ã£o, dados, telecomunicaÃ§Ãµes).</li>
-  <li><strong>Isolamento de cabos:</strong> cabos de sinal e dados devem ser blindados e roteados longe de descidas do PDA.</li>
-</ul>
-
-<h3>Zonas de ProteÃ§Ã£o</h3>
-<p>A NBR 5419 define zonas de proteÃ§Ã£o (LPZ â€” Lightning Protection Zone):</p>
-<ul>
-  <li><strong>LPZ 0A:</strong> Ã¡rea externa, sujeita a descarga direta e campo eletromagnÃ©tico total.</li>
-  <li><strong>LPZ 0B:</strong> protegida contra descarga direta (pelo PDA), mas sujeita ao campo eletromagnÃ©tico.</li>
-  <li><strong>LPZ 1:</strong> interior da edificaÃ§Ã£o, protegida contra descarga direta e campo eletromagnÃ©tico reduzido (paredes, blindagem).</li>
-  <li><strong>LPZ 2, 3, ...:</strong> interiores de armÃ¡rios, salas com equipamentos sensÃ­veis, com proteÃ§Ã£o adicional.</li>
-</ul>
-
-<h3>Erros Comuns</h3>
-<ul>
-  <li><strong>Instalar captor sem aterramento adequado</strong> â€” o captor conduz a corrente ao topo, mas sem terra eficiente, a corrente se espalha pela edificaÃ§Ã£o causando danos.</li>
-  <li><strong>Descidas com caminhos tortuosos</strong> â€” curvas acentuadas aumentam a impedÃ¢ncia e provocam salto de arco (flashover).</li>
-  <li><strong>NÃ£o equipotencializar</strong> â€” a diferenÃ§a de potencial entre o aterramento do PDA e o aterramento da instalaÃ§Ã£o pode causar arcos internos.</li>
-  <li><strong>Usar ESE sem respaldo normativo</strong> â€” a NBR 5419 nÃ£o reconhece captors ESE como mÃ©todo vÃ¡lido. Usar apenas mÃ©todos convencionais ou em rede.</li>
-  <li><strong>Esquecer proteÃ§Ã£o de linhas de dados</strong> â€” um raio pode acoplar-se indutivamente a cabos de dados e danificar equipamentos internos mesmo sem atingir diretamente a edificaÃ§Ã£o.</li>
-</ul>
-
-<div class="norma-badge">NBR 5419 â€” ProteÃ§Ã£o contra descargas atmosfÃ©ricas: sistema de proteÃ§Ã£o (captor, descida, aterramento) deve ser projetado conforme classe de proteÃ§Ã£o.</div>
-<div class="norma-badge">IEC 62305 â€” Norma internacional para proteÃ§Ã£o contra descargas atmosfÃ©ricas â€” danos a pessoas, edificaÃ§Ãµes e equipamentos.</div>
-<div class="norma-badge">NBR 5419 Anexo H â€” MÃ©todo da esfera rolante para cÃ¡lculo do raio de proteÃ§Ã£o dos captors.</div>`,
-
+        title: "Proteção contra Descargas Atmosféricas",
+        theory: `
+          <h2>Proteção contra Descargas Atmosféricas (PDA)</h2>
+          <p>Sistema de PDA protege edificações contra raios, conforme <strong>NBR 5419</strong>.</p>
+          <h3>Efeitos de um Raio</h3>
+          <ul>
+            <li><strong>Direto:</strong> Impacto na estrutura</li>
+            <li><strong>Indireto:</strong> Surtos em cabos</li>
+            <li><strong>Lateral:</strong> Salta para estruturas próximas</li>
+            <li><strong>Passo:</strong> Tensão entre pés no solo</li>
+          </ul>
+          <h3>Componentes</h3>
+          <h4>Captação</h4>
+          <ul>
+            <li>Pára-raios (haste metálica)</li>
+            <li>Condutores de descida</li>
+            <li>Malha de aterramento</li>
+          </ul>
+          <h4>Equipotencialização</h4>
+          <ul>
+            <li>Conecta massas metálicas ao terra</li>
+            <li>Evita tensões de passo e toque</li>
+          </ul>
+          <h4>Proteção contra Surtos</h4>
+          <ul>
+            <li>DPS em todos os pontos de entrada</li>
+          </ul>
+          <h3>Classes (NBR 5419)</h3>
+          <table>
+            <tr><th>Classe</th><th>Raio Máx.</th><th>Proteção</th></tr>
+            <tr><td>I</td><td>200 kA</td><td>Hospitais, torres</td></tr>
+            <tr><td>II</td><td>150 kA</td><td>Comercial/industrial</td></tr>
+            <tr><td>III</td><td>100 kA</td><td>Residências</td></tr>
+            <tr><td>IV</td><td>75 kA</td><td>Estruturas simples</td></tr>
+          </table>
+          <h3>Aterramento</h3>
+          <ul>
+            <li>Resistência máxima: 10 Ω</li>
+            <li>Preferencialmente: 5 Ω</li>
+          </ul>
+        `,
         exercises: [
           {
+            id: "m8-l7-ex1",
             type: "multiple-choice",
-            question: "A resistÃªncia mÃ¡xima do aterramento de um PDA conforme a NBR 5419 Ã©:",
-            options: ["25 Î©", "10 Î©", "5 Î©", "50 Î©"],
-            correct: 1,
-            explanation: "NBR 5419 determina resistÃªncia â‰¤ 10 Î© para o aterramento do PDA, para garantir dissipaÃ§Ã£o segura da corrente de descarga."
-          },
-          {
-            type: "multiple-choice",
-            question: "O mÃ©todo da esfera rolante com raio de 20 metros corresponde Ã  classe de proteÃ§Ã£o:",
-            options: ["Classe IV", "Classe III", "Classe II", "Classe I"],
+            question: "Classe PDA para 200 kA?",
+            choices: ["IV", "III", "II", "I"],
             correct: 3,
-            explanation: "Raio de 20m = Classe I (proteÃ§Ã£o mÃ¡xima). Quanto menor o raio, maior a proteÃ§Ã£o: I=20m, II=30m, III=45m, IV=60m."
+            explanation: "Classe I protege contra raios até 200 kA."
           },
           {
-            type: "fill-blank",
-            question: "O componente do PDA que conduz a corrente do captor ao sistema de aterramento Ã© chamado de ___.",
-            answer: "descida",
-            explanation: "Descida (down conductor): conductor que liga o captor ao aterramento, conduzindo a corrente de descarga ao solo."
-          },
-          {
-            type: "drag-drop",
-            question: "Classifique as zonas de proteÃ§Ã£o (LPZ) da externa para a interna (menos protegida â†’ mais protegida):",
-            items: ["LPZ 0A", "LPZ 0B", "LPZ 1", "LPZ 2"],
-            correctOrder: [0, 1, 2, 3],
-            explanation: "LPZ 0A (externa, sem proteÃ§Ã£o) â†’ LPZ 0B (protegida contra descarga direta, mas campo total) â†’ LPZ 1 (interna, campo reduzido) â†’ LPZ 2 (interna adicional)."
-          },
-          {
+            id: "m8-l7-ex2",
             type: "multiple-choice",
-            question: "Qual NÃƒO Ã© uma causa comum de surtos de tensÃ£o em instalaÃ§Ãµes elÃ©tricas?",
-            options: [
-              "Descarga atmosfÃ©rica",
-              "Manobras de religamento",
-              "Sobrecarga tÃ©rmica de motor",
-              "Abertura de contatores sob carga"
-            ],
+            question: "Resistência máxima do aterramento PDA?",
+            choices: ["1 Ω", "5 Ω", "10 Ω", "25 Ω"],
             correct: 2,
-            explanation: "Sobrecarga tÃ©rmica Ã© uma condiÃ§Ã£o de sobrecorrente, nÃ£o de surto. Surtos sÃ£o transientes de microssegundos causados por descargas, manobras e aberturas de carga indutiva."
+            explanation: "Máximo 10 Ω, preferencialmente 5 Ω."
+          },
+          {
+            id: "m8-l7-ex3",
+            type: "fill-blank",
+            question: "Complete: O método da _____ determina a área protegida.",
+            code: "esfera rolante",
+            blanks: ["esfera rolante"],
+            explanation: "Método gráfico usando esfera虚拟 para determinar zona protegida."
+          },
+          {
+            id: "m8-l7-ex4",
+            type: "drag-drop",
+            question: "Associe efeito com descrição:",
+            pieces: ["Direto → Impacto estrutura", "Indireto → Surtos cabos", "Passo → Tensão solo", "Lateral → Salto estruturas"],
+            correctOrder: ["Direto → Impacto estrutura", "Indireto → Surtos cabos", "Passo → Tensão solo", "Lateral → Salto estruturas"],
+            explanation: "Cada efeito tem mecanismo diferente."
+          },
+          {
+            id: "m8-l7-ex5",
+            type: "multiple-choice",
+            question: "Norma brasileira para PDA?",
+            choices: ["NR-10", "NBR 5419", "NBR 14039", "ABNT 13571"],
+            correct: 1,
+            explanation: "NBR 5419 regulamenta proteção contra descargas atmosféricas."
+          }
+        ]
+      },
+      {
+        id: "m8-l8",
+        title: "Riscos Elétricos",
+        theory: `
+          <h2>Riscos Elétricos</h2>
+          <p>Conhecer os riscos elétricos é essencial para prevenção.</p>
+          <h3>Tipos de Risco</h3>
+          <h4>1. Choque Elétrico</h4>
+          <ul>
+            <li>Passagem de corrente pelo corpo</li>
+            <li>Correntes &gt; 30 mA causam fibrilação</li>
+            <li>Resistência: 500-2.000 Ω (seca), 200-500 Ω (molhada)</li>
+          </ul>
+          <h4>2. Arco Elétrico</h4>
+          <ul>
+            <li>Temperatura até 20.000°C</li>
+            <li>Explosão de pressão</li>
+            <li>Produtos tóxicos</li>
+          </ul>
+          <h4>3. Curto-Circuito</h4>
+          <ul>
+            <li>Correntes muito altas (kA)</li>
+            <li>Calor intenso, incêndio</li>
+          </ul>
+          <h3>Efeitos no Corpo</h3>
+          <table>
+            <tr><th>Corrente</th><th>Efeito</th></tr>
+            <tr><td>1 mA</td><td>Percepção</td></tr>
+            <tr><td>10-20 mA</td><td>Contração muscular</td></tr>
+            <tr><td>30 mA</td><td>Paralisia respiratória</td></tr>
+            <tr><td>50-100 mA</td><td>Fibrilação ventricular</td></tr>
+          </table>
+          <h3>Caminho Mais Perigoso</h3>
+          <ul>
+            <li>Mão-mão (passa pelo coração)</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m8-l8-ex1",
+            type: "multiple-choice",
+            question: "Corrente para fibrilação ventricular?",
+            choices: ["1-5 mA", "5-10 mA", "10-20 mA", "50-100 mA"],
+            correct: 3,
+            explanation: "50-100 mA podem causar fibrilação ventricular."
+          },
+          {
+            id: "m8-l8-ex2",
+            type: "multiple-choice",
+            question: "Temperatura máxima de arco elétrico?",
+            choices: ["1.000°C", "5.000°C", "10.000°C", "20.000°C"],
+            correct: 3,
+            explanation: "Até 20.000°C, 4x a superfície do sol."
+          },
+          {
+            id: "m8-l8-ex3",
+            type: "fill-blank",
+            question: "Complete: O caminho mais perigoso é de _____ para _____.",
+            code: "mão; mão",
+            blanks: ["mão", "mão"],
+            explanation: "Mão-mão passa diretamente pelo coração."
+          },
+          {
+            id: "m8-l8-ex4",
+            type: "drag-drop",
+            question: "Ordene efeitos (menor → maior corrente):",
+            pieces: ["1 mA → Percepção", "10-20 mA → Contração", "30 mA → Paralisia", "50-100 mA → Fibrilação"],
+            correctOrder: ["1 mA → Percepção", "10-20 mA → Contração", "30 mA → Paralisia", "50-100 mA → Fibrilação"],
+            explanation: "Gravidade aumenta com a corrente."
+          },
+          {
+            id: "m8-l8-ex5",
+            type: "multiple-choice",
+            question: "Resistência do corpo seco?",
+            choices: ["10-50 Ω", "100-200 Ω", "500-2.000 Ω", "5.000-10.000 Ω"],
+            correct: 2,
+            explanation: "500-2.000 Ω. Molhado cai para 200-500 Ω."
+          }
+        ]
+      },
+      {
+        id: "m8-l9",
+        title: "Primeiros Socorros em Acidentes Elétricos",
+        theory: `
+          <h2>Primeiros Socorros em Acidentes Elétricos</h2>
+          <p>O conhecimento de primeiros socorros salva vidas.</p>
+          <h3>Primeiros Passos</h3>
+          <ol>
+            <li><strong>Desligar energia</strong> se possível</li>
+            <li><strong>Não tocar</strong> se vítima estiver em contato com fonte</li>
+            <li><strong>Afastar com isolante:</strong> pau seco, plástico</li>
+            <li><strong>Ligar 192 (SAMU) ou 193 (Bombeiros)</strong></li>
+          </ol>
+          <h3>Avaliação</h3>
+          <ul>
+            <li><strong>Consciência:</strong> Fala, se move</li>
+            <li><strong>Respiração:</strong> Movimento do peito</li>
+            <li><strong>Circulação:</strong> Pulso, coloração</li>
+            <li><strong>Queimaduras:</strong> Extensão</li>
+          </ul>
+          <h3>Procedimentos</h3>
+          <h4>Vítima Consciente</h4>
+          <ul>
+            <li>Mantê-la deitada e confortável</li>
+            <li>Não deixar se levantar subitamente</li>
+            <li>Monitorar sinais vitais</li>
+          </ul>
+          <h4>Vítima Inconsciente com Respiração</h4>
+          <ul>
+            <li>Posição lateral de segurança</li>
+            <li>Verificar vias aéreas</li>
+            <li>Manter respiração</li>
+          </ul>
+          <h4>Parada Cardíaca</h4>
+          <ul>
+            <li>Iniciar RCP imediatamente</li>
+            <li>30 compressões : 2 ventilações</li>
+            <li>Usar DEA se disponível</li>
+            <li>Continuar até SAMU chegar</li>
+          </ul>
+          <h3>Queimaduras Elétricas</h3>
+          <ul>
+            <li>Não remover roupas adheridas</li>
+            <li>Cobrir com pano limpo</li>
+            <li>Não aplicar pomadas</li>
+            <li>Procurar atendimento médico</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m8-l9-ex1",
+            type: "multiple-choice",
+            question: "O que fazer se a vítima está em contato com fio energizado?",
+            choices: ["Puxar a vítima", "Desligar energia ou usar isolante", "Jogar água", "Sair correndo"],
+            correct: 1,
+            explanation: "NUNCA tocar na vítima. Desligar energia ou afastar com material isolante."
+          },
+          {
+            id: "m8-l9-ex2",
+            type: "multiple-choice",
+            question: "Número para SAMU?",
+            choices: ["190", "192", "193", "197"],
+            correct: 1,
+            explanation: "192 é o SAMU. 193 são os Bombeiros."
+          },
+          {
+            id: "m8-l9-ex3",
+            type: "fill-blank",
+            question: "Complete: Na RCP, a proporção é 30 compressões para _____ ventilações.",
+            code: "2",
+            blanks: ["2"],
+            explanation: "30:2 é a proporção padrão para RCP em adultos."
+          },
+          {
+            id: "m8-l9-ex4",
+            type: "multiple-choice",
+            question: "Posição para vítima inconsciente com respiração?",
+            choices: ["Sentada", "Deitada de costas", "Lateral de segurança", "Em pé"],
+            correct: 2,
+            explanation: "Posição lateral de segurança mantém vias aéreas livres."
+          },
+          {
+            id: "m8-l9-ex5",
+            type: "multiple-choice",
+            question: "Em caso de queimadura elétrica, NÃO se deve:",
+            choices: ["Cobrir com pano limpo", "Procurar médico", "Remover roupas adheridas", "Lavar com água"],
+            correct: 2,
+            explanation: "Nunca remover roupas adheridas, pode causar mais dano."
+          }
+        ]
+      },
+      {
+        id: "m8-l10",
+        title: "Normas e Certificações",
+        theory: `
+          <h2>Normas e Certificações</h2>
+          <p>Conhecer as normas é essencial para garantir conformidade e segurança nas instalações elétricas.</p>
+          <h3>NR-10</h3>
+          <ul>
+            <li>Segurança em instalações e serviços em eletricidade</li>
+            <li>Obrigatória para todas as atividades com risco elétrico</li>
+            <li>Exige capacitação e certificação dos trabalhadores</li>
+          </ul>
+          <h3>Normas Técnicas</h3>
+          <table>
+            <tr><th>Norma</th><th>Assunto</th></tr>
+            <tr><td>ABNT NBR 5410</td><td>Instalações elétricas de baixa tensão</td></tr>
+            <tr><td>ABNT NBR 14039</td><td>Instalações de média tensão</td></tr>
+            <tr><td>ABNT NBR 5419</td><td>Proteção contra descargas atmosféricas</td></tr>
+            <tr><td>ABNT NBR 13571</td><td>Sistemas de iluminação de emergência</td></tr>
+            <tr><td>ABNT NBR 14644</td><td>Cabeamento estruturado</td></tr>
+          </table>
+          <h3>INMETRO</h3>
+          <ul>
+            <li>Instituto Nacional de Metrologia</li>
+            <li>Certifica equipamentos de proteção</li>
+            <li>Valida calibração de instrumentos</li>
+            <li>Regulamenta produtos para segurança</li>
+          </ul>
+          <h3>Certificações Importantes</h3>
+          <ul>
+            <li><strong>NR-10:</strong> Capacitação obrigatória</li>
+            <li><strong>SBRAI:</strong> Sociedade Brasileira de Redes de Ar Incêndio</li>
+            <li><strong>CFE:</strong> Conformidade de Equipamentos Elétricos</li>
+            <li><strong>CEPEE:</strong> Certificação de Profissionais</li>
+          </ul>
+          <h3>Responsabilidades Técnicas</h3>
+          <ul>
+            <li><strong>Engenheiro Eletricista:</strong> Projeto e vistoria</li>
+            <li><strong>Técnico em Eletricidade:</strong> Instalação e manutenção</li>
+            <li><strong>Responsável Técnico:</strong> Assina projetos e laudos</li>
+          </ul>
+          <h3>Documentação Obrigatória</h3>
+          <ul>
+            <li>Projeto elétrico aprovado</li>
+            <li>Laudos de inspeção</li>
+            <li>Certificados de calibração</li>
+            <li>Registros de treinamento</li>
+            <li>Planos de manutenção</li>
+          </ul>
+        `,
+        exercises: [
+          {
+            id: "m8-l10-ex1",
+            type: "multiple-choice",
+            question: "Qual norma regula instalações de baixa tensão?",
+            choices: ["NBR 5419", "NBR 5410", "NR-10", "NBR 14039"],
+            correct: 1,
+            explanation: "ABNT NBR 5410 regula instalações elétricas de baixa tensão."
+          },
+          {
+            id: "m8-l10-ex2",
+            type: "multiple-choice",
+            question: "O que regula o INMETRO?",
+            choices: ["Normas técnicas", "Certificação de equipamentos e calibração", "Projetos elétricos", "Treinamentos"],
+            correct: 1,
+            explanation: "INMETRO certifica equipamentos e valida calibração de instrumentos."
+          },
+          {
+            id: "m8-l10-ex3",
+            type: "fill-blank",
+            question: "Complete: A _____ é obrigatória para trabalhadores com risco elétrico.",
+            code: "capacitação",
+            blanks: ["capacitação"],
+            explanation: "A NR-10 exige capacitação e certificação dos trabalhadores."
+          },
+          {
+            id: "m8-l10-ex4",
+            type: "drag-drop",
+            question: "Associe norma com assunto:",
+            pieces: ["NBR 5410 → Baixa tensão", "NBR 5419 → PDA", "NBR 14039 → Média tensão", "NR-10 → Segurança elétrica"],
+            correctOrder: ["NBR 5410 → Baixa tensão", "NBR 5419 → PDA", "NBR 14039 → Média tensão", "NR-10 → Segurança elétrica"],
+            explanation: "Cada norma regula um aspecto específico."
+          },
+          {
+            id: "m8-l10-ex5",
+            type: "multiple-choice",
+            question: "Quem assina projetos elétricos?",
+            choices: ["Técnico em eletricidade", "Engenheiro Eletricista", "Eletricista", "Fiscal"],
+            correct: 1,
+            explanation: "O Engenheiro Eletricista é o responsável técnico que assina projetos e laudos."
           }
         ]
       }

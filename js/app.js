@@ -70,7 +70,7 @@ const App = {
           HomePage.render();
           break;
         case 'lesson':
-          LessonPage.render(args[0], args[1]);
+          LessonPage.render(args[0], args[1], args[2]);
           break;
         case 'leaderboard':
           LeaderboardPage.render();
