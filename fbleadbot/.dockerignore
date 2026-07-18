@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.git
+.env
+.venv/
+venv/
+data/*.db
+data/cookies.json
+logs/
+exports/
+.vscode/
+.idea/
+*.md
+tests/
