@@ -847,13 +847,53 @@ const COURSE_DATA = {
         id: "m3-l1",
         title: "Introdução a Simbologia (NBR 5444)",
         theory: `<h2>Introdução a Simbologia (NBR 5444)</h2>
-<p>A <strong>NBR 5444</strong> é a norma ABNT que padroniza os <strong>símbolos gráficos</strong> utilizados em diagramas elétricos no Brasil. Ela é baseada na norma internacional <strong>IEC 60617</strong>.</p>
-<p><strong>Importância:</strong> A padronização garante que qualquer profissional, em qualquer lugar do Brasil, interprete o mesmo diagrama da mesma forma. É essencial para projetos, manutenções e normas de segurança.</p>
-<p><strong>Categorias principais:</strong> <strong>Símbolos de elementos</strong> (resistor, capacitor, etc.), <strong>conexões</strong> (junções, cruzamentos), <strong>terminais</strong> (pontos de conexão), <strong>linha de referência</strong> (terra, masse).</p>
-<p><strong>Convenções:</strong> Os símbolos são desenhados em formato simplificado, usando linhas retas e arcos. A orientação padrão é horizontal, mas pode ser rotacionada sem alterar o significado.</p>
-<p><strong>Aplicação prática:</strong> Ao ler um diagrama elétrico industrial, você precisa conhecer os símbolos para identificar cada componente e sua função no circuito.</p>
-<p><strong>Erro comum:</strong> Usar símbolos antigos ou não padronizados. Isso causa confusão entre profissionais e pode gerar erros de instalação.</p>
-<p><strong>Dica:</strong> Mantenha uma referência da NBR 5444 sempre disponível. A prática de leitura de diagramas torna a identificação dos símbolos automática.</p>`,
+
+<h3>🚦 Por que precisamos de símbolos?</h3>
+<p>Imagine tentar descrever uma estrada inteira escrevendo "vire à direita depois da árvore grande, siga 200m até a ponte velha...". Seria confuso e demorado, não é? Por isso existem as <strong>sinais de trânsito</strong>: símbolos universais que qualquer motorista entende.</p>
+<p>Com eletricidade é igual! Em vez de desenhar cada resistor, capacitor ou fio detalhadamente, usamos <strong>símbolos gráficos padronizados</strong>. Assim, um eletricista em São Paulo e outro em Manaus leem o <strong>mesmo diagrama da mesma forma</strong>.</p>
+
+<h3>📚 A NBR 5444: A "biblia" dos símbolos elétricos</h3>
+<p>A <strong>NBR 5444</strong> é a norma ABNT que padroniza os símbolos gráficos elétricos no Brasil. Ela é baseada na norma internacional <strong>IEC 60617</strong>.</p>
+<p><strong>Importância:</strong> A padronização garante que qualquer profissional interprete o mesmo diagrama da mesma forma. É essencial para projetos, manutenções e segurança.</p>
+
+<h3>🗂️ Categorias de símbolos</h3>
+<table>
+  <tr><th>Categoria</th><th>Exemplos</th><th>Função</th></tr>
+  <tr><td><strong>Elementos</strong></td><td>Resistor, capacitor, indutor, fusível</td><td>Componentes que processam energia</td></tr>
+  <tr><td><strong>Conexões</strong></td><td>Junções, cruzamentos sem contato</td><td>Como os fios se encontram</td></tr>
+  <tr><td><strong>Terminais</strong></td><td>Pontos de conexão, bornes</td><td>Onde os fios são ligados</td></tr>
+  <tr><td><strong>Referência</strong></td><td>Terra, masse</td><td>Ponto de referência do circuito</td></tr>
+  <tr><td><strong>Fontes</strong></td><td>Pilha, bateria, gerador</td><td>Fornecem energia ao circuito</td></tr>
+  <tr><td><strong>Dispositivos</strong></td><td>Interruptor, relé, contactor</td><td>Comandam e protegem o circuito</td></tr>
+</table>
+
+<h3>📏 Convenções de desenho</h3>
+<p>Os símbolos seguem regras simples:</p>
+<ol>
+  <li><strong>Linhas retas e arcos</strong> — nada de desenhos complexos</li>
+  <li><strong>Orientação padrão:</strong> horizontal (mas pode ser rotacionada sem mudar o significado)</li>
+  <li><strong>Proporção:</strong> mantenha as proporções corretas (ex: resistor é retângulo 2:1)</li>
+  <li><strong>Conexões:</strong> linhas que se encontram = conexão elétrica</li>
+</ol>
+
+<h3>🔍 Passo a passo: Como identificar símbolos</h3>
+<ol>
+  <li><strong>Observe o formato geral:</strong> É um círculo? Retângulo? Linhas?</li>
+  <li><strong>Procure letras internas:</strong> "~" indica CA, "CC" indica contínua, "R" = resistor</li>
+  <li><strong>Conte as linhas:</strong> Duas linhas = capacitor ou bateria (verifique espessuras)</li>
+  <li><strong>Verifique conexões:</strong> Onde o símbolo se conecta às linhas do circuito?</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Usar símbolos antigos:</strong> O zigue-zague para resistor é padrão americano (ANSI). No Brasil, use retângulo (IEC/NBR 5444)</li>
+  <li><strong>Desenhar sem proporção:</strong> Um resistor muito "gordo" ou "fino" confunde a leitura</li>
+  <li><strong>Esquecer a orientação:</strong> Embora possa rotacionar, evite símbolos de cabeça para baixo — dificulta a leitura</li>
+  <li><strong>Misturar padrões:</strong> Não misture símbolos ANSI com IEC no mesmo diagrama</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>NBR 5444</strong> = norma brasileira de símbolos elétricos (baseada na IEC 60617). Os símbolos são como "letras" de uma linguagem universal. Domine-os e você conseguirá ler qualquer diagrama elétrico do Brasil.</p>`,
         exercises: [
           { type: "multiple-choice", question: "Qual norma padroniza os símbolos gráficos elétricos no Brasil?", choices: ["NBR 5410", "NBR 5444", "NBR 14626", "NBR 14931"], correct: 1, explanation: "A NBR 5444 é a norma específica para símbolos gráficos, baseada na IEC 60617." },
           { type: "multiple-choice", question: "A NBR 5444 é baseada em qual norma internacional?", choices: ["ISO 9001", "IEC 60617", "IEC 61850", "ISO 14001"], correct: 1, explanation: "A NBR 5444 é uma adaptação brasileira da norma internacional IEC 60617 para símbolos gráficos." },
@@ -865,15 +905,55 @@ const COURSE_DATA = {
         id: "m3-l2",
         title: "Símbolos de Fontes (pilha, bateria, gerador)",
         theory: `<h2>Símbolos de Fontes (pilha, bateria, gerador)</h2>
-<p>As <strong>fontes de tensão</strong> são representadas por símbolos específicos que indicam seu tipo e característica.</p>
-<p><strong>Pilha:</strong> Representada por duas linhas paralelas de tamanhos diferentes. A linha maior indica o polo positivo (+) e a menor o polo negativo (-). Gera tensão CC constante.</p>
-<p><strong>Bateria:</strong> Representação de múltiplas pilhas em série: alternância de linhas longas e curtas. Cada par representa uma célula. A tensão total é a soma das células.</p>
-<p><strong>Gerador CC:</strong> Círculo com as letras "CC" ou um símbolo de onda retificada dentro. Indica geração de corrente contínua.</p>
-<p><strong>Gerador CA:</strong> Círculo com o símbolo de onda senoidal (~) dentro. Representa alternadores e geradores de corrente alternada.</p>
-<p><strong>Fonte de tensão independente:</strong> Duas linhas paralelas com sinais + e -. Não depende de outra fonte para funcionar.</p>
-<p><strong>Aplicação prática:</strong> Em diagramas de circuitos eletrônicos, identificar corretamente a fonte é o primeiro passo para entender o funcionamento do circuito.</p>
-<p><strong>Erro comum:</strong> Confundir o símbolo de bateria com o de capacitor. Bateria tem linhas de espessuras diferentes; capacitor tem linhas iguais.</p>
-<p><strong>Dica:</strong> Sempre verifique os terminais + e - ao ligar uma fonte CC. A inversão pode danificar componentes sensíveis.</p>`,
+
+<h3>🔋 O que são fontes de tensão?</h3>
+<p>Fontes são os "corações" do circuito elétrico — são elas que <strong>fornecem a energia</strong> para tudo funcionar. Sem uma fonte, não há corrente, não há luz, não há nada!</p>
+
+<h3>⚡ Analogia da Fonte</h3>
+<p>Pense em uma <strong>bomba d'água</strong>:</p>
+<ul>
+  <li>A <strong>bomba</strong> cria pressão para mover a água → a <strong>fonte</strong> cria tensão para mover os elétrons</li>
+  <li>Uma <strong>pilhinha</strong> é como uma bomba pequena (pouca pressão, pouco volume)</li>
+  <li>Uma <strong>bateria de carro</strong> é como uma bomba industrial (muita pressão, muito volume)</li>
+</ul>
+
+<h3>📊 Comparação das Fontes</h3>
+<table>
+  <tr><th>Fonte</th><th>Símbolo</th><th>Descrição</th><th>Exemplo de uso</th></tr>
+  <tr><td><strong>Pilha</strong></td><td>Duas linhas (uma longa, uma curta)</td><td>Gera CC constante, uso único</td><td>Controle remoto, relógio</td></tr>
+  <tr><td><strong>Bateria</strong></td><td>Múltiplas linhas alternadas</td><td>Várias pilhas em série</td><td>Carro, notebook, celular</td></tr>
+  <tr><td><strong>Gerador CC</strong></td><td>Círculo com "CC"</td><td>Gera corrente contínua</td><td>Dinamo, painel solar</td></tr>
+  <tr><td><strong>Gerador CA</strong></td><td>Círculo com "~"</td><td>Gera corrente alternada</td><td>Alternador de carro, usina</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar uma fonte no diagrama</h3>
+<ol>
+  <li><strong>Procurar linhas paralelas:</strong> Duas linhas de tamanhos diferentes = fonte</li>
+  <li><strong>Verificar espessura:</strong> Linha mais longa = polo positivo (+); linha mais curta = polo negativo (-)</li>
+  <li><strong>Contar pares:</strong> Múltiplos pares = bateria (cada par = uma célula)</li>
+  <li><strong>Procurar círculo com letra:</strong> "~" = CA; "CC" = contínua</li>
+</ol>
+
+<h3>🔋 Pilha vs. Bateria vs. Capacitor: Não confunda!</h3>
+<p>Essa é a <strong>dúvida nº1</strong> dos iniciantes:</p>
+<table>
+  <tr><th>Símbolo</th><th>Componente</th><th>Como identificar</th></tr>
+  <tr><td>Duas linhas, uma longa e uma curta</td><td>Pilha</td><td>Linhas de <strong>tamanhos diferentes</strong></td></tr>
+  <tr><td>Múltiplas linhas alternadas</td><td>Bateria</td><td>Vários pares de linhas</td></tr>
+  <tr><td>Duas linhas iguais</td><td>Capacitor</td><td>Linhas de <strong>mesmo tamanho</strong></td></tr>
+</table>
+<p><strong>Regra de ouro:</strong> Se as linhas são diferentes = fonte. Se são iguais = capacitor.</p>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Confundir bateria com capacitor:</strong> Bateria = linhas diferentes; Capacitor = linhas iguais</li>
+  <li><strong>Esquecer a polaridade:</strong> Em fontes CC, inverter + e - pode queimar componentes sensíveis (LEDs, CI's)</li>
+  <li><strong>Não indicar tensão:</strong> Sempre escreva o valor da fonte no diagrama (ex: 9V, 12V)</li>
+  <li><strong>Misturar símbolos:</strong> Não use o símbolo de pilha para bateria e vice-versa</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Fontes</strong> fornecem energia ao circuito. Pilha = uma célula; Bateria = várias células; Gerador = produção de energia. Lembre: linha longa = positivo (+), linha curta = negativo (-).</p>`,
         exercises: [
           { type: "multiple-choice", question: "No símbolo de uma pilha, qual linha representa o polo positivo?", choices: ["A linha menor", "A linha maior", "Ambas iguais", "Depende da cor"], correct: 1, explanation: "A linha maior (mais longa) representa o polo positivo (+); a menor representa o polo negativo (-)." },
           { type: "multiple-choice", question: "O símbolo de um gerador CA é representado por:", choices: ["Um círculo com 'CC'", "Um círculo com '~'", "Duas linhas paralelas", "Um triângulo"], correct: 1, explanation: "O círculo com o símbolo de onda senoidal (~) indica geração de corrente alternada." },
@@ -885,15 +965,49 @@ const COURSE_DATA = {
         id: "m3-l3",
         title: "Símbolos de Passivos (resistor, capacitor, indutor, fusível)",
         theory: `<h2>Símbolos de Passivos (resistor, capacitor, indutor, fusível)</h2>
-<p>Os <strong>componentes passivos</strong> não geram energia, apenas armazenam ou dissipam. Cada um possui símbolo próprio na NBR 5444.</p>
-<p><strong>Resistor:</strong> Retângulo com proporção 2:1 (mais longo que alto). No padrão americano, usa-se zigue-zague. No Brasil, adota-se o retângulo (IEC). Valor em ohms (Ω).</p>
-<p><strong>Capacitor:</strong> Duas linhas paralelas iguais. Capacitor eletrolítico: uma das linhas é curvada (polarizado). Capacitor cerâmico: duas linhas retas (não polarizado).</p>
-<p><strong>Indutor:</strong> Semi-círculos encadeados (bobina). Representa uma sequência de espiras. Valor em henrys (H).</p>
-<p><strong>Fusível:</strong> Retângulo com uma linha que o atravessa, ou símbolo de "S" esticado. Protege contra sobrecorrente abrindo o circuito.</p>
-<p><strong>Varistor:</strong> Símbolo de resistor com uma linha em diagonal e seta. Protege contra surtos de tensão.</p>
-<p><strong>Aplicação prática:</strong> Em diagramas de placas eletrônicas, a identificação correta dos passivos é essencial para soldagem e manutenção.</p>
-<p><strong>Erro comum:</strong> Confundir capacitor com bateria. Capacitor tem linhas iguais; bateria tem linhas de tamanhos diferentes.</p>
-<p><strong>Dica:</strong> Ao desmontar um circuito, anote os valores antes de remover. Componentes idênticos podem ter valores diferentes.</p>`,
+
+<h3>🔌 O que são componentes passivos?</h3>
+<p>Componentes <strong>passivos</strong> são aqueles que <strong>não geram energia</strong> — apenas consomem, armazenam ou controlam. Pense neles como as "ferramentas" que moldam a energia que vem da fonte.</p>
+
+<h3>💡 Analogia: Os passivos como "portões" de água</h3>
+<table>
+  <tr><th>Componente</th><th>Na água</th><th>Na eletricidade</th></tr>
+  <tr><td><strong>Resistor</strong></td><td>Estrangulamento no cano (reduz o fluxo)</td><td>Limita a corrente</td></tr>
+  <tr><td><strong>Capacitor</strong></td><td>Um balde que enche e guarda água</td><td>Armazena carga elétrica</td></tr>
+  <tr><td><strong>Indutor</strong></td><td>Uma massa d'água que resiste a mudanças de fluxo</td><td>Resiste a mudanças de corrente</td></tr>
+  <tr><td><strong>Fusível</strong></td><td>Uma "válvula" que estoura se a pressão for alta demais</td><td>Abre o circuito se a corrente for alta demais</td></tr>
+</table>
+
+<h3>📊 Tabela completa de símbolos passivos</h3>
+<table>
+  <tr><th>Componente</th><th>Símbolo NBR 5444</th><th>Unidade</th><th>Função principal</th></tr>
+  <tr><td><strong>Resistor</strong></td><td>Retângulo 2:1 (IEC)</td><td>Ohm (Ω)</td><td>Limitar corrente</td></tr>
+  <tr><td><strong>Capacitor</strong></td><td>Duas linhas paralelas iguais</td><td>Farad (F)</td><td>Armazenar carga</td></tr>
+  <tr><td><strong>Cap. Eletrolítico</strong></td><td>Uma linha curva + uma reta</td><td>µF, mF</td><td>Armazenar (polarizado)</td></tr>
+  <tr><td><strong>Indutor</strong></td><td>Semi-círculos encadeados</td><td>Henry (H)</td><td>Armazenar campo magnético</td></tr>
+  <tr><td><strong>Fusível</strong></td><td>Retângulo + linha atravessando</td><td>Ampère (A)</td><td>Proteger contra sobrecarga</td></tr>
+  <tr><td><strong>Varistor</strong></td><td>Resistor + linha diagonal + seta</td><td>V</td><td>Proteger contra surtos</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar passivos no diagrama</h3>
+<ol>
+  <li><strong>Retângulo puro?</strong> → É um <strong>resistor</strong> (padrão IEC)</li>
+  <li><strong>Duas linhas paralelas iguais?</strong> → É um <strong>capacitor</strong></li>
+  <li><strong>Duas linhas, uma curva?</strong> → É um <strong>capacitor eletrolítico</strong> (polarizado)</li>
+  <li><strong>Semi-círculos em sequência?</strong> → É um <strong>indutor</strong> (bobina)</li>
+  <li><strong>Retângulo com linha atravessando?</strong> → É um <strong>fusível</strong></li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Confundir capacitor com bateria:</strong> Capacitor = linhas iguais; Bateria = linhas diferentes</li>
+  <li><strong>Usar zigue-zague para resistor:</strong> No Brasil, o padrão é retângulo (IEC). Zigue-zague é americano (ANSI)</li>
+  <li><strong>Esquecer polaridade do eletrolítico:</strong> Capacitor eletrolítico tem polaridade! Inverter pode explodir o componente</li>
+  <li><strong>Não anotar valores:</strong> Ao desmontar, anote valores (resistores parecem idênticos mas têm valores diferentes)</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Passivos</strong> moldam a energia: Resistor limita, Capacitor armazena, Indutor resiste a mudanças, Fusível protege. No Brasil, use sempre o padrão IEC (retângulo para resistor).</p>`,
         exercises: [
           { type: "multiple-choice", question: "Qual o símbolo do resistor no padrão IEC (Brasil)?", choices: ["Zigue-zague", "Retângulo 2:1", "Círculo com R", "Linha com ponto"], correct: 1, explanation: "O padrão IEC (adotado pelo Brasil) usa retângulo. O zigue-zague é o padrão ANSI (americano)." },
           { type: "multiple-choice", question: "O fusível é representado por:", choices: ["Retângulo puro", "Retângulo com linha atravessando", "Duas linhas paralelas", "Semi-círculos"], correct: 1, explanation: "O fusível é um retângulo com uma linha que o atravessa, indicando o elemento fusível." },
@@ -905,16 +1019,55 @@ const COURSE_DATA = {
         id: "m3-l4",
         title: "Símbolos de Dispositivos (interruptor, contactor, relé, disjuntor)",
         theory: `<h2>Símbolos de Dispositivos (interruptor, contactor, relé, disjuntor)</h2>
-<p>Os <strong>dispositivos de comando e proteção</strong> possuem símbolos que indicam sua função e modo de operação.</p>
-<p><strong>Interruptor simples:</strong> Duas linhas com um ponto de contato que abre ou fecha. O símbolo mostra o contato aberto (NC - Normalmente Aberto) ou fechado (NF - Normalmente Fechado).</p>
-<p><strong>Contactor:</strong> Símbolo de interruptor com uma bobina eletromagnética representada por um retângulo ou círculo com a letra "K". Aciona por ação eletromagnética.</p>
-<p><strong>Relé:</strong> Similar ao contactor, mas de menor potência. Representado por uma bobina e contatos. Usado em circuitos de comando.</p>
-<p><strong>Disjuntor:</strong> Símbolo de interruptor com uma marca de corte (traço diagonal ou curva). Indica capacidade de corte automático.</p>
-<p><strong>Contator térmico:</strong> Símbolo de contato com uma marca de "batente" ou curva. Responde ao aquecimento causado pela corrente.</p>
-<p><strong>DR/IDR:</strong> Símbolo de disjuntor com o acrônimo "DR" ou "IDR" indicado. Detecta fuga de corrente.</p>
-<p><strong>Aplicação prática:</strong> Em diagramas de comando de motores, a identificação dos contactores e relés é crucial para entender a sequência de partida.</p>
-<p><strong>Erro comum:</strong> Não diferenciar contato NO de NF. NO (Normalmente Aberto) fecha quando energizado; NF (Normalmente Fechado) abre quando energizado.</p>
-<p><strong>Dica:</strong> Ao ler diagramas, siga o fluxo: fonte → proteção → comando → carga. Isso facilita a compreensão do circuito.</p>`,
+
+<h3>🎛️ O que são dispositivos de comando e proteção?</h3>
+<p>Se os <strong>passivos</strong> (resistor, capacitor) são as "mãos" que moldam a energia, os <strong>dispositivos</strong> são os "cérebros" que decidem <strong>quando</strong> e <strong>como</strong> a energia flui. Eles comandam e protegem o circuito.</p>
+
+<h3>💡 Analogia: O sistema nervioso da instalação</h3>
+<ul>
+  <li><strong>Interruptor</strong> = o dedo que liga e desliga a luz (comando manual)</li>
+  <li><strong>Contactor</strong> = um "músculo" que move peças grandes por comando remoto</li>
+  <li><strong>Relé</strong> = um "reflexo" automático que reage a situações específicas</li>
+  <li><strong>Disjuntor</strong> = um "segurança" que corta tudo se houver perigo</li>
+</ul>
+
+<h3>📊 Tabela: Contato NO vs. NF</h3>
+<table>
+  <tr><th>Tipo</th><th>Sigla</th><th>Estado normal</th><th>Quando energizado</th><th>Exemplo</th></tr>
+  <tr><td><strong>Normalmente Aberto</strong></td><td>NO (NA)</td><td>ABERTO (não passa corrente)</td><td>FECHA (passa corrente)</td><td>Botoeira de liga</td></tr>
+  <tr><td><strong>Normalmente Fechado</strong></td><td>NF (NC)</td><td>FECHADO (passa corrente)</td><td>ABRE (não passa corrente)</td><td>Botoeira de desliga</td></tr>
+</table>
+<p><strong>Regra de ouro:</strong> "Normalmente" = SEM ENERGIA. O contato está assim quando a bobina não está acionada.</p>
+
+<h3>📊 Tabela completa de dispositivos</h3>
+<table>
+  <tr><th>Dispositivo</th><th>Símbolo</th><th>Função</th><th>Acionamento</th></tr>
+  <tr><td><strong>Interruptor</strong></td><td>Contato simples (NO ou NF)</td><td>Ligar/desligar manualmente</td><td>Manual (mão)</td></tr>
+  <tr><td><strong>Contactor</strong></td><td>Contato + bobina (K)</td><td>Ligar cargas pesadas</td><td>Eletromagnético</td></tr>
+  <tr><td><strong>Relé</strong></td><td>Bobina + contatos</td><td>Lógica de comando</td><td>Eletromagnético</td></tr>
+  <tr><td><strong>Disjuntor</strong></td><td>Contato + marca de corte</td><td>Proteger contra sobrecarga/curto</td><td>Automático</td></tr>
+  <tr><td><strong>DR/IDR</strong></td><td>Disjuntor + "DR"</td><td>Detectar fuga de corrente</td><td>Automático</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar dispositivos</h3>
+<ol>
+  <li><strong>Só um contato?</strong> → <strong>Interruptor</strong> simples</li>
+  <li><strong>Contato + retângulo "K"?</strong> → <strong>Contactor</strong> (bobina eletromagnética)</li>
+  <li><strong>Bobina + vários contatos?</strong> → <strong>Relé</strong> (lógica)</li>
+  <li><strong>Contato + traço/curva?</strong> → <strong>Disjuntor</strong> (proteção)</li>
+  <li><strong>Disjuntor + "DR"?</strong> → <strong>DR</strong> (proteção contra fuga)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não diferenciar NO de NF:</strong> NO fecha com energia; NF abre com energia. Errar isso bagunça toda a lógica!</li>
+  <li><strong>Confundir contactor com relé:</strong> Contactor = cargas pesadas (motores); Relé = lógica de comando</li>
+  <li><strong>Esquecer o intertravamento:</strong> Em inversão de marcha, SEMPRE intertrave os contactores!</li>
+  <li><strong>Não seguir a sequência:</strong> Ao ler: fonte → proteção → comando → carga</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Dispositivos</strong> controlam e protegem: Interruptor (manual), Contactor (pesado), Relé (lógica), Disjuntor (proteção). Lembre: NO = Normalmente Aberto (fecha com energia); NF = Normalmente Fechado (abre com energia).</p>`,
         exercises: [
           { type: "multiple-choice", question: "O que significa NO em um contato de relé?", choices: ["Não Operacional", "Normalmente Aberto", "Nível de Ohm", "Núcleo de Oxigênio"], correct: 1, explanation: "NO = Normalmente Aberto: o contato está aberto quando a bobina não está energizada." },
           { type: "multiple-choice", question: "O contactor é acionado por:", choices: ["Ação manual", "Ação eletromagnética", "Temperatura", "Pressão"], correct: 1, explanation: "O contactor possui uma bobina eletromagnética que, quando energizada, atrai o núcleo e fecha os contatos." },
@@ -926,16 +1079,45 @@ const COURSE_DATA = {
         id: "m3-l5",
         title: "Símbolos de Motores e Geradores",
         theory: `<h2>Símbolos de Motores e Geradores</h2>
-<p>Motores e geradores são representados por <strong>círculos</strong> com indicações específicas de tipo e função.</p>
-<p><strong>Motor CC:</strong> Círculo com as letras "CC" ou "CCD" (contínua). Duas escovas laterais indicam a ligação com o coletor.</p>
-<p><strong>Motor CA monofásico:</strong> Círculo com "~" e "1~". Indica funcionamento com corrente alternada de uma fase.</p>
-<p><strong>Motor CA trifásico:</strong> Círculo com "~" e "3~". Representa motores de indução trifásicos, os mais industriais.</p>
-<p><strong>Motor trifásico com estrela/triângulo:</strong> Círculo com "3~" e as indicações "Y" (estrela) ou "Δ" (triângulo) quando aplicável.</p>
-<p><strong>Gerador CA:</strong> Círculo com "~". A diferença do motor é a direção da seta no diagrama (gerador fornece energia; motor consome).</p>
-<p><strong>Gerador CC:</strong> Círculo com "CC" e indicação de escovas.</p>
-<p><strong>Aplicação prática:</strong> Em diagramas industriais, a identificação correta do motor (monofásico, trifásico, com ou sem inversor) determina o dimensionamento dos componentes.</p>
-<p><strong>Erro comum:</strong> Não indicar se o motor é monofásico ou trifásico. Isso é crucial para dimensionar corretamente disjuntores e fios.</p>
-<p><strong>Dica:</strong> Sempre verifique a tensão e tipo de ligação (Y ou Δ) ao dimensionar componentes para motores trifásicos.</p>`,
+
+<h3>⚙️ Motores: Os "músculos" da eletricidade</h3>
+<p>Se a fonte é o "coração" e os dispositivos são os "cérebros", os <strong>motores</strong> são os "músculos" — convertem energia elétrica em <strong>movimento mecânico</strong>.</p>
+
+<h3>💡 Analogia: Motor como "bomba elétrica"</h3>
+<p>Assim como uma <strong>bomba hidráulica</strong> usa pressão de água para mover algo, um <strong>motor elétrico</strong> usa tensão elétrica para girar. A bomba precisa de água; o motor precisa de corrente!</p>
+
+<h3>📊 Tabela de símbolos de motores e geradores</h3>
+<table>
+  <tr><th>Equipamento</th><th>Símbolo</th><th>Descrição</th><th>Uso típico</th></tr>
+  <tr><td><strong>Motor CC</strong></td><td>Círculo + "CC" + escovas</td><td>Corrente contínua</td><td>Elevadores, veículos</td></tr>
+  <tr><td><strong>Motor CA monofásico</strong></td><td>Círculo + "1~"</td><td>Uma fase</td><td>Bombas, ventiladores</td></tr>
+  <tr><td><strong>Motor CA trifásico</strong></td><td>Círculo + "3~"</td><td>Três fases</td><td>Indústrias, compressores</td></tr>
+  <tr><td><strong>Motor Y/Δ</strong></td><td>Círculo + "3~" + Y ou Δ</td><td>Estrela/triângulo</td><td>Partida suave</td></tr>
+  <tr><td><strong>Gerador CA</strong></td><td>Círculo + "~" (seta saindo)</td><td>Gera CA</td><td>Usinas, alternadores</td></tr>
+  <tr><td><strong>Gerador CC</strong></td><td>Círculo + "CC" + escovas</td><td>Gera CC</td><td>Dínamos</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar motores e geradores</h3>
+<ol>
+  <li><strong>Círculo?</strong> → Pode ser motor ou gerador</li>
+  <li><strong>Tem "~"?</strong> → É CA (alternada)</li>
+  <li><strong>"1~" ou "3~"?</strong> → Monofásico ou trifásico</li>
+  <li><strong>"CC"?</strong> → Corrente contínua</li>
+  <li><strong>Escovas laterais?</strong> → Indica coletor (motor CC ou gerador CC)</li>
+  <li><strong>Seta para fora?</strong> → Gerador (fornece energia)</li>
+  <li><strong>Seta para dentro?</strong> → Motor (consome energia)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não indicar monofásico ou trifásico:</strong> Isso é crucial para dimensionar disjuntores e fios corretamente</li>
+  <li><strong>Confundir motor com gerador:</strong> A seta no diagrama indica a direção da energia</li>
+  <li><strong>Esquecer a ligação Y/Δ:</strong> Para motores trifásicos, verifique sempre o tipo de ligação</li>
+  <li><strong>Não verificar tensão:</strong> Sempre confirme a tensão nominal do motor antes de dimensionar</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Motores</strong> convertem elétrica em mecânica; <strong>Geradores</strong> fazem o contrário. Todos usam círculos. "1~" = monofásico; "3~" = trifásico; "CC" = contínua.</p>`,
         exercises: [
           { type: "multiple-choice", question: "O símbolo 3~ em um círculo representa:", choices: ["Motor CC", "Motor trifásico CA", "Gerador CC", "Transformador"], correct: 1, explanation: "3~ indica três fases (trifásico). É o símbolo padrão para motores e geradores de corrente alternada trifásica." },
           { type: "multiple-choice", question: "As escovas laterais no símbolo de motor CC indicam:", choices: ["Polo norte e sul", "Conexão com o coletor", "Ponto de fixação", "Ventilação"], correct: 1, explanation: "As escovas fazem contato com o coletor (comutador) para energizar os enrolamentos do rotor." },
@@ -947,14 +1129,51 @@ const COURSE_DATA = {
         id: "m3-l6",
         title: "Diagrama Unifilar",
         theory: `<h2>Diagrama Unifilar</h2>
-<p>O <strong>diagrama unifilar</strong> representa uma instalação elétrica usando <strong>uma única linha</strong> para cada circuito, independente do número de fios. É a forma mais simplificada de representação.</p>
-<p><strong>Características:</strong> Cada ramal é representado por uma linha. As barras de fase e neutro são mostradas como linhas horizontais. Os componentes são colocados ao longo dessas linhas.</p>
-<p><strong>Elementos representados:</strong> <strong>Barras de alimentação</strong> (fase e neutro), <strong>disjuntores</strong> (símbolos ao longo da linha), <strong>DRs</strong>, <strong>tomadas</strong>, <strong>luminárias</strong>, <strong>motores</strong>.</p>
-<p><strong>Vantagens:</strong> Visão geral da instalação. Fácil de entender para projetos simples. Mostra claramente a sequência de proteção.</p>
-<p><strong>Limitações:</strong> Não mostra cores dos fios. Não diferencia fases em sistemas trifásicos. Para isso, usa-se o diagrama multifilar.</p>
-<p><strong>Aplicação prática:</strong> O diagrama unifilar é o mais comum em projetos residenciais e pequenos comerciais. É exigido pela concessionária para aprovação de ligações.</p>
-<p><strong>Erro comum:</strong> Usar diagrama unifilar para projetos industriais complexos. Nesses casos, é necessário o multifilar para detalhar as conexões.</p>
-<p><strong>Dica:</strong> Ao desenhar um diagrama unifilar, comece pelas barras de alimentação e vá adicionando circuitos da esquerda para a direita.</p>`,
+
+<h3>🗺️ O que é um diagrama unifilar?</h3>
+<p>Pense em um <strong>mapa de metrô</strong>: ele não mostra cada trilho, cada fio elétrico ou cada passageiro. Ele mostra apenas as <strong>estações e rotas</strong> de forma simplificada. O diagrama unifilar faz o mesmo com uma instalação elétrica!</p>
+<p>Ele representa cada <strong>circuito</strong> com <strong>uma única linha</strong>, independente de quantos fios reais existem. É a forma mais simplificada de representação.</p>
+
+<h3>📊 Comparação: Unifilar vs. Multifilar</h3>
+<table>
+  <tr><th>Aspecto</th><th>Unifilar</th><th>Multifilar</th></tr>
+  <tr><td><strong>Linhas</strong></td><td>1 linha por circuito</td><td>1 linha por fio</td></tr>
+  <tr><td><strong>Cores dos fios</strong></td><td>Não mostra</td><td>Mostra</td></tr>
+  <tr><td><strong>Detalhamento</strong></td><td>Simplificado</td><td>Completo</td></tr>
+  <tr><td><strong>Uso principal</strong></td><td>Projetos residenciais</td><td>Instalações industriais</td></tr>
+  <tr><td><strong>Exigência</strong></td><td>Concessionárias</td><td>Manutenção industrial</td></tr>
+</table>
+
+<h3>🏢 Elementos de um diagrama unifilar</h3>
+<table>
+  <tr><th>Elemento</th><th>Representação</th><th>Função</th></tr>
+  <tr><td><strong>Barras de alimentação</strong></td><td>Linhas horizontais no topo</td><td>Entrada de energia (fase/neutro)</td></tr>
+  <tr><td><strong>DR/IDR</strong></td><td>Após as barras</td><td>Proteção contra fuga</td></tr>
+  <tr><td><strong>Disjuntores</strong></td><td>Ao longo das linhas</td><td>Proteção de cada circuito</td></tr>
+  <tr><td><strong>Tomadas</strong></td><td>Linhas com símbolo</td><td>Circuitos de tomadas</td></tr>
+  <tr><td><strong>Luminárias</strong></td><td>Linhas com símbolo</td><td>Circuitos de iluminação</td></tr>
+  <tr><td><strong>Motores</strong></td><td>Círculos no final</td><td>Cargas motorizadas</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Como ler um diagrama unifilar</h3>
+<ol>
+  <li><strong>Identifique as barras de alimentação</strong> (linhas horizontais no topo) — é por onde entra a energia</li>
+  <li><strong>Localize o DR geral</strong> (proteção contra fuga de corrente)</li>
+  <li><strong>Segue cada linha para baixo</strong> — cada linha é um circuito diferente</li>
+  <li><strong>Identifique os disjuntores</strong> (proteção individual de cada circuito)</li>
+  <li><strong>Veja o que cada circuito alimenta</strong> (tomadas, luz, motor)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Usar unifilar para projetos complexos:</strong> Industriais precisam de multifilar para detalhar conexões</li>
+  <li><strong>Não seguir a sequência:</strong> Sempre comece pelas barras e vá para baixo</li>
+  <li><strong>Esquecer os disjuntores:</strong> Todo circuito DEVE ter proteção individual</li>
+  <li><strong>Não indicar potências:</strong> Sempre anote a potência ou corrente de cada circuito</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p>O <strong>diagrama unifilar</strong> é o "mapa" simplificado da instalação: 1 linha por circuito. Ideal para residências e pequenos comerciais. Sempre comece pelas barras de alimentação e siga o fluxo para baixo.</p>`,
         exercises: [
           { type: "multiple-choice", question: "O diagrama unifilar representa:", choices: ["Cada fio individualmente", "Cada circuito com uma única linha", "Apenas o quadro de distribuição", "Apenas os disjuntores"], correct: 1, explanation: "No unifilar, cada circuito é representado por uma única linha, independentemente do número de fios." },
           { type: "multiple-choice", question: "Qual a principal vantagem do diagrama unifilar?", choices: ["Mostra cores dos fios", "Visão geral da instalação", "Detalha cada conexão", "Indica correntes específicas"], correct: 1, explanation: "O unifilar oferece uma visão clara e organizada de toda a instalação, ideal para projetos simples." },
@@ -966,13 +1185,49 @@ const COURSE_DATA = {
         id: "m3-l7",
         title: "Diagrama Multifilar (cores NBR)",
         theory: `<h2>Diagrama Multifilar (cores NBR)</h2>
-<p>O <strong>diagrama multifilar</strong> mostra <strong>cada fio individualmente</strong>, incluindo cores, seções e conexões. É a representação mais detalhada de uma instalação.</p>
-<p><strong>Cores dos condutores (NBR 5410):</strong> <strong>Fase (L):</strong> vermelho, marrom ou preto. <strong>Neutro (N):</strong> azul. <strong>Proteção/Terra (PE):</strong> verde ou verde-amarelo. Não usar azul no lugar do verde-amarelo.</p>
-<p><strong>Vantagens:</strong> Mostra exatamente como cada fio deve ser conectado. Indica a cor correta de cada condutor. Essencial para instalações complexas.</p>
-<p><strong>Convenções:</strong> Linhas tracejadas podem indicar fios ocultos (em eletrodutos). Setas mostram direção de alimentação. Letras indicam função (F, N, PE).</p>
-<p><strong>Aplicação prática:</strong> Em instalações industriais, o multifilar é obrigatório para documentar cada conexão. É a base para manutenções futuras.</p>
-<p><strong>Erro comum:</strong> Não seguir a codificação de cores. Usar fio azul para fase ou verde-amarelo para neutro é violação da norma e gera confusão.</p>
-<p><strong>Dica:</strong> Ao instalar fios, use fita isolante da cor correspondente para marcar cada ponto de conexão. Isso facilita manutenções futuras.</p>`,
+
+<h3>🔌 O que é um diagrama multifilar?</h3>
+<p>Se o unifilar é o "mapa de metrô", o <strong>multifilar</strong> é o "mapa de cada rua e beco" — ele mostra <strong>cada fio individualmente</strong>, incluindo cores, seções e conexões. É a representação mais detalhada de uma instalação.</p>
+
+<h3>🎨 As cores dos fios: A "linguagem" da instalação</h3>
+<p>Assim como as <strong>cores das sinalizações de trânsito</strong> indicam o que fazer (verde = siga, vermelho = pare), as cores dos fios elétricos indicam a <strong>função de cada condutor</strong>.</p>
+
+<h3>📊 Tabela de cores (NBR 5410)</h3>
+<table>
+  <tr><th>Conducor</th><th>Sigla</th><th>Cor(es) permitida(s)</th><th>Função</th><th>Regra</th></tr>
+  <tr><td><strong>Fase</strong></td><td>L (Line)</td><td>Vermelho, marrom ou preto</td><td>Transporta energia</td><td>Uma cor por fase</td></tr>
+  <tr><td><strong>Neutro</strong></td><td>N (Neutral)</td><td>Azul</td><td>Retorno da corrente</td><td>Só azul!</td></tr>
+  <tr><td><strong>Proteção/Terra</strong></td><td>PE</td><td>Verde ou verde-amarelo</td><td>Proção contra choques</td><td>NUNCA usar azul aqui!</td></tr>
+</table>
+<p><strong>Regra de ouro:</strong> Azul = SÓ NEUTRO. Verde/verde-amarelo = SÓ TERRA. Nunca misture!</p>
+
+<h3>📝 Convenções de desenho</h3>
+<ul>
+  <li><strong>Linha tracejada:</strong> Fio oculto (em eletroduto)</li>
+  <li><strong>Linha sólida:</strong> Fio aparente ou visível no diagrama</li>
+  <li><strong>Setas:</strong> Direção de alimentação</li>
+  <li><strong>Letras (F, N, PE):</strong> Indicam a função do condutor</li>
+</ul>
+
+<h3>🔍 Passo a passo: Como ler um diagrama multifilar</h3>
+<ol>
+  <li><strong>Identifique as cores:</strong> Cada cor indica um tipo de condutor</li>
+  <li><strong>Segua cada linha:</strong> Cada linha é um fio individual</li>
+  <li><strong>Observe as letras:</strong> F = fase, N = neutro, PE = terra</li>
+  <li><strong>Verifique conexões:</strong> Onde os fios se encontram = ponto de conexão</li>
+  <li><strong>Confira a seção:</strong> O diagrama pode indicar a espessura do fio (mm²)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Usar azul para fase:</strong> Azul é SÓ para neutro! Usar para fase é violação da norma</li>
+  <li><strong>Usar verde-amarelo para neutro:</strong> Verde/verde-amarelo é SÓ para terra!</li>
+  <li><strong>Não marcar pontos de conexão:</strong> Use fita isolante da cor correspondente para facilitar manutenções</li>
+  <li><strong>Esquecer a seção do fio:</strong> Sempre verifique se o diagrama indica o mm² do condutor</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p>O <strong>diagrama multifilar</strong> mostra cada fio com suas cores e funções. Vermelho/marrom/preto = fase. Azul = neutro. Verde/verde-amarelo = terra. Nunca misture as cores!</p>`,
         exercises: [
           { type: "multiple-choice", question: "Qual cor é padronizada para o condutor de proteção (terra)?", choices: ["Azul", "Vermelho", "Verde ou verde-amarelo", "Preto"], correct: 2, explanation: "O condutor de proteção (PE) deve ser verde ou verde-amarelo, conforme NBR 5410." },
           { type: "multiple-choice", question: "O diagrama multifilar é necessário para:", choices: ["Projetos residenciais simples", "Instalações industriais complexas", "Apenas iluminação", "Apenas circuitos de tomada"], correct: 1, explanation: "Indústrias exigem multifilar para documentar cada conexão, facilitando manutenção e expansão." },
@@ -984,13 +1239,48 @@ const COURSE_DATA = {
         id: "m3-l8",
         title: "Diagrama de Força",
         theory: `<h2>Diagrama de Força</h2>
-<p>O <strong>diagrama de força</strong> (ou diagrama potência) mostra o <strong>circuito de potência</strong> de uma instalação: onde a energia elétrica flui para alimentar cargas como motores, resistências e iluminação.</p>
-<p><strong>Elementos principais:</strong> <strong>Alimentação</strong> (barras de fase e neutro), <strong>proteção</strong> (disjuntores, fusíveis), <strong>comando</strong> (contactores), <strong>cargas</strong> (motores, resistências, iluminação).</p>
-<p><strong>Características:</strong> Usa símbolos maiores e linhas mais grossas que o diagrama de comando. Mostra as correntes e tensões de cada ramo. Identifica a potência de cada carga.</p>
-<p><strong>Função:</strong> Dimensionar fios, disjuntores e componentes de potência. Calcular correntes totais e quedas de tensão. Verificar capacidade da alimentação.</p>
-<p><strong>Aplicação prática:</strong> Em painéis industriais, o diagrama de força mostra todos os motores, suas potências e o caminho da energia desde a entrada até cada equipamento.</p>
-<p><strong>Erro comum:</strong> Não indicar as correntes nominais de cada carga. Sem esses dados, não é possível dimensionar adequadamente os protetores.</p>
-<p><strong>Dica:</strong> Ao projetar, primeiro desenhe o diagrama de força para dimensionar. Depois, o diagrama de comando para a lógica de operação.</p>`,
+
+<h3>⚡ O que é o diagrama de força?</h3>
+<p>Se a instalação elétrica fosse uma <strong>autoestrada</strong>, o diagrama de força seria o <strong>mapa da autoestrada</strong> — mostrando onde a energia flui em alta potência, por quais "rodovias" (fios grossos) passa, e onde chega (as cargas).</p>
+<p>O <strong>diagrama de força</strong> (ou diagrama potência) mostra o <strong>circuito de potência</strong>: onde a energia elétrica flui para alimentar cargas como motores, resistências e iluminação.</p>
+
+<h3>📊 Comparação: Diagrama de Força vs. Comando</h3>
+<table>
+  <tr><th>Aspecto</th><th>Diagrama de Força</th><th>Diagrama de Comando</th></tr>
+  <tr><td><strong>O que mostra</strong></td><td>Circuito de potência</td><td>Lógica de operação</td></tr>
+  <tr><td><strong>Linhas</strong></td><td>Grossas (maior corrente)</td><td>Finas (menor corrente)</td></tr>
+  <tr><td><strong>Elementos</strong></td><td>Disjuntores, contactores, cargas</td><td>Botoeiras, relés, temporizadores</td></tr>
+  <tr><td><strong>Função</strong></td><td>Dimensionar fios e proteções</td><td>Definir sequência de operação</td></tr>
+</table>
+
+<h3>🏢 Elementos do diagrama de força</h3>
+<table>
+  <tr><th>Elemento</th><th>Função</th><th>Símbolo típico</th></tr>
+  <tr><td><strong>Alimentação</strong></td><td>Entrada de energia</td><td>Barras de fase/neutro</td></tr>
+  <tr><td><strong>Proteção</strong></td><td>Contra sobrecarga/curto</td><td>Disjuntores, fusíveis</td></tr>
+  <tr><td><strong>Comando</strong></td><td>Ligar/desligar cargas</td><td>Contatores</td></tr>
+  <tr><td><strong>Cargas</strong></td><td>Equipamentos que consomem</td><td>Motores, resistências, luz</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Como ler um diagrama de força</h3>
+<ol>
+  <li><strong>Identifique a alimentação:</strong> Tensão, número de fases, capacidade</li>
+  <li><strong>Localize as proteções:</strong> Disjuntores e fusíveis</li>
+  <li><strong>Identifique os contactores:</strong> Onde a energia é ligada/desligada</li>
+  <li><strong>Veja as cargas:</strong> Motores, resistências, iluminação</li>
+  <li><strong>Anote correntes e potências:</strong> Essenciais para dimensionamento</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não indicar correntes nominais:</strong> Sem esses dados, não é possível dimensionar proteções</li>
+  <li><strong>Esquecer a potência das cargas:</strong> Sempre anote a potência (W ou CV) de cada equipamento</li>
+  <li><strong>Não verificar capacidade da alimentação:</strong> A alimentação deve suportar a soma de todas as cargas</li>
+  <li><strong>Misturar força e comando:</strong> São diagramas separados, cada um com sua função</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p>O <strong>diagrama de força</strong> mostra o caminho da energia: entrada → proteção → comando → carga. Use linhas grossas e anote correntes/potências para dimensionamento correto.</p>`,
         exercises: [
           { type: "multiple-choice", question: "O diagrama de força mostra:", choices: ["A lógica de comando", "O circuito de potência", "Apenas o quadro de distribuição", "Apenas a iluminação"], correct: 1, explanation: "O diagrama de força representa o circuito de potência, onde flui a energia para alimentar as cargas." },
           { type: "multiple-choice", question: "Os elementos de proteção no diagrama de força são:", choices: ["Relés e temporizadores", "Disjuntores e fusíveis", "Contatores e botoeiras", "Cabos e eletrodutos"], correct: 1, explanation: "Disjuntores e fusíveis protegem o circuito de potência contra sobrecorrente e curto-circuito." },
@@ -1002,13 +1292,50 @@ const COURSE_DATA = {
         id: "m3-l9",
         title: "Diagrama de Comando",
         theory: `<h2>Diagrama de Comando</h2>
-<p>O <strong>diagrama de comando</strong> (ou diagrama de controle) mostra a <strong>lógica de operação</strong> de uma instalação: como os dispositivos são acionados, intertravados e temporizados.</p>
-<p><strong>Elementos principais:</strong> <strong>Botoeiras</strong> (liga/desliga), <strong>contatores</strong> (acionamento de cargas), <strong>relés</strong> (lógica), <strong>temporizadores</strong> (atraso), <strong>intertravamentos</strong> (proteção cruzada).</p>
-<p><strong>Representação:</strong> Usa-se linhas verticais para representar a alimentação (fase e neutro). Os dispositivos são colocados entre essas linhas, indicando a sequência de operação.</p>
-<p><strong>Lógica série/paralelo:</strong> Contatos em série = lógica E (ambos devem estar fechados). Contatos em paralelo = lógica OU (qualquer um fecha o circuito).</p>
-<p><strong>Aplicação prática:</strong> Em partida de motores, o diagrama de comando mostra o acionamento do contactor, o intertravamento e a proteção térmica.</p>
-<p><strong>Erro comum:</strong> Não incluir intertravamentos em circuitos com inversão de marcha. Isso pode causar curto-circuito entre fases.</p>
-<p><strong>Dica:</strong> Leia o diagrama de cima para baixo e da esquerda para a direita. Siga o fluxo da corrente de comando.</p>`,
+
+<h3>🧠 O que é o diagrama de comando?</h3>
+<p>Se o diagrama de força é a "autoestrada" por onde a energia viaja, o <strong>diagrama de comando</strong> é o "semáforo inteligente" que decide <strong>quando</strong> e <strong>como</strong> a energia chega a cada destino. Ele mostra a <strong>lógica de operação</strong> da instalação.</p>
+
+<h3>💡 Analogia: O diagrama de comando como uma "receita de bolo"</h3>
+<p>Uma receita de bolo diz: "SE tiver farinha E ovos, ENTÃO misture. SE tiver chocolate OU baunilha, ADICIONE ao misto." O diagrama de comando funciona igual — ele define <strong>condições</strong> (contatos) e <strong>ações</strong> (bobinas).</p>
+
+<h3>📊 Tabela: Lógica série vs. paralelo</h3>
+<table>
+  <tr><th>Ligação</th><th>Lógica</th><th>Regra</th><th>Exemplo</th></tr>
+  <tr><td><strong>Série</strong></td><td>E (AND)</td><td>AMBOS devem estar fechados</td><td>Ligar só se botão A E botão B pressionados</td></tr>
+  <tr><td><strong>Paralelo</strong></td><td>OU (OR)</td><td>QUALQUER UM fecha o circuito</td><td>Ligar se botão A OU botão B pressionado</td></tr>
+</table>
+
+<h3>🏢 Elementos do diagrama de comando</h3>
+<table>
+  <tr><th>Elemento</th><th>Função</th><th>Símbolo</th></tr>
+  <tr><td><strong>Botoeiras</strong></td><td>Comando manual (liga/desliga)</td><td>Contato NO ou NF</td></tr>
+  <tr><td><strong>Contatores</strong></td><td>Acionar cargas pesadas</td><td>Bobina "K" + contatos</td></tr>
+  <tr><td><strong>Relés</strong></td><td>Lógica e proteção</td><td>Bobina + contatos</td></tr>
+  <tr><td><strong>Temporizadores</strong></td><td>Atraso na operação</td><td>Bobina + símbolo de tempo</td></tr>
+  <tr><td><strong>Intertravamentos</strong></td><td>Proteção cruzada</td><td>Contato NF do outro contator</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Como ler um diagrama de comando</h3>
+<ol>
+  <li><strong>Identifique as barras verticais:</strong> São a fase e neutro de alimentação do comando</li>
+  <li><strong>Leia de cima para baixo:</strong> Siga o fluxo da corrente de comando</li>
+  <li><strong>Identifique as botoeiras:</strong> São os comandos manuais (liga/desliga)</li>
+  <li><strong>Veja os contatos em série/paralelo:</strong> Lógica E ou OU</li>
+  <li><strong>Identifique as bobinas:</strong> São os contactores/relés que serão acionados</li>
+  <li><strong>Verifique intertravamentos:</strong> Contatos NF que impedem ações simultâneas</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não incluir intertravamento:</strong> Em inversão de marcha, SEMPRE intertrave! Sem isso, pode haver curto entre fases</li>
+  <li><strong>Confundir NO com NF:</strong> NO fecha com energia; NF abre com energia</li>
+  <li><strong>Não considerar temporizadores:</strong> Motores grandes precisam de atraso para partida</li>
+  <li><strong>Ler na ordem errada:</strong> Sempre leia de cima para baixo, da esquerda para a direita</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p>O <strong>diagrama de comando</strong> mostra a lógica: Série = lógica E; Paralelo = lógica OU. Sempre inclua intertravamentos em inversores. Leia de cima para baixo.</p>`,
         exercises: [
           { type: "multiple-choice", question: "Contatos em série no diagrama de comando representam:", choices: ["Lógica OU", "Lógica E", "Lógica NÃO", "Lógica XOR"], correct: 1, explanation: "Em série, AMBOS os contatos devem estar fechados para haver passagem de corrente = lógica E (AND)." },
           { type: "multiple-choice", question: "O intertravamento em circuito de reversão serve para:", choices: ["Aumentar potência", "Evitar curto entre fases", "Reduzir consumo", "Melhorar eficiência"], correct: 1, explanation: "O intertravamento impede que contactores de ida e volta sejam acionados simultaneamente, evitando curto." },
@@ -1020,18 +1347,66 @@ const COURSE_DATA = {
         id: "m3-l10",
         title: "Leitura de Diagrama Completo",
         theory: `<h2>Leitura de Diagrama Completo</h2>
-<p>A <strong>leitura de diagrama completo</strong> envolve a integração do diagrama de força e de comando para entender toda a instalação.</p>
-<p><strong>Passo a passo:</strong> <strong>1)</strong> Identifique a alimentação (tensão, número de fases). <strong>2)</strong> Localize os dispositivos de proteção. <strong>3)</strong> Identifique as cargas e suas potências. <strong>4)</strong> Analise a lógica de comando. <strong>5)</strong> Verifique intertravamentos e proteções.</p>
-<p><strong>Informações essenciais:</strong> Tensão nominal, corrente de cada ramo, potência das cargas, seção dos fios, tipo de proteção, sequência de operação.</p>
-<p><strong>Erros a identificar:</strong> Fios subdimensionados, proteções inadequadas, ausência de terra, intertravamentos faltantes, conexões incorretas.</p>
-<p><strong>Aplicação prática:</strong> Antes de qualquer intervenção em um quadro ou painel, leia completamente o diagrama. Identifique cada componente e sua função.</p>
-<p><strong>Erro comum:</strong> Começar a trabalhar sem entender o diagrama. Isso pode causar danos a equipamentos e riscos ao profissional.</p>
-<p><strong>Dica:</strong> Imprima o diagrama e marque com caneta cada circuito que verificar. Isso evita esquecer etapas na verificação.</p>`,
+
+<h3>📋 O que é a leitura de diagrama completo?</h3>
+<p>É a <strong>integração</strong> do diagrama de força e de comando para entender <strong>toda a instalação</strong> como um todo. É como ler um livro inteiro — não basta ler um capítulo, precisa entender a história completa!</p>
+
+<h3>🔍 Passo a passo: O roteiro completo</h3>
+<table>
+  <tr><th>Passo</th><th>O que fazer</th><th>O que procurar</th></tr>
+  <tr><td><strong>1. Alimentação</strong></td><td>Identificar a entrada de energia</td><td>Tensão, número de fases, capacidade</td></tr>
+  <tr><td><strong>2. Proteções</strong></td><td>Localizar dispositivos de segurança</td><td>Disjuntores, DRs, fusíveis</td></tr>
+  <tr><td><strong>3. Cargas</strong></td><td>Identificar o que consome energia</td><td>Motores, tomadas, luz, potências</td></tr>
+  <tr><td><strong>4. Comando</strong></td><td>Analisar a lógica de operação</td><td>Botoeiras, contactores, relés</td></tr>
+  <tr><td><strong>5. Intertravamentos</strong></td><td>Verificar proteções cruzadas</td><td>Contatos NF que impedem ações simultâneas</td></tr>
+</table>
+
+<h3>📝 Checklist: Informações essenciais</h3>
+<ul>
+  <li>✅ <strong>Tensão nominal:</strong> 127V, 220V, 380V?</li>
+  <li>✅ <strong>Corrente de cada ramo:</strong> Quantos ampères?</li>
+  <li>✅ <strong>Potência das cargas:</strong> Watts ou cavalos-vapor?</li>
+  <li>✅ <strong>Seção dos fios:</strong> mm² de cada condutor</li>
+  <li>✅ <strong>Tipo de proteção:</strong> Disjuntor, fusível, DR?</li>
+  <li>✅ <strong>Sequência de operação:</strong> O que acontece quando liga?</li>
+</ul>
+
+<h3>⚠️ Erros que o diagrama pode esconder</h3>
+<table>
+  <tr><th>Erro</th><th>Consequência</th><th>Como identificar</th></tr>
+  <tr><td>Fios subdimensionados</td><td>Sobrecalentamento, incêndio</td><td>Seção do fio menor que a necessária</td></tr>
+  <tr><td>Proteções inadequadas</td><td>Não protege contra curto</td><td>Disjuntor com corrente muito alta</td></tr>
+  <tr><td>Ausência de terra</td><td>Risco de choque elétrico</td><td>Sem condutor PE</td></tr>
+  <tr><td>Intertravamentos faltantes</td><td>Curto entre fases</td><td>Inversor sem contato NF</td></tr>
+  <tr><td>Conexões incorretas</td><td>Mal funcionamento</td><td>Fios ligados em pontos errados</td></tr>
+</table>
+
+<h3>🔍 Passo a passo detalhado: Como analisar</h3>
+<ol>
+  <li><strong>Imprima o diagrama</strong> — é mais fácil marcar com caneta</li>
+  <li><strong>Comece pela alimentação:</strong> Identifique tensão e fases</li>
+  <li><strong>Siga o fluxo de força:</strong> Entrada → proteção → cargas</li>
+  <li><strong>Analise o comando:</strong> Leia a lógica de cima para baixo</li>
+  <li><strong>Cruze force e comando:</strong> Veja como o comando aciona a força</li>
+  <li><strong>Verifique cada circuito:</strong> Marque os que já verificou</li>
+  <li><strong>Anote dúvidas:</strong> Não deixe nada passar</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Começar a trabalhar sem ler:</strong> Isso pode causar danos a equipamentos e riscos ao profissional</li>
+  <li><strong>Ler só a força ou só o comando:</strong> Precisa ler AMBOS para entender tudo</li>
+  <li><strong>Não marcar o que já verificou:</strong> Use caneta para riscar os circuitos já analisados</li>
+  <li><strong>Esquecer o terra:</strong> Sempre verifique se há condutor PE em todo o diagrama</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Leitura completa</strong> = Força + Comando. Siga o roteiro: Alimentação → Proteções → Cargas → Comando → Intertravamentos. Imprima, marque, não pule etapas!</p>`,
         exercises: [
           { type: "multiple-choice", question: "Ao ler um diagrama completo, qual é o primeiro passo?", choices: ["Verificar os disjuntores", "Identificar a alimentação", "Ligar o equipamento", "Medir a corrente"], correct: 1, explanation: "O primeiro passo é sempre identificar a alimentação: tensão, número de fases e capacidade." },
           { type: "multiple-choice", question: "Qual informação NÃO é encontrada em um diagrama completo?", choices: ["Tensão nominal", "Cor do fio do eletricista", "Potência das cargas", "Tipo de proteção"], correct: 1, explanation: "O diagrama não informa dados pessoais do profissional. Ele mostra dados técnicos da instalação." },
           { type: "fill-blank", code: "Um diagrama completo integra o diagrama de ________ e o diagrama de ________. Antes de qualquer intervenção, leia ________ o diagrama.", blanks: [{ answer: "força", placeholder: "circuitos de potência" }, { answer: "comando", placeholder: "lógica de operação" }, { answer: "completamente", placeholder: "ação recomendada" }], explanation: "Força + comando = instalação completa. Ler tudo antes de trabalhar é regra de segurança." },
-          { type: "drag-drop", question: "Organize os passos para ler um diagrama completo:", pieces: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], correctOrder: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], explanation: "Seguir essa ordem系统ática garante que nenhum detalhe seja esquecido na análise do diagrama." }
+          { type: "drag-drop", question: "Organize os passos para ler um diagrama completo:", pieces: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], correctOrder: ["1. Identificar alimentação", "2. Localizar proteções", "3. Identificar cargas", "4. Analisar comando", "5. Verificar intertravamentos"], explanation: "Seguir essa ordem sistemática garante que nenhum detalhe seja esquecido na análise do diagrama." }
         ]
       }
     ]
@@ -1246,30 +1621,55 @@ const COURSE_DATA = {
       {
         id: "m5-l1",
         title: "Botoeiras e Sinais",
-        theory: `Botoeiras são dispositivos de comando manual utilizados para acionar e desligar equipamentos. Elas são classificadas conforme a sua função:
+        theory: `<h2>Botoeiras e Sinais</h2>
 
-**Botão NA (Normalmente Aberto) – Verde:**
-- Usado para LIGAR o circuito
-- Contato fechado apenas quando pressionado
-- Cor padrão: VERDE
+<h3>🎮 O que são botoeiras?</h3>
+<p>Botoeiras são os "controles remoto" do mundo elétrico — são elas que o <strong>operador humano usa para dar comandos</strong> aos equipamentos. Assim como você aperta botões no celular para fazer coisas, o eletricista aperta botoeiras para ligar/desligar motores!</p>
 
-**Botão NF (Normalmente Fechado) – Vermelho:**
-- Usado para DESLIGAR o circuito
-- Contato aberto apenas quando pressionado
-- Cor padrão: VERMELHO
+<h3>💡 Analogia: O semáforo inteligente</h3>
+<p>Pense em um <strong>semáforo de pedestre</strong>:</p>
+<ul>
+  <li><strong>Botão verde (NA):</strong> Assim como o botão de "liberar travessia", quando pressionado, permite que algo aconteça (fechar o circuito)</li>
+  <li><strong>Botão vermelho (NF):</strong> Assim como o sinal vermelho para carros, quando pressionado, para tudo (abrir o circuito)</li>
+</ul>
 
-**Tipos de Botoeiras:**
-- Simples: apenas um contato (NA ou NF)
-- Dupla: dois contatos (1 NA + 1 NF)
-- Bloqueio (Selo): mantém ligado após soltar o botão
-- Emergência: botão vermelho com trava (NC)
+<h3>📊 Tabela: Tipos de Botoeiras</h3>
+<table>
+  <tr><th>Tipo</th><th>Contato</th><th>Cor</th><th>Função</th><th>Exemplo de uso</th></tr>
+  <tr><td><strong>NA (Normalmente Aberto)</strong></td><td>Aberto → fecha ao pressionar</td><td>Verde</td><td>Ligar / Marcha</td><td>Botão de partida do motor</td></tr>
+  <tr><td><strong>NF (Normalmente Fechado)</strong></td><td>Fechado → abre ao pressionar</td><td>Vermelho</td><td>Desligar / Parada</td><td>Botão de parada do motor</td></tr>
+  <tr><td><strong>Duplo (NA + NF)</strong></td><td>Um de cada tipo</td><td>Varia</td><td>Comando múltiplo</td><td>Liga/desliga no mesmo botão</td></tr>
+  <tr><td><strong>Emergência (NC)</strong></td><td>Fechado com trava</td><td>Vermelho</td><td>Parada de emergência</td><td>Máquinas perigosas</td></tr>
+</table>
 
-**Cores Padrão (NBR 8196):**
-- Verde: ligar / marcha
-- Vermelho: desligar / parada
-- Amarelo: alerta / advertência
-- Azul: reset / reinício
-- Branco: função geral`,
+<h3>🎨 Cores Padrão (NBR 8196)</h3>
+<table>
+  <tr><th>Cor</th><th>Função</th><th>Lembrete fácil</th></tr>
+  <tr><td><strong>Verde</strong></td><td>Ligar / Marcha</td><td>"Verde = pode ir!" (como semáforo)</td></tr>
+  <tr><td><strong>Vermelho</strong></td><td>Desligar / Parada</td><td>"Vermelho = pare!" (como semáforo)</td></tr>
+  <tr><td><strong>Amarelo</strong></td><td>Alerta / Advertência</td><td>"Amarelo = cuidado!" (como semáforo)</td></tr>
+  <tr><td><strong>Azul</strong></td><td>Reset / Reinício</td><td>"Azul = recomeçar"</td></tr>
+  <tr><td><strong>Branco</strong></td><td>Função geral</td><td>"Branco = qualquer coisa"</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar uma botoeira</h3>
+<ol>
+  <li><strong>Observe a cor:</strong> Verde = liga, Vermelho = desliga</li>
+  <li><strong>Verifique o contato:</strong> NA (aberto) ou NF (fechado)</li>
+  <li><strong>Teste manualmente:</strong> Pressione e veja se fecha ou abre o contato</li>
+  <li><strong>Confira a aplicação:</strong> É para comando manual de que equipamento?</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Inverter NA e NF:</strong> NA = liga (verde); NF = desliga (vermelho). Errar isso faz o motor funcionar ao contrário!</li>
+  <li><strong>Usar cor errada:</strong> Nunca use verde para desligar ou vermelho para ligar — isso confunde o operador</li>
+  <li><strong>Esquecer o botão de emergência:</strong> Toda máquina perigosa DEVE ter botão vermelho com trava</li>
+  <li><strong>Não verificar o tipo:</strong> Sempre confirme se é NA ou NF antes de instalar</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Botoeiras</strong> são os comandos manuais: <strong>NA (verde) = ligar</strong>, <strong>NF (vermelho) = desligar</strong>. Lembre das cores do semáforo: verde = pode ir, vermelho = pare!</p>`,
         exercises: [
           {
             id: "m5-l1-e1",
@@ -1316,29 +1716,68 @@ const COURSE_DATA = {
       {
         id: "m5-l2",
         title: "Contatores",
-        theory: `Contatores são dispositivos eletromecânicos usados para ligar e desligar cargas de potência (motores, fornos, iluminação).
+        theory: `<h2>Contatores</h2>
 
-**Construção Básica:**
-- Núcleo de ferro (estator e rotor)
-- Bobina eletromagnética
-- Contatos de potência (principal)
-- Contatos auxiliares (sinalização/lógica)
-- Mola de retorno
+<h3>⚡ O que é um contator?</h3>
+<p>Um <strong>contator</strong> é como um <strong>interruptor gigante controlado por ímã</strong>. Assim como você liga uma lâmpada pressionando um interruptor, o contator liga/desliga motores e cargas pesadas — mas de forma <strong>automática e segura</strong>!</p>
 
-**Princípio de Funcionamento:**
-- Bobina energizada → gera campo magnético → atrai o rotor → fecha os contatos de potência
-- Bobina desenergizada → mola de retorno abre os contatos
+<h3>💡 Analogia: O contator como "porteiro eletrônico"</h3>
+<p>Pense em um <strong>porteiro de prédio</strong>:</p>
+<ul>
+  <li><strong>Bobina (chamada do porteiro):</strong> Quando alguém aperta a campainha (energiza a bobina), o porteiro abre a porta</li>
+  <li><strong>Contatos de potência (porta principal):</strong> A porta grande por onde passam as pessoas (cargas pesadas)</li>
+  <li><strong>Contatos auxiliares (interfone):</strong> O sistema de comunicação que avisa que a porta está aberta</li>
+  <li><strong>Mola de retorno (fecha a porta):</strong> Quando a campainha para de tocar, a porta fecha sozinha</li>
+</ul>
 
-**Contatos de Selo (Selo):**
-- Contato auxiliar ligado em paralelo com o botão NA de partida
-- Mantém a bobina energizada após soltar o botão
-- Permite que o motor continue ligado após o comando inicial
+<h3>📊 Construção e Funcionamento</h3>
+<table>
+  <tr><th>Componente</th><th>Função</th><th>Analogia</th></tr>
+  <tr><td><strong>Núcleo de ferro</strong></td><td>Concentra o campo magnético</td><td>O "esqueleto" do contator</td></tr>
+  <tr><td><strong>Bobina eletromagnética</strong></td><td>Gera campo magnético ao energizar</td><td>O "cérebro" que dá o comando</td></tr>
+  <tr><td><strong>Contatos de potência</strong></td><td>Ligam/desligam a carga (motor)</td><td>A "porta principal" por onde passa a energia</td></tr>
+  <tr><td><strong>Contatos auxiliares</strong></td><td>Usados em circuitos de comando/lógica</td><td>O "interfone" que avisa o status</td></tr>
+  <tr><td><strong>Mola de retorno</strong></td><td>Abre os contatos ao desenergizar</td><td>A "mola da porta" que fecha automaticamente</td></tr>
+</table>
 
-**Classificação por Corrente:**
-- Contator IEC (contato auxiliar): até 16A
-- Contator de potência: 9A a 2000A (depende do modelo)
+<h3>🔄 Sequência de Funcionamento</h3>
+<ol>
+  <li><strong>Bobina energizada:</strong> Campainha toca (botão pressionado)</li>
+  <li><strong>Campo magnético:</strong> Porteiro "vê" a campainha</li>
+  <li><strong>Núcleo atrai:</strong> Porteiro abre a porta</li>
+  <li><strong>Contatos fecham:</strong> Porta aberta (motor ligado)</li>
+  <li><strong>Bobina desenergizada:</strong> Campainha para</li>
+  <li><strong>Mola de retorno:</strong> Porta fecha (motor desliga)</li>
+</ol>
 
-**Marcas conhecidas:** Siemens, Schneider, ABB, WEG, LS`,
+<h3>🔗 Contato de Selo (o "segredo" para motor continuar ligado)</h3>
+<p>O <strong>contato de selo</strong> é um contato auxiliar do contator ligado em <strong>paralelo</strong> com o botão NA de partida. Ele "segura" o motor ligado mesmo após você soltar o botão verde!</p>
+<p><strong>Como funciona:</strong></p>
+<ol>
+  <li>Você pressiona o botão verde (NA) → corrente flui pela bobina</li>
+  <li>Contator fecha → contato de selo TAMBÉM fecha</li>
+  <li>Ao soltar o botão, a corrente continua fluindo pelo <strong>contato de selo</strong></li>
+  <li>Motor continua ligado!</li>
+</ol>
+
+<h3>🔍 Passo a passo: Identificar um contator</h3>
+<ol>
+  <li><strong>Observe o tamanho:</strong> Maior que um relé (para cargas pesadas)</li>
+  <li><strong>Procure a bobina:</strong> Geralmente标识ada com "A1" e "A2"</li>
+  <li><strong>Identifique os contatos:</strong> Potência (1/L1, 3/L2, 5/L3) e auxiliares (13NO, 21NC)</li>
+  <li><strong>Verifique a corrente:</strong> Indicada na placa (ex: 9A, 25A, 100A)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não usar contato de selo:</strong> Sem ele, o motor para quando você soltar o botão!</li>
+  <li><strong>Dimensionar errado:</strong> O contator DEVE suportar a corrente do motor (consulte a placa)</li>
+  <li><strong>Esquecer a proteção:</strong> Contator NÃO protege contra sobrecarga — use relé térmico!</li>
+  <li><strong>Não verificar a bobina:</strong> A tensão da bobina (24V, 110V, 220V) deve ser compatível com a rede</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Contator</strong> = interruptor controlado por ímã. Bobina energizada → contatos fecham → motor liga. <strong>Contato de selo</strong> mantém o motor ligado após soltar o botão. Sempre use com relé térmico para proteção!</p>`,
         exercises: [
           {
             id: "m5-l2-e1",
@@ -1521,27 +1960,55 @@ const COURSE_DATA = {
       {
         id: "m5-l5",
         title: "Circuitos de Comando",
-        theory: `Circuitos de comando são divididos em dois tipos fundamentais:
+        theory: `<h2>Circuitos de Comando</h2>
 
-**Circuito de Força:**
-- Transporta a energia elétrica até a carga (motor)
-- Utiliza fios de maior seção (2,5mm² a 16mm²)
-- Contém contator, relé térmico, fusível
-- Trabalha em alta tensão/corrente (220V/380V)
+<h3>🧠 O que são circuitos de comando?</h3>
+<p>Se o <strong>circuito de força</strong> é a "autoestrada" por onde a energia viaja, o <strong>circuito de comando</strong> é o "semáforo inteligente" que decide <strong>quando</strong> e <strong>como</strong> a energia chega ao motor. Ele é o "cérebro" da instalação!</p>
 
-**Circuito de Comando:**
-- Controla o funcionamento do circuito de força
-- Utiliza fios de menor seção (0,75mm² a 1,5mm²)
-- Contém botoeiras, contator, relé térmico, temporizador
-- Trabalha em baixa tensão (24V/110V/220V)
+<h3>💡 Analogia: O circuito de comando como "chef de cozinha"</h3>
+<p>Pense em uma <strong>cozinha industrial</strong>:</p>
+<ul>
+  <li><strong>Circuito de Força:</strong> Os gasodutos, fios grossos, fogão industrial — transportam a energia até as panelas (motores)</li>
+  <li><strong>Circuito de Comando:</strong> O chef que decide QUANDO ligar cada fogão, por QUANTO tempo, e em que ORDEM — ele controla tudo!</li>
+</ul>
 
-**Fiação Padrão:**
-- Fase: vermelho ou marrom
-- Neutro: azul claro
-- Terra: verde/amarelo
-- Comando: cinza ou preto
+<h3>📊 Comparação: Força vs. Comando</h3>
+<table>
+  <tr><th>Aspecto</th><th>Circuito de Força</th><th>Circuito de Comando</th></tr>
+  <tr><td><strong>Função</strong></td><td>Transportar energia até a carga</td><td>Controlar o funcionamento</td></tr>
+  <tr><td><strong>Fios</strong></td><td>Grossos (2,5mm² a 16mm²)</td><td>Finos (0,75mm² a 1,5mm²)</td></tr>
+  <tr><td><strong>Tensão</strong></td><td>Alta (220V/380V)</td><td>Baixa (24V/110V/220V)</td></tr>
+  <tr><td><strong>Corrente</strong></td><td>Alta (motor)</td><td>Baixa (bobinas)</td></tr>
+  <tr><td><strong>Componentes</strong></td><td>Contator, relé térmico, fusível</td><td>Botoeiras, relés, temporizadores</td></tr>
+</table>
 
-**Dica Importante:** Sempre verifique o diagrama elétrico antes de qualquer conexão.`,
+<h3>🎨 Fiação Padrão</h3>
+<table>
+  <tr><th>Função</th><th>Cor</th><th>Lembrete fácil</th></tr>
+  <tr><td><strong>Fase</strong></td><td>Vermelho ou marrom</td><td>"Fase = fogo" (perigosa!)</td></tr>
+  <tr><td><strong>Neutro</strong></td><td>Azul claro</td><td>"Azul = água" (retorna a energia)</td></tr>
+  <tr><td><strong>Terra</strong></td><td>Verde/amarelo</td><td>"Verde = chão" (proteção)</td></tr>
+  <tr><td><strong>Comando</strong></td><td>Cinza ou preto</td><td>"Cinza = controle" (neutro)</td></tr>
+</table>
+
+<h3>🔍 Passo a passo: Identificar os circuitos</h3>
+<ol>
+  <li><strong>Observe a espessura do fio:</strong> Grosso = força; Fino = comando</li>
+  <li><strong>Verifique os componentes:</strong> Contator = força; Botoeira = comando</li>
+  <li><strong>Meça a tensão:</strong> 220V/380V = força; 24V/110V = comando</li>
+  <li><strong>Siga o diagrama:</strong> Sempre identifique qual é qual</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Misturar fios:</strong> Nunca use fio fino para força ou grosso para comando — pode causar incêndio!</li>
+  <li><strong>Esquecer o diagrama:</strong> Sempre verifique o diagrama antes de conectar — errar pode queimar equipamentos</li>
+  <li><strong>Não identificar cores:</strong> Use as cores corretas para evitar confusões em manutenções futuras</li>
+  <li><strong>Dimensionar errado:</strong> Fio de comando precisa suportar apenas a corrente da bobina, não do motor</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Circuito de Força</strong> = energia até o motor (fios grossos, 220V/380V). <strong>Circuito de Comando</strong> = controle do funcionamento (fios finos, 24V/110V). Lembre: Força = "autoestrada"; Comando = "semáforo inteligente"!</p>`,
         exercises: [
           {
             id: "m5-l5-e1",
@@ -1588,27 +2055,66 @@ const COURSE_DATA = {
       {
         id: "m5-l6",
         title: "Partida Direta",
-        theory: `A partida direta é o método mais simples de ligar um motor elétrico trifásico.
+        theory: `<h2>Partida Direta</h2>
 
-**Diagrama de Força:**
-- Disjuntor → Contator → Relé Térmico → Motor
-- Três fases (R, S, T) conectadas diretamente ao motor
+<h3>⚡ O que é partida direta?</h3>
+<p>A <strong>partida direta</strong> é como "ligar o interruptor da luz" — você aperta o botão e o motor recebe <strong>toda a energia de uma vez</strong>. É o método mais simples e barato!</p>
 
-**Diagrama de Comando:**
-- Botão NA (liga) + Botão NF (desliga)
-- Contato de selo (mantém ligado)
-- Relé térmico (proteção contra sobrecarga)
-- Bobina do contator
+<h3>💡 Analogia: A partida direta como "pisar no acelerador"</h3>
+<p>Pense em um <strong>carro em ponto morto</strong>:</p>
+<ul>
+  <li><strong>Disjuntor:</strong> Ligou a ignição (carro ligado, mas parado)</li>
+  <li><strong>Botão verde:</strong> Pisou no acelerador (motor arranca)</li>
+  <li><strong>Contator:</strong> A "transmissão" que conecta o motor às rodas</li>
+  <li><strong>Relé térmico:</strong> O "sensor de temperatura" que protege o motor de sobrequente</li>
+</ul>
 
-**Sequência de Funcionamento:**
-1. Fechar disjuntor
-2. Pressionar botão NA verde
-3. Bobina K1 energiza → fecha contatos de potência e selo
-4. Motor arranca
-5. Para desligar, pressionar botão NF vermelho
+<h3>📊 Componentes da Partida Direta</h3>
+<table>
+  <tr><th>Componente</th><th>Função</th><th>Por que é necessário?</th></tr>
+  <tr><td><strong>Disjuntor</strong></td><td>Proteção geral contra curto-circuito</td><td>Segurança principal da instalação</td></tr>
+  <tr><td><strong>Contator</strong></td><td>Liga/desliga o motor</td><td>Controla a energia que vai ao motor</td></tr>
+  <tr><td><strong>Relé térmico</strong></td><td>Protege contra sobrecarga</td><td>Evita que o motor queime por excesso de carga</td></tr>
+  <tr><td><strong>Botoeiras</strong></td><td>Comando manual (liga/desliga)</td><td>Interface com o operador</td></tr>
+</table>
 
-**Vantagens:** Simplicidade, baixo custo
-**Desvantagens:** Corrente de partida alta (6-8x nominal)`,
+<h3>🔄 Sequência de Funcionamento (passo a passo)</h3>
+<ol>
+  <li><strong>1. Fechar disjuntor:</strong> Energiza o circuito de força (carro ligado)</li>
+  <li><strong>2. Pressionar botão verde (NA):</strong> Corrente flui pela bobina do contator</li>
+  <li><strong>3. Contator energiza:</strong> Fecha contatos de potência E contato de selo</li>
+  <li><strong>4. Motor arranca:</strong> Recebe tensão total (380V) e acelera</li>
+  <li><strong>5. Para desligar:</strong> Pressionar botão vermelho (NF) → contator desliga → motor para</li>
+</ol>
+
+<h3>⚠️ Corrente de Partida: O "grande problema"</h3>
+<p>Em partida direta, o motor puxa <strong>5 a 7 vezes a corrente nominal</strong> até atingir velocidade. É como "pisar fundo" no carro — gera muito "consumo"瞬间!</p>
+<p><strong>Consequências:</strong></p>
+<ul>
+  <li>Queda de tensão na rede</li>
+  <li>Luzes piscando na vizinhança</li>
+  <li>Possível desligamento de disjuntores</li>
+</ul>
+
+<h3>🔍 Passo a passo: Montar uma partida direta</h3>
+<ol>
+  <li><strong>Dimensione o contator:</strong> Corrente do motor × 1,5 (margem de segurança)</li>
+  <li><strong>Escolha o relé térmico:</strong> Ajuste para a corrente nominal do motor</li>
+  <li><strong>Ligue o circuito de força:</strong> Disjuntor → Contator → Relé térmico → Motor</li>
+  <li><strong>Ligue o circuito de comando:</strong> Botoeiras → Contato de selo → Bobina do contator</li>
+  <li><strong>Teste:</strong> Pressione botão verde → motor deve girar; solte → continua; pressione vermelho → para</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Esquecer o relé térmico:</strong> Sem ele, o motor pode queimar por sobrecarga sem que o disjuntor atue!</li>
+  <li><strong>Dimensionar contator errado:</strong> Se for menor que a corrente do motor, o contator pode "soldar" os contatos</li>
+  <li><strong>Não usar contato de selo:</strong> Sem ele, o motor para quando você soltar o botão!</li>
+  <li><strong>Ligar motor grande (>10CV):</strong> A corrente de partida pode derrubar a rede — use estrela-triângulo</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Partida direta</strong> = o mais simples: apertou o botão, motor ligou. Cuidado: corrente alta (5-7x nominal)! Para motores grandes (>10CV), use partida reduzida (estrela-triângulo).</p>`,
         exercises: [
           {
             id: "m5-l6-e1",
@@ -1655,28 +2161,66 @@ const COURSE_DATA = {
       {
         id: "m5-l7",
         title: "Estrela-Triângulo",
-        theory: `A partida estrela-triângulo é um método de partida reduzida para motores trifásicos.
+        theory: `<h2>Partida Estrela-Triângulo</h2>
 
-**Princípio:**
-- Partida em estrela (Y): tensão reduzida (√3 = 1,73x menor)
-- Após tempo ajustado, muda para triângulo (Δ): tensão nominal
-- Corrente de partida reduzida para 1/3 da partida direta
+<h3>⚡ O que é partida estrela-triângulo?</h3>
+<p>A <strong>partida estrela-triângulo</strong> é como "começar devagar e depois acelerar" — o motor inicia com <strong>tensão reduzida</strong> (estrela) e depois muda para <strong>tensão nominal</strong> (triângulo). É a solução para o problema da alta corrente de partida!</p>
 
-**Componentes Necessários:**
-- 3 contatores (K1 principal, K2 estrela, K3 triângulo)
-- 1 temporizador
-- Relé térmico
-- Botões de comando
+<h3>💡 Analogia: A partida estrela-triângulo como "aquecimento de atleta"</h3>
+<p>Pense em um <strong>atleta antes de uma corrida</strong>:</p>
+<ul>
+  <li><strong>Estrela (aquecimento):</strong> Você começa devagar, aquece os músculos (tensão reduzida, corrente baixa)</li>
+  <li><strong>Triângulo (prova):</strong> Quando está pronto, corre em velocidade total (tensão nominal, potência total)</li>
+  <li><strong>Temporizador:</strong> O "treinador" que diz quando parar de aquecer e começar a correr</li>
+</ul>
 
-**Sequência:**
-1. K1 (principal) + K2 (estrela) energizam → motor arranca em estrela
-2. Temporizador contagem
-3. K2 desliga → K3 liga → motor muda para triângulo
-4. Motor funciona em triângulo (regime)
+<h3>📊 Comparação: Direta vs. Estrela-Triângulo</h3>
+<table>
+  <tr><th>Aspecto</th><th>Partida Direta</th><th>Estrela-Triângulo</th></tr>
+  <tr><td><strong>Corrente de partida</strong></td><td>5-7x nominal</td><td>1/3 da direta (≈2x nominal)</td></tr>
+  <tr><td><strong>Torque de partida</strong></td><td>100% do nominal</td><td>1/3 do nominal</td></tr>
+  <tr><td><strong>Componentes</strong></td><td>1 contator</td><td>3 contatores + temporizador</td></tr>
+  <tr><td><strong>Custo</strong></td><td>Baixo</td><td>Médio</td></tr>
+  <tr><td><strong>Aplicação</strong></td><td>Motores < 10CV</td><td>Motores 10-100CV</td></tr>
+</table>
 
-**Intertravamento:**
-- K2 e K3 NUNCA podem estar ligados ao mesmo tempo
-- Intertravamento elétrico e/ou mecânico obrigatório`,
+<h3>🔄 Sequência de Funcionamento</h3>
+<ol>
+  <li><strong>1. Botão liga:</strong> Contator principal (K1) + Contator estrela (K2) energizam</li>
+  <li><strong>2. Motor arranca em estrela:</strong> Cada enrolamento recebe 220V (em rede 380V)</li>
+  <li><strong>3. Temporizador conta:</strong> Ajustado para 2-5 segundos (até motor atingir ~80% da velocidade)</li>
+  <li><strong>4. Transição:</strong> K2 desliga → K3 (triângulo) energiza</li>
+  <li><strong>5. Motor em regime:</strong> Funciona em triângulo (380V por enrolamento)</li>
+</ol>
+
+<h3>🔗 Intertravamento: A "regra de ouro"</h3>
+<p><strong>K2 (estrela) e K3 (triângulo) NUNCA podem estar ligados ao mesmo tempo!</strong></p>
+<p>Se ambos fecharem simultaneamente → <strong>curto-circuito trifásico!</strong></p>
+<p><strong>Como garantir:</strong></p>
+<ul>
+  <li><strong>Intertravamento elétrico:</strong> Contato NF de K2 na bobina de K3 (e vice-versa)</li>
+  <li><strong>Intertravamento mecânico:</strong> Trava física entre os contatores</li>
+</ul>
+
+<h3>🔍 Passo a passo: Dimensionar uma partida Y-Δ</h3>
+<ol>
+  <li><strong>Verifique o motor:</strong> Placa deve indicar "380/660V Y/Δ" (compatível com rede 380V)</li>
+  <li><strong>Dimensione os contatores:</strong> K1 e K3 para corrente nominal; K2 para 1/3 da corrente</li>
+  <li><strong>Escolha o temporizador:</strong> Ajuste para o motor atingir ~80% da velocidade</li>
+  <li><strong>Ligue o intertravamento:</strong> OBRIGATÓRIO entre K2 e K3</li>
+  <li><strong>Teste:</strong> Motor deve arrancar devagar (estrela) e depois acelerar (triângulo)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Esquecer o intertravamento:</strong> SEMPRE intertrave K2 e K3 — caso contrário, curto-circuito!</li>
+  <li><strong>Usar em motor inadequado:</strong> Motor deve ser triangular (380V) para rede 380V — verifique a placa!</li>
+  <li><strong>Tempo errado:</strong> Muito curto = motor não acelera; Muito longo = motor esquenta em estrela</li>
+  <li><strong>Não verificar tensão:</strong> Em estrela, cada enrolamento recebe 220V; em triângulo, 380V</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Estrela-triângulo</strong> = começa devagar (Y, 1/3 corrente) e depois acelera (Δ, potência total). Necessita 3 contatores + temporizador. <strong>SEMPRE intertrave K2 e K3!</strong></p>`,
         exercises: [
           {
             id: "m5-l7-e1",
@@ -1940,34 +2484,60 @@ const COURSE_DATA = {
       {
         id: "m6-l1",
         title: "O que é um CLP",
-        theory: `CLP (Controlador Lógico Programável) é um computador industrial projetado para controlar processos de automação.
+        theory: `<h2>O que é um CLP</h2>
 
-**Arquitetura Básica:**
-- CPU (Unidade Central de Processamento)
-- Memória (RAM e ROM)
-- Módulos de Entrada (INPUT)
-- Módulos de Saída (OUTPUT)
-- Fonte de alimentação
-- Barramento de comunicação
+<h3>🧠 O que é um CLP?</h3>
+<p>Um <strong>CLP (Controlador Lógico Programável)</strong> é como um <strong>"mini computador industrial"</strong> que controla máquinas e processos. Assim como seu celular roda aplicativos, o CLP roda <strong>programas de controle</strong>!</p>
 
-**Varredura (Scan Cycle):**
-O CLP executa um ciclo contínuo:
-1. Leitura de entradas (Read Input)
-2. Processamento do programa (Execute Program)
-3. Atualização de saídas (Write Output)
-4. Comunicação e diagnósticos
+<h3>💡 Analogia: O CLP como "cérebro de robô"</h3>
+<p>Pense em um <strong>robô de cozinha</strong>:</p>
+<ul>
+  <li><strong>CPU:</strong> O "cérebro" que processa informações e toma decisões</li>
+  <li><strong>Memória:</strong> A "memória" que guarda o que fazer (receitas/programas)</li>
+  <li><strong>Entradas:</strong> Os "olhos e ouvidos" que recebem informações (botões, sensores)</li>
+  <li><strong>Saídas:</strong> As "mãos" que executam ações (ligar motor, acender luz)</li>
+  <li><strong>Fonte:</strong> A "energia" que mantém tudo funcionando</li>
+</ul>
 
-**Scan Time:**
-- Tempo para completar um ciclo de varredura
-- Tipicamente: 1ms a 100ms
-- Quanto menor, mais rápido o controle
-- Depende do tamanho do programa e tipo de CPU
+<h3>📊 Arquitetura Básica do CLP</h3>
+<table>
+  <tr><th>Componente</th><th>Função</th><th>Analogia</th></tr>
+  <tr><td><strong>CPU</strong></td><td>Processa o programa e toma decisões</td><td>O "cérebro" do robô</td></tr>
+  <tr><td><strong>Memória</strong></td><td>Guarda o programa e dados</td><td>A "memória" do celular</td></tr>
+  <tr><td><strong>Entradas (INPUT)</strong></td><td>Recebe sinais do mundo real</td><td>Os "olhos e ouvidos"</td></tr>
+  <tr><td><strong>Saídas (OUTPUT)</strong></td><td>Aciona equipamentos</td><td>As "mãos e braços"</td></tr>
+  <tr><td><strong>Fonte</strong></td><td>Alimenta o CLP</td><td>A "pilha" do robô</td></tr>
+  <tr><td><strong>Barramento</strong></td><td>Comunica os componentes</td><td>Os "nervos" que conectam tudo</td></tr>
+</table>
 
-**Vantagens sobre relés:**
-- Flexibilidade (mudar programa sem rewiring)
-- Diagnósticos integrados
-- Menor espaço físico
-- Maior confiabilidade`,
+<h3>🔄 Varredura (Scan Cycle): O "pulso" do CLP</h3>
+<p>O CLP funciona como um <strong>robô muito rápido</strong> que repete o mesmo ciclo continuamente:</p>
+<ol>
+  <li><strong>1. Leitura de entradas:</strong> "O que está acontecendo?" (lê sensores, botões)</li>
+  <li><strong>2. Processamento do programa:</strong> "O que devo fazer?" (executa o código)</li>
+  <li><strong>3. Atualização de saídas:</strong> "Vou agir!" (liga/desliga motores, luzes)</li>
+  <li><strong>4. Comunicação:</strong> "Tudo bem aqui?" (troca dados com outros CLPs)</li>
+</ol>
+<p><strong>Scan Time:</strong> Tempo para completar um ciclo (1ms a 100ms). Quanto menor, mais rápido o controle!</p>
+
+<h3>🔍 Passo a passo: Entender um CLP</h3>
+<ol>
+  <li><strong>Identifique as entradas:</strong> O que o CLP "vê"? (botões, sensores)</li>
+  <li><strong>Identifique as saídas:</strong> O que o CLP "controla"? (motores, luzes)</li>
+  <li><strong>Leia o programa:</strong> O que o CLP "pensa"? (lógica Ladder)</li>
+  <li><strong>Verifique o scan time:</strong> Quão rápido ele reage?</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Não programar intertravamentos:</strong> SEMPRE proteja contra ações simultâneas perigosas!</li>
+  <li><strong>Esquecer o scan time:</strong> Processos rápidos precisam de CLPs com scan time baixo</li>
+  <li><strong>Não documentar:</strong> Sempre anote o que cada entrada/saída faz — facilita manutenção!</li>
+  <li><strong>Usar entrada errada:</strong> Verifique se é NPN ou PNP — o CLP deve ser compatível</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>CLP</strong> = computador industrial que controla máquinas. Entradas = "olhos"; Saídas = "mãos"; CPU = "cérebro". Funciona em ciclo contínuo: ler → pensar → agir.</p>`,
         exercises: [
           {
             id: "m6-l1-e1",
