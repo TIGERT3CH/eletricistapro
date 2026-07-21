@@ -14,93 +14,527 @@ const COURSE_DATA = {
         id: "m1-l1",
         title: "O que é Eletricidade",
         theory: `<h2>O que é Eletricidade</h2>
-<p>A eletricidade é o fluxo de <strong>elétrons</strong> (cargas negativas) através de um condutor. Todo átomo possui prótons (carga +), nêutrons (carga 0) e elétrons (carga -). Quando um átomo perde ou ganha elétrons, torna-se um <strong>íon</strong>.</p>
-<p>Existem dois tipos de corrente: <strong>CC (Corrente Contínua)</strong> — fluxo unidirecional, como em baterias — e <strong>CA (Corrente Alternada)</strong> — oscila em ciclos, como a rede elétrica domiciliar.</p>
-<p>As <strong>fontes de energia</strong> convertem outras formas de energia em energia elétrica. Exemplos: geradores eólicos, painéis solares, usinas termoelétricas e hidrelétricas.</p>
-<p>Para que haja fluxo de elétrons, são necessários dois elementos: um <strong>meio condutor</strong> (fio de cobre, alumínio) e uma <strong>diferença de potencial</strong> (tensão) entre dois pontos.</p>
-<p><strong>Aplicação prática:</strong> Em uma instalação residencial, os fios de cobre funcionam como condutores e o disjuntor protege contra sobrecorrentes.</p>
-<p><strong>Erro comum:</strong> Confundir tensão com corrente. Tensão é a "pressão" que empurra os elétrons; corrente é a quantidade de elétrons que fluem por segundo.</p>
-<p><strong>Dica:</strong> Pense na água: tensão é como a altura de uma torre d'água (pressão), corrente é o volume de água que flai por segundo.</p>`,
+
+<h3>🧠 Por onde começar? Entendendo o átomo</h3>
+<p>Antes de falar de eletricidade, precisamos entender a <strong>unidade básica da matéria</strong>: o átomo. Imagine que cada átomo é como um mini sistema solar:</p>
+<ul>
+  <li><strong>Núcleo</strong> (centro): contém prótons (carga +) e nêutrons (carga 0)</li>
+  <li><strong>Eletrosfera</strong> (ao redor): contém elétrons (carga -) girando em órbitas</li>
+</ul>
+
+<p><strong>Por que isso importa?</strong> Porque a eletricidade é, basicamente, o <strong>movimento organizado de elétrons</strong> de um átomo para outro através de um material condutor.</p>
+
+<h3>💡 Analogia da Água (a mais clássica!)</h3>
+<p>Pense em um <strong>sistema hidráulico</strong>:</p>
+<table>
+  <tr><th>Eletricidade</th><th>Água</th></tr>
+  <tr><td>Tensão (V)</td><td>Pressão da água (altura da torre d'água)</td></tr>
+  <tr><td>Corrente (I)</td><td>Volume de água que flui por segundo</td></tr>
+  <tr><td>Resistência (R)</td><td>Diâmetro do cano (quanto estreito, mais dificuldade)</td></tr>
+</table>
+<p>Assim como a água precisa de <strong>pressão</strong> para fluir por um cano, os elétrons precisam de <strong>tensão</strong> para se deslocar por um fio.</p>
+
+<h3>⚡ Os dois tipos de corrente</h3>
+<p><strong>Corrente Contínua (CC)</strong> — Os elétrons fluem em <strong>uma única direção</strong>, como o fluxo de água em um rio. Exemplos:</p>
+<ul>
+  <li>Baterias de celular e notebook</li>
+  <li>Painéis solares</li>
+  <li>Veículos elétricos</li>
+</ul>
+
+<p><strong>Corrente Alternada (CA)</strong> — Os elétrons <strong>oscilam de um lado para o outro</strong> (50 ou 60 vezes por segundo). É a energia que chega na sua tomada! No Brasil, usamos <strong>60 Hz</strong> (60 oscilações por segundo).</p>
+
+<h3>🔋 Fontes de energia elétrica</h3>
+<p>Para gerar eletricidade, precisamos <strong>converter outra forma de energia</strong> em energia elétrica:</p>
+<ul>
+  <li><strong>Hidrelétricas:</strong> Energia cinética da água → elétrica</li>
+  <li><strong>Eólicas:</strong> Energia do vento → elétrica</li>
+  <li><strong>Solares:</strong> Luz do sol → elétrica (efeito fotovoltaico)</li>
+  <li><strong>Termoelétricas:</strong> Calor → vapor → turbina → elétrica</li>
+</ul>
+
+<h3>🏠 Aplicação na sua casa</h3>
+<p>Quando você liga uma lâmpada:</p>
+<ol>
+  <li>A <strong>usina</strong> gera tensão (pressão)</li>
+  <li>Os <strong>fios de cobre</strong> conduzem os elétrons (meio condutor)</li>
+  <li>A <strong>lâmpada</strong> oferece resistência, convertendo energia elétrica em luz e calor</li>
+  <li>O <strong>disjuntor</strong> protege contra sobrecorrentes (como uma válvula de segurança)</li>
+</ol>
+
+<h3>⚠️ Erros que todo iniciante comete</h3>
+<ul>
+  <li><strong>Confundir tensão com corrente:</strong> Tensão é a "força" que empurra; corrente é a quantidade que flui</li>
+  <li><strong>Achar que 127V é seguro:</strong> Ambos (127V e 220V) são letais dependendo das condições!</li>
+  <li><strong>Esquecer o terra:</strong> O fio verde/amarelo é essencial para sua segurança</li>
+</ul>
+
+<h3>🎯 Resumo Rápido</h3>
+<p><strong>Eletricidade</strong> = Fluxo organizado de elétrons por um condutor, impulsionado por uma diferença de tensão.</p>`,
         exercises: [
-          { type: "multiple-choice", question: "Qual partícula é responsável pelo fluxo de corrente elétrica?", choices: ["Próton", "Nêutron", "Elétron", "Íon"], correct: 2, explanation: "O elétron, com carga negativa, é a partícula que se desloca nos condutores metálicos, criando o fluxo de corrente." },
-          { type: "multiple-choice", question: "A corrente alternada (CA) se diferencia da corrente contínua (CC) porque:", choices: ["Não possui carga elétrica", "O fluxo é unidirecional", "O sentido do fluxo oscila em ciclos", "Não necessita de condutor"], correct: 2, explanation: "Na CA, o sentido do fluxo de elétrons alterna periodicamente, geralmente em 50 ou 60 Hz." },
-          { type: "fill-blank", code: "A corrente contínua (CC) possui fluxo ________ de elétrons, enquanto a corrente alternada (CA) ________ o sentido do fluxo em ciclos.", blanks: [{ answer: "unidirecional", placeholder: "direção do fluxo" }, { answer: "inverte", placeholder: "ação sobre o fluxo" }], explanation: "CC mantém direção constante; CA alterna o sentido periodicamente." },
-          { type: "drag-drop", question: "Ordene os elementos necessários para haver fluxo de elétrons:", pieces: ["Fonte de tensão", "Meio condutor", "Diferença de potencial", "Circuito fechado"], correctOrder: ["Fonte de tensão", "Diferença de potencial", "Meio condutor", "Circuito fechado"], explanation: "A fonte cria a diferença de potencial, que empurra elétrons pelo condutor em circuito fechado." },
-          { type: "calculation", question: "Se uma bateria fornece 12V e a resistência é 4Ω, qual a corrente que flui?", answer: 3, unit: "A", validate: function(v) { return Math.abs(v - 3) < 0.1; }, explanation: "I = V/R = 12/4 = 3A. A Lei de Ohm relaciona tensão, resistência e corrente." }
+          { 
+            type: "multiple-choice", 
+            question: "Pense na analogia da água: o que representaria a 'tensão' em um sistema hidráulico?", 
+            choices: ["O volume de água", "A pressão da água", "O diâmetro do cano", "A temperatura"], 
+            correct: 1, 
+            explanation: "A tensão é análoga à pressão da água. Assim como a pressão empurra a água pelo cano, a tensão empurra os elétrons pelo fio." 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "Qual partícula se desloca para criar a corrente elétrica em um fio de cobre?", 
+            choices: ["Próton", "Nêutron", "Elétron", "Íon"], 
+            correct: 2, 
+            explanation: "Os elétrons, com carga negativa, são as partículas que se deslocam nos condutores metálicos. Prótons e nêutrons ficam no núcleo do átomo." 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "No Brasil, a rede elétrica oscila quantas vezes por segundo?", 
+            choices: ["50 Hz", "60 Hz", "120 Hz", "25 Hz"], 
+            correct: 1, 
+            explanation: "O Brasil usa 60 Hz, meaning 60 oscilações por segundo. Países como a Europa usam 50 Hz." 
+          },
+          { 
+            type: "fill-blank", 
+            code: "A corrente ________ mantém os elétrons fluindo em uma única direção, enquanto a corrente ________ alterna o sentido do fluxo.", 
+            blanks: [{ answer: "contínua", placeholder: "tipo de corrente" }, { answer: "alternada", placeholder: "tipo de corrente" }], 
+            explanation: "CC = Contínua (direção fixa). CA = Alternada (oscila). Baterias = CC; Tomadas = CA." 
+          },
+          { 
+            type: "drag-drop", 
+            question: "Organize os elementos necessários para haver fluxo de elétrons (do início ao fim):", 
+            pieces: ["Fonte de tensão", "Diferença de potencial", "Meio condutor", "Circuito fechado"], 
+            correctOrder: ["Fonte de tensão", "Diferença de potencial", "Meio condutor", "Circuito fechado"], 
+            explanation: "A fonte cria a diferença de potencial (tensão), que empurra os elétrons pelo condutor em circuito fechado." 
+          },
+          { 
+            type: "calculation", 
+            question: "Se uma bateria de 9V está ligada a um resistor de 3Ω, qual a corrente que flui pelo circuito? (Use Lei de Ohm: I = V/R)", 
+            answer: 3, 
+            unit: "A", 
+            validate: function(v) { return Math.abs(v - 3) < 0.1; }, 
+            explanation: "I = V/R = 9/3 = 3A. A Lei de Ohm é a base de todos os cálculos elétricos. Memorize: I = V/R!" 
+          }
         ]
       },
       {
         id: "m1-l2",
         title: "Tensão e seus Tipos",
         theory: `<h2>Tensão e seus Tipos</h2>
-<p><strong>Tensão elétrica</strong> (U ou V) é a diferença de potencial elétrico entre dois pontos, medida em <strong>Volt (V)</strong>. É a "pressão" que faz os elétrons fluírem.</p>
-<p>Na <strong>tensão alternada (TA)</strong>, a forma de onda é senoidal. No Brasil, a frequência é de <strong>60 Hz</strong>, meaning 60 ciclos por segundo. Cada ciclo completo tem duração de 1/60 ≈ 16,67 ms.</p>
-<p>A <strong>tensão eficaz</strong> é o valor que medimos no multímetro e na conta de luz: <strong>127V ou 220V</strong>. A <strong>tensão de pico</strong> (Vp) é o valor máximo da onda: Vp = Vef × √2. Para 127V, Vp ≈ 180V; para 220V, Vp ≈ 311V.</p>
-<p>O <strong>tensão de pico a pico</strong> (Vpp) é a distância entre o máximo positivo e negativo: Vpp = 2 × Vp.</p>
-<p><strong>Aplicação prática:</strong> Equipamentos eletrônicos sensíveis (computadores, TVs) precisam de <strong>No-Break</strong> ou estabilizadores para proteger contra variações de tensão.</p>
-<p><strong>Erro comum:</strong> Achar que 127V é "menos perigoso" que 220V. Ambos são letais dependendo das condições (resistência corporal, trajeto da corrente).</p>
-<p><strong>Dica:</strong> Nunca meça tensão em modo de corrente (A). Sempre selecione o modo de tensão (V~ ou V=) no multímetro.</p>`,
+
+<h3>🔋 O que é Tensão Elétrica?</h3>
+<p><strong>Tensão</strong> (também chamada de diferença de potencial) é a <strong>"pressão"</strong> que faz os elétrons se moverem de um ponto para outro. É medida em <strong>Volt (V)</strong>.</p>
+
+<h3>💧 Analogia da Água (parte 2)</h3>
+<p>Imagine duas torres d'água:</p>
+<ul>
+  <li><strong>Torre alta</strong> (mais água): tem mais "pressão" → maior tensão</li>
+  <li><strong>Torre baixa</strong> (menos água): tem menos "pressão" → menor tensão</li>
+</ul>
+<p>A <strong>diferença de altura</strong> entre as torres é análoga à <strong>diferença de potencial</strong> (tensão). Quanto maior a diferença, maior a "força" que empurra os elétrons.</p>
+
+<h3>📊 Tensão Eficaz vs. Tensão de Pico</h3>
+<p>A onda senoidal da CA tem três valores importantes:</p>
+
+<table>
+  <tr><th>Tipo</th><th>Símbolo</th><th>O que é</th><th>Exemplo (127V)</th></tr>
+  <tr><td>Eficaz (RMS)</td><td>Vef ou Vrms</td><td>O valor que medimos e pagamos na conta de luz</td><td>127V</td></tr>
+  <tr><td>De Pico</td><td>Vp</td><td>O valor MÁXIMO que a onda atinge</td><td>~180V</td></tr>
+  <tr><td>Pico a Pico</td><td>Vpp</td><td>Distância entre o máximo positivo e negativo</td><td>~360V</td></tr>
+</table>
+
+<p><strong>Fórmula essencial:</strong></p>
+<p><code>Vp = Vef × √2</code> (ou seja, Vp = Vef × 1,414)</p>
+
+<h3>🌍 Tensão no Brasil</h3>
+<p>No Brasil, temos <strong>duas tensões residenciais</strong>:</p>
+<ul>
+  <li><strong>127V:</strong> Usada em tomadas comuns (lâmpadas, ventiladores, TV)</li>
+  <li><strong>220V:</strong> Usada em equipamentos de alto consumo (chuveiro elétrico, ar-condicionado)</li>
+</ul>
+<p><strong>Variação permitida:</strong> ±10% da tensão nominal. Ou seja:</p>
+<ul>
+  <li>Para 127V: aceitável entre 114V e 140V</li>
+  <li>Para 220V: aceitável entre 198V e 242V</li>
+</ul>
+
+<h3>⚠️ Perigo Real: Ambos Matam!</h3>
+<p><strong>Erro fatal:</strong> Achar que 127V é "seguro" e 220V é "perigoso".</p>
+<p>A verdade: <strong>ambas são letais</strong> dependendo de:</p>
+<ul>
+  <li>Resistência do seu corpo (se está molhado, a resistência cai!)</li>
+  <li>Trajeto da corrente (mão-mão é o mais perigoso)</li>
+  <li>Tempo de contato</li>
+</ul>
+
+<h3>🔧 Multímetro: como medir</h3>
+<p>Para medir tensão com o multímetro:</p>
+<ol>
+  <li>Selecione o modo <strong>V~</strong> (CA) ou <strong>V=</strong> (CC)</li>
+  <li>Conecte a <strong>sonda vermelha</strong> no terminal positivo</li>
+  <li>Conecte a <strong>sonda preta</strong> no terminal negativo</li>
+  <li><strong>NUNCA</strong> meça corrente (A) com o multímetro em modo de tensão!</li>
+</ol>
+
+<h3>🏠 Aplicação Prática</h3>
+<p>Quando você compra um equipamento eletrônico (notebook, TV), ele vem com uma <strong>faixa de tensão</strong>: "127V/220V" ou "100-240V". Isso indica qual tensão o equipamento suporta.</p>
+<p><strong>Dica:</strong> Equipamentos com "bivolt" funcionam em ambas as tensões automaticamente.</p>`,
         exercises: [
-          { type: "multiple-choice", question: "Qual é a tensão de pico (Vp) para uma rede de 220V eficazes?", choices: ["220V", "311V", "380V", "110V"], correct: 1, explanation: "Vp = Vef × √2 = 220 × 1,414 ≈ 311V. A tensão de pico é sempre maior que a eficaz." },
-          { type: "multiple-choice", question: "A frequência da rede elétrica brasileira é:", choices: ["50 Hz", "60 Hz", "120 Hz", "25 Hz"], correct: 1, explanation: "O Brasil adota 60 Hz. Isso significa que a tensão alterna 60 vezes por segundo." },
-          { type: "fill-blank", code: "A tensão ________ é o valor medido pelo multímetro e equivale a 127V ou 220V no Brasil. A tensão de ________ é o valor máximo da onda senoidal.", blanks: [{ answer: "eficaz", placeholder: "tipo de tensão medida" }, { answer: "pico", placeholder: "valor máximo" }], explanation: "A tensão eficaz (RMS) é o valor útil; a de pico é o extremo da onda." },
-          { type: "calculation", question: "Se a tensão de pico é 180V, qual é a tensão eficaz?", answer: 127.3, unit: "V", validate: function(v) { return Math.abs(v - 127.3) < 1; }, explanation: "Vef = Vp / √2 = 180 / 1,414 ≈ 127,3V. A tensão eficaz é menor que a de pico." }
+          { 
+            type: "multiple-choice", 
+            question: "Se a tensão eficaz da sua casa é 220V, qual seria a tensão de pico máxima que aparece na rede?", 
+            choices: ["220V", "311V", "380V", "440V"], 
+            correct: 1, 
+            explanation: "Vp = Vef × √2 = 220 × 1,414 ≈ 311V. A tensão de pico é sempre maior que a eficaz! É por isso que equipamentos precisam suportar mais que a tensão nominal." 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "Qual é a variação de tensão aceitável em uma rede de 127V?", 
+            choices: ["120V a 135V", "114V a 140V", "100V a 150V", "125V a 129V"], 
+            correct: 1, 
+            explanation: "A norma permite ±10%. Para 127V: mínimo 114V e máximo 140V. Fora dessa faixa, há risco de danos aos equipamentos." 
+          },
+          { 
+            type: "fill-blank", 
+            code: "A tensão ________ é o valor medido pelo multímetro e que pagamos na conta de luz. A tensão ________ é o valor máximo da onda senoidal.", 
+            blanks: [{ answer: "eficaz", placeholder: "tipo de tensão" }, { answer: "pico", placeholder: "valor máximo" }], 
+            explanation: "Eficaz (RMS) = valor útil, o que medimos. Pico = valor máximo, maior que a eficaz." 
+          },
+          { 
+            type: "calculation", 
+            question: "Uma tomada fornece 127V eficazes. Qual é a tensão de pico?", 
+            answer: 179.6, 
+            unit: "V", 
+            validate: function(v) { return Math.abs(v - 179.6) < 2; }, 
+            explanation: "Vp = 127 × 1,414 = 179,6V. Arredondando, temos ~180V de pico. Essa é a tensão máxima que aparece 120 vezes por segundo!" 
+          },
+          { 
+            type: "drag-drop", 
+            question: "Organize os tipos de tensão do menor para o maior valor:", 
+            pieces: ["Tensão Eficaz (127V)", "Tensão de Pico (~180V)", "Tensão Pico a Pico (~360V)"], 
+            correctOrder: ["Tensão Eficaz (127V)", "Tensão de Pico (~180V)", "Tensão Pico a Pico (~360V)"], 
+            explanation: "Eficaz < Pico < Pico a Pico. A eficaz é a menor; a pico a pico é o dobro da pico." 
+          }
         ]
       },
       {
         id: "m1-l3",
         title: "Corrente Elétrica",
         theory: `<h2>Corrente Elétrica</h2>
-<p><strong>Corrente elétrica</strong> (I) é a quantidade de carga elétrica que flui por unidade de tempo por um ponto do condutor. Medida em <strong>Ampère (A)</strong>.</p>
-<p>A <strong>corrente convencional</strong> é definida como o fluxo de cargas positivas (do + para o -). Na realidade, são os <strong>elétrons</strong> que fluem do - para o +. A convenção histórica prevalece nos cálculos.</p>
-<p>Correntes pequenas são classificadas: <strong>mA</strong> (miliampère, 1A = 1000mA), <strong>μA</strong> (microampère, 1A = 1.000.000μA). Para referência: 1mA já causa formigamento; 10mA pode causar tetanização muscular; acima de 30mA é potencialmente letal.</p>
-<p>Os <strong>efeitos da corrente</strong> no corpo humano dependem de: intensidade, frequência, trajeto (mão-mão é o mais perigoso), tempo de contato e resistência corporal.</p>
-<p><strong>Aplicação prática:</strong> O <strong>DR (Dispositivo Residual)</strong> detecta fugas de corrente e desliga em menos de 30ms quando detecta diferença superior a 30mA entre fase e neutro.</p>
-<p><strong>Erro comum:</strong> Dimensionar fios apenas pela corrente sem considerar a queda de tensão em distâncias longas.</p>
-<p><strong>Dica:</strong> Ao verificar se há tensão em um fio, sempre use o multímetro. Nunca teste com o corpo!</p>`,
+
+<h3>🌊 O que é Corrente Elétrica?</h3>
+<p><strong>Corrente elétrica</strong> (I) é a <strong>quantidade de elétrons</strong> que passa por um ponto do condutor em um determinado tempo. É medida em <strong>Ampère (A)</strong>.</p>
+
+<h3>💧 Analogia da Água (parte 3)</h3>
+<table>
+  <tr><th>Eletricidade</th><th>Água</th></tr>
+  <tr><td>Tensão (V)</td><td>Pressão (altura da torre)</td></tr>
+  <tr><td><strong>Corrente (I)</strong></td><td><strong>Volume de água por segundo</strong></td></tr>
+  <tr><td>Resistência (R)</td><td>Diâmetro do cano</td></tr>
+</table>
+<p>Assim como a corrente de água é o <strong>volume</strong> que flui por segundo, a corrente elétrica é a <strong>quantidade de elétrons</strong> que flui por segundo.</p>
+
+<h3>⚠️ Corrente Convencional vs. Real</h3>
+<p><strong>Atenção:</strong> Existe uma confusão histórica que você precisa entender:</p>
+<ul>
+  <li><strong>Corrente convencional:</strong> Do + para o - (como se fossem cargas positivas)</li>
+  <li><strong>Corrente real:</strong> Dos - para o + (elétrons, que são negativos)</li>
+</ul>
+<p><strong>Por que isso?</strong> No século XVIII, os cientistas achavam que eram cargas positivas se movendo. Quando descobriram que eram elétrons (negativos), já era tarde demais para mudar a convenção!</p>
+<p><strong>Resultado:</strong> Nos cálculos, usamos a <strong>corrente convencional</strong> (do + para o -), mesmo sabendo que na realidade são os elétrons que se movem no sentido oposto.</p>
+
+<h3>📏 Unidades de Corrente</h3>
+<table>
+  <tr><th>Unidade</th><th>Símbolo</th><th>Equivalência</th><th>Uso</th></tr>
+  <tr><td>Ampère</td><td>A</td><td>1A</td><td>Correntes industriais</td></tr>
+  <tr><td>Miliampère</td><td>mA</td><td>1A = 1.000mA</td><td>Eletrônica</td></tr>
+  <tr><td>Microampère</td><td>μA</td><td>1A = 1.000.000μA</td><td>Sensores, alarmes</td></tr>
+</table>
+
+<h3>☠️ Efeitos da Corrente no Corpo Humano</h3>
+<p><strong>Isso é SÉRIO:</strong> A corrente elétrica pode matar! Veja os efeitos:</p>
+<table>
+  <tr><th>Corrente</th><th>Efeito</th></tr>
+  <tr><td>1 mA</td><td>Formigamento leve (não sente perigo)</td></tr>
+  <tr><td>5 mA</td><td>Choque perceptível</td></tr>
+  <tr><td>10 mA</td><td>Tetanização muscular (não consegue soltar o fio!)</td></tr>
+  <tr><td>30 mA</td><td>Dificuldade respiratória</td></tr>
+  <tr><td>100 mA</td><td>Fibrilação ventricular (parada cardíaca)</td></tr>
+  <tr><td>> 1A</td><td>Queimaduras graves, morte certa</td></tr>
+</table>
+
+<p><strong>Fato assustador:</strong> Um choque de 30mA em 1 segundo pode ser letal! Por isso, o <strong>DR (Dispositivo Residual)</strong> é dimensionado para 30mA e desliga em menos de 30ms.</p>
+
+<h3>🏠 Aplicação Prática: O DR na sua casa</h3>
+<p>O DR (Interruptor Diferencial Residual) é o dispositivo que salva vidas:</p>
+<ul>
+  <li>Ele compara a corrente que <strong>sai pela fase</strong> com a que <strong>retorna pelo neutro</strong></li>
+  <li>Se houver diferença (fuga para terra), ele <strong>desliga imediatamente</strong></li>
+  <li>É obrigatório em: banheiros, cozinhas, lavanderias, áreas externas</li>
+</ul>
+
+<h3>📐 Fórmula da Corrente</h3>
+<p><code>I = Q / t</code></p>
+<p>Onde:</p>
+<ul>
+  <li><strong>I</strong> = Corrente (Ampères)</li>
+  <li><strong>Q</strong> = Carga (Coulombs)</li>
+  <li><strong>t</strong> = Tempo (segundos)</li>
+</ul>
+<p><strong>Exemplo:</strong> Se 60 Coulombs passam por um fio em 30 segundos, a corrente é:</p>
+<p><code>I = 60 / 30 = 2A</code></p>`,
         exercises: [
-          { type: "multiple-choice", question: "Qual corrente é considerada potencialmente letal para o ser humano?", choices: ["1mA", "5mA", "30mA", "500mA"], correct: 2, explanation: "Acima de 30mA, pode ocorrer fibrilação ventricular. O DR é dimensionado para 30mA justamente por essa razão." },
-          { type: "multiple-choice", question: "A corrente convencional é definida como o fluxo de:", choices: ["Elétrons do negativo para o positivo", "Prótons do positivo para o negativo", "Cargas positivas do positivo para o negativo", "Nêutrons"], correct: 2, explanation: "Por convenção histórica, a corrente é definida como o fluxo de cargas positivas, do polo + para o polo -." },
-          { type: "fill-blank", code: "1A = ________ mA = ________ μA", blanks: [{ answer: "1000", placeholder: "miliampères" }, { answer: "1000000", placeholder: "microampères" }], explanation: "O prefixo 'mili' significa 10⁻³ e 'micro' significa 10⁻⁶." },
-          { type: "calculation", question: "Se 45C (coulombs) de carga fluem em 30 segundos, qual é a corrente?", answer: 1.5, unit: "A", validate: function(v) { return Math.abs(v - 1.5) < 0.1; }, explanation: "I = Q/t = 45/30 = 1,5A. Corrente é a taxa de variação da carga." },
-          { type: "drag-drop", question: "Ordene os níveis de efeito da corrente no corpo humano (do menor para o maior efeito):", pieces: ["Formigamento", "Tetanização muscular", "Dificuldade respiratória", "Fibrilação ventricular"], correctOrder: ["Formigamento", "Tetanização muscular", "Dificuldade respiratória", "Fibrilação ventricular"], explanation: "Os efeitos aumentam com a intensidade: de ~1mA a ~100mA, passando por risco crescente." }
+          { 
+            type: "multiple-choice", 
+            question: "Segundo a tabela de efeitos, qual corrente já pode causar tetanização muscular (não conseguir soltar o fio)?", 
+            choices: ["1 mA", "5 mA", "10 mA", "30 mA"], 
+            correct: 2, 
+            explanation: "A 10mA, ocorre tetanização muscular: seus músculos contraem involuntariamente e você NÃO consegue soltar o fio elétrico. É por isso que choques acidentais são tão perigosos!" 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "A corrente convencional é definida como o fluxo de cargas positivas em qual direção?", 
+            choices: ["Do negativo para o positivo", "Do positivo para o negativo", "Em ambas as direções", "De cima para baixo"], 
+            correct: 1, 
+            explanation: "Por convenção histórica, a corrente vai do + para o -. Mas na realidade, são os elétrons (negativos) que vão do - para o +. Usamos a convenção nos cálculos!" 
+          },
+          { 
+            type: "fill-blank", 
+            code: "1 Ampère = ________ miliampères = ________ microampères.", 
+            blanks: [{ answer: "1000", placeholder: "miliampères" }, { answer: "1000000", placeholder: "microampères" }], 
+            explanation: "1A = 1.000mA = 1.000.000μA. Lembre: 'mili' = 10⁻³ (dividir por 1000), 'micro' = 10⁻� (dividir por 1 milhão)." 
+          },
+          { 
+            type: "calculation", 
+            question: "Se 120 Coulombs de carga fluem por um fio em 60 segundos, qual é a corrente?", 
+            answer: 2, 
+            unit: "A", 
+            validate: function(v) { return Math.abs(v - 2) < 0.1; }, 
+            explanation: "I = Q/t = 120/60 = 2A. Corrente é a 'velocidade' com que a carga se move. Mais carga no mesmo tempo = mais corrente." 
+          },
+          { 
+            type: "drag-drop", 
+            question: "Organize os efeitos da corrente no corpo humano do menos para o mais grave:", 
+            pieces: ["Fibrilação ventricular", "Formigamento", "Tetanização muscular", "Dificuldade respiratória"], 
+            correctOrder: ["Formigamento", "Tetanização muscular", "Dificuldade respiratória", "Fibrilação ventricular"], 
+            explanation: "Formigamento (~1mA) → Tetanização (~10mA) → Dificuldade respiratória (~30mA) → Fibrilação (~100mA). Quanto maior a corrente, mais grave o efeito!" 
+          }
         ]
       },
       {
         id: "m1-l4",
         title: "Resistência e Resistividade",
         theory: `<h2>Resistência e Resistividade</h2>
-<p><strong>Resistência elétrica</strong> (R) é a oposição que um material oferece ao fluxo de corrente. Medida em <strong>Ohm (Ω)</strong>. Depende de: comprimento, seção transversal, material e temperatura.</p>
-<p>A <strong>resistividade</strong> (ρ) é uma propriedade intrínseca do material, medida em Ω·m. A relação é dada pela fórmula: <strong>R = ρ × L / A</strong>, onde L é o comprimento e A é a área da seção.</p>
-<p>A <strong>tabela de resistividade</strong> é essencial para dimensionamento: Cobre: 1,72 × 10⁻⁸ Ω·m; Alumínio: 2,82 × 10⁻⁸ Ω·m. O cobre é mais condutor, mas o alumínio é mais leve e barato.</p>
-<p>A <strong>temperatura</strong> afeta a resistência: metais conductores aumentam R com o aumento da temperatura. Para o cobre: R₂ = R₁ × [1 + α(T₂ - T₁)], onde α ≈ 0,00393/°C.</p>
-<p><strong>Aplicação prática:</strong> Fios de cobre 2,5mm² são usados em circuitos de tomadas de 20A. Fios 1,5mm² são usados em iluminação.</p>
-<p><strong>Erro comum:</strong> Usar fio de alumínio em instalações residenciais sem precauções. O alumínio oxida, cria resistência no contato e pode causar incêndio.</p>
-<p><strong>Dica:</strong> Quanto maior a seção transversal do fio, menor a resistência e maior a capacidade de conduzir corrente.</p>`,
+
+<h3>🚧 O que é Resistência Elétrica?</h3>
+<p><strong>Resistência</strong> (R) é a <strong>dificuldade</strong> que um material oferece para a passagem da corrente elétrica. É medida em <strong>Ohm (Ω)</strong>.</p>
+
+<h3>💧 Analogia da Água (parte 4)</h3>
+<table>
+  <tr><th>Eletricidade</th><th>Água</th></tr>
+  <tr><td>Tensão (V)</td><td>Pressão (altura da torre)</td></tr>
+  <tr><td>Corrente (I)</td><td>Volume de água/segundo</td></tr>
+  <tr><td><strong>Resistência (R)</strong></td><td><strong>Diâmetro do cano</strong></td></tr>
+</table>
+<p>Quanto mais <strong>estreito</strong> o cano, mais <strong>dificuldade</strong> a água tem para passar. O mesmo acontece com o fio elétrico!</p>
+
+<h3>📏 Fórmula da Resistência</h3>
+<p><code>R = ρ × L / A</code></p>
+<p>Onde:</p>
+<ul>
+  <li><strong>R</strong> = Resistência (Ω)</li>
+  <li><strong>ρ</strong> (rho) = Resistividade do material (Ω·m)</li>
+  <li><strong>L</strong> = Comprimento do fio (m)</li>
+  <li><strong>A</strong> = Área da seção transversal (m²)</li>
+</ul>
+
+<h3>📊 Tabela de Resistividade</h3>
+<table>
+  <tr><th>Material</th><th>Resistividade (Ω·m)</th><th>Uso</th></tr>
+  <tr><td>Cobre</td><td>1,72 × 10⁻⁸</td><td>Fios elétricos (padrão)</td></tr>
+  <tr><td>Alumínio</td><td>2,82 × 10⁻⁸</td><td>Linhas de transmissão</td></tr>
+  <tr><td>Ferro</td><td>10 × 10⁻⁸</td><td>Solda, estruturas</td></tr>
+  <tr><td>Ouro</td><td>2,44 × 10⁻⁸</td><td>Contatos eletrônicos</td></tr>
+</table>
+
+<p><strong>Por que o cobre?</strong> Porque tem a menor resistividade (exceto prata e ouro, que são caros demais). Mas o alumínio é mais leve e barato, por isso é usado em linhas aéreas.</p>
+
+<h3>🌡️ Efeito da Temperatura</h3>
+<p>Quando a temperatura aumenta:</p>
+<ul>
+  <li>Os átomos vibram mais</li>
+  <li>Os elétrons colidem mais com os átomos</li>
+  <li>Resultado: <strong>resistência aumenta!</strong></li>
+</ul>
+<p><strong>Fórmula:</strong></p>
+<p><code>R₂ = R₁ × [1 + α × (T₂ - T₁)]</code></p>
+<p>Onde α ≈ 0,00393/°C para o cobre.</p>
+
+<h3>🏠 Aplicação Prática: Qual fio usar?</h3>
+<table>
+  <tr><th>Seção (mm²)</th><th>Corrente Máx.</th><th>Uso Típico</th></tr>
+  <tr><td>1,5 mm²</td><td>16A</td><td>Iluminação</td></tr>
+  <tr><td>2,5 mm²</td><td>25A</td><td>Tomadas gerais</td></tr>
+  <tr><td>4,0 mm²</td><td>35A</td><td>Chuveiro elétrico</td></tr>
+  <tr><td>6,0 mm²</td><td>45A</td><td>Forno elétrico</td></tr>
+</table>
+
+<h3>⚠️ Erro Fatal: Fio de Alumínio em Residência</h3>
+<p><strong>NUNCA</strong> use fio de alumínio em instalações residenciais novas!</p>
+<ul>
+  <li>O alumínio <strong>oxida</strong> com o tempo</li>
+  <li>A oxidação cria <strong>resistência no contato</strong></li>
+  <li>Isso gera <strong>calor</strong> pode causar <strong>incêndio!</strong></li>
+</ul>
+
+<h3>🎯 Resumo: Quanto maior a seção, menor a resistência!</h3>
+<p>Fio grosso = menos resistência = mais corrente suporta = mais seguro.</p>`,
         exercises: [
-          { type: "multiple-choice", question: "O que acontece com a resistência de um condutor quando a temperatura aumenta?", choices: ["Diminui", "Aumenta", "Permanece igual", "Depende do material"], correct: 1, explanation: "Em metais conductores, o aumento da temperatura faz com que os elétrons colidam mais com os átomos, aumentando a resistência." },
-          { type: "multiple-choice", question: "Qual material tem menor resistividade (melhor condução)?", choices: ["Alumínio", "Ferro", "Couro", "Cobre"], correct: 3, explanation: "O cobre tem resistividade de 1,72 × 10⁻⁸ Ω·m, menor que o alumínio (2,82 × 10⁻⁸ Ω·m)." },
-          { type: "fill-blank", code: "A resistência é diretamente proporcional ao comprimento do condutor e ________ proporcional à seção transversal. A unidade de resistividade é ________.", blanks: [{ answer: "inversamente", placeholder: "relação com seção" }, { answer: "Ω·m", placeholder: "unidade" }], explanation: "Fio mais longo = mais resistência; seção maior = menos resistência. Resistividade em Ohm-metro." },
-          { type: "calculation", question: "Um fio de cobre de 50m e seção 2,5mm² possui resistividade 1,72×10⁻⁸ Ω·m. Qual sua resistência?", answer: 0.034, unit: "Ω", validate: function(v) { return Math.abs(v - 0.034) < 0.01; }, explanation: "R = ρ×L/A = 1,72×10⁻⁸ × 50 / (2,5×10⁻⁶) ≈ 0,344Ω. Valores muito baixos em condutores curtos." }
+          { 
+            type: "multiple-choice", 
+            question: "Se você aumentar o comprimento de um fio para o dobro, o que acontece com a resistência?", 
+            choices: ["Diminui pela metade", "Permanece igual", "Dobra", "Quadruplica"], 
+            correct: 2, 
+            explanation: "Pela fórmula R = ρ×L/A, se L dobra, R também dobra. Fio mais longo = mais resistência!" 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "Qual material é MAIS indicado para fios elétricos residenciais?", 
+            choices: ["Alumínio", "Ferro", "Cobre", "Ouro"], 
+            correct: 2, 
+            explanation: "O cobre tem menor resistividade (1,72×10⁻⁸ Ω·m) que o alumínio (2,82×10⁻⁸ Ω·m), além de ser mais seguro (não oxida)." 
+          },
+          { type: "fill-blank", 
+            code: "A resistência é diretamente proporcional ao comprimento do fio e ________ proporcional à seção transversal.", 
+            blanks: [{ answer: "inversamente", placeholder: "relação com seção" }], 
+            explanation: "Fio mais longo = mais resistência (+). Seção maior = menos resistência (-). São relações inversas!" 
+          },
+          { 
+            type: "calculation", 
+            question: "Um fio de cobre tem 100m e seção 4mm². A resistividade do cobre é 1,72×10⁻⁸ Ω·m. Qual a resistência?", 
+            answer: 0.43, 
+            unit: "Ω", 
+            validate: function(v) { return Math.abs(v - 0.43) < 0.05; }, 
+            explanation: "R = ρ×L/A = 1,72×10⁻⁸ × 100 / (4×10⁻⁶) = 0,43Ω. Em fios curtos, a resistência é muito baixa!" 
+          },
+          { 
+            type: "drag-drop", 
+            question: "Organize os fios por capacidade de corrente (do menor para o maior):", 
+            pieces: ["Fio 6mm² (45A)", "Fio 1,5mm² (16A)", "Fio 4mm² (35A)", "Fio 2,5mm² (25A)"], 
+            correctOrder: ["Fio 1,5mm² (16A)", "Fio 2,5mm² (25A)", "Fio 4mm² (35A)", "Fio 6mm² (45A)"], 
+            explanation: "Quanto maior a seção, maior a corrente que suporta. Ordem: 1,5 → 2,5 → 4 → 6 mm²" 
+          }
         ]
       },
       {
         id: "m1-l5",
         title: "Lei de Ohm",
         theory: `<h2>Lei de Ohm</h2>
-<p>A <strong>Lei de Ohm</strong> é a relação fundamental entre tensão, corrente e resistência: <strong>V = R × I</strong> (Tensão = Resistência × Corrente).</p>
-<p>A partir dessa equação, podemos derivar três formas: <strong>V = R × I</strong>, <strong>R = V / I</strong>, <strong>I = V / R</strong>. O <strong>triângulo de Ohm</strong> ajuda a visualizar: V no topo, R e I na base. Cobriremos a grandeza desejada.</p>
-<p><strong>Exemplos práticos:</strong> Uma lâmpada de 60Ω ligada a 127V consome I = 127/60 ≈ 2,12A. Um aquecedor de 20Ω em 220V: I = 220/20 = 11A.</p>
-<p>A Lei de Ohm se aplica a <strong>circuitos lineares</strong> (resistores puros). Em componentes não-lineares (diodos, transistores), a relação não é linear.</p>
-<p><strong>Aplicação prática:</strong> Para dimensionar um disjuntor, primeiro calculamos a corrente usando I = P/V (resistência não é dada diretamente, mas obtemos corrente pela potência).</p>
-<p><strong>Erro comum:</strong> Esquecer que a Lei de Ohm funciona apenas com valores equivalentes: se R está em ohms e V em volts, I sai em amperes.</p>
-<p><strong>Dica:</strong> O triângulo de Ohm é sua melhor ferramenta. Memorize as três formas e use para qualquer cálculo rápido.</p>`,
+
+<h3>⚡ A Fórmula Mais Importante da Eletricidade!</h3>
+<p>A <strong>Lei de Ohm</strong> é a relação fundamental que conecta tensão, corrente e resistência. Se você só pudesse decorar UMA fórmula na vida, seria esta:</p>
+
+<p><code>V = R × I</code></p>
+
+<h3>💧 Analogia da Água (parte 5 - final!)</h3>
+<table>
+  <tr><th>Eletricidade</th><th>Água</th><th>Relação</th></tr>
+  <tr><td>Tensão (V)</td><td>Pressão</td><td>Quanto mais pressão, mais água flui</td></tr>
+  <tr><td>Corrente (I)</td><td>Volume/segundo</td><td>Quanto mais volume, mais água flui</td></tr>
+  <tr><td>Resistência (R)</td><td>Diâmetro do cano</td><td>Quanto mais estreito, menos água flui</td></tr>
+</table>
+
+<p><strong>Lei de Ohm em palavras:</strong> "A tensão é igual à resistência multiplicada pela corrente."</p>
+
+<h3>📐 As 3 Formas da Lei de Ohm</h3>
+<p>Dependendo do que você quer calcular, pode usar uma das três formas:</p>
+
+<table>
+  <tr><th>O que quer calcular</th><th>Fórmula</th><th>Exemplo</th></tr>
+  <tr><td><strong>Tensão (V)</strong></td><td>V = R × I</td><td>10Ω × 3A = 30V</td></tr>
+  <tr><td><strong>Resistência (R)</strong></td><td>R = V / I</td><td>120V / 4A = 30Ω</td></tr>
+  <tr><td><strong>Corrente (I)</strong></td><td>I = V / R</td><td>220V / 50Ω = 4,4A</td></tr>
+</table>
+
+<h3>🔺 O Triângulo de Ohm (sua melhor amigo!)</h3>
+<p>Imagine um triângulo com:</p>
+<ul>
+  <li><strong>V</strong> no topo</li>
+  <li><strong>R</strong> na base esquerda</li>
+  <li><strong>I</strong> na base direita</li>
+</ul>
+<p>Para calcular qualquer grandeza, <strong>copre-a</strong> e multiplique/divida as outras:</p>
+<ul>
+  <li>Para <strong>V</strong>: copre V → sobra R × I</li>
+  <li>Para <strong>R</strong>: copre R → sobra V / I</li>
+  <li>Para <strong>I</strong>: copre I → sobra V / R</li>
+</ul>
+
+<h3>📊 Exemplos Práticos</h3>
+<p><strong>Exemplo 1:</strong> Uma lâmpada de 60Ω ligada a 127V</p>
+<p><code>I = V / R = 127 / 60 = 2,12A</code></p>
+<p>A lâmpada consome 2,12 Ampères.</p>
+
+<p><strong>Exemplo 2:</strong> Um aquecedor de 20Ω em 220V</p>
+<p><code>I = V / R = 220 / 20 = 11A</code></p>
+<p>O aquecedor consome 11 Ampères (muita corrente!).</p>
+
+<h3>⚠️ Cuidados Importantes</h3>
+<ul>
+  <li><strong>A Lei de Ohm funciona apenas para circuitos LINEARES</strong> (resistores puros)</li>
+  <li>Componentes como diodos, transistores e motores NÃO seguem a Lei de Ohm diretamente</li>
+  <li>Em motores, parte da energia vira <strong>movimento</strong>, não só calor</li>
+</ul>
+
+<h3>🏠 Aplicação Prática: Dimensionar Disjuntor</h3>
+<p>Para saber qual disjuntor usar, primeiro calculamos a corrente:</p>
+<ol>
+  <li>Somamos a potência de todos os equipamentos do circuito</li>
+  <li>Dividimos pela tensão: <code>I = P / V</code></li>
+  <li>O disjuntor deve ser <strong>maior</strong> que essa corrente</li>
+</ol>
+<p><strong>Exemplo:</strong> Circuito com 3 lâmpadas de 100W cada em 127V:</p>
+<p><code>P total = 3 × 100 = 300W</code></p>
+<p><code>I = 300 / 127 = 2,36A</code></p>
+<p>Usar disjuntor de <strong>10A</strong> (próximo padrão disponível).</p>
+
+<h3>🎯 Dica de Ouro</h3>
+<p><strong>Memorize o triângulo de Ohm!</strong> Ele vai te acompanhar em TODO o curso. Se você dominar essa fórmula, 50% da eletricidade já está compreendida.</p>`,
         exercises: [
-          { type: "multiple-choice", question: "Uma resistência de 47Ω é conectada a 220V. Qual a corrente?", choices: ["4,68A", "10.340A", "0,21A", "47A"], correct: 0, explanation: "I = V/R = 220/47 ≈ 4,68A. A corrente depende inversamente da resistência." },
-          { type: "multiple-choice", question: "Qual a resistência de um circuito que consome 5A com 127V?", choices: ["25,4Ω", "635Ω", "0,04Ω", "5A"], correct: 0, explanation: "R = V/I = 127/5 = 25,4Ω. Resistência é tensão dividida por corrente." },
-          { type: "fill-blank", code: "Na Lei de Ohm, V = R × I. Se mantivermos R constante e dobrarmos a I, a V também ________. Se mantivermos V constante e aumentarmos R, a I ________.", blanks: [{ answer: "dobra", placeholder: "efeito na tensão" }, { answer: "diminui", placeholder: "efeito na corrente" }], explanation: "V é diretamente proporcional a I (quando R constante). I é inversamente proporcional a R (quando V constante)." },
-          { type: "calculation", question: "Um motor consome 2000W em 220V. Se sua resistência interna é 12Ω, qual a corrente pela Lei de Ohm?", answer: 18.3, unit: "A", validate: function(v) { return Math.abs(v - 18.3) < 0.5; }, explanation: "I = V/R = 220/12 ≈ 18,3A. Note que pela potência daria I = P/V = 2000/220 ≈ 9,1A — a diferença é porque o motor não é puramente resistivo." },
-          { type: "drag-drop", question: "Complete o triângulo de Ohm colocando cada grandeza no lugar correto:", pieces: ["V (Tensão)", "R (Resistência)", "I (Corrente)", "Divisão", "Multiplicação"], correctOrder: ["V (Tensão)", "Divisão", "R (Resistência)", "Multiplicação", "I (Corrente)"], explanation: "V está no topo: V = R × I. Para R: R = V / I. Para I: I = V / R." }
+          { 
+            type: "multiple-choice", 
+            question: "Uma resistência de 100Ω é conectada a uma bateria de 12V. Qual a corrente que flui?", 
+            choices: ["0,12A", "12A", "120A", "1200A"], 
+            correct: 0, 
+            explanation: "I = V/R = 12/100 = 0,12A. A corrente é pequena porque a resistência é alta. Se a resistência diminuísse, a corrente aumentaria!" 
+          },
+          { 
+            type: "multiple-choice", 
+            question: "Para calcular a RESISTÊNCCIA usando a Lei de Ohm, qual fórmula usamos?", 
+            choices: ["R = V × I", "R = V / I", "R = I / V", "R = V + I"], 
+            correct: 1, 
+            explanation: "R = V/I é a fórmula correta. Para encontrar a resistência, dividimos a tensão pela corrente." 
+          },
+          { 
+            type: "fill-blank", 
+            code: "Na Lei de Ohm: V = R × I. Se R = 50Ω e I = 4A, então V = ________ V.", 
+            blanks: [{ answer: "200", placeholder: "tensão calculada" }], 
+            explanation: "V = R × I = 50 × 4 = 200V. É só multiplicar!" 
+          },
+          { 
+            type: "calculation", 
+            question: "Um chuveiro elétrico tem resistência de 20Ω e é ligado em 220V. Qual a corrente que ele consome?", 
+            answer: 11, 
+            unit: "A", 
+            validate: function(v) { return Math.abs(v - 11) < 0.5; }, 
+            explanation: "I = V/R = 220/20 = 11A. Essa é uma corrente alta! Por isso o chuveiro precisa de fio grosso (4mm²) e disjuntor dedicado." 
+          },
+          { 
+            type: "drag-drop", 
+            question: "Complete o Triângulo de Ohm colocando as fórmulas no lugar correto:", 
+            pieces: ["R = V / I", "I = V / R", "V = R × I"], 
+            correctOrder: ["V = R × I", "R = V / I", "I = V / R"], 
+            explanation: "V no topo (R×I). R na base (V/I). I na base (V/R). Copre o que quer calcular e multiplique/divida as outras!" 
+          }
         ]
       },
       {
